@@ -15,4 +15,5 @@ All notable changes to this project will be documented here.
 - Contract validator for uniqueness, provenance, runtime SVG integrity, and
   accessibility.
 - Desktop and 390px mobile interaction QA.
+- Browser query/render/extension API and generated machine-readable catalog.
 - GitHub Actions validation and Pages deployment workflows.

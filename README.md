@@ -11,6 +11,7 @@ figures.
 [Live catalog](https://aidennovak.github.io/llm-benchmark-atlas/) ·
 [Chinese README](README.zh-CN.md) ·
 [Component contract](docs/COMPONENT_CONTRACT.md) ·
+[Browser API](docs/API.md) ·
 [Source inventory](research/SOURCES.md)
 
 ![Benchmark Atlas catalog](assets/atlas-preview.png)
@@ -72,6 +73,8 @@ exportable.
 library/catalog.js       source registry, component metadata, demo data
 library/renderers.js     40 core pure-SVG renderers
 library/vendor-series.js vendor-specific extension registry and renderers
+library/api.js           stable query, render, and extension API
+library/catalog.generated.json machine-readable registry snapshot
 library/app.js           search, filters, details, JSON copy, SVG download
 scripts/validate-*       contract and runtime validation
 research/                source evidence and chart taxonomy

@@ -41,12 +41,11 @@
   }
 
   function filteredComponents() {
-    const query = state.query.trim().toLocaleLowerCase('zh-CN');
-    return window.BENCHMARK_COMPONENTS.filter(entry => {
-      if (state.family !== 'all' && entry.family !== state.family) return false;
-      if (state.sourceType !== 'all' && entry.sourceType !== state.sourceType) return false;
-      if (state.vendor !== 'all' && entry.source !== state.vendor) return false;
-      return !query || searchableText(entry).includes(query);
+    return window.BenchmarkAtlas.query({
+      query: state.query,
+      family: state.family,
+      sourceType: state.sourceType,
+      source: state.vendor
     });
   }
 

@@ -44,6 +44,12 @@ core catalog implementation.
 Owns presentation-only state: query, filters, density, selected component,
 dialog rendering, JSON copy, and SVG download. It does not own chart data.
 
+### `api.js`
+
+Exposes a stable browser surface for querying, rendering, and registering
+extensions. It returns defensive clones so consumers cannot mutate the registry
+accidentally. A generated JSON snapshot serves non-JavaScript consumers.
+
 ## Invariants
 
 - `id`, `grammar`, `visualSystem`, and `renderer` are globally unique.

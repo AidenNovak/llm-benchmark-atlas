@@ -8,11 +8,13 @@ vm.createContext(sandbox);
 vm.runInContext(read('library/catalog.js'), sandbox, { filename: 'catalog.js' });
 vm.runInContext(read('library/renderers.js'), sandbox, { filename: 'renderers.js' });
 vm.runInContext(read('library/vendor-series.js'), sandbox, { filename: 'vendor-series.js' });
+vm.runInContext(read('library/api.js'), sandbox, { filename: 'api.js' });
 
 const components = sandbox.window.BENCHMARK_COMPONENTS;
 const sources = sandbox.window.BENCHMARK_SOURCES;
 const renderers = sandbox.window.BENCHMARK_RENDERERS;
 const renderBenchmark = sandbox.window.renderBenchmark;
+const api = sandbox.window.BenchmarkAtlas;
 const errors = [];
 
 function requireUnique(field) {
@@ -62,8 +64,29 @@ for (const entry of components) {
 }
 
 const index = read('library/index.html');
-for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'app.js']) {
+for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'api.js', 'app.js']) {
   if (!index.includes(asset)) errors.push(`index.html does not load ${asset}`);
+}
+
+const generated = JSON.parse(read('library/catalog.generated.json'));
+if (generated.components.length !== components.length) errors.push('generated catalog component count is stale');
+if (generated.sources.length !== Object.keys(sources).length) errors.push('generated catalog source count is stale');
+if (generated.stats.components !== api.stats().components) errors.push('generated catalog stats are stale');
+if (generated.components.map(entry => entry.id).join('|') !== components.map(entry => entry.id).join('|')) {
+  errors.push('generated catalog component order or IDs are stale');
+}
+
+const apiCopy = api.get('claude-master-table');
+if (!apiCopy || apiCopy.id !== 'claude-master-table') errors.push('API get() failed');
+apiCopy.name = 'mutated outside registry';
+if (api.get('claude-master-table').name === apiCopy.name) errors.push('API get() did not return a defensive clone');
+if (api.query({ query: 'Sankey' }).length !== 1) errors.push('API query() failed');
+if (!api.render('openai-compute-frontier').startsWith('<svg')) errors.push('API render() failed');
+try {
+  api.registerSource('anthropic', sources.anthropic);
+  errors.push('API accepted a duplicate source');
+} catch (error) {
+  // Expected contract rejection.
 }
 
 const report = {

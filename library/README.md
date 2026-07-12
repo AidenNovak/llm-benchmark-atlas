@@ -40,6 +40,8 @@ leaderboard result.
 | `catalog.js` | Source registry, component metadata, demo data |
 | `renderers.js` | One pure SVG renderer per component |
 | `vendor-series.js` | Maintainable second-pass vendor release series |
+| `api.js` | Query, render, and validated extension registration API |
+| `catalog.generated.json` | Machine-readable registry snapshot |
 | `app.js` | Search, filters, detail view, copy, SVG download |
 | `../scripts/validate-library.mjs` | Duplication, coverage, rendering, and accessibility checks |
 
