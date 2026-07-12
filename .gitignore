@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+__pycache__/
+.pytest_cache/
+node_modules/
+screenshots/
+
+# Local research archive and earlier private experiments are intentionally not
+# part of the public product repository.
+_archive/
+canon/
+cola-promo/
+CATALOG.md

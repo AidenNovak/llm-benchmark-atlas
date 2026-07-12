@@ -1,0 +1,43 @@
+name: New chart grammar
+description: Propose a source-grounded benchmark visualization component.
+title: "[Chart]: "
+labels: ["new-chart"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+      description: First-party vendor, benchmark, lab, or paper URL.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Benchmark question
+      description: What decision or evidence does this chart make easier to understand?
+    validations:
+      required: true
+  - type: textarea
+    id: grammar
+    attributes:
+      label: Proposed information grammar
+      description: Explain why no existing component expresses the same structure.
+    validations:
+      required: true
+  - type: textarea
+    id: schema
+    attributes:
+      label: Expected data schema
+      render: javascript
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Contribution checks
+      options:
+        - label: This is not only a color, model-name, or theme variation.
+          required: true
+        - label: I will not commit unlicensed vendor source artwork.
+          required: true

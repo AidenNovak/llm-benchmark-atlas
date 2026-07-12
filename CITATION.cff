@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If Benchmark Atlas helps your research or product work, please cite it."
+title: "Benchmark Atlas"
+type: software
+authors:
+  - family-names: "Novak"
+    given-names: "Aiden"
+repository-code: "https://github.com/AidenNovak/llm-benchmark-atlas"
+url: "https://aidennovak.github.io/llm-benchmark-atlas/"
+license: MIT
+version: 0.1.0
+date-released: 2026-07-12

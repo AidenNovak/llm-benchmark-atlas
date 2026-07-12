@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a rendering, interaction, accessibility, or data-contract issue.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component ID
+      placeholder: claude-master-table
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and viewport
+      placeholder: Chrome 130, 390x844
