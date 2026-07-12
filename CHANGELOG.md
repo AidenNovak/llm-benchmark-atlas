@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented here.
 
+## [0.3.0] - 2026-07-12
+
+### Added
+
+- Figure-verified Kimi K2 series: sparsity scaling trajectories, attention-head
+  facets, pipeline overlap schedule, and paired real/synthetic tool embeddings.
+- Dedicated Asian model-lab family and browser QA assertion.
+- Kimi K2 source evidence mapped to Figures 5, 6, 7, and 9.
+- Published JSON Schema and TypeScript declarations for the component API.
+
 ## [0.2.0] - 2026-07-12
 
 ### Added

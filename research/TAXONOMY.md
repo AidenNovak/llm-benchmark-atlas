@@ -12,6 +12,7 @@
 | Agent and process evaluation | long-horizon time series, stacked token area, swimlane, Sankey, survival curve, cumulative solve curve |
 | Special encoding and coverage | cylindrical columns, waffle, treemap, beeswarm |
 | Vendor release reproduction | Google triptych, OpenAI thinking outlines, Claude language intervals and broken axis, DeepSeek protocol uplift, TML frontier, Qwen language dots, Mistral selection quadrants |
+| Asian model-lab papers | Kimi sparsity scaling, attention-head facets, pipeline overlap grid, paired tool-embedding maps |
 
 ## Non-qualifying duplicates
 

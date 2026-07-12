@@ -16,12 +16,12 @@ be more restrictive.
 
 ## Current contract
 
-- 60 components
-- 60 renderer functions
-- 60 unique chart grammars
-- 60 unique visual-system identifiers
-- 31 source lineages
-- 9 chart families
+- 64 components
+- 64 renderer functions
+- 64 unique chart grammars
+- 64 unique visual-system identifiers
+- 32 source lineages
+- 10 chart families
 - searchable and filterable catalog
 - enlarged inspection dialog
 - self-contained SVG export
@@ -41,6 +41,7 @@ leaderboard result.
 | `renderers.js` | One pure SVG renderer per component |
 | `vendor-series.js` | Maintainable second-pass vendor release series |
 | `research-series.js` | Detailed vendor and paper-figure extension series |
+| `asian-series.js` | Figure-verified Asian model-lab research series |
 | `api.js` | Query, render, and validated extension registration API |
 | `catalog.generated.json` | Machine-readable registry snapshot |
 | `app.js` | Search, filters, detail view, copy, SVG download |

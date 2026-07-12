@@ -33,6 +33,7 @@ renderer are unique.
 | NVIDIA Nemotron | <https://research.nvidia.com/labs/adlr/Nemotron-4-340B/> | black/green post-training scorecard |
 | Cognition SWE research | <https://cognition.ai/blog/swe-grep> | behavioral scatter and repository distributions |
 | Thinking Machines Lab | <https://thinkingmachines.ai/blog/interaction-models/> | intelligence-interactivity frontier |
+| Kimi K2 report | <https://arxiv.org/abs/2507.20534> | sparsity scaling, attention-head facets, pipeline overlap, paired t-SNE |
 
 ## Independent leaderboards and benchmark lineages
 
@@ -70,5 +71,12 @@ has been captured. The maintainable completion criterion is therefore:
 4. record sources and the date checked;
 5. keep an explicit gap list for newly observed grammars.
 
-This inventory is the evidence base for the current 60-component release, not a
+### Figure-level Kimi evidence
+
+- Figure 5: sparsity scaling with fixed active/shared experts and varying total experts.
+- Figure 6: validation-loss scaling for heads=layers versus doubled heads.
+- Figure 7: computation, communication, and offload overlap across PP phases.
+- Figure 9: paired t-SNE maps for real MCP tools and synthetic tool domains.
+
+This inventory is the evidence base for the current 64-component release, not a
 claim that internet research can never discover another valid grammar.
