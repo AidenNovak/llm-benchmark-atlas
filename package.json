@@ -1,9 +1,10 @@
 {
   "name": "llm-benchmark-atlas",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "A source-grounded, duplication-checked component atlas for LLM benchmark charts.",
   "license": "MIT",
+  "types": "types/index.d.ts",
   "scripts": {
     "catalog": "node scripts/export-catalog.mjs",
     "validate": "node scripts/validate-library.mjs",

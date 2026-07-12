@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aidennovak.github.io/llm-benchmark-atlas/schema/catalog.schema.json",
+  "title": "Benchmark Atlas generated catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "stats", "sources", "components"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date" },
+    "stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["components", "grammars", "visualSystems", "renderers", "sources", "families"],
+      "properties": {
+        "components": { "type": "integer", "minimum": 1 },
+        "grammars": { "type": "integer", "minimum": 1 },
+        "visualSystems": { "type": "integer", "minimum": 1 },
+        "renderers": { "type": "integer", "minimum": 1 },
+        "sources": { "type": "integer", "minimum": 1 },
+        "families": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "source.schema.json" }
+    },
+    "components": {
+      "type": "array",
+      "items": { "$ref": "component.schema.json" }
+    }
+  }
+}

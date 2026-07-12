@@ -3,11 +3,13 @@ import vm from 'node:vm';
 
 const root = new URL('../', import.meta.url);
 const read = relative => fs.readFileSync(new URL(relative, root), 'utf8');
+const parse = relative => JSON.parse(read(relative));
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 vm.runInContext(read('library/catalog.js'), sandbox, { filename: 'catalog.js' });
 vm.runInContext(read('library/renderers.js'), sandbox, { filename: 'renderers.js' });
 vm.runInContext(read('library/vendor-series.js'), sandbox, { filename: 'vendor-series.js' });
+vm.runInContext(read('library/research-series.js'), sandbox, { filename: 'research-series.js' });
 vm.runInContext(read('library/api.js'), sandbox, { filename: 'api.js' });
 
 const components = sandbox.window.BENCHMARK_COMPONENTS;
@@ -30,7 +32,7 @@ function requireVendor(pattern, label) {
   }
 }
 
-if (components.length < 48) errors.push(`expected at least 48 components, found ${components.length}`);
+if (components.length < 60) errors.push(`expected at least 60 components, found ${components.length}`);
 requireUnique('id');
 requireUnique('grammar');
 requireUnique('visualSystem');
@@ -49,6 +51,10 @@ requireUnique('renderer');
 
 for (const entry of components) {
   if (!sources[entry.sourceKey]) errors.push(`${entry.id}: unknown sourceKey ${entry.sourceKey}`);
+  const source = sources[entry.sourceKey];
+  if (source && (entry.source !== source.name || entry.sourceType !== source.type || entry.sourceUrl !== source.url)) {
+    errors.push(`${entry.id}: resolved source metadata does not match ${entry.sourceKey}`);
+  }
   if (!renderers[entry.renderer]) errors.push(`${entry.id}: missing renderer ${entry.renderer}`);
   if (!entry.sourceUrl?.startsWith('https://')) errors.push(`${entry.id}: source URL must use https`);
   if (!entry.description || !entry.useWhen || !entry.data) errors.push(`${entry.id}: incomplete component contract`);
@@ -64,7 +70,7 @@ for (const entry of components) {
 }
 
 const index = read('library/index.html');
-for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'api.js', 'app.js']) {
+for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'api.js', 'app.js']) {
   if (!index.includes(asset)) errors.push(`index.html does not load ${asset}`);
 }
 
@@ -87,6 +93,20 @@ try {
   errors.push('API accepted a duplicate source');
 } catch (error) {
   // Expected contract rejection.
+}
+
+for (const schemaFile of ['schema/source.schema.json', 'schema/component.schema.json', 'schema/catalog.schema.json']) {
+  try {
+    const schema = parse(schemaFile);
+    if (schema.$schema !== 'https://json-schema.org/draft/2020-12/schema') {
+      errors.push(`${schemaFile}: unexpected JSON Schema draft`);
+    }
+  } catch (error) {
+    errors.push(`${schemaFile}: invalid JSON: ${error.message}`);
+  }
+}
+if (!read('types/index.d.ts').includes('interface BenchmarkAtlasAPI')) {
+  errors.push('TypeScript API declaration is missing');
 }
 
 const report = {

@@ -24,6 +24,8 @@
     const base = byId(baseId);
     if (!base) throw new Error(`Missing base component: ${baseId}`);
     const entry = Object.assign({}, base, clone(overrides));
+    const source = window.BENCHMARK_SOURCES[entry.sourceKey];
+    if (source) Object.assign(entry, { source: source.name, sourceType: source.type, sourceUrl: source.url });
     components.push(entry);
     return entry;
   }
@@ -333,6 +335,7 @@
     name: 'Multilingual Capability Dot Plot',
     chartLabel: 'Language family benchmark detail',
     family: '厂商发布复现系列',
+    sourceKey: 'qwen',
     visualSystem: 'VS-47 Qwen language constellation',
     grammar: '语言横向点图 + 系列范围线 + 三模型紧凑比较',
     renderer: 'languageDotPlot',
@@ -349,6 +352,7 @@
     name: 'Cost–Quality Quadrants',
     chartLabel: 'Enterprise model selection map',
     family: '厂商发布复现系列',
+    sourceKey: 'mistral',
     visualSystem: 'VS-48 Mistral selection canvas',
     grammar: '成本-质量四象限 + 推荐区底色 + 自家大点突出',
     renderer: 'costQualityQuadrants',

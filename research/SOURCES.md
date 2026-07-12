@@ -70,5 +70,5 @@ has been captured. The maintainable completion criterion is therefore:
 4. record sources and the date checked;
 5. keep an explicit gap list for newly observed grammars.
 
-This inventory is the evidence base for the current 48-component release, not a
+This inventory is the evidence base for the current 60-component release, not a
 claim that internet research can never discover another valid grammar.

@@ -12,6 +12,7 @@ figures.
 [Chinese README](README.zh-CN.md) ·
 [Component contract](docs/COMPONENT_CONTRACT.md) ·
 [Browser API](docs/API.md) ·
+[JSON Schema](schema/catalog.schema.json) ·
 [Source inventory](research/SOURCES.md)
 
 ![Benchmark Atlas catalog](assets/atlas-preview.png)
@@ -22,10 +23,10 @@ Benchmark screenshots are abundant, but reusable chart grammar is not. The
 same bar chart is frequently copied into several folders, recolored for a new
 vendor, and counted again. Benchmark Atlas uses a stricter unit of value:
 
-- **48 live SVG components** generated from structured data
-- **48 unique chart grammars**, renderers, and visual-system identifiers
-- **27 source lineages** across vendors, leaderboards, labs, and arXiv papers
-- **8 chart families** from ranking and uncertainty to agent trajectories
+- **60 live SVG components** generated from structured data
+- **60 unique chart grammars**, renderers, and visual-system identifiers
+- **31 source lineages** across vendors, leaderboards, labs, and arXiv papers
+- **9 chart families** from ranking and uncertainty to agent trajectories
 - search, multi-axis filtering, enlarged inspection, JSON access, and SVG export
 - validation that fails on duplicates, missing sources, invalid SVG values, or
   missing accessibility metadata
@@ -73,6 +74,7 @@ exportable.
 library/catalog.js       source registry, component metadata, demo data
 library/renderers.js     40 core pure-SVG renderers
 library/vendor-series.js vendor-specific extension registry and renderers
+library/research-series.js vendor detail and paper-figure extension series
 library/api.js           stable query, render, and extension API
 library/catalog.generated.json machine-readable registry snapshot
 library/app.js           search, filters, details, JSON copy, SVG download

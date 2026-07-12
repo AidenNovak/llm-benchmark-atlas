@@ -27,9 +27,16 @@ jobs:
           node-version: 22
       - run: npm run validate
       - uses: actions/configure-pages@v5
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp -R library/. _site/
+          mkdir -p _site/schema _site/types
+          cp schema/*.json _site/schema/
+          cp types/index.d.ts _site/types/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: library
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented here.
 
+## [0.2.0] - 2026-07-12
+
+### Added
+
+- 12 detailed vendor and paper-figure grammars: MRCR spark rows, centered expert
+  win rate, enterprise win/tie/loss, MoE activation rails, context contour,
+  post-training ladder, latency ranges, generation vectors, UpSet, alluvial,
+  raincloud, and ternary selection.
+- Four additional paper and benchmark source lineages.
+- Source metadata consistency checks across every extension module.
+- Dedicated browser QA for vendor-release and paper-reproduction families.
+
 ## [0.1.0] - 2026-07-12
 
 ### Added

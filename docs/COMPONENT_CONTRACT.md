@@ -2,6 +2,9 @@
 
 Each catalog entry is a structured object.
 
+Machine-readable contracts live in `schema/`, and TypeScript declarations live
+in `types/index.d.ts`.
+
 ```js
 {
   id: "claude-master-table",

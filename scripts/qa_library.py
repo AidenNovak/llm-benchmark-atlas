@@ -9,6 +9,8 @@ from playwright.sync_api import sync_playwright
 
 BASE_URL = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:4173/library/"
 SCREENSHOT = Path("/private/tmp/benchmark-atlas-dialog.png")
+SERIES_SCREENSHOT = Path("/private/tmp/benchmark-atlas-series.png")
+PAPER_SCREENSHOT = Path("/private/tmp/benchmark-atlas-paper-series.png")
 
 
 def main() -> None:
@@ -31,11 +33,21 @@ def main() -> None:
         page.wait_for_selector(".component-card")
 
         report["initial_cards"] = page.locator(".component-card").count()
-        assert report["initial_cards"] >= 48
+        assert report["initial_cards"] >= 60
 
         page.locator("#family-filter").select_option(label="Agent 与过程评测")
         report["agent_family_cards"] = page.locator(".component-card").count()
         assert report["agent_family_cards"] == 6
+
+        page.locator("#family-filter").select_option(label="厂商发布复现系列")
+        report["vendor_series_cards"] = page.locator(".component-card").count()
+        assert report["vendor_series_cards"] == 15
+        page.screenshot(path=str(SERIES_SCREENSHOT), full_page=True)
+
+        page.locator("#family-filter").select_option(label="论文图表复现")
+        report["paper_series_cards"] = page.locator(".component-card").count()
+        assert report["paper_series_cards"] == 5
+        page.screenshot(path=str(PAPER_SCREENSHOT), full_page=True)
 
         page.locator("#reset-filters").click()
         page.locator("#search").fill("Sankey")

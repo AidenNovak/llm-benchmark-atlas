@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "generatedAt": "2026-07-12",
   "stats": {
-    "components": 48,
-    "grammars": 48,
-    "visualSystems": 48,
-    "renderers": 48,
-    "sources": 27,
-    "families": 8
+    "components": 60,
+    "grammars": 60,
+    "visualSystems": 60,
+    "renderers": 60,
+    "sources": 31,
+    "families": 9
   },
   "sources": [
     {
@@ -205,6 +205,34 @@
       "type": "研究博客",
       "url": "https://thinkingmachines.ai/blog/interaction-models/",
       "note": "智能-交互前沿与研究方向二维叙事"
+    },
+    {
+      "key": "arenaPaper",
+      "name": "Chatbot Arena Paper",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2403.04132",
+      "note": "人类偏好、排名迁移与评审一致性"
+    },
+    {
+      "key": "longBenchPaper",
+      "name": "LongBench",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2308.14508",
+      "note": "长上下文长度、深度与任务退化"
+    },
+    {
+      "key": "evalHarnessPaper",
+      "name": "Language Model Evaluation Harness",
+      "type": "arXiv / 开源评测",
+      "url": "https://arxiv.org/abs/2110.14168",
+      "note": "benchmark 集合、任务交集与统一评测"
+    },
+    {
+      "key": "mtebPaper",
+      "name": "MTEB",
+      "type": "arXiv / 独立评测",
+      "url": "https://arxiv.org/abs/2210.07316",
+      "note": "多任务 embedding 评测与分布比较"
     }
   ],
   "components": [
@@ -3748,15 +3776,15 @@
       }
     },
     {
-      "source": "OpenCompass",
-      "sourceType": "独立榜单",
-      "sourceUrl": "https://opencompass.org.cn/leaderboard-llm",
+      "source": "Alibaba Qwen",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://qwenlm.github.io/blog/qwen3/",
       "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
       "id": "qwen-multilingual-dotplot",
       "name": "Multilingual Capability Dot Plot",
       "chartLabel": "Language family benchmark detail",
       "family": "厂商发布复现系列",
-      "sourceKey": "opencompass",
+      "sourceKey": "qwen",
       "visualSystem": "VS-47 Qwen language constellation",
       "grammar": "语言横向点图 + 系列范围线 + 三模型紧凑比较",
       "renderer": "languageDotPlot",
@@ -3838,15 +3866,15 @@
       }
     },
     {
-      "source": "DeepSeek",
+      "source": "Mistral AI",
       "sourceType": "厂商发布",
-      "sourceUrl": "https://api-docs.deepseek.com/news/news250120",
+      "sourceUrl": "https://mistral.ai/news/mistral-large-2407",
       "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
       "id": "mistral-cost-quality-quadrants",
       "name": "Cost–Quality Quadrants",
       "chartLabel": "Enterprise model selection map",
       "family": "厂商发布复现系列",
-      "sourceKey": "deepseek",
+      "sourceKey": "mistral",
       "visualSystem": "VS-48 Mistral selection canvas",
       "grammar": "成本-质量四象限 + 推荐区底色 + 自家大点突出",
       "renderer": "costQualityQuadrants",
@@ -3902,6 +3930,912 @@
             "label": "Small",
             "x": 1,
             "y": 66
+          }
+        ]
+      }
+    },
+    {
+      "source": "Anthropic / Claude",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-6",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "claude-mrcr-context-rows",
+      "name": "MRCR Context Spark Rows",
+      "chartLabel": "Long-context retrieval · aligned model rows",
+      "family": "厂商发布复现系列",
+      "sourceKey": "anthropic",
+      "visualSystem": "VS-49 Claude MRCR row traces",
+      "grammar": "模型分行 sparkline + 共享 context 横轴 + 每点直接分数",
+      "renderer": "contextSparkRows",
+      "palette": {
+        "bg": "#f4efe5",
+        "ink": "#211b16",
+        "muted": "#7b7168",
+        "grid": "#d8d0c5",
+        "c1": "#d96f4f",
+        "c2": "#2c6e63",
+        "c3": "#3270a8",
+        "c4": "#c8bfaf",
+        "c5": "#f0b354",
+        "c6": "#704f92"
+      },
+      "description": "复现 Claude 长上下文发布图的 MRCR 叙事，把每个模型放在独立行中避免曲线交叉遮挡。",
+      "useWhen": "适合模型数少、context 档位多且需要逐点读数的 MRCR 或 needle 评测。",
+      "tags": [
+        "claude",
+        "mrcr",
+        "context"
+      ],
+      "data": {
+        "lengths": [
+          "4k",
+          "16k",
+          "64k",
+          "256k",
+          "1m"
+        ],
+        "models": [
+          {
+            "label": "Opus",
+            "values": [
+              98,
+              96,
+              92,
+              86,
+              74
+            ]
+          },
+          {
+            "label": "Sonnet",
+            "values": [
+              97,
+              93,
+              87,
+              76,
+              61
+            ]
+          },
+          {
+            "label": "Gemini",
+            "values": [
+              96,
+              92,
+              85,
+              79,
+              69
+            ]
+          },
+          {
+            "label": "GPT",
+            "values": [
+              94,
+              89,
+              81,
+              68,
+              52
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "OpenAI / ChatGPT",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://openai.com/index/introducing-o3-and-o4-mini/",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "openai-expert-winrate",
+      "name": "Expert Preference Win-rate",
+      "chartLabel": "Expert preference against baseline",
+      "family": "厂商发布复现系列",
+      "sourceKey": "openai",
+      "visualSystem": "VS-50 OpenAI centered preference",
+      "grammar": "50% 中心胜率柱 + 双侧方向 + 置信区间 whisker",
+      "renderer": "centeredWinBars",
+      "palette": {
+        "bg": "#ffffff",
+        "ink": "#141414",
+        "muted": "#70706d",
+        "grid": "#dededb",
+        "c1": "#d6409f",
+        "c2": "#9f87ff",
+        "c3": "#ffdd57",
+        "c4": "#55a99d",
+        "c5": "#dadad6",
+        "c6": "#111111"
+      },
+      "description": "复现 OpenAI 面向专家评审的胜率图，以 50% 为中性中心并保留置信区间。",
+      "useWhen": "适合成对偏好评审；必须显示评审样本量和区间方法。",
+      "tags": [
+        "openai",
+        "preference",
+        "experts"
+      ],
+      "data": {
+        "items": [
+          {
+            "label": "Coding",
+            "value": 66,
+            "low": 62,
+            "high": 70
+          },
+          {
+            "label": "Science",
+            "value": 61,
+            "low": 57,
+            "high": 65
+          },
+          {
+            "label": "Writing",
+            "value": 55,
+            "low": 51,
+            "high": 59
+          },
+          {
+            "label": "Search",
+            "value": 48,
+            "low": 44,
+            "high": 52
+          },
+          {
+            "label": "Math",
+            "value": 69,
+            "low": 65,
+            "high": 73
+          }
+        ]
+      }
+    },
+    {
+      "source": "Cohere / Command",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://cohere.com/blog/command-a",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "cohere-outcome-strips",
+      "name": "Enterprise Win–Tie–Loss Strips",
+      "chartLabel": "Command A vs baseline · task outcomes",
+      "family": "厂商发布复现系列",
+      "sourceKey": "cohere",
+      "visualSystem": "VS-51 Cohere outcome strips",
+      "grammar": "以 tie 为中心的 100% 发散堆叠条 + win/loss 双向标签",
+      "renderer": "divergingOutcomeStrips",
+      "palette": {
+        "bg": "#fff4ed",
+        "ink": "#241f1b",
+        "muted": "#7b6d62",
+        "grid": "#e7d5c8",
+        "c1": "#d65b4a",
+        "c2": "#84c7a9",
+        "c3": "#f0ba52",
+        "c4": "#466b8a",
+        "c5": "#a975a3",
+        "c6": "#241f1b"
+      },
+      "description": "复现 Cohere 企业评测中的 win-rate 叙事，同时保留 tie 和 loss，而不是只报胜率。",
+      "useWhen": "适合成对人工或 judge 比较，并且每行三类结果总和为 100。",
+      "tags": [
+        "cohere",
+        "win-tie-loss",
+        "enterprise"
+      ],
+      "data": {
+        "items": [
+          {
+            "label": "RAG",
+            "win": 62,
+            "tie": 18,
+            "loss": 20
+          },
+          {
+            "label": "SQL",
+            "win": 57,
+            "tie": 21,
+            "loss": 22
+          },
+          {
+            "label": "Tools",
+            "win": 65,
+            "tie": 17,
+            "loss": 18
+          },
+          {
+            "label": "Agents",
+            "win": 54,
+            "tie": 24,
+            "loss": 22
+          },
+          {
+            "label": "Instruction",
+            "win": 59,
+            "tie": 20,
+            "loss": 21
+          }
+        ]
+      }
+    },
+    {
+      "source": "Alibaba Qwen",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://qwenlm.github.io/blog/qwen3/",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "qwen-moe-activation-rails",
+      "name": "MoE Activation Rails",
+      "chartLabel": "Total vs active parameters · quality rail",
+      "family": "厂商发布复现系列",
+      "sourceKey": "qwen",
+      "visualSystem": "VS-52 Qwen MoE nested rails",
+      "grammar": "总参数外胶囊 + 激活参数内胶囊 + 右侧 benchmark 点轴",
+      "renderer": "moeActivationRails",
+      "palette": {
+        "bg": "#f6f3ff",
+        "ink": "#24174a",
+        "muted": "#756b91",
+        "grid": "#ded5f3",
+        "c1": "#6657d9",
+        "c2": "#28b8c7",
+        "c3": "#ffb12b",
+        "c4": "#d75b9b",
+        "c5": "#a59af0",
+        "c6": "#2c2850"
+      },
+      "description": "把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。",
+      "useWhen": "适合 MoE 家族说明规模与实际推理负载的差别。",
+      "tags": [
+        "qwen",
+        "moe",
+        "active-parameters"
+      ],
+      "data": {
+        "items": [
+          {
+            "label": "Qwen 30B-A3B",
+            "total": 30,
+            "active": 3,
+            "score": 74
+          },
+          {
+            "label": "Qwen 80B-A8B",
+            "total": 80,
+            "active": 8,
+            "score": 82
+          },
+          {
+            "label": "Qwen 235B-A22B",
+            "total": 235,
+            "active": 22,
+            "score": 89
+          },
+          {
+            "label": "Dense 70B",
+            "total": 70,
+            "active": 70,
+            "score": 84
+          }
+        ]
+      }
+    },
+    {
+      "source": "LongBench",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2308.14508",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "longbench-context-contour",
+      "name": "Context Length × Depth Surface",
+      "chartLabel": "Needle retrieval · length and depth surface",
+      "family": "论文图表复现",
+      "sourceKey": "longBenchPaper",
+      "visualSystem": "VS-53 LongBench context contour field",
+      "grammar": "context-length × needle-depth 矩阵 + 双等值线 + 单元格读数",
+      "renderer": "contextContour",
+      "palette": {
+        "bg": "#fbf5eb",
+        "ink": "#201c18",
+        "muted": "#736b62",
+        "grid": "#dfd5c8",
+        "c1": "#3559c7",
+        "c2": "#d64d3a",
+        "c3": "#e3a72f",
+        "c4": "#3f8b72",
+        "c5": "#8b66b0",
+        "c6": "#201c18"
+      },
+      "description": "把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。",
+      "useWhen": "适合检索位置显著影响结果的长上下文评测。",
+      "tags": [
+        "longbench",
+        "long-context",
+        "contour"
+      ],
+      "data": {
+        "lengths": [
+          "8k",
+          "32k",
+          "128k",
+          "512k",
+          "1m"
+        ],
+        "depths": [
+          "10%",
+          "30%",
+          "50%",
+          "70%",
+          "90%"
+        ],
+        "values": [
+          [
+            98,
+            97,
+            94,
+            87,
+            76
+          ],
+          [
+            98,
+            95,
+            91,
+            82,
+            69
+          ],
+          [
+            97,
+            94,
+            88,
+            76,
+            61
+          ],
+          [
+            96,
+            91,
+            83,
+            69,
+            53
+          ],
+          [
+            94,
+            88,
+            78,
+            62,
+            44
+          ]
+        ]
+      }
+    },
+    {
+      "source": "NVIDIA / Nemotron",
+      "sourceType": "技术报告",
+      "sourceUrl": "https://research.nvidia.com/labs/adlr/Nemotron-4-340B/",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "nemotron-posttrain-ladder",
+      "name": "Post-training Phase Ladder",
+      "chartLabel": "Cumulative reward across post-training stages",
+      "family": "厂商发布复现系列",
+      "sourceKey": "nvidia",
+      "visualSystem": "VS-54 NVIDIA post-train staircase",
+      "grammar": "训练阶段阶梯 + 每级 score 盒 + 阶段间增量标签",
+      "renderer": "phaseLadder",
+      "palette": {
+        "bg": "#10130d",
+        "ink": "#f1f5e9",
+        "muted": "#aab2a2",
+        "grid": "#394032",
+        "c1": "#76b900",
+        "c2": "#b7db69",
+        "c3": "#58c7a6",
+        "c4": "#f6cc55",
+        "c5": "#8fa8ff",
+        "c6": "#f1f5e9"
+      },
+      "description": "用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。",
+      "useWhen": "适合 SFT、reward model、RL、rejection sampling 等明确阶段。",
+      "tags": [
+        "nvidia",
+        "post-training",
+        "ladder"
+      ],
+      "data": {
+        "stages": [
+          {
+            "label": "BASE",
+            "score": 54
+          },
+          {
+            "label": "SFT",
+            "score": 66
+          },
+          {
+            "label": "RM",
+            "score": 74
+          },
+          {
+            "label": "RL",
+            "score": 84
+          },
+          {
+            "label": "ALIGN",
+            "score": 89
+          }
+        ]
+      }
+    },
+    {
+      "source": "Amazon Nova",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://aws.amazon.com/ai/generative-ai/nova/",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "nova-latency-range-bands",
+      "name": "Nova Latency Range Bands",
+      "chartLabel": "p50–p95 latency with quality rings",
+      "family": "厂商发布复现系列",
+      "sourceKey": "nova",
+      "visualSystem": "VS-55 AWS latency range instrument",
+      "grammar": "p50-p95 粗区间带 + 开闭端点 + 质量环半径编码",
+      "renderer": "latencyRangeBands",
+      "palette": {
+        "bg": "#0f1b2a",
+        "ink": "#f5f7fa",
+        "muted": "#aab5c3",
+        "grid": "#344154",
+        "c1": "#ff9900",
+        "c2": "#36c2b4",
+        "c3": "#759cff",
+        "c4": "#e86f92",
+        "c5": "#f3d35f",
+        "c6": "#f5f7fa"
+      },
+      "description": "在一张图里保留服务延迟中位数、长尾和质量，避免只比较单点 latency。",
+      "useWhen": "适合模型家族的服务层选型；延迟测试必须使用同一硬件和负载。",
+      "tags": [
+        "aws",
+        "latency",
+        "range-band"
+      ],
+      "data": {
+        "items": [
+          {
+            "label": "Nova Micro",
+            "p50": 0.32,
+            "p95": 0.74,
+            "quality": 68
+          },
+          {
+            "label": "Nova Lite",
+            "p50": 0.58,
+            "p95": 1.12,
+            "quality": 76
+          },
+          {
+            "label": "Nova Pro",
+            "p50": 1.08,
+            "p95": 2.34,
+            "quality": 88
+          },
+          {
+            "label": "Peer A",
+            "p50": 1.42,
+            "p95": 3.18,
+            "quality": 90
+          },
+          {
+            "label": "Peer B",
+            "p50": 0.86,
+            "p95": 2.72,
+            "quality": 82
+          }
+        ]
+      }
+    },
+    {
+      "source": "xAI / Grok",
+      "sourceType": "厂商发布",
+      "sourceUrl": "https://x.ai/news/grok-3",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "grok-generation-arrows",
+      "name": "Generation Leap Arrows",
+      "chartLabel": "Model generation movement · speed and quality",
+      "family": "厂商发布复现系列",
+      "sourceKey": "xai",
+      "visualSystem": "VS-56 xAI generation vectors",
+      "grammar": "旧版空心点 → 新版箭头 + 速度质量二维坐标 + 系列直标",
+      "renderer": "generationArrows",
+      "palette": {
+        "bg": "#111311",
+        "ink": "#f6f7f2",
+        "muted": "#a8aca4",
+        "grid": "#3a3d38",
+        "c1": "#b4f451",
+        "c2": "#66d9c1",
+        "c3": "#ff7b72",
+        "c4": "#a9a7ff",
+        "c5": "#ffd166",
+        "c6": "#f4f4ef"
+      },
+      "description": "用向量同时展示新一代模型的速度与质量变化，避免把两个改善拆成无关联图。",
+      "useWhen": "适合同一系列的 before/after；两代测试环境必须一致。",
+      "tags": [
+        "xai",
+        "generation",
+        "arrow-scatter"
+      ],
+      "data": {
+        "items": [
+          {
+            "label": "Grok",
+            "before": [
+              72,
+              74
+            ],
+            "after": [
+              142,
+              88
+            ]
+          },
+          {
+            "label": "Fast",
+            "before": [
+              110,
+              66
+            ],
+            "after": [
+              171,
+              79
+            ]
+          },
+          {
+            "label": "Reason",
+            "before": [
+              48,
+              81
+            ],
+            "after": [
+              93,
+              92
+            ]
+          },
+          {
+            "label": "Mini",
+            "before": [
+              130,
+              63
+            ],
+            "after": [
+              178,
+              72
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "Language Model Evaluation Harness",
+      "sourceType": "arXiv / 开源评测",
+      "sourceUrl": "https://arxiv.org/abs/2110.14168",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "arxiv-benchmark-upset",
+      "name": "Benchmark Set UpSet",
+      "chartLabel": "Dataset overlap across evaluation suites",
+      "family": "论文图表复现",
+      "sourceKey": "evalHarnessPaper",
+      "visualSystem": "VS-57 Evaluation harness UpSet",
+      "grammar": "交集柱 + benchmark membership 点阵 + 连线组合",
+      "renderer": "upsetPlot",
+      "palette": {
+        "bg": "#fffaf7",
+        "ink": "#2e2d29",
+        "muted": "#736f69",
+        "grid": "#e2d9d2",
+        "c1": "#8c1515",
+        "c2": "#d8786c",
+        "c3": "#4d7f89",
+        "c4": "#e5b754",
+        "c5": "#7f6ca8",
+        "c6": "#2e2d29"
+      },
+      "description": "用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。",
+      "useWhen": "适合 4 个以上集合及其主要交集；集合定义必须一致。",
+      "tags": [
+        "arxiv",
+        "upset",
+        "benchmark-overlap"
+      ],
+      "data": {
+        "benchmarks": [
+          "MMLU",
+          "BBH",
+          "HELM",
+          "OpenCompass"
+        ],
+        "sets": [
+          {
+            "count": 42,
+            "members": [
+              0
+            ]
+          },
+          {
+            "count": 31,
+            "members": [
+              0,
+              2
+            ]
+          },
+          {
+            "count": 27,
+            "members": [
+              0,
+              1,
+              3
+            ]
+          },
+          {
+            "count": 23,
+            "members": [
+              1
+            ]
+          },
+          {
+            "count": 19,
+            "members": [
+              1,
+              2
+            ]
+          },
+          {
+            "count": 15,
+            "members": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "Chatbot Arena Paper",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2403.04132",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "arxiv-rank-alluvial",
+      "name": "Rank Migration Alluvial",
+      "chartLabel": "Model rank migration across evaluation snapshots",
+      "family": "论文图表复现",
+      "sourceKey": "arenaPaper",
+      "visualSystem": "VS-58 Preference rank alluvial",
+      "grammar": "三时点排名节点 + 半透明宽 ribbon + 末端系列直标",
+      "renderer": "alluvialRanks",
+      "palette": {
+        "bg": "#f7f7f5",
+        "ink": "#191919",
+        "muted": "#72726e",
+        "grid": "#dcdcd8",
+        "c1": "#2f65d9",
+        "c2": "#e04b42",
+        "c3": "#28a17a",
+        "c4": "#8c62c4",
+        "c5": "#e2a928",
+        "c6": "#4f4f4b"
+      },
+      "description": "把模型在三次榜单快照中的排名迁移画成 alluvial ribbon，突出稳定和剧烈换位。",
+      "useWhen": "适合 3 个时点、少量对象和离散名次；更多时点改用 bump chart。",
+      "tags": [
+        "arxiv",
+        "alluvial",
+        "rank-migration"
+      ],
+      "data": {
+        "periods": [
+          "APR",
+          "MAY",
+          "JUN"
+        ],
+        "items": [
+          {
+            "label": "A",
+            "ranks": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "label": "B",
+            "ranks": [
+              3,
+              1,
+              1
+            ]
+          },
+          {
+            "label": "C",
+            "ranks": [
+              2,
+              3,
+              2
+            ]
+          },
+          {
+            "label": "D",
+            "ranks": [
+              5,
+              4,
+              4
+            ]
+          },
+          {
+            "label": "E",
+            "ranks": [
+              4,
+              5,
+              5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "MTEB",
+      "sourceType": "arXiv / 独立评测",
+      "sourceUrl": "https://arxiv.org/abs/2210.07316",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "arxiv-prompt-raincloud",
+      "name": "Prompt Sensitivity Raincloud",
+      "chartLabel": "Prompt-template sensitivity by model",
+      "family": "论文图表复现",
+      "sourceKey": "mtebPaper",
+      "visualSystem": "VS-59 Paper raincloud specimen",
+      "grammar": "半小提琴云 + IQR 粗线 + median + 原始点雨",
+      "renderer": "raincloud",
+      "palette": {
+        "bg": "#fbfbfb",
+        "ink": "#202020",
+        "muted": "#707070",
+        "grid": "#dedede",
+        "c1": "#7049a8",
+        "c2": "#36a58b",
+        "c3": "#e18b35",
+        "c4": "#cf5268",
+        "c5": "#4e81bd",
+        "c6": "#222222"
+      },
+      "description": "用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。",
+      "useWhen": "适合 prompt 敏感性、seed 方差或多任务分布；样本少时不要平滑密度。",
+      "tags": [
+        "arxiv",
+        "raincloud",
+        "prompt-sensitivity"
+      ],
+      "data": {
+        "groups": [
+          {
+            "label": "Model A",
+            "values": [
+              51,
+              57,
+              61,
+              63,
+              66,
+              69,
+              72,
+              78,
+              82
+            ]
+          },
+          {
+            "label": "Model B",
+            "values": [
+              48,
+              54,
+              59,
+              65,
+              68,
+              74,
+              79,
+              81,
+              86
+            ]
+          },
+          {
+            "label": "Model C",
+            "values": [
+              56,
+              61,
+              64,
+              70,
+              73,
+              76,
+              84,
+              87,
+              90
+            ]
+          },
+          {
+            "label": "Model D",
+            "values": [
+              43,
+              52,
+              58,
+              60,
+              67,
+              71,
+              75,
+              80,
+              88
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "Stanford HELM",
+      "sourceType": "独立榜单",
+      "sourceUrl": "https://crfm.stanford.edu/helm/lite/latest/",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "arxiv-selection-ternary",
+      "name": "Quality–Speed–Cost Ternary",
+      "chartLabel": "Three-way model selection trade-off",
+      "family": "论文图表复现",
+      "sourceKey": "helm",
+      "visualSystem": "VS-60 Ternary selection field",
+      "grammar": "三元重心坐标 + 三顶点权重 + 模型点直标",
+      "renderer": "ternaryPlot",
+      "palette": {
+        "bg": "#f8fbff",
+        "ink": "#172239",
+        "muted": "#64708a",
+        "grid": "#d9e2ef",
+        "c1": "#4d6bfe",
+        "c2": "#86a0ff",
+        "c3": "#b9c7ff",
+        "c4": "#d9e1f4",
+        "c5": "#27355c",
+        "c6": "#7db6ff"
+      },
+      "description": "把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。",
+      "useWhen": "适合三项占比总和为 100% 的权重或资源分配；不是原始指标散点。",
+      "tags": [
+        "arxiv",
+        "ternary",
+        "model-selection"
+      ],
+      "data": {
+        "items": [
+          {
+            "label": "Premium",
+            "values": [
+              12,
+              18,
+              70
+            ]
+          },
+          {
+            "label": "Balanced",
+            "values": [
+              30,
+              32,
+              38
+            ]
+          },
+          {
+            "label": "Fast",
+            "values": [
+              18,
+              65,
+              17
+            ]
+          },
+          {
+            "label": "Budget",
+            "values": [
+              68,
+              21,
+              11
+            ]
+          },
+          {
+            "label": "Agent",
+            "values": [
+              22,
+              29,
+              49
+            ]
           }
         ]
       }

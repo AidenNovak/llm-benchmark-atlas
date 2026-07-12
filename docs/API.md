@@ -70,3 +70,6 @@ npm run catalog
 
 The validator compares the generated manifest with the runtime registry and
 fails when it is stale.
+
+TypeScript consumers can reference `types/index.d.ts`; catalog and component
+metadata contracts are published under `schema/` on GitHub Pages.
