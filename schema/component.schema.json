@@ -61,6 +61,18 @@
       }
     },
     "dataNote": { "type": "string", "minLength": 8 },
+    "evidence": {
+      "description": "Figure-level PDF evidence. Required by project validation for figure-verified paper families.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locator", "page", "verifiedAt", "summary"],
+      "properties": {
+        "locator": { "type": "string", "minLength": 3 },
+        "page": { "type": "integer", "minimum": 1 },
+        "verifiedAt": { "type": "string", "format": "date" },
+        "summary": { "type": "string", "minLength": 12 }
+      }
+    },
     "data": { "type": "object" }
   },
   "$defs": {

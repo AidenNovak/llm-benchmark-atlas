@@ -35,6 +35,7 @@
   function frame(entry, content) {
     const p = entry.palette;
     const id = entry.id.replace(/[^a-z0-9]/gi, '');
+    const locator = entry.evidence ? ` · ${entry.evidence.locator} / PDF p.${entry.evidence.page}` : '';
     return `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='${id}-title ${id}-desc' style='background:${p.bg};color:${p.ink}'>
       <title id='${id}-title'>${esc(entry.chartLabel)}</title>
       <desc id='${id}-desc'>${esc(entry.description)} ${esc(entry.dataNote)}</desc>
@@ -46,7 +47,7 @@
         .g{stroke:${p.grid};stroke-width:1;shape-rendering:crispEdges}
       </style></defs>
       <text class='t' x='28' y='30'>${esc(entry.chartLabel)}</text>
-      <text class='s' x='28' y='48'>${esc(entry.source)}</text>
+      <text class='s' x='28' y='48'>${esc(entry.source + locator)}</text>
       <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
       ${content}
     </svg>`;
@@ -159,6 +160,7 @@
   add('llama-scaling-law', {
     id: 'kimi-sparsity-scaling', name: 'Kimi Sparsity Scaling Law', chartLabel: 'Sparsity scaling · validation loss vs training FLOPs', family: '亚洲模型实验室', sourceKey: 'kimiK2', visualSystem: 'VS-61 Kimi sparsity trajectories', grammar: '多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合', renderer: 'sparsityScalingCurves', palette: kimiPalette,
     description: '复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。', useWhen: '适合 MoE 稀疏度实验；横轴 compute 和激活专家配置必须一致。', tags: ['kimi', 'sparsity', 'scaling-law'],
+    evidence: { locator: 'Figure 5', page: 7, verifiedAt: '2026-07-12', summary: '固定激活专家数，以总专家数变化比较 sparsity scaling law。' },
     data: { series: [
       { sparsity: 8, points: [[1.1e20, 1.78], [2.2e20, 1.66], [4.3e20, 1.55], [8.5e20, 1.43], [1.1e21, 1.39]] },
       { sparsity: 16, points: [[1.0e20, 1.73], [2.0e20, 1.62], [4.0e20, 1.51], [8.0e20, 1.40], [1.05e21, 1.35]] },
@@ -171,6 +173,7 @@
   add('gemini-small-multiples', {
     id: 'kimi-attention-head-scaling', name: 'Attention-head Scaling Facets', chartLabel: 'Validation loss · heads equal layers vs doubled heads', family: '亚洲模型实验室', sourceKey: 'kimiK2', visualSystem: 'VS-62 Kimi head-count facets', grammar: '四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标', renderer: 'attentionHeadFacets', palette: Object.assign({}, kimiPalette, { bg: '#f8fbff', c4: '#3978c5', c5: '#e4539a' }),
     description: '复现 Kimi K2 Figure 6：在不同 compute 档位比较 heads=layers 与 doubled heads 的验证 loss。', useWhen: '适合架构消融跨多个 compute scale 的比较。', tags: ['kimi', 'attention-heads', 'facets'],
+    evidence: { locator: 'Figure 6', page: 7, verifiedAt: '2026-07-12', summary: '不同训练 compute 下比较 heads=layers 与 doubled heads 的 validation loss。' },
     data: { facets: [
       { label: '1.2e20 FLOPs', min: 1.62, max: 1.76, delta: 0.5, base: [1.74, 1.70, 1.67, 1.66, 1.67], double: [1.73, 1.69, 1.66, 1.64, 1.65] },
       { label: '2.2e20 FLOPs', min: 1.53, max: 1.65, delta: 0.7, base: [1.63, 1.59, 1.57, 1.56, 1.58], double: [1.62, 1.58, 1.55, 1.54, 1.56] },
@@ -182,6 +185,7 @@
   add('terminal-bench-trajectory', {
     id: 'kimi-pipeline-overlap', name: 'Pipeline Parallel Overlap Grid', chartLabel: 'Compute, communication and offload overlap', family: '亚洲模型实验室', sourceKey: 'kimiK2', visualSystem: 'VS-63 Kimi pipeline schedule', grammar: 'microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带', renderer: 'pipelineOverlapGrid', palette: Object.assign({}, kimiPalette, { bg: '#fffaf5', c1: '#ef6256', c4: '#4a65ee' }),
     description: '复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。', useWhen: '适合训练系统 pipeline 调度；每格必须对应同一时间粒度。', tags: ['kimi', 'pipeline-parallel', 'overlap'],
+    evidence: { locator: 'Figure 7', page: 8, verifiedAt: '2026-07-12', summary: '不同 PP phase 中 computation、communication 与 offloading 的重叠调度。' },
     data: { phases: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10'], rows: [
       { label: 'PP0', cells: [{ kind: 'F', text: 'F1' }, { kind: 'F', text: 'F2' }, { kind: 'C', text: 'C' }, null, { kind: 'B', text: 'B1' }, { kind: 'B', text: 'B2' }, null, null, null, null, null] },
       { label: 'PP1', cells: [null, { kind: 'F', text: 'F1' }, { kind: 'F', text: 'F2' }, { kind: 'C', text: 'C' }, null, { kind: 'B', text: 'B1' }, { kind: 'B', text: 'B2' }, null, null, null, null] },
@@ -193,6 +197,7 @@
   add('swebench-behavior-quadrant', {
     id: 'kimi-tool-embedding-pair', name: 'Real vs Synthetic Tool Embeddings', chartLabel: 'Paired t-SNE maps · MCP tools and synthetic domains', family: '亚洲模型实验室', sourceKey: 'kimiK2', visualSystem: 'VS-64 Kimi paired embedding atlas', grammar: '真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度', renderer: 'pairedEmbeddingClusters', palette: Object.assign({}, kimiPalette, { bg: '#fffefe' }),
     description: '复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。', useWhen: '适合比较两套 embedding 空间的覆盖结构；t-SNE 距离不应被解释为绝对相似度。', tags: ['kimi', 'tsne', 'tool-embeddings'],
+    evidence: { locator: 'Figure 9', page: 10, verifiedAt: '2026-07-12', summary: '真实 MCP 工具与合成工具 collection 的 paired t-SNE embedding。' },
     data: { panels: [
       { label: 'REAL MCP TOOLS', clusters: [{ center: [-.55, .4], count: 18, spread: 1.8 }, { center: [.2, .5], count: 20, spread: 2.2 }, { center: [.5, -.35], count: 18, spread: 1.9 }, { center: [-.25, -.4], count: 22, spread: 2.5 }, { center: [.05, .05], count: 24, spread: 2.8 }] },
       { label: 'SYNTHETIC TOOLS', clusters: [{ center: [-.62, .55], count: 22, spread: 1.2 }, { center: [.52, .48], count: 22, spread: 1.1 }, { center: [.58, -.52], count: 22, spread: 1.15 }, { center: [-.55, -.5], count: 22, spread: 1.2 }, { center: [0, .05], count: 22, spread: 1.3 }] }

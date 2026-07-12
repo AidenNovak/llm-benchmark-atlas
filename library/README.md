@@ -16,11 +16,11 @@ be more restrictive.
 
 ## Current contract
 
-- 64 components
-- 64 renderer functions
-- 64 unique chart grammars
-- 64 unique visual-system identifiers
-- 32 source lineages
+- 71 components
+- 71 renderer functions
+- 71 unique chart grammars
+- 71 unique visual-system identifiers
+- 35 source lineages
 - 10 chart families
 - searchable and filterable catalog
 - enlarged inspection dialog
@@ -41,7 +41,8 @@ leaderboard result.
 | `renderers.js` | One pure SVG renderer per component |
 | `vendor-series.js` | Maintainable second-pass vendor release series |
 | `research-series.js` | Detailed vendor and paper-figure extension series |
-| `asian-series.js` | Figure-verified Asian model-lab research series |
+| `asian-series.js` | Figure-verified Kimi research series |
+| `lab-series.js` | Figure-verified MiniMax and GLM research series |
 | `api.js` | Query, render, and validated extension registration API |
 | `catalog.generated.json` | Machine-readable registry snapshot |
 | `app.js` | Search, filters, detail view, copy, SVG download |
@@ -55,7 +56,8 @@ node scripts/validate-library.mjs
 
 The validator fails on duplicate IDs, duplicate chart grammars, duplicate visual
 systems, duplicate renderers, missing required LLM vendors, missing sources,
-runtime SVG errors, leaked `NaN`/`undefined`, or absent accessible SVG metadata.
+runtime SVG errors, leaked `NaN`/`undefined`, absent accessible SVG metadata, or
+missing figure-level evidence in the Asian model-lab family.
 
 ## Add a component
 

@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "generatedAt": "2026-07-12",
   "stats": {
-    "components": 64,
-    "grammars": 64,
-    "visualSystems": 64,
-    "renderers": 64,
-    "sources": 32,
+    "components": 71,
+    "grammars": 71,
+    "visualSystems": 71,
+    "renderers": 71,
+    "sources": 35,
     "families": 10
   },
   "sources": [
@@ -240,6 +240,27 @@
       "type": "arXiv 论文",
       "url": "https://arxiv.org/abs/2507.20534",
       "note": "稀疏缩放、attention heads、流水线重叠与工具 embedding"
+    },
+    {
+      "key": "minimax01",
+      "name": "MiniMax-01 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2501.08313",
+      "note": "MoE isoflop、attention throughput 与 VLM 数据层级覆盖"
+    },
+    {
+      "key": "minimaxM1",
+      "name": "MiniMax-M1 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2506.13585",
+      "note": "RL 算法等质量加速与训练/推理概率一致性"
+    },
+    {
+      "key": "glm45",
+      "name": "GLM-4.5 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2508.06471",
+      "note": "参数效率、难度课程与上下文课程消融"
     }
   ],
   "components": [
@@ -5007,6 +5028,12 @@
             ]
           }
         ]
+      },
+      "evidence": {
+        "locator": "Figure 5",
+        "page": 7,
+        "verifiedAt": "2026-07-12",
+        "summary": "固定激活专家数，以总专家数变化比较 sparsity scaling law。"
       }
     },
     {
@@ -5124,6 +5151,12 @@
             ]
           }
         ]
+      },
+      "evidence": {
+        "locator": "Figure 6",
+        "page": 7,
+        "verifiedAt": "2026-07-12",
+        "summary": "不同训练 compute 下比较 heads=layers 与 doubled heads 的 validation loss。"
       }
     },
     {
@@ -5310,6 +5343,12 @@
             "end": 10
           }
         ]
+      },
+      "evidence": {
+        "locator": "Figure 7",
+        "page": 8,
+        "verifiedAt": "2026-07-12",
+        "summary": "不同 PP phase 中 computation、communication 与 offloading 的重叠调度。"
       }
     },
     {
@@ -5437,6 +5476,975 @@
             ]
           }
         ]
+      },
+      "evidence": {
+        "locator": "Figure 9",
+        "page": 10,
+        "verifiedAt": "2026-07-12",
+        "summary": "真实 MCP 工具与合成工具 collection 的 paired t-SNE embedding。"
+      }
+    },
+    {
+      "source": "MiniMax-01 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2501.08313",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "minimax-isoflop-gaps",
+      "name": "Isoflop Equal-Quality Gaps",
+      "chartLabel": "MoE vs dense · equal-quality compute gaps",
+      "family": "亚洲模型实验室",
+      "sourceKey": "minimax01",
+      "visualSystem": "VS-65 MiniMax isoflop gap facets",
+      "grammar": "benchmark 小多图双拟合曲线 + 等性能水平桥 + 两端算力垂线与倍率",
+      "renderer": "isoflopGapFacets",
+      "palette": {
+        "bg": "#fffafb",
+        "ink": "#171518",
+        "muted": "#6f6870",
+        "grid": "#e5dde2",
+        "c1": "#ed4966",
+        "c2": "#168f91",
+        "c3": "#f0a33a",
+        "c4": "#5b63ce",
+        "c5": "#2d9b62",
+        "c6": "#8b58b7"
+      },
+      "description": "复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。",
+      "useWhen": "适合回答“达到同一质量要多少 compute”；不同训练 token 或激活参数设置不可混在同一桥线。",
+      "tags": [
+        "minimax",
+        "moe",
+        "isoflop",
+        "compute-gap"
+      ],
+      "data": {
+        "facets": [
+          {
+            "label": "HellaSwag",
+            "min": 54,
+            "max": 74,
+            "target": 70,
+            "moeMatch": 3.4,
+            "denseMatch": 10.2,
+            "moe": [
+              [
+                0.5,
+                58
+              ],
+              [
+                1.2,
+                63
+              ],
+              [
+                2.1,
+                67
+              ],
+              [
+                3.4,
+                70
+              ],
+              [
+                4.2,
+                72
+              ]
+            ],
+            "dense": [
+              [
+                0.5,
+                55
+              ],
+              [
+                2,
+                60
+              ],
+              [
+                5,
+                66
+              ],
+              [
+                9,
+                69
+              ],
+              [
+                13,
+                72
+              ]
+            ]
+          },
+          {
+            "label": "WinoGrande",
+            "min": 56,
+            "max": 69,
+            "target": 65,
+            "moeMatch": 3.1,
+            "denseMatch": 9.6,
+            "moe": [
+              [
+                0.5,
+                58
+              ],
+              [
+                1.3,
+                61
+              ],
+              [
+                2.2,
+                63
+              ],
+              [
+                3.1,
+                65
+              ],
+              [
+                4.1,
+                66
+              ]
+            ],
+            "dense": [
+              [
+                0.5,
+                57
+              ],
+              [
+                2.5,
+                60
+              ],
+              [
+                5.5,
+                63
+              ],
+              [
+                9.6,
+                65
+              ],
+              [
+                13,
+                67
+              ]
+            ]
+          },
+          {
+            "label": "Natural Questions",
+            "min": 5,
+            "max": 16,
+            "target": 13,
+            "moeMatch": 3.7,
+            "denseMatch": 11.6,
+            "moe": [
+              [
+                0.5,
+                7
+              ],
+              [
+                1.3,
+                9
+              ],
+              [
+                2.3,
+                11
+              ],
+              [
+                3.7,
+                13
+              ],
+              [
+                4.4,
+                15
+              ]
+            ],
+            "dense": [
+              [
+                0.5,
+                6
+              ],
+              [
+                2.8,
+                8.5
+              ],
+              [
+                6,
+                10
+              ],
+              [
+                9,
+                11
+              ],
+              [
+                11.6,
+                13
+              ],
+              [
+                13.5,
+                14.5
+              ]
+            ]
+          },
+          {
+            "label": "PIQA",
+            "min": 70,
+            "max": 80,
+            "target": 77,
+            "moeMatch": 2.8,
+            "denseMatch": 11.8,
+            "moe": [
+              [
+                0.5,
+                73
+              ],
+              [
+                1.2,
+                75
+              ],
+              [
+                2,
+                76
+              ],
+              [
+                2.8,
+                77
+              ],
+              [
+                3.8,
+                79
+              ]
+            ],
+            "dense": [
+              [
+                0.5,
+                71.5
+              ],
+              [
+                3,
+                74
+              ],
+              [
+                6,
+                75
+              ],
+              [
+                9,
+                76
+              ],
+              [
+                11.8,
+                77
+              ],
+              [
+                13.5,
+                77.4
+              ]
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 4",
+        "page": 5,
+        "verifiedAt": "2026-07-12",
+        "summary": "五个 benchmark facet 比较 2B-active MoE 与 7B dense 的等性能算力差。"
+      }
+    },
+    {
+      "source": "MiniMax-01 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2501.08313",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "minimax-attention-throughput-cliff",
+      "name": "Attention Throughput Cliff",
+      "chartLabel": "Training throughput · sequence-length pressure test",
+      "family": "亚洲模型实验室",
+      "sourceKey": "minimax01",
+      "visualSystem": "VS-66 MiniMax throughput cliff",
+      "grammar": "log sequence 横轴多机制吞吐线 + 末端 OOM 叉标 + 长上下文保持率直读",
+      "renderer": "throughputCliffLines",
+      "palette": {
+        "bg": "#fffdf9",
+        "ink": "#171518",
+        "muted": "#6f6870",
+        "grid": "#e5dde2",
+        "c1": "#ef5b4d",
+        "c2": "#168f91",
+        "c3": "#e08b20",
+        "c4": "#5b63ce",
+        "c5": "#2d9b62",
+        "c6": "#8b58b7"
+      },
+      "description": "复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。",
+      "useWhen": "适合统一 GPU、并行度和 batch 条件下的长序列压力测试；不可跨硬件比较绝对吞吐。",
+      "tags": [
+        "minimax",
+        "attention",
+        "throughput",
+        "oom"
+      ],
+      "data": {
+        "lengths": [
+          1024,
+          2048,
+          4096,
+          8192,
+          16384,
+          32768,
+          65536
+        ],
+        "series": [
+          {
+            "label": "Hybrid-lightning",
+            "values": [
+              16200,
+              15900,
+              15700,
+              15300,
+              14600,
+              13800,
+              12900
+            ]
+          },
+          {
+            "label": "Lightning",
+            "values": [
+              15400,
+              15600,
+              15700,
+              15100,
+              15000,
+              15400,
+              15700
+            ]
+          },
+          {
+            "label": "Softmax",
+            "values": [
+              16600,
+              15800,
+              14500,
+              12700,
+              10100,
+              6800,
+              null
+            ],
+            "oomAt": 65536
+          },
+          {
+            "label": "HGRN2",
+            "values": [
+              14300,
+              14200,
+              14100,
+              14000,
+              13900,
+              14200,
+              14500
+            ]
+          },
+          {
+            "label": "Mamba2",
+            "values": [
+              12900,
+              13000,
+              12900,
+              12800,
+              12800,
+              13000,
+              null
+            ],
+            "oomAt": 65536
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 8",
+        "page": 10,
+        "verifiedAt": "2026-07-12",
+        "summary": "五种 attention 机制在 1K-65K 序列长度下的 token/GPU/s 曲线。"
+      }
+    },
+    {
+      "source": "MiniMax-01 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2501.08313",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "minimax-data-taxonomy-sunburst",
+      "name": "Instruction Coverage Sunburst",
+      "chartLabel": "Hierarchical instruction-data coverage",
+      "family": "亚洲模型实验室",
+      "sourceKey": "minimax01",
+      "visualSystem": "VS-67 MiniMax hierarchical coverage wheel",
+      "grammar": "能力族内环占比 + 高频 instruction tag 外环分裂 + 中心样本口径",
+      "renderer": "hierarchicalCoverageSunburst",
+      "palette": {
+        "bg": "#fffcf8",
+        "ink": "#171518",
+        "muted": "#6f6870",
+        "grid": "#e5dde2",
+        "c1": "#ed4966",
+        "c2": "#168f91",
+        "c3": "#f0a33a",
+        "c4": "#5b63ce",
+        "c5": "#2d9b62",
+        "c6": "#8b58b7"
+      },
+      "description": "复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。",
+      "useWhen": "适合训练集或评测集 taxonomy 覆盖审计；扇区面积只编码样本占比，不能替代质量评估。",
+      "tags": [
+        "minimax",
+        "sunburst",
+        "taxonomy",
+        "data-coverage"
+      ],
+      "data": {
+        "categories": [
+          {
+            "label": "TEXT QA",
+            "share": 30,
+            "tags": [
+              {
+                "label": "retrieval",
+                "share": 17
+              },
+              {
+                "label": "comprehension",
+                "share": 13
+              }
+            ]
+          },
+          {
+            "label": "IMAGE QA",
+            "share": 22,
+            "tags": [
+              {
+                "label": "VQA",
+                "share": 12
+              },
+              {
+                "label": "captioning",
+                "share": 10
+              }
+            ]
+          },
+          {
+            "label": "OBJECT",
+            "share": 16,
+            "tags": [
+              {
+                "label": "detection",
+                "share": 9
+              },
+              {
+                "label": "counting",
+                "share": 7
+              }
+            ]
+          },
+          {
+            "label": "REASON",
+            "share": 13,
+            "tags": [
+              {
+                "label": "spatial",
+                "share": 7
+              },
+              {
+                "label": "causal",
+                "share": 6
+              }
+            ]
+          },
+          {
+            "label": "DOCUMENT",
+            "share": 11,
+            "tags": [
+              {
+                "label": "OCR",
+                "share": 7
+              },
+              {
+                "label": "layout",
+                "share": 4
+              }
+            ]
+          },
+          {
+            "label": "TOOLS",
+            "share": 8,
+            "tags": [
+              {
+                "label": "code",
+                "share": 5
+              },
+              {
+                "label": "agent",
+                "share": 3
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 17",
+        "page": 36,
+        "verifiedAt": "2026-07-12",
+        "summary": "内层展示 14 个大类占比，外层展示各类 top instruction tags。"
+      }
+    },
+    {
+      "source": "MiniMax-M1 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2506.13585",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "minimax-m1-matched-quality-speedup",
+      "name": "Matched-quality RL Speedup",
+      "chartLabel": "RL algorithms · steps to matched quality",
+      "family": "亚洲模型实验室",
+      "sourceKey": "minimaxM1",
+      "visualSystem": "VS-68 MiniMax matched-quality speed arrow",
+      "grammar": "多算法训练轨迹 + 同分水平双向步数箭头 + 等质量 speedup 直标",
+      "renderer": "matchedQualitySpeedup",
+      "palette": {
+        "bg": "#fffefe",
+        "ink": "#171518",
+        "muted": "#6f6870",
+        "grid": "#e5dde2",
+        "c1": "#ed4966",
+        "c2": "#168f91",
+        "c3": "#f0a33a",
+        "c4": "#5b63ce",
+        "c5": "#2c9860",
+        "c6": "#8b58b7"
+      },
+      "description": "复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。",
+      "useWhen": "适合算法训练效率对比；匹配点必须来自同一任务、模型底座、采样与评测协议。",
+      "tags": [
+        "minimax",
+        "cispo",
+        "rl",
+        "speedup"
+      ],
+      "data": {
+        "steps": [
+          0,
+          100,
+          200,
+          300,
+          400,
+          500,
+          600,
+          700,
+          800,
+          900,
+          1000,
+          1100,
+          1200,
+          1300,
+          1400,
+          1500
+        ],
+        "series": [
+          {
+            "label": "GRPO",
+            "values": [
+              2,
+              10,
+              17,
+              20,
+              22,
+              21,
+              21,
+              22,
+              23,
+              22,
+              23,
+              24,
+              23,
+              24,
+              22,
+              23
+            ]
+          },
+          {
+            "label": "DAPO",
+            "values": [
+              2,
+              8,
+              15,
+              21,
+              21,
+              26,
+              24,
+              27,
+              29,
+              28,
+              31,
+              28,
+              32,
+              28,
+              33,
+              34
+            ]
+          },
+          {
+            "label": "CISPO",
+            "values": [
+              2,
+              9,
+              24,
+              26,
+              28,
+              33,
+              35,
+              36,
+              38,
+              42,
+              41,
+              44,
+              40,
+              42,
+              41,
+              39
+            ]
+          }
+        ],
+        "match": {
+          "score": 33,
+          "candidateStep": 500,
+          "referenceStep": 1000,
+          "speedup": 2
+        }
+      },
+      "evidence": {
+        "locator": "Figure 2",
+        "page": 6,
+        "verifiedAt": "2026-07-12",
+        "summary": "GRPO、DAPO、CISPO 的 AIME avg@32 训练轨迹及 2x matched-quality speedup。"
+      }
+    },
+    {
+      "source": "MiniMax-M1 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2506.13585",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "minimax-m1-probability-agreement",
+      "name": "Training–Inference Agreement Audit",
+      "chartLabel": "Token probabilities · before and after numerical fix",
+      "family": "亚洲模型实验室",
+      "sourceKey": "minimaxM1",
+      "visualSystem": "VS-69 MiniMax paired residual agreement",
+      "grammar": "修复前/后概率散点对照 + y=x 精确线 + 残差强度编码 + 相关系数盒",
+      "renderer": "agreementResidualPair",
+      "palette": {
+        "bg": "#fbfbff",
+        "ink": "#171518",
+        "muted": "#6f6870",
+        "grid": "#e5dde2",
+        "c1": "#ed4966",
+        "c2": "#168f91",
+        "c3": "#e8a52b",
+        "c4": "#4f62b8",
+        "c5": "#2d9b62",
+        "c6": "#8b58b7"
+      },
+      "description": "复现 MiniMax-M1 Figure 3：逐 token 检查 training-mode 与 inference-mode 概率在数值修复前后的对角一致性。",
+      "useWhen": "适合训练/服务实现一致性审计；高相关系数不能替代对尾部大残差和系统性偏移的检查。",
+      "tags": [
+        "minimax",
+        "probability",
+        "agreement",
+        "numerics"
+      ],
+      "data": {
+        "panels": [
+          {
+            "label": "BEFORE FIX",
+            "count": 160,
+            "residual": 0.145,
+            "correlation": 0.9873
+          },
+          {
+            "label": "AFTER FP32 FIX",
+            "count": 160,
+            "residual": 0.045,
+            "correlation": 0.9971
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 3",
+        "page": 8,
+        "verifiedAt": "2026-07-12",
+        "summary": "FP32 output-head 修复前后，token 概率散点相对 y=x 的残差与 Pearson 相关性。"
+      }
+    },
+    {
+      "source": "GLM-4.5 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2508.06471",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "glm-curriculum-counterfactuals",
+      "name": "RL Curriculum Counterfactuals",
+      "chartLabel": "Difficulty and output-length curriculum ablations",
+      "family": "亚洲模型实验室",
+      "sourceKey": "glm45",
+      "visualSystem": "VS-70 GLM curriculum counterfactual panels",
+      "grammar": "共享前缀难度分支面板 + 分段 context 背景的 single/multi-stage 反事实面板",
+      "renderer": "curriculumCounterfactualPanels",
+      "palette": {
+        "bg": "#f8fbff",
+        "ink": "#17202b",
+        "muted": "#687587",
+        "grid": "#d9e3ee",
+        "c1": "#1689e8",
+        "c2": "#35aa7c",
+        "c3": "#ef5a50",
+        "c4": "#7764d8",
+        "c5": "#e7a532",
+        "c6": "#667487"
+      },
+      "description": "合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。",
+      "useWhen": "适合课程学习与干预消融；阶段边界、样本池和最大输出长度必须随数据一同记录。",
+      "tags": [
+        "glm",
+        "curriculum",
+        "rl",
+        "counterfactual"
+      ],
+      "data": {
+        "difficulty": {
+          "steps": [
+            0,
+            200,
+            400,
+            600,
+            800,
+            1000,
+            1200,
+            1400,
+            1600,
+            1800,
+            2000,
+            2200
+          ],
+          "switchIndex": 7,
+          "moderate": [
+            75,
+            76,
+            74.5,
+            77.5,
+            79,
+            78.2,
+            80.5,
+            81.8,
+            80.1,
+            81,
+            80.4,
+            80.2
+          ],
+          "extreme": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            81.8,
+            80.9,
+            82.2,
+            81.7,
+            83.4
+          ]
+        },
+        "context": {
+          "steps": [
+            0,
+            200,
+            400,
+            600,
+            800,
+            1000,
+            1200,
+            1400,
+            1600,
+            1800,
+            2000,
+            2200
+          ],
+          "stages": [
+            {
+              "label": "16K",
+              "endIndex": 3
+            },
+            {
+              "label": "32K",
+              "endIndex": 6
+            },
+            {
+              "label": "48K",
+              "endIndex": 9
+            },
+            {
+              "label": "64K",
+              "endIndex": 11
+            }
+          ],
+          "single": [
+            75,
+            76,
+            77,
+            79,
+            80,
+            79,
+            81,
+            80,
+            82,
+            81,
+            82,
+            83.4
+          ],
+          "multi": [
+            61,
+            65,
+            68,
+            71,
+            72,
+            73,
+            75,
+            74,
+            78,
+            79,
+            78.5,
+            80.6
+          ]
+        }
+      },
+      "evidence": {
+        "locator": "Figures 5-6",
+        "page": 8,
+        "verifiedAt": "2026-07-12",
+        "summary": "难度课程切换与 16K→64K 多阶段输出长度课程的两组控制实验。"
+      }
+    },
+    {
+      "source": "GLM-4.5 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2508.06471",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "glm-parameter-frontier-unknown-lane",
+      "name": "Known vs Undisclosed Parameter Frontier",
+      "chartLabel": "SWE-bench quality vs known and undisclosed parameters",
+      "family": "亚洲模型实验室",
+      "sourceKey": "glm45",
+      "visualSystem": "VS-71 GLM mixed-domain parameter frontier",
+      "grammar": "连续参数 Pareto 区 + 断轴后的 undisclosed 垂直通道 + 前沿楔形与异形点",
+      "renderer": "unknownParameterFrontier",
+      "palette": {
+        "bg": "#fbfdff",
+        "ink": "#17202b",
+        "muted": "#687587",
+        "grid": "#d9e3ee",
+        "c1": "#1689e8",
+        "c2": "#35aa7c",
+        "c3": "#ef5a50",
+        "c4": "#7764d8",
+        "c5": "#e7a532",
+        "c6": "#667487"
+      },
+      "description": "复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。",
+      "useWhen": "适合参数效率比较又必须保留未披露模型时；未知参数点不可被放到虚构的连续坐标。",
+      "tags": [
+        "glm",
+        "swe-bench",
+        "parameters",
+        "pareto"
+      ],
+      "data": {
+        "frontier": [
+          [
+            0,
+            51
+          ],
+          [
+            106,
+            57
+          ],
+          [
+            355,
+            64
+          ],
+          [
+            650,
+            72
+          ]
+        ],
+        "known": [
+          {
+            "label": "GLM-4.5-Air",
+            "parameters": 106,
+            "score": 57.2,
+            "frontier": true,
+            "dx": 10,
+            "dy": -8
+          },
+          {
+            "label": "GLM-4.5",
+            "parameters": 355,
+            "score": 64.2,
+            "frontier": true,
+            "dx": 10,
+            "dy": -9
+          },
+          {
+            "label": "MiniMax-M1",
+            "parameters": 456,
+            "score": 55.7,
+            "frontier": false,
+            "dx": 10,
+            "dy": 16
+          },
+          {
+            "label": "DeepSeek-R1",
+            "parameters": 671,
+            "score": 57.3,
+            "frontier": false,
+            "dx": 10,
+            "dy": -8
+          },
+          {
+            "label": "Qwen3",
+            "parameters": 235,
+            "score": 35.6,
+            "frontier": false,
+            "dx": 10,
+            "dy": -8
+          },
+          {
+            "label": "Kimi K2",
+            "parameters": 1043,
+            "score": 64.9,
+            "frontier": false,
+            "dx": -10,
+            "dy": -8
+          }
+        ],
+        "unknown": [
+          {
+            "label": "Claude",
+            "score": 69.8
+          },
+          {
+            "label": "Gemini",
+            "score": 62.4
+          },
+          {
+            "label": "GPT-4.1",
+            "score": 54.8
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 2",
+        "page": 3,
+        "verifiedAt": "2026-07-12",
+        "summary": "开源模型按总参数定位，专有模型在右侧 Unknown 通道比较 SWE-bench Verified。"
       }
     }
   ]

@@ -23,6 +23,12 @@ in `types/index.d.ts`.
   tags: ["table", "multi-benchmark"],
   palette: { bg, ink, muted, grid, c1, c2, c3, c4, c5, c6 },
   dataNote: "Demo-data disclosure.",
+  evidence: {
+    locator: "Figure 5",
+    page: 8,
+    verifiedAt: "2026-07-12",
+    summary: "What was visually verified in the source PDF."
+  },
   data: { /* renderer-specific schema */ }
 }
 ```
@@ -40,6 +46,11 @@ from inflating coverage.
 depend on another lookup.
 
 The source identifies formal lineage, not ownership or endorsement.
+
+`evidence` is optional for general vendor lineages and required by validation for
+the figure-verified Asian model-lab family. `locator` uses the publication's own
+figure numbering, while `page` is the one-based rendered PDF page. The pair
+prevents a paper citation from masquerading as figure-level verification.
 
 ## Data fields
 

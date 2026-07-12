@@ -6,6 +6,9 @@ The static catalog exposes `window.BenchmarkAtlas` after `api.js` loads.
 <script src="catalog.js"></script>
 <script src="renderers.js"></script>
 <script src="vendor-series.js"></script>
+<script src="research-series.js"></script>
+<script src="asian-series.js"></script>
+<script src="lab-series.js"></script>
 <script src="api.js"></script>
 ```
 

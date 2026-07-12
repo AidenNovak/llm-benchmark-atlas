@@ -12,6 +12,7 @@ coverage and do not record when a chart should or should not be used.
 Benchmark Atlas is an inspectable component catalog where every entry has:
 
 - a source lineage;
+- figure locator, PDF page, and verification date when a paper figure was visually audited;
 - a unique information grammar;
 - a named visual system;
 - a benchmark-specific use case and misuse warning;
@@ -45,6 +46,7 @@ are part of the component contract, not optional documentation.
 
 - unique accepted grammars, not total card count;
 - percentage of entries with first-party or paper provenance;
+- percentage of paper-derived entries with figure-level evidence metadata;
 - renderer validation and visual-regression pass rate;
 - time from benchmark dataset to publication-ready chart;
 - external contributions that pass the non-duplication gate.

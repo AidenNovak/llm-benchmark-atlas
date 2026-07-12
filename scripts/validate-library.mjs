@@ -11,6 +11,7 @@ vm.runInContext(read('library/renderers.js'), sandbox, { filename: 'renderers.js
 vm.runInContext(read('library/vendor-series.js'), sandbox, { filename: 'vendor-series.js' });
 vm.runInContext(read('library/research-series.js'), sandbox, { filename: 'research-series.js' });
 vm.runInContext(read('library/asian-series.js'), sandbox, { filename: 'asian-series.js' });
+vm.runInContext(read('library/lab-series.js'), sandbox, { filename: 'lab-series.js' });
 vm.runInContext(read('library/api.js'), sandbox, { filename: 'api.js' });
 
 const components = sandbox.window.BENCHMARK_COMPONENTS;
@@ -33,7 +34,7 @@ function requireVendor(pattern, label) {
   }
 }
 
-if (components.length < 64) errors.push(`expected at least 64 components, found ${components.length}`);
+if (components.length < 71) errors.push(`expected at least 71 components, found ${components.length}`);
 requireUnique('id');
 requireUnique('grammar');
 requireUnique('visualSystem');
@@ -59,6 +60,11 @@ for (const entry of components) {
   if (!renderers[entry.renderer]) errors.push(`${entry.id}: missing renderer ${entry.renderer}`);
   if (!entry.sourceUrl?.startsWith('https://')) errors.push(`${entry.id}: source URL must use https`);
   if (!entry.description || !entry.useWhen || !entry.data) errors.push(`${entry.id}: incomplete component contract`);
+  if (entry.family === '亚洲模型实验室') {
+    if (!entry.evidence?.locator || !Number.isInteger(entry.evidence?.page) || !entry.evidence?.verifiedAt || !entry.evidence?.summary) {
+      errors.push(`${entry.id}: Asian model-lab component lacks figure-level evidence`);
+    }
+  }
   try {
     const svg = renderBenchmark(entry);
     if (!svg.startsWith('<svg')) errors.push(`${entry.id}: renderer did not return SVG`);
@@ -71,7 +77,7 @@ for (const entry of components) {
 }
 
 const index = read('library/index.html');
-for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'api.js', 'app.js']) {
+for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'api.js', 'app.js']) {
   if (!index.includes(asset)) errors.push(`index.html does not load ${asset}`);
 }
 

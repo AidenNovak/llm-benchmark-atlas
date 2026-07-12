@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented here.
 
+## [0.4.0] - 2026-07-12
+
+### Added
+
+- Seven PDF-verified MiniMax and GLM components: equal-quality isoflop gaps,
+  attention throughput cliffs, hierarchical instruction coverage, matched-quality
+  RL speedup, training/inference probability agreement, curriculum
+  counterfactuals, and a known/undisclosed parameter frontier.
+- Machine-readable `evidence` metadata with publication figure locator, rendered
+  PDF page, verification date, and a concise visual-evidence summary.
+- Evidence surfaced in the inspection dialog and validated for all 11 Asian
+  model-lab components.
+- Dedicated MiniMax and GLM browser QA, plus a refreshed catalog preview.
+
 ## [0.3.0] - 2026-07-12
 
 ### Added

@@ -10,6 +10,8 @@ Open a new-chart issue and include:
 - a first-party vendor, benchmark, lab, or paper URL;
 - a screenshot or figure number for research context (do not commit copyrighted
   source artwork without permission);
+- for PDF-derived charts, the rendered PDF page and a concise visual evidence
+  summary suitable for the component's `evidence` field;
 - the benchmark question the chart answers;
 - the proposed grammar and why no existing component can express it;
 - the expected data schema.

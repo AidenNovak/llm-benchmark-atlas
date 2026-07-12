@@ -12,6 +12,9 @@ SCREENSHOT = Path("/private/tmp/benchmark-atlas-dialog.png")
 SERIES_SCREENSHOT = Path("/private/tmp/benchmark-atlas-series.png")
 PAPER_SCREENSHOT = Path("/private/tmp/benchmark-atlas-paper-series.png")
 ASIAN_SCREENSHOT = Path("/private/tmp/benchmark-atlas-asian-series.png")
+MINIMAX_SCREENSHOT = Path("/private/tmp/benchmark-atlas-minimax-series.png")
+GLM_SCREENSHOT = Path("/private/tmp/benchmark-atlas-glm-series.png")
+PREVIEW_SCREENSHOT = Path("assets/atlas-preview.png")
 
 
 def main() -> None:
@@ -34,7 +37,8 @@ def main() -> None:
         page.wait_for_selector(".component-card")
 
         report["initial_cards"] = page.locator(".component-card").count()
-        assert report["initial_cards"] >= 64
+        assert report["initial_cards"] == 71
+        page.screenshot(path=str(PREVIEW_SCREENSHOT))
 
         page.locator("#family-filter").select_option(label="Agent 与过程评测")
         report["agent_family_cards"] = page.locator(".component-card").count()
@@ -52,8 +56,25 @@ def main() -> None:
 
         page.locator("#family-filter").select_option(label="亚洲模型实验室")
         report["asian_lab_cards"] = page.locator(".component-card").count()
-        assert report["asian_lab_cards"] == 4
+        assert report["asian_lab_cards"] == 11
         page.screenshot(path=str(ASIAN_SCREENSHOT), full_page=True)
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("MiniMax")
+        report["minimax_cards"] = page.locator(".component-card").count()
+        assert report["minimax_cards"] == 5
+        page.screenshot(path=str(MINIMAX_SCREENSHOT), full_page=True)
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("GLM")
+        report["glm_cards"] = page.locator(".component-card").count()
+        assert report["glm_cards"] == 2
+        page.screenshot(path=str(GLM_SCREENSHOT), full_page=True)
+
+        page.locator(".preview-button").first.click()
+        assert "Figure" in page.locator("#dialog-facts").inner_text()
+        assert page.locator("#dialog-json").text_content().find('"evidence"') >= 0
+        page.locator("#close-dialog").click()
 
         page.locator("#reset-filters").click()
         page.locator("#search").fill("Sankey")

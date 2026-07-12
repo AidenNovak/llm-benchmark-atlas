@@ -7,6 +7,7 @@ __pycache__/
 .pytest_cache/
 node_modules/
 screenshots/
+tmp/
 
 # Local research archive and earlier private experiments are intentionally not
 # part of the public product repository.

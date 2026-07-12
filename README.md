@@ -23,9 +23,9 @@ Benchmark screenshots are abundant, but reusable chart grammar is not. The
 same bar chart is frequently copied into several folders, recolored for a new
 vendor, and counted again. Benchmark Atlas uses a stricter unit of value:
 
-- **64 live SVG components** generated from structured data
-- **64 unique chart grammars**, renderers, and visual-system identifiers
-- **32 source lineages** across vendors, leaderboards, labs, and arXiv papers
+- **71 live SVG components** generated from structured data
+- **71 unique chart grammars**, renderers, and visual-system identifiers
+- **35 source lineages** across vendors, leaderboards, labs, and arXiv papers
 - **10 chart families** from ranking and uncertainty to agent trajectories
 - search, multi-axis filtering, enlarged inspection, JSON access, and SVG export
 - validation that fails on duplicates, missing sources, invalid SVG values, or
@@ -59,6 +59,7 @@ Open <http://127.0.0.1:4173/library/>.
 | Agent and process evaluation | long-horizon ledger, token area, swimlane, Sankey, survival, solve curve |
 | Special encoding and coverage | cylinders, waffle, treemap, beeswarm |
 | Vendor release reproductions | Gemini triptych, OpenAI thinking pairs, Claude intervals, TML frontier |
+| Figure-verified Asian labs | Kimi scaling and systems, MiniMax efficiency and data coverage, GLM curriculum and parameter frontier |
 
 The source lineages include OpenAI/ChatGPT, Anthropic/Claude, Google/Gemini,
 DeepSeek, Qwen, Meta/Llama, Mistral, xAI/Grok, Microsoft/Phi, Amazon Nova,
@@ -75,7 +76,8 @@ library/catalog.js       source registry, component metadata, demo data
 library/renderers.js     40 core pure-SVG renderers
 library/vendor-series.js vendor-specific extension registry and renderers
 library/research-series.js vendor detail and paper-figure extension series
-library/asian-series.js  verified Asian model-lab paper series
+library/asian-series.js  figure-verified Kimi research series
+library/lab-series.js    figure-verified MiniMax and GLM research series
 library/api.js           stable query, render, and extension API
 library/catalog.generated.json machine-readable registry snapshot
 library/app.js           search, filters, details, JSON copy, SVG download
@@ -108,7 +110,7 @@ current leaderboard. See [NOTICE.md](NOTICE.md) and
 ## Roadmap
 
 The next releases focus on versioned real-data adapters, an ESM package API,
-more verified Asian model-lab sources, visual regression snapshots, and
+more verified model-lab sources, visual regression snapshots, and
 additional chart grammars only where a real evaluation use case justifies them.
 See [ROADMAP.md](docs/ROADMAP.md).
 

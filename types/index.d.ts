@@ -19,6 +19,13 @@ export interface BenchmarkPalette {
   c6: string;
 }
 
+export interface BenchmarkEvidence {
+  locator: string;
+  page: number;
+  verifiedAt: `${number}-${number}-${number}`;
+  summary: string;
+}
+
 export interface BenchmarkComponent<TData extends Record<string, unknown> = Record<string, unknown>> {
   id: string;
   name: string;
@@ -36,6 +43,7 @@ export interface BenchmarkComponent<TData extends Record<string, unknown> = Reco
   tags: string[];
   palette: BenchmarkPalette;
   dataNote: string;
+  evidence?: BenchmarkEvidence;
   data: TData;
 }
 

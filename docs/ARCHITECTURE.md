@@ -39,6 +39,13 @@ Demonstrates the extension boundary for coherent vendor or research series. It
 registers new sources, new components, and new renderers without changing the
 core catalog implementation.
 
+### `research-series.js`, `asian-series.js`, and `lab-series.js`
+
+Own the larger paper and model-lab extension sets. Figure-verified entries carry
+an `evidence` object with the paper's figure locator, one-based rendered PDF
+page, verification date, and visual summary. Source PDFs remain local research
+material and are never shipped with the public package.
+
 ### `app.js`
 
 Owns presentation-only state: query, filters, density, selected component,
@@ -57,6 +64,7 @@ accidentally. A generated JSON snapshot serves non-JavaScript consumers.
 - Every renderer returns self-contained SVG with `<title>` and `<desc>`.
 - No rendered SVG may contain `NaN`, `undefined`, or `null`.
 - Every component has a description, `useWhen`, structured data, and disclosure.
+- Figure-verified model-lab components have complete figure-level evidence.
 - Required major model-lab lineages remain represented.
 
 The validator treats these as executable product constraints.

@@ -34,6 +34,9 @@ renderer are unique.
 | Cognition SWE research | <https://cognition.ai/blog/swe-grep> | behavioral scatter and repository distributions |
 | Thinking Machines Lab | <https://thinkingmachines.ai/blog/interaction-models/> | intelligence-interactivity frontier |
 | Kimi K2 report | <https://arxiv.org/abs/2507.20534> | sparsity scaling, attention-head facets, pipeline overlap, paired t-SNE |
+| MiniMax-01 report | <https://arxiv.org/abs/2501.08313> | equal-quality isoflop gaps, sequence throughput cliff, hierarchical data coverage |
+| MiniMax-M1 report | <https://arxiv.org/abs/2506.13585> | matched-quality RL speedup, training/inference probability agreement |
+| GLM-4.5 report | <https://arxiv.org/abs/2508.06471> | RL curriculum counterfactuals, known/undisclosed parameter frontier |
 
 ## Independent leaderboards and benchmark lineages
 
@@ -78,5 +81,18 @@ has been captured. The maintainable completion criterion is therefore:
 - Figure 7: computation, communication, and offload overlap across PP phases.
 - Figure 9: paired t-SNE maps for real MCP tools and synthetic tool domains.
 
-This inventory is the evidence base for the current 64-component release, not a
+### Figure-level MiniMax evidence
+
+- MiniMax-01 Figure 4, PDF page 5: MoE versus dense isoflop curves across five benchmarks, with dashed equal-quality compute gaps.
+- MiniMax-01 Figure 8, PDF page 10: attention-mechanism training throughput across 1K-65K sequence length and observed OOM limits.
+- MiniMax-01 Figure 17, PDF page 36: two-level hierarchy of major multimodal capability groups and their top instruction tags.
+- MiniMax-M1 Figure 2, PDF page 6: GRPO, DAPO, and CISPO training trajectories with an explicit 2x matched-quality step comparison.
+- MiniMax-M1 Figure 3, PDF page 8: token-level training-mode versus inference-mode probabilities before and after the FP32 output-head fix.
+
+### Figure-level GLM evidence
+
+- GLM-4.5 Figure 2, PDF page 3: SWE-bench Verified against disclosed model parameters, with proprietary models placed in a separate Unknown lane.
+- GLM-4.5 Figures 5-6, PDF page 8: difficulty-switch curriculum and single-stage versus progressive output-length RL counterfactuals.
+
+This inventory is the evidence base for the current 71-component release, not a
 claim that internet research can never discover another valid grammar.

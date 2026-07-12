@@ -153,6 +153,7 @@
       ['视觉系统', entry.visualSystem],
       ['来源类型', entry.sourceType],
       ['来源谱系', entry.source],
+      ...(entry.evidence ? [['论文定位', `${entry.evidence.locator} · PDF p.${entry.evidence.page}`]] : []),
       ['数据状态', '示意数据']
     ].map(([label, value]) => `<dl class='fact'><dt>${esc(label)}</dt><dd>${esc(value)}</dd></dl>`).join('');
     document.getElementById('dialog-json').textContent = JSON.stringify({
@@ -161,6 +162,7 @@
       grammar: entry.grammar,
       source: entry.source,
       sourceUrl: entry.sourceUrl,
+      evidence: entry.evidence,
       dataNote: entry.dataNote,
       data: entry.data
     }, null, 2);

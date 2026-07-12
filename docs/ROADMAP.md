@@ -23,7 +23,7 @@
 
 ## Ongoing source coverage
 
-- verified releases from Asian model labs: Kimi, GLM, MiniMax, ERNIE, Yi;
+- verified releases from Asian model labs: ERNIE, Yi, StepFun, Baichuan, and InternLM;
 - additional first-party Meta, Mistral, Cohere, AWS, NVIDIA, and xAI figures;
 - arXiv grammars such as UpSet, alluvial, posterior intervals, correlation
   matrices, token alignment ribbons, and sourced multilingual maps;
