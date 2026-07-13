@@ -37,6 +37,7 @@ leaderboard result.
 |---|---|
 | `index.html` | Semantic page shell, filters, catalog, dialog |
 | `about.html` / `about.css` / `about.js` | Apple-inspired product story with live component evidence |
+| `component-page.css` | Shared layout for generated, indexable component detail pages and static index |
 | `styles.css` | Responsive application layout |
 | `catalog.js` | Source registry, component metadata, demo data |
 | `renderers.js` | One pure SVG renderer per component |
@@ -50,6 +51,7 @@ leaderboard result.
 | `catalog.generated.json` | Machine-readable registry snapshot |
 | `app.js` | Search, filters, detail view, copy, SVG download |
 | `../scripts/validate-library.mjs` | Duplication, coverage, rendering, and accessibility checks |
+| `../scripts/build-site.mjs` | Static bundle, 83 component pages, sitemap, and `llms.txt` generation |
 
 ## Validate
 

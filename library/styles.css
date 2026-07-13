@@ -265,6 +265,8 @@ input::placeholder { color: #9a9a96; }
 .card-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin-top: auto; }
 .chip { padding: 2px 6px; border: 1px solid var(--line); border-radius: 3px; color: var(--muted); font-size: 10px; }
 .source-name { margin-left: auto; color: var(--muted); font-size: 10px; }
+.component-page-link { color: var(--ink); font-size: 10px; font-weight: 650; text-decoration: none; }
+.component-page-link:hover { text-decoration: underline; }
 
 .component-grid.compact { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .component-grid.compact .chart-preview { min-height: 170px; }
