@@ -7,6 +7,7 @@ charts, model launch comparisons, independent leaderboards, and research-paper
 figures.
 
 [Live catalog](https://aidennovak.github.io/llm-benchmark-atlas/) ·
+[Product story](https://aidennovak.github.io/llm-benchmark-atlas/about.html) ·
 [Chinese README](README.zh-CN.md) ·
 [Component contract](docs/COMPONENT_CONTRACT.md) ·
 [Browser API](docs/API.md) ·

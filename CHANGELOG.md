@@ -11,6 +11,8 @@ All notable changes to this project will be documented here.
   mixed-precision lifecycle plus fine-grained quantization accumulation.
 - Three source lineages and browser QA for 83 components, 23 Asian model-lab
   entries, Hunyuan/Seed discovery, and both FP8 components.
+- An Apple-inspired product story page with live component renders, provenance
+  walkthroughs, responsive layout, and a dedicated browser QA suite.
 
 ### Research decisions
 
