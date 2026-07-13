@@ -79,8 +79,13 @@ for (const entry of components) {
 }
 
 const index = read('library/index.html');
-for (const asset of ['styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'lab-systems-series.js', 'frontier-systems-series.js', 'api.js', 'app.js']) {
+for (const asset of ['favicon.svg', 'favicon-32.png', 'favicon.ico', 'apple-touch-icon.png', 'styles.css', 'catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'lab-systems-series.js', 'frontier-systems-series.js', 'api.js', 'app.js']) {
   if (!index.includes(asset)) errors.push(`index.html does not load ${asset}`);
+}
+
+const about = read('library/about.html');
+for (const asset of ['favicon.svg', 'favicon-32.png', 'favicon.ico', 'apple-touch-icon.png']) {
+  if (!about.includes(asset)) errors.push(`about.html does not load ${asset}`);
 }
 
 const generated = JSON.parse(read('library/catalog.generated.json'));
