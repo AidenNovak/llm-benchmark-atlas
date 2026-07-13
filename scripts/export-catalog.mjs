@@ -6,13 +6,13 @@ const read = relative => fs.readFileSync(new URL(relative, root), 'utf8');
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 
-for (const file of ['catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'lab-systems-series.js', 'api.js']) {
+for (const file of ['catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'lab-systems-series.js', 'frontier-systems-series.js', 'api.js']) {
   vm.runInContext(read(`library/${file}`), sandbox, { filename: file });
 }
 
 const payload = {
   schemaVersion: 1,
-  generatedAt: '2026-07-12',
+  generatedAt: '2026-07-13',
   stats: sandbox.window.BenchmarkAtlas.stats(),
   sources: sandbox.window.BenchmarkAtlas.listSources(),
   components: sandbox.window.BenchmarkAtlas.list()

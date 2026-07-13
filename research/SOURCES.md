@@ -41,6 +41,9 @@ renderer are unique.
 | ERNIE 5.0 report | <https://arxiv.org/abs/2602.04705> | replay-buffer scheduling, entropy collapse, cross-modal expert collaboration |
 | Step-3 report | <https://arxiv.org/abs/2507.19427> | attention hardware roofline, training/decoding objective reversal |
 | Yi report | <https://arxiv.org/abs/2403.04652> | continuous/discrete emergence, layer-token similarity |
+| Hunyuan-Large report | <https://arxiv.org/abs/2411.02265> | overloaded-token drop versus capacity-aware recycle routing |
+| Seed1.5-VL report | <https://arxiv.org/abs/2505.07062> | linked subcategory-loss scaling and downstream metric calibration |
+| DeepSeek-V3 report | <https://arxiv.org/abs/2412.19437> | mixed-precision lifecycle, fine-grained quantization and accumulation |
 
 ## Independent leaderboards and benchmark lineages
 
@@ -109,6 +112,13 @@ has been captured. The maintainable completion criterion is therefore:
 - Yi Figure 3, PDF page 11: continuous difference-to-target and discontinuous exact-match views of the same in-context coefficient tasks.
 - Yi Figure 8, PDF page 17: token-wise input/output cosine similarity across base and depth-upscaled layer sequences.
 
+### Figure-level Hunyuan, Seed1.5-VL, and DeepSeek-V3 evidence
+
+- Hunyuan-Large Figure 2, PDF page 6: Token D is dropped when Expert 1 exceeds capacity in traditional top-k routing, but is reassigned to available Expert 4 by recycle routing.
+- Seed1.5-VL Figure 3, PDF page 14: OCR and grounding training loss scale with tokens, then locally predict related ChartQA, InfoVQA, RefCOCO, and RefCOCO+ metrics.
+- DeepSeek-V3 Figure 6, PDF page 15: Fprop, Dgrad, and Wgrad use FP8 GEMMs while activation boundaries remain BF16 and accumulation/master/optimizer state remain FP32.
+- DeepSeek-V3 Figure 7, PDF page 16: activations use 1×128 tile scales, weights use 128×128 block scales, and accumulation periodically promotes to FP32.
+
 ### Rejected citation mismatches
 
 - arXiv `2408.05510` is a magnetization-dynamics paper, not an InternLM report.
@@ -117,5 +127,5 @@ has been captured. The maintainable completion criterion is therefore:
 
 These title/body checks prevent plausible-looking but incorrect IDs from becoming provenance.
 
-This inventory is the evidence base for the current 79-component release, not a
+This inventory is the evidence base for the current 83-component release, not a
 claim that internet research can never discover another valid grammar.

@@ -21,9 +21,9 @@ Benchmark screenshots are abundant, but reusable chart grammar is not. The
 same bar chart is frequently copied into several folders, recolored for a new
 vendor, and counted again. Benchmark Atlas uses a stricter unit of value:
 
-- **79 live SVG components** generated from structured data
-- **79 unique chart grammars**, renderers, and visual-system identifiers
-- **39 source lineages** across vendors, leaderboards, labs, and arXiv papers
+- **83 live SVG components** generated from structured data
+- **83 unique chart grammars**, renderers, and visual-system identifiers
+- **42 source lineages** across vendors, leaderboards, labs, and arXiv papers
 - **10 chart families** from ranking and uncertainty to agent trajectories
 - search, multi-axis filtering, enlarged inspection, JSON access, and SVG export
 - validation that fails on duplicates, missing sources, invalid SVG values, or
@@ -70,7 +70,7 @@ npm run qa -- https://aidennovak.github.io/llm-benchmark-atlas/
 | Agent and process evaluation | long-horizon ledger, token area, swimlane, Sankey, survival, solve curve |
 | Special encoding and coverage | cylinders, waffle, treemap, beeswarm |
 | Vendor release reproductions | Gemini triptych, OpenAI thinking pairs, Claude intervals, TML frontier |
-| Figure-verified Asian labs | Kimi, MiniMax, GLM, InternLM2, ERNIE 5.0, Step-3, and Yi research grammars |
+| Figure-verified Asian labs | Kimi, MiniMax, GLM, InternLM2, ERNIE 5.0, Step-3, Yi, Hunyuan, Seed, and DeepSeek research grammars |
 
 The source lineages include OpenAI/ChatGPT, Anthropic/Claude, Google/Gemini,
 DeepSeek, Qwen, Meta/Llama, Mistral, xAI/Grok, Microsoft/Phi, Amazon Nova,
@@ -90,6 +90,7 @@ library/research-series.js vendor detail and paper-figure extension series
 library/asian-series.js  figure-verified Kimi research series
 library/lab-series.js    figure-verified MiniMax and GLM research series
 library/lab-systems-series.js InternLM2, ERNIE, Step-3, and Yi systems series
+library/frontier-systems-series.js Hunyuan, Seed, and DeepSeek systems series
 library/api.js           stable query, render, and extension API
 library/catalog.generated.json machine-readable registry snapshot
 library/app.js           search, filters, details, JSON copy, SVG download

@@ -16,11 +16,11 @@ be more restrictive.
 
 ## Current contract
 
-- 79 components
-- 79 renderer functions
-- 79 unique chart grammars
-- 79 unique visual-system identifiers
-- 39 source lineages
+- 83 components
+- 83 renderer functions
+- 83 unique chart grammars
+- 83 unique visual-system identifiers
+- 42 source lineages
 - 10 chart families
 - searchable and filterable catalog
 - enlarged inspection dialog
@@ -44,6 +44,7 @@ leaderboard result.
 | `asian-series.js` | Figure-verified Kimi research series |
 | `lab-series.js` | Figure-verified MiniMax and GLM research series |
 | `lab-systems-series.js` | Figure-verified InternLM2, ERNIE 5.0, Step-3, and Yi series |
+| `frontier-systems-series.js` | Figure-verified Hunyuan, Seed1.5-VL, and DeepSeek-V3 systems series |
 | `api.js` | Query, render, and validated extension registration API |
 | `catalog.generated.json` | Machine-readable registry snapshot |
 | `app.js` | Search, filters, detail view, copy, SVG download |

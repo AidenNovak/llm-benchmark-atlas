@@ -16,6 +16,7 @@ ASIAN_SCREENSHOT = Path("/private/tmp/benchmark-atlas-asian-series.png")
 MINIMAX_SCREENSHOT = Path("/private/tmp/benchmark-atlas-minimax-series.png")
 GLM_SCREENSHOT = Path("/private/tmp/benchmark-atlas-glm-series.png")
 SYSTEMS_SCREENSHOT = Path("/private/tmp/benchmark-atlas-lab-systems-series.png")
+FRONTIER_SCREENSHOT = Path("/private/tmp/benchmark-atlas-frontier-systems-series.png")
 PREVIEW_SCREENSHOT = Path("assets/atlas-preview.png")
 
 
@@ -39,7 +40,7 @@ def main() -> None:
         page.wait_for_selector(".component-card")
 
         report["initial_cards"] = page.locator(".component-card").count()
-        assert report["initial_cards"] == 79
+        assert report["initial_cards"] == 83
         if IS_LOCAL:
             page.screenshot(path=str(PREVIEW_SCREENSHOT))
 
@@ -59,8 +60,27 @@ def main() -> None:
 
         page.locator("#family-filter").select_option(label="亚洲模型实验室")
         report["asian_lab_cards"] = page.locator(".component-card").count()
-        assert report["asian_lab_cards"] == 19
+        assert report["asian_lab_cards"] == 23
         page.screenshot(path=str(ASIAN_SCREENSHOT), full_page=True)
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("Hunyuan")
+        report["hunyuan_cards"] = page.locator(".component-card").count()
+        assert report["hunyuan_cards"] == 1
+        page.locator(".preview-button").click()
+        assert "Figure 2" in page.locator("#dialog-facts").inner_text()
+        page.locator("#close-dialog").click()
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("Seed1.5-VL")
+        report["seed_cards"] = page.locator(".component-card").count()
+        assert report["seed_cards"] == 1
+        page.screenshot(path=str(FRONTIER_SCREENSHOT), full_page=True)
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("FP8")
+        report["fp8_cards"] = page.locator(".component-card").count()
+        assert report["fp8_cards"] == 2
 
         page.locator("#reset-filters").click()
         page.locator("#search").fill("MiniMax")

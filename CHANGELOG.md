@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented here.
 
+## [0.6.0] - 2026-07-13
+
+### Added
+
+- Four PDF-verified system grammars: Hunyuan-Large capacity-aware recycle
+  routing, Seed1.5-VL loss-to-benchmark transfer calibration, and DeepSeek-V3
+  mixed-precision lifecycle plus fine-grained quantization accumulation.
+- Three source lineages and browser QA for 83 components, 23 Asian model-lab
+  entries, Hunyuan/Seed discovery, and both FP8 components.
+
+### Research decisions
+
+- Rejected DeepSeek-V3 Figure 9 as a new component because its expert-load
+  heatmap information grammar overlaps the existing matrix family.
+
 ## [0.5.0] - 2026-07-13
 
 ### Added

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-12",
+  "generatedAt": "2026-07-13",
   "stats": {
-    "components": 79,
-    "grammars": 79,
-    "visualSystems": 79,
-    "renderers": 79,
-    "sources": 39,
+    "components": 83,
+    "grammars": 83,
+    "visualSystems": 83,
+    "renderers": 83,
+    "sources": 42,
     "families": 10
   },
   "sources": [
@@ -289,6 +289,27 @@
       "type": "arXiv 论文",
       "url": "https://arxiv.org/abs/2403.04652",
       "note": "in-context emergence、SFT data scaling 与 depth upscaling"
+    },
+    {
+      "key": "deepseekV3",
+      "name": "DeepSeek-V3 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2412.19437",
+      "note": "FP8 mixed-precision lifecycle and fine-grained quantization"
+    },
+    {
+      "key": "hunyuanLarge",
+      "name": "Hunyuan-Large Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2411.02265",
+      "note": "capacity-aware recycle routing for overloaded MoE experts"
+    },
+    {
+      "key": "seed15vl",
+      "name": "Seed1.5-VL Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2505.07062",
+      "note": "subcategory loss scaling and downstream metric transfer calibration"
     }
   ],
   "components": [
@@ -8133,6 +8154,483 @@
         "page": 17,
         "verifiedAt": "2026-07-13",
         "summary": "Yi-6B 与 Yi-9B 初始化的 token-wise layer cosine similarity，新增 16 层接近 1。"
+      }
+    },
+    {
+      "source": "Hunyuan-Large Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2411.02265",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "hunyuan-recycle-routing",
+      "name": "Capacity-aware Recycle Routing",
+      "chartLabel": "Overloaded MoE tokens · drop vs recycle",
+      "family": "亚洲模型实验室",
+      "sourceKey": "hunyuanLarge",
+      "visualSystem": "VS-80 Hunyuan token-preserving recycle route",
+      "grammar": "传统/回收双路由面板 + token 身份保持 + expert 容量槽 + overloaded token 丢弃/二次分配状态转换",
+      "renderer": "recycleRoutingComparison",
+      "palette": {
+        "bg": "#fcfdff",
+        "ink": "#17212e",
+        "muted": "#687487",
+        "grid": "#dbe2eb",
+        "c1": "#135ad8",
+        "c2": "#5c8ff0",
+        "c3": "#d95247",
+        "c4": "#42a278",
+        "c5": "#96a2b4",
+        "c6": "#f1b447"
+      },
+      "description": "复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。",
+      "useWhen": "适合解释 MoE 容量溢出策略；必须同时展示容量上限、token 身份和二次路由结果。",
+      "tags": [
+        "hunyuan",
+        "moe",
+        "routing",
+        "capacity",
+        "token-flow"
+      ],
+      "data": {
+        "methods": [
+          {
+            "label": "TRADITIONAL TOP-K",
+            "tokens": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ],
+            "experts": [
+              [
+                "A",
+                "C"
+              ],
+              [],
+              [],
+              [
+                "B"
+              ],
+              []
+            ],
+            "recycle": false
+          },
+          {
+            "label": "RECYCLE ROUTING",
+            "tokens": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ],
+            "experts": [
+              [
+                "A",
+                "C"
+              ],
+              [],
+              [],
+              [
+                "B",
+                "D"
+              ],
+              []
+            ],
+            "recycle": true
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 2",
+        "page": 6,
+        "verifiedAt": "2026-07-13",
+        "summary": "Expert 1 容量为 2；Token D 从丢弃状态变为重新分配到未满的 Expert 4。"
+      }
+    },
+    {
+      "source": "Seed1.5-VL Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2505.07062",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "seed-loss-metric-transfer",
+      "name": "Loss-to-Benchmark Transfer Calibration",
+      "chartLabel": "Training tokens → subcategory loss → downstream metrics",
+      "family": "亚洲模型实验室",
+      "sourceKey": "seed15vl",
+      "visualSystem": "VS-81 Seed linked loss-transfer facets",
+      "grammar": "能力子类分行 + token-loss 幂律首面板 + 同一 loss 映射多个下游指标的局部 log-linear 双面板 + 因果阅读箭头",
+      "renderer": "lossMetricTransferFacets",
+      "palette": {
+        "bg": "#fffefe",
+        "ink": "#19212c",
+        "muted": "#6c7480",
+        "grid": "#dfe3e8",
+        "c1": "#247bc1",
+        "c2": "#ef5546",
+        "c3": "#49a574",
+        "c4": "#8b63c6",
+        "c5": "#e39b2f",
+        "c6": "#7b8795"
+      },
+      "description": "复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。",
+      "useWhen": "适合用训练代理指标预测相关 benchmark；只应在论文支持的局部 loss 区间内解释，不外推到饱和区。",
+      "tags": [
+        "seed",
+        "vlm",
+        "scaling-law",
+        "calibration",
+        "transfer"
+      ],
+      "data": {
+        "rows": [
+          {
+            "label": "OCR",
+            "panels": [
+              {
+                "label": "loss vs training tokens",
+                "axis": "log tokens →",
+                "points": [
+                  [
+                    0.04,
+                    0.92
+                  ],
+                  [
+                    0.15,
+                    0.82
+                  ],
+                  [
+                    0.28,
+                    0.77
+                  ],
+                  [
+                    0.4,
+                    0.64
+                  ],
+                  [
+                    0.54,
+                    0.55
+                  ],
+                  [
+                    0.65,
+                    0.43
+                  ],
+                  [
+                    0.76,
+                    0.32
+                  ],
+                  [
+                    0.9,
+                    0.16
+                  ],
+                  [
+                    0.98,
+                    0.08
+                  ]
+                ]
+              },
+              {
+                "label": "ChartQA vs -log loss",
+                "axis": "-log OCR loss →",
+                "points": [
+                  [
+                    0.08,
+                    0.12
+                  ],
+                  [
+                    0.2,
+                    0.24
+                  ],
+                  [
+                    0.32,
+                    0.3
+                  ],
+                  [
+                    0.46,
+                    0.48
+                  ],
+                  [
+                    0.62,
+                    0.55
+                  ],
+                  [
+                    0.76,
+                    0.71
+                  ],
+                  [
+                    0.91,
+                    0.84
+                  ]
+                ]
+              },
+              {
+                "label": "InfoVQA vs -log loss",
+                "axis": "-log OCR loss →",
+                "points": [
+                  [
+                    0.06,
+                    0.1
+                  ],
+                  [
+                    0.22,
+                    0.2
+                  ],
+                  [
+                    0.38,
+                    0.36
+                  ],
+                  [
+                    0.54,
+                    0.47
+                  ],
+                  [
+                    0.68,
+                    0.64
+                  ],
+                  [
+                    0.82,
+                    0.78
+                  ],
+                  [
+                    0.95,
+                    0.86
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "label": "GROUNDING",
+            "panels": [
+              {
+                "label": "loss vs training tokens",
+                "axis": "log tokens →",
+                "points": [
+                  [
+                    0.02,
+                    0.94
+                  ],
+                  [
+                    0.17,
+                    0.85
+                  ],
+                  [
+                    0.31,
+                    0.71
+                  ],
+                  [
+                    0.46,
+                    0.62
+                  ],
+                  [
+                    0.6,
+                    0.48
+                  ],
+                  [
+                    0.73,
+                    0.37
+                  ],
+                  [
+                    0.86,
+                    0.23
+                  ],
+                  [
+                    0.98,
+                    0.1
+                  ]
+                ]
+              },
+              {
+                "label": "RefCOCO vs -log loss",
+                "axis": "-log grounding loss →",
+                "points": [
+                  [
+                    0.08,
+                    0.16
+                  ],
+                  [
+                    0.22,
+                    0.28
+                  ],
+                  [
+                    0.36,
+                    0.25
+                  ],
+                  [
+                    0.49,
+                    0.52
+                  ],
+                  [
+                    0.63,
+                    0.58
+                  ],
+                  [
+                    0.77,
+                    0.73
+                  ],
+                  [
+                    0.93,
+                    0.9
+                  ]
+                ]
+              },
+              {
+                "label": "RefCOCO+ vs -log loss",
+                "axis": "-log grounding loss →",
+                "points": [
+                  [
+                    0.07,
+                    0.12
+                  ],
+                  [
+                    0.22,
+                    0.3
+                  ],
+                  [
+                    0.37,
+                    0.36
+                  ],
+                  [
+                    0.51,
+                    0.49
+                  ],
+                  [
+                    0.66,
+                    0.64
+                  ],
+                  [
+                    0.8,
+                    0.76
+                  ],
+                  [
+                    0.95,
+                    0.92
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 3",
+        "page": 14,
+        "verifiedAt": "2026-07-13",
+        "summary": "六分面分别连接 OCR/grounding loss 的 token 幂律与 ChartQA、InfoVQA、RefCOCO、RefCOCO+ 指标。"
+      }
+    },
+    {
+      "source": "DeepSeek-V3 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2412.19437",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "deepseek-fp8-precision-lifecycle",
+      "name": "Mixed-precision Training Lifecycle",
+      "chartLabel": "FP8 GEMMs with BF16 boundaries and FP32 state",
+      "family": "亚洲模型实验室",
+      "sourceKey": "deepseekV3",
+      "visualSystem": "VS-82 DeepSeek precision-domain lifecycle",
+      "grammar": "Fprop/Dgrad/Wgrad 三 GEMM 闭环 + 每条转换边的精度协议 + BF16 激活边界 + FP32 master/optimizer 状态域",
+      "renderer": "mixedPrecisionLifecycle",
+      "palette": {
+        "bg": "#fbfeff",
+        "ink": "#17232b",
+        "muted": "#667780",
+        "grid": "#d9e5e9",
+        "c1": "#21a6b4",
+        "c2": "#67b85b",
+        "c3": "#eeae42",
+        "c4": "#cf6ca4",
+        "c5": "#687f90",
+        "c6": "#d96556"
+      },
+      "description": "复现 DeepSeek-V3 Figure 6：把线性层前向、激活反传、权重反传和优化器更新放进一个显式精度转换闭环。",
+      "useWhen": "适合审计混合精度训练的数据类型边界；节点和转换边都必须标明精度，不能仅靠颜色暗示。",
+      "tags": [
+        "deepseek",
+        "fp8",
+        "mixed-precision",
+        "training-system",
+        "dataflow"
+      ],
+      "data": {
+        "domains": [
+          "FP8 GEMM",
+          "BF16 activation",
+          "FP32 accumulation",
+          "FP32 optimizer state"
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 6",
+        "page": 15,
+        "verifiedAt": "2026-07-13",
+        "summary": "Fprop、Dgrad、Wgrad 使用 FP8 GEMM；激活边界保留 BF16，累加、master weight、gradient 与 optimizer state 保留 FP32。"
+      }
+    },
+    {
+      "source": "DeepSeek-V3 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2412.19437",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "deepseek-fine-grained-quantization",
+      "name": "Fine-grained Quantization Accumulator",
+      "chartLabel": "Local scaling blocks with periodic FP32 promotion",
+      "family": "亚洲模型实验室",
+      "sourceKey": "deepseekV3",
+      "visualSystem": "VS-83 DeepSeek local-scale accumulation instrument",
+      "grammar": "activation 1×128 tile scales + weight 128×128 block scales + low-precision MMA 批次 + 固定间隔 FP32 promotion 时间轴",
+      "renderer": "quantizationAccumulator",
+      "palette": {
+        "bg": "#fffefd",
+        "ink": "#17232b",
+        "muted": "#667780",
+        "grid": "#d9e5e9",
+        "c1": "#21a6b4",
+        "c2": "#67b85b",
+        "c3": "#eeae42",
+        "c4": "#cf6ca4",
+        "c5": "#687f90",
+        "c6": "#d96556"
+      },
+      "description": "复现 DeepSeek-V3 Figure 7：并排展示局部 scale 如何隔离 outlier，以及低精度 MMA 如何按固定间隔提升到 CUDA Core 做 FP32 累加。",
+      "useWhen": "适合说明量化误差控制由空间分组和时间累加两部分共同完成；必须保留两种分组形状与 promotion 间隔。",
+      "tags": [
+        "deepseek",
+        "fp8",
+        "quantization",
+        "outlier",
+        "accumulation"
+      ],
+      "data": {
+        "groups": [
+          [
+            "M1",
+            "M2",
+            "M3",
+            "M4"
+          ],
+          [
+            "M5",
+            "M6",
+            "M7",
+            "M8"
+          ],
+          [
+            "M9",
+            "M10",
+            "M11",
+            "M12"
+          ]
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 7",
+        "page": 16,
+        "verifiedAt": "2026-07-13",
+        "summary": "Activation 按 1×128 tile、weight 按 128×128 block 独立缩放，并每 128 个 MMA 元素提升到 FP32 累加。"
       }
     }
   ]
