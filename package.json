@@ -7,6 +7,7 @@
   "types": "types/index.d.ts",
   "scripts": {
     "catalog": "node scripts/export-catalog.mjs",
+    "build:site": "node scripts/build-site.mjs",
     "validate": "node scripts/validate-library.mjs",
     "serve": "python3 -m http.server 4173 --bind 127.0.0.1",
     "qa": "python3 scripts/qa_library.py http://127.0.0.1:4173/library/"

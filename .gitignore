@@ -8,6 +8,7 @@ __pycache__/
 node_modules/
 screenshots/
 tmp/
+_site/
 
 # Local research archive and earlier private experiments are intentionally not
 # part of the public product repository.
