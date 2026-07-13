@@ -18,6 +18,9 @@ All notable changes to this project will be documented here.
 - Search and social infrastructure: canonical URLs, robots and sitemap files,
   Open Graph and X cards, JSON-LD, Web App Manifest, a 1200×630 share image,
   and public author identity linked to `@logiclogic1223`.
+- Eighty-three pre-rendered, indexable component detail pages with unique titles,
+  descriptions, SVGs, evidence, structured data, internal links, and automatic
+  sitemap generation for long-tail search discovery.
 
 ### Research decisions
 

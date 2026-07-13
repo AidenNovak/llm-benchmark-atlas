@@ -12,7 +12,8 @@
     "validate": "node scripts/validate-library.mjs",
     "serve": "python3 -m http.server 4173 --bind 127.0.0.1",
     "qa": "python3 scripts/qa_library.py",
-    "qa:about": "python3 scripts/qa_about.py"
+    "qa:about": "python3 scripts/qa_about.py",
+    "qa:seo": "python3 scripts/qa_seo.py"
   },
   "engines": {
     "node": ">=20"

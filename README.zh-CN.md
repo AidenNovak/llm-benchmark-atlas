@@ -5,6 +5,7 @@
 
 [在线组件库](https://aidennovak.github.io/llm-benchmark-atlas/) ·
 [产品详解](https://aidennovak.github.io/llm-benchmark-atlas/about.html) ·
+[静态组件索引](https://aidennovak.github.io/llm-benchmark-atlas/components/) ·
 [X / @logiclogic1223](https://x.com/logiclogic1223) ·
 [组件契约](docs/COMPONENT_CONTRACT.md) ·
 [来源清单](research/SOURCES.md)

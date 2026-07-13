@@ -67,6 +67,7 @@
           <div class='card-foot'>
             <span class='chip'>${esc(entry.sourceType)}</span>
             <span class='chip'>${esc(entry.grammar.split(' + ')[0])}</span>
+            <a class='component-page-link' href='components/${esc(entry.id)}.html' aria-label='查看 ${esc(entry.name)} 的独立组件页面'>独立页面</a>
             <span class='source-name'>${esc(entry.source)}</span>
           </div>
         </div>

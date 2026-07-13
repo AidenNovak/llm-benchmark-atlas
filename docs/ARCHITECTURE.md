@@ -51,6 +51,15 @@ material and are never shipped with the public package.
 Owns presentation-only state: query, filters, density, selected component,
 dialog rendering, JSON copy, and SVG download. It does not own chart data.
 
+### Static discovery build
+
+`scripts/build-site.mjs` evaluates the same runtime registry and renders one
+indexable HTML page per component under `components/`. These pages carry the
+live SVG, canonical metadata, evidence, data schema, related-component links,
+and structured data without requiring client-side JavaScript. The same build
+also generates the static component index, `llms.txt`, and the complete XML
+sitemap so their URL inventory cannot drift from the catalog.
+
 ### `api.js`
 
 Exposes a stable browser surface for querying, rendering, and registering
