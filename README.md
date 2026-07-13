@@ -8,6 +8,7 @@ figures.
 
 [Live catalog](https://aidennovak.github.io/llm-benchmark-atlas/) ·
 [Product story](https://aidennovak.github.io/llm-benchmark-atlas/about.html) ·
+[X / @logiclogic1223](https://x.com/logiclogic1223) ·
 [Chinese README](README.zh-CN.md) ·
 [Component contract](docs/COMPONENT_CONTRACT.md) ·
 [Browser API](docs/API.md) ·

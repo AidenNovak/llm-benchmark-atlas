@@ -88,6 +88,31 @@ for (const asset of ['favicon.svg', 'favicon-32.png', 'favicon.ico', 'apple-touc
   if (!about.includes(asset)) errors.push(`about.html does not load ${asset}`);
 }
 
+for (const [file, html, canonical] of [
+  ['index.html', index, 'https://aidennovak.github.io/llm-benchmark-atlas/'],
+  ['about.html', about, 'https://aidennovak.github.io/llm-benchmark-atlas/about.html']
+]) {
+  for (const marker of ['rel="canonical"', canonical, 'property="og:title"', 'property="og:image"', 'name="twitter:card"', 'twitter:creator', '@logiclogic1223', 'type="application/ld+json"', 'site.webmanifest']) {
+    if (!html.includes(marker)) errors.push(`${file}: missing SEO marker ${marker}`);
+  }
+}
+
+for (const asset of ['library/robots.txt', 'library/sitemap.xml', 'library/site.webmanifest', 'library/social-card.png']) {
+  if (!fs.existsSync(new URL(asset, root))) errors.push(`${asset}: missing SEO infrastructure asset`);
+}
+
+try {
+  const manifest = parse('library/site.webmanifest');
+  if (manifest.name !== 'Benchmark Atlas' || !Array.isArray(manifest.icons) || manifest.icons.length < 2) {
+    errors.push('site.webmanifest: incomplete app identity');
+  }
+} catch (error) {
+  errors.push(`site.webmanifest: invalid JSON: ${error.message}`);
+}
+
+if (!read('library/robots.txt').includes('sitemap.xml')) errors.push('robots.txt: sitemap declaration missing');
+if (!read('library/sitemap.xml').includes('<urlset')) errors.push('sitemap.xml: invalid sitemap root');
+
 const generated = JSON.parse(read('library/catalog.generated.json'));
 if (generated.components.length !== components.length) errors.push('generated catalog component count is stale');
 if (generated.sources.length !== Object.keys(sources).length) errors.push('generated catalog source count is stale');

@@ -15,6 +15,9 @@ All notable changes to this project will be documented here.
   walkthroughs, responsive layout, and a dedicated browser QA suite.
 - A custom three-bar Benchmark Atlas favicon, PNG fallback, Apple Touch Icon,
   and matching browser theme metadata across the catalog and product story.
+- Search and social infrastructure: canonical URLs, robots and sitemap files,
+  Open Graph and X cards, JSON-LD, Web App Manifest, a 1200×630 share image,
+  and public author identity linked to `@logiclogic1223`.
 
 ### Research decisions
 
