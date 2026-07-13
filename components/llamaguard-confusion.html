@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。 适合 guardrail 和拒答分类；必须明确哪个错误更昂贵。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 诊断与矩阵, Meta / Llama, confusion-matrix, safety, guardrail">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Safety Confusion Matrix · Benchmark Atlas">
+  <meta property="og:description" content="把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/llamaguard-confusion.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Safety Confusion Matrix · Benchmark Atlas">
+  <meta name="twitter:description" content="把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Safety Confusion Matrix · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/llamaguard-confusion.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Safety Confusion Matrix · Benchmark Atlas","description":"把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/llamaguard-confusion.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 诊断与矩阵, Meta / Llama, confusion-matrix, safety, guardrail"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>诊断与矩阵</span><span>/</span><span aria-current="page">Safety Confusion Matrix</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">诊断与矩阵 · arXiv 论文</p>
+        <h1>Safety Confusion Matrix</h1>
+        <p class="component-lede">把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。</p>
+        <div class="component-tags"><span>confusion-matrix</span><span>safety</span><span>guardrail</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbf5eb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='llamaguardconfusion-title llamaguardconfusion-desc' style='background:#fbf5eb;color:#201c18'>
+        <title id='llamaguardconfusion-title'>Llama Guard decision audit</title>
+        <desc id='llamaguardconfusion-desc'>把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='llamaguardconfusion-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#d64d3a' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#3559c7' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#201c18}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#736b62}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#736b62}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#201c18}
+            .g{stroke:#dfd5c8;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#201c18;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Llama Guard decision audit</text>
+        <text class='s' x='28' y='48'>Meta / Llama</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <text class='s' x='332' y='75' text-anchor='middle'>PREDICTED</text><text class='s' x='72' y='221' text-anchor='middle' transform='rotate(-90 72 221)'>ACTUAL</text><text class='v' x='273' y='90' text-anchor='middle'>Unsafe</text><text class='v' x='198' y='159' text-anchor='end'>Unsafe</text><text class='v' x='391' y='90' text-anchor='middle'>Safe</text><text class='v' x='198' y='277' text-anchor='end'>Safe</text><rect x='214' y='96' width='113' height='113' fill='#3f8b72' fill-opacity='0.3213842173350582'/><text x='270.5' y='152' text-anchor='middle' style='font:700 25px ui-sans-serif;fill:#201c18'>184</text><text class='s' x='270.5' y='172' text-anchor='middle'>correct</text><rect x='332' y='96' width='113' height='113' fill='#d64d3a' fill-opacity='0.16490297542043983'/><text x='388.5' y='152' text-anchor='middle' style='font:700 25px ui-sans-serif;fill:#201c18'>16</text><text class='s' x='388.5' y='172' text-anchor='middle'>over-refusal</text><rect x='214' y='214' width='113' height='113' fill='#d64d3a' fill-opacity='0.17514877102199222'/><text x='270.5' y='270' text-anchor='middle' style='font:700 25px ui-sans-serif;fill:#201c18'>27</text><text class='s' x='270.5' y='290' text-anchor='middle'>miss</text><rect x='332' y='214' width='113' height='113' fill='#3f8b72' fill-opacity='0.87'/><text x='388.5' y='270' text-anchor='middle' style='font:700 25px ui-sans-serif;fill:#201c18'>773</text><text class='s' x='388.5' y='290' text-anchor='middle'>correct</text><text class='s' x='332' y='362' text-anchor='middle'>n=1000 · false negative cost weighted ×3</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>confusion</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>2×2 混淆矩阵 + 边际总量 + 错误成本标注</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-26 Safety field matrix</dd></div><div><dt>Component ID</dt><dd><code>llamaguard-confusion</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 guardrail 和拒答分类；必须明确哪个错误更昂贵。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Meta / Llama</h2><p>缩放曲线、模型族比较与安全诊断</p><a class="text-link" href="https://arxiv.org/abs/2407.21783" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;labels&quot;: [
+    &quot;Unsafe&quot;,
+    &quot;Safe&quot;
+  ],
+  &quot;values&quot;: [
+    [
+      184,
+      16
+    ],
+    [
+      27,
+      773
+    ]
+  ],
+  &quot;costs&quot;: [
+    &quot;miss&quot;,
+    &quot;over-refusal&quot;
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="helm-capability-heatmap.html"><strong>Scenario Heatmap</strong><span>连续热力矩阵 + 行列聚类顺序 + 最差格标记</span></a><a href="gemini-context-decay.html"><strong>Long-context Decay Strips</strong><span>多模型水平色带 + 上下文断点 + 退化阈值</span></a><a href="qwen-ablation-waterfall.html"><strong>Ablation Waterfall</strong><span>正负增量瀑布 + 累计基线 + 最终值</span></a><a href="arena-winrate-matrix.html"><strong>Pairwise Win-rate Matrix</strong><span>反对称胜率矩阵 + 50% 中性线 + 对角禁用</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

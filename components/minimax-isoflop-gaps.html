@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。 适合回答“达到同一质量要多少 compute”；不同训练 token 或激活参数设置不可混在同一桥线。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-01 Technical Report, minimax, moe, isoflop, compute-gap">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Isoflop Equal-Quality Gaps · Benchmark Atlas">
+  <meta property="og:description" content="复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-isoflop-gaps.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Isoflop Equal-Quality Gaps · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Isoflop Equal-Quality Gaps · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-isoflop-gaps.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Isoflop Equal-Quality Gaps · Benchmark Atlas","description":"复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-isoflop-gaps.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-01 Technical Report, minimax, moe, isoflop, compute-gap"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Isoflop Equal-Quality Gaps</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Isoflop Equal-Quality Gaps</h1>
+        <p class="component-lede">复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。</p>
+        <div class="component-tags"><span>minimax</span><span>moe</span><span>isoflop</span><span>compute-gap</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffafb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='minimaxisoflopgaps-title minimaxisoflopgaps-desc' style='background:#fffafb;color:#171518'>
+      <title id='minimaxisoflopgaps-title'>MoE vs dense · equal-quality compute gaps</title>
+      <desc id='minimaxisoflopgaps-desc'>复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6f6870}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6f6870}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .g{stroke:#e5dde2;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>MoE vs dense · equal-quality compute gaps</text>
+      <text class='s' x='28' y='48'>MiniMax-01 Technical Report · Figure 4 / PDF p.5</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <rect x='34' y='72' width='270' height='126' fill='#5b63ce' fill-opacity='.025' stroke='#e5dde2'/><text class='v' x='44' y='89'>HellaSwag</text><path d='M 73.04 172.05 L 97.14 152.30 L 145.36 128.60 L 209.64 116.75 L 273.93 104.90' fill='none' stroke='#5b63ce' stroke-width='2.5'/><path d='M 73.04 160.20 L 84.29 140.45 L 98.75 124.65 L 119.64 112.80 L 132.50 104.90' fill='none' stroke='#ed4966' stroke-width='2.5'/><circle cx='73.03571428571428' cy='172.05' r='3.2' fill='#5b63ce'/><circle cx='97.14285714285714' cy='152.3' r='3.2' fill='#5b63ce'/><circle cx='145.35714285714286' cy='128.6' r='3.2' fill='#5b63ce'/><circle cx='209.64285714285717' cy='116.75' r='3.2' fill='#5b63ce'/><circle cx='273.92857142857144' cy='104.89999999999999' r='3.2' fill='#5b63ce'/><circle cx='73.03571428571428' cy='160.2' r='3.2' fill='#ed4966'/><circle cx='84.28571428571428' cy='140.45' r='3.2' fill='#ed4966'/><circle cx='98.75' cy='124.65' r='3.2' fill='#ed4966'/><circle cx='119.64285714285714' cy='112.8' r='3.2' fill='#ed4966'/><circle cx='132.5' cy='104.89999999999999' r='3.2' fill='#ed4966'/><line x1='119.64285714285714' y1='112.8' x2='228.92857142857142' y2='112.8' stroke='#6f6870' stroke-width='1.2' stroke-dasharray='4 3'/><line x1='119.64285714285714' y1='112.8' x2='119.64285714285714' y2='183' stroke='#6f6870' stroke-dasharray='4 3'/><line x1='228.92857142857142' y1='112.8' x2='228.92857142857142' y2='183' stroke='#6f6870' stroke-dasharray='4 3'/><text class='s' x='174.28571428571428' y='106.8' text-anchor='middle'>3.0× compute gap</text><text class='s' x='295' y='192' text-anchor='end'>ZFLOPs →</text><rect x='337' y='72' width='270' height='126' fill='#5b63ce' fill-opacity='.025' stroke='#e5dde2'/><text class='v' x='347' y='89'>WinoGrande</text><path d='M 376.04 169.92 L 408.18 151.69 L 456.39 133.46 L 522.29 121.31 L 576.93 109.15' fill='none' stroke='#5b63ce' stroke-width='2.5'/><path d='M 376.04 163.85 L 388.89 145.62 L 403.36 133.46 L 417.82 121.31 L 433.89 115.23' fill='none' stroke='#ed4966' stroke-width='2.5'/><circle cx='376.0357142857143' cy='169.92307692307693' r='3.2' fill='#5b63ce'/><circle cx='408.17857142857144' cy='151.69230769230768' r='3.2' fill='#5b63ce'/><circle cx='456.3928571428571' cy='133.46153846153845' r='3.2' fill='#5b63ce'/><circle cx='522.2857142857142' cy='121.3076923076923' r='3.2' fill='#5b63ce'/><circle cx='576.9285714285714' cy='109.15384615384616' r='3.2' fill='#5b63ce'/><circle cx='376.0357142857143' cy='163.84615384615384' r='3.2' fill='#ed4966'/><circle cx='388.89285714285717' cy='145.6153846153846' r='3.2' fill='#ed4966'/><circle cx='403.3571428571429' cy='133.46153846153845' r='3.2' fill='#ed4966'/><circle cx='417.82142857142856' cy='121.3076923076923' r='3.2' fill='#ed4966'/><circle cx='433.8928571428571' cy='115.23076923076923' r='3.2' fill='#ed4966'/><line x1='417.82142857142856' y1='121.3076923076923' x2='522.2857142857142' y2='121.3076923076923' stroke='#6f6870' stroke-width='1.2' stroke-dasharray='4 3'/><line x1='417.82142857142856' y1='121.3076923076923' x2='417.82142857142856' y2='183' stroke='#6f6870' stroke-dasharray='4 3'/><line x1='522.2857142857142' y1='121.3076923076923' x2='522.2857142857142' y2='183' stroke='#6f6870' stroke-dasharray='4 3'/><text class='s' x='470.0535714285714' y='115.3076923076923' text-anchor='middle'>3.1× compute gap</text><text class='s' x='598' y='192' text-anchor='end'>ZFLOPs →</text><rect x='34' y='220' width='270' height='126' fill='#5b63ce' fill-opacity='.025' stroke='#e5dde2'/><text class='v' x='44' y='237'>Natural Questions</text><path d='M 73.04 316.82 L 110.00 298.86 L 161.43 288.09 L 209.64 280.91 L 251.43 266.55 L 281.96 255.77' fill='none' stroke='#5b63ce' stroke-width='2.5'/><path d='M 73.04 309.64 L 85.89 295.27 L 101.96 280.91 L 124.46 266.55 L 135.71 252.18' fill='none' stroke='#ed4966' stroke-width='2.5'/><circle cx='73.03571428571428' cy='316.8181818181818' r='3.2' fill='#5b63ce'/><circle cx='110' cy='298.8636363636364' r='3.2' fill='#5b63ce'/><circle cx='161.42857142857142' cy='288.0909090909091' r='3.2' fill='#5b63ce'/><circle cx='209.64285714285717' cy='280.90909090909093' r='3.2' fill='#5b63ce'/><circle cx='251.42857142857142' cy='266.54545454545456' r='3.2' fill='#5b63ce'/><circle cx='281.9642857142857' cy='255.77272727272725' r='3.2' fill='#5b63ce'/><circle cx='73.03571428571428' cy='309.6363636363636' r='3.2' fill='#ed4966'/><circle cx='85.89285714285714' cy='295.27272727272725' r='3.2' fill='#ed4966'/><circle cx='101.96428571428572' cy='280.90909090909093' r='3.2' fill='#ed4966'/><circle cx='124.46428571428572' cy='266.54545454545456' r='3.2' fill='#ed4966'/><circle cx='135.71428571428572' cy='252.1818181818182' r='3.2' fill='#ed4966'/><line x1='124.46428571428572' y1='266.54545454545456' x2='251.42857142857142' y2='266.54545454545456' stroke='#6f6870' stroke-width='1.2' stroke-dasharray='4 3'/><line x1='124.46428571428572' y1='266.54545454545456' x2='124.46428571428572' y2='331' stroke='#6f6870' stroke-dasharray='4 3'/><line x1='251.42857142857142' y1='266.54545454545456' x2='251.42857142857142' y2='331' stroke='#6f6870' stroke-dasharray='4 3'/><text class='s' x='187.94642857142856' y='260.54545454545456' text-anchor='middle'>3.1× compute gap</text><text class='s' x='295' y='340' text-anchor='end'>ZFLOPs →</text><rect x='337' y='220' width='270' height='126' fill='#5b63ce' fill-opacity='.025' stroke='#e5dde2'/><text class='v' x='347' y='237'>PIQA</text><path d='M 376.04 312.15 L 416.21 292.40 L 464.43 284.50 L 512.64 276.60 L 557.64 268.70 L 584.96 265.54' fill='none' stroke='#5b63ce' stroke-width='2.5'/><path d='M 376.04 300.30 L 387.29 284.50 L 400.14 276.60 L 413.00 268.70 L 429.07 252.90' fill='none' stroke='#ed4966' stroke-width='2.5'/><circle cx='376.0357142857143' cy='312.15' r='3.2' fill='#5b63ce'/><circle cx='416.2142857142857' cy='292.4' r='3.2' fill='#5b63ce'/><circle cx='464.42857142857144' cy='284.5' r='3.2' fill='#5b63ce'/><circle cx='512.6428571428571' cy='276.6' r='3.2' fill='#5b63ce'/><circle cx='557.6428571428571' cy='268.7' r='3.2' fill='#5b63ce'/><circle cx='584.9642857142858' cy='265.53999999999996' r='3.2' fill='#5b63ce'/><circle cx='376.0357142857143' cy='300.3' r='3.2' fill='#ed4966'/><circle cx='387.2857142857143' cy='284.5' r='3.2' fill='#ed4966'/><circle cx='400.1428571428571' cy='276.6' r='3.2' fill='#ed4966'/><circle cx='413' cy='268.7' r='3.2' fill='#ed4966'/><circle cx='429.07142857142856' cy='252.89999999999998' r='3.2' fill='#ed4966'/><line x1='413' y1='268.7' x2='557.6428571428571' y2='268.7' stroke='#6f6870' stroke-width='1.2' stroke-dasharray='4 3'/><line x1='413' y1='268.7' x2='413' y2='331' stroke='#6f6870' stroke-dasharray='4 3'/><line x1='557.6428571428571' y1='268.7' x2='557.6428571428571' y2='331' stroke='#6f6870' stroke-dasharray='4 3'/><text class='s' x='485.32142857142856' y='262.7' text-anchor='middle'>4.2× compute gap</text><text class='s' x='598' y='340' text-anchor='end'>ZFLOPs →</text><circle cx='220' cy='378' r='4' fill='#ed4966'/><text class='l' x='230' y='382'>2B active MoE</text><circle cx='354' cy='378' r='4' fill='#5b63ce'/><text class='l' x='364' y='382'>7B dense</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>isoflopGapFacets</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>benchmark 小多图双拟合曲线 + 等性能水平桥 + 两端算力垂线与倍率</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-65 MiniMax isoflop gap facets</dd></div><div><dt>Component ID</dt><dd><code>minimax-isoflop-gaps</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合回答“达到同一质量要多少 compute”；不同训练 token 或激活参数设置不可混在同一桥线。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 4 · PDF p.5</h2><p>五个 benchmark facet 比较 2B-active MoE 与 7B dense 的等性能算力差。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2501.08313" rel="noreferrer">MiniMax-01 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;facets&quot;: [
+    {
+      &quot;label&quot;: &quot;HellaSwag&quot;,
+      &quot;min&quot;: 54,
+      &quot;max&quot;: 74,
+      &quot;target&quot;: 70,
+      &quot;moeMatch&quot;: 3.4,
+      &quot;denseMatch&quot;: 10.2,
+      &quot;moe&quot;: [
+        [
+          0.5,
+          58
+        ],
+        [
+          1.2,
+          63
+        ],
+        [
+          2.1,
+          67
+        ],
+        [
+          3.4,
+          70
+        ],
+        [
+          4.2,
+          72
+        ]
+      ],
+      &quot;dense&quot;: [
+        [
+          0.5,
+          55
+        ],
+        [
+          2,
+          60
+        ],
+        [
+          5,
+          66
+        ],
+        [
+          9,
+          69
+        ],
+        [
+          13,
+          72
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;WinoGrande&quot;,
+      &quot;min&quot;: 56,
+      &quot;max&quot;: 69,
+      &quot;target&quot;: 65,
+      &quot;moeMatch&quot;: 3.1,
+      &quot;denseMatch&quot;: 9.6,
+      &quot;moe&quot;: [
+        [
+          0.5,
+          58
+        ],
+        [
+          1.3,
+          61
+        ],
+        [
+          2.2,
+          63
+        ],
+        [
+          3.1,
+          65
+        ],
+        [
+          4.1,
+          66
+        ]
+      ],
+      &quot;dense&quot;: [
+        [
+          0.5,
+          57
+        ],
+        [
+          2.5,
+          60
+        ],
+        [
+          5.5,
+          63
+        ],
+        [
+          9.6,
+          65
+        ],
+        [
+          13,
+          67
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Natural Questions&quot;,
+      &quot;min&quot;: 5,
+      &quot;max&quot;: 16,
+      &quot;target&quot;: 13,
+      &quot;moeMatch&quot;: 3.7,
+      &quot;denseMatch&quot;: 11.6,
+      &quot;moe&quot;: [
+        [
+          0.5,
+          7
+        ],
+        [
+          1.3,
+          9
+        ],
+        [
+          2.3,
+          11
+        ],
+        [
+          3.7,
+          13
+        ],
+        [
+          4.4,
+          15
+        ]
+      ],
+      &quot;dense&quot;: [
+        [
+          0.5,
+          6
+        ],
+        [
+          2.8,
+          8.5
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          11.6,
+          13
+        ],
+        [
+          13.5,
+          14.5
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;PIQA&quot;,
+      &quot;min&quot;: 70,
+      &quot;max&quot;: 80,
+      &quot;target&quot;: 77,
+      &quot;moeMatch&quot;: 2.8,
+      &quot;denseMatch&quot;: 11.8,
+      &quot;moe&quot;: [
+        [
+          0.5,
+          73
+        ],
+        [
+          1.2,
+          75
+        ],
+        [
+          2,
+          76
+        ],
+        [
+          2.8,
+          77
+        ],
+        [
+          3.8,
+          79
+        ]
+      ],
+      &quot;dense&quot;: [
+        [
+          0.5,
+          71.5
+        ],
+        [
+          3,
+          74
+        ],
+        [
+          6,
+          75
+        ],
+        [
+          9,
+          76
+        ],
+        [
+          11.8,
+          77
+        ],
+        [
+          13.5,
+          77.4
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。 适合 MoE 稀疏度实验；横轴 compute 和激活专家配置必须一致。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Kimi K2 Technical Report, kimi, sparsity, scaling-law">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Kimi Sparsity Scaling Law · Benchmark Atlas">
+  <meta property="og:description" content="复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-sparsity-scaling.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Kimi Sparsity Scaling Law · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Kimi Sparsity Scaling Law · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-sparsity-scaling.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Kimi Sparsity Scaling Law · Benchmark Atlas","description":"复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-sparsity-scaling.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Kimi K2 Technical Report, kimi, sparsity, scaling-law"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Kimi Sparsity Scaling Law</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Kimi Sparsity Scaling Law</h1>
+        <p class="component-lede">复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。</p>
+        <div class="component-tags"><span>kimi</span><span>sparsity</span><span>scaling-law</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffefd"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='kimisparsityscaling-title kimisparsityscaling-desc' style='background:#fffefd;color:#19212b'>
+      <title id='kimisparsityscaling-title'>Sparsity scaling · validation loss vs training FLOPs</title>
+      <desc id='kimisparsityscaling-desc'>复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212b}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6e7682}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6e7682}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212b}
+        .g{stroke:#dce1e7;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Sparsity scaling · validation loss vs training FLOPs</text>
+      <text class='s' x='28' y='48'>Kimi K2 Technical Report · Figure 5 / PDF p.7</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <line class='g' x1='76' y1='86' x2='76' y2='336'/><text class='s' x='76' y='359' text-anchor='middle'>10²⁰</text><line class='g' x1='298.94574993264206' y1='86' x2='298.94574993264206' y2='336'/><text class='s' x='298.94574993264206' y='359' text-anchor='middle'>3×10²⁰</text><line class='g' x1='543.2727272727267' y1='86' x2='543.2727272727267' y2='336'/><text class='s' x='543.2727272727267' y='359' text-anchor='middle'>10²¹</text><line class='g' x1='76' y1='315.16666666666663' x2='590' y2='315.16666666666663'/><text class='l' x='64' y='318.16666666666663' text-anchor='end'>1.3</text><line class='g' x1='76' y1='231.83333333333334' x2='590' y2='231.83333333333334'/><text class='l' x='64' y='234.83333333333334' text-anchor='end'>1.5</text><line class='g' x1='76' y1='148.50000000000006' x2='590' y2='148.50000000000006'/><text class='l' x='64' y='151.50000000000006' text-anchor='end'>1.7</text><line class='g' x1='76' y1='86' x2='590' y2='86'/><text class='l' x='64' y='89' text-anchor='end'>1.85</text><path d='M 95.34 115.17 L 236.00 165.17 L 372.00 211.00 L 510.29 261.00 L 562.61 277.67' fill='none' stroke='#f47a1f' stroke-width='2.5' stroke-opacity='.78'/><path d='M 95.34167288302528 124.16666666666671 L 562.6144001557519 269.66666666666674' fill='none' stroke='#f47a1f' stroke-width='2' stroke-dasharray='7 4'/><circle cx='95.34167288302528' cy='115.16666666666671' r='3.5' fill='#f47a1f'/><circle cx='236.00477994783088' cy='165.1666666666667' r='3.5' fill='#f47a1f'/><circle cx='372.00253287991495' cy='211' r='3.5' fill='#f47a1f'/><circle cx='510.29211619740454' cy='261' r='3.5' fill='#f47a1f'/><circle cx='562.6144001557519' cy='277.66666666666674' r='5' fill='#f47a1f'/><circle cx='438' cy='91' r='4' fill='#f47a1f'/><text class='s' x='448' y='95'>s=8</text><path d='M 76.00 136.00 L 216.66 181.83 L 357.33 227.67 L 497.99 273.50 L 553.17 294.33' fill='none' stroke='#2f9e54' stroke-width='2.5' stroke-opacity='.78'/><path d='M 76 145.00000000000006 L 553.1739088381341 286.3333333333333' fill='none' stroke='#2f9e54' stroke-width='2' stroke-dasharray='7 4'/><circle cx='76' cy='136.00000000000006' r='3.5' fill='#2f9e54'/><circle cx='216.66310706480562' cy='181.8333333333333' r='3.5' fill='#2f9e54'/><circle cx='357.32621412961123' cy='227.66666666666669' r='3.5' fill='#2f9e54'/><circle cx='497.9893211944168' cy='273.50000000000006' r='3.5' fill='#2f9e54'/><circle cx='553.1739088381341' cy='294.3333333333333' r='5' fill='#2f9e54'/><circle cx='533' cy='91' r='4' fill='#2f9e54'/><text class='s' x='543' y='95'>s=16</text><path d='M 76.00 152.67 L 206.25 198.50 L 346.92 240.17 L 484.89 286.00 L 543.27 311.00' fill='none' stroke='#8e58c7' stroke-width='2.5' stroke-opacity='.78'/><path d='M 76 161.6666666666667 L 543.2727272727267 303' fill='none' stroke='#8e58c7' stroke-width='2' stroke-dasharray='7 4'/><circle cx='76' cy='152.6666666666667' r='3.5' fill='#8e58c7'/><circle cx='206.25395535432168' cy='198.5' r='3.5' fill='#8e58c7'/><circle cx='346.91706241912726' cy='240.16666666666669' r='3.5' fill='#8e58c7'/><circle cx='484.8922630757575' cy='285.99999999999994' r='3.5' fill='#8e58c7'/><circle cx='543.2727272727267' cy='311' r='5' fill='#8e58c7'/><circle cx='438' cy='108' r='4' fill='#8e58c7'/><text class='s' x='448' y='112'>s=32</text><path d='M 113.00 148.50 L 245.03 194.33 L 385.69 236.00 L 515.01 281.83 L 558.89 306.83' fill='none' stroke='#3978c5' stroke-width='2.5' stroke-opacity='.78'/><path d='M 112.99923678952659 157.50000000000006 L 558.8907366548108 298.8333333333333' fill='none' stroke='#3978c5' stroke-width='2' stroke-dasharray='7 4'/><circle cx='112.99923678952659' cy='148.50000000000006' r='3.5' fill='#3978c5'/><circle cx='245.02555246640236' cy='194.33333333333331' r='3.5' fill='#3978c5'/><circle cx='385.6886595312079' cy='236.00000000000003' r='3.5' fill='#3978c5'/><circle cx='515.0117234963363' cy='281.83333333333337' r='3.5' fill='#3978c5'/><circle cx='558.8907366548108' cy='306.8333333333333' r='5' fill='#3978c5'/><circle cx='533' cy='108' r='4' fill='#3978c5'/><text class='s' x='543' y='112'>s=42</text><path d='M 95.34 156.83 L 226.56 202.67 L 367.23 248.50 L 503.00 290.17 L 547.29 315.17' fill='none' stroke='#e34f83' stroke-width='2.5' stroke-opacity='.78'/><path d='M 95.34167288302528 165.8333333333334 L 547.2913529869311 307.16666666666663' fill='none' stroke='#e34f83' stroke-width='2' stroke-dasharray='7 4'/><circle cx='95.34167288302528' cy='156.8333333333334' r='3.5' fill='#e34f83'/><circle cx='226.56428863021313' cy='202.66666666666666' r='3.5' fill='#e34f83'/><circle cx='367.2273956950187' cy='248.50000000000003' r='3.5' fill='#e34f83'/><circle cx='503.00029102293695' cy='290.16666666666663' r='3.5' fill='#e34f83'/><circle cx='547.2913529869311' cy='315.16666666666663' r='5' fill='#e34f83'/><circle cx='438' cy='125' r='4' fill='#e34f83'/><text class='s' x='448' y='129'>s=64</text><text class='s' x='333' y='385' text-anchor='middle'>training FLOPs (log scale) →</text><text class='s' x='18' y='220' text-anchor='middle' transform='rotate(-90 18 220)'>validation loss ↓</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>sparsityScalingCurves</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-61 Kimi sparsity trajectories</dd></div><div><dt>Component ID</dt><dd><code>kimi-sparsity-scaling</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 MoE 稀疏度实验；横轴 compute 和激活专家配置必须一致。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 5 · PDF p.7</h2><p>固定激活专家数，以总专家数变化比较 sparsity scaling law。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2507.20534" rel="noreferrer">Kimi K2 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;series&quot;: [
+    {
+      &quot;sparsity&quot;: 8,
+      &quot;points&quot;: [
+        [
+          110000000000000000000,
+          1.78
+        ],
+        [
+          220000000000000000000,
+          1.66
+        ],
+        [
+          430000000000000000000,
+          1.55
+        ],
+        [
+          850000000000000000000,
+          1.43
+        ],
+        [
+          1.1e+21,
+          1.39
+        ]
+      ]
+    },
+    {
+      &quot;sparsity&quot;: 16,
+      &quot;points&quot;: [
+        [
+          100000000000000000000,
+          1.73
+        ],
+        [
+          200000000000000000000,
+          1.62
+        ],
+        [
+          400000000000000000000,
+          1.51
+        ],
+        [
+          800000000000000000000,
+          1.4
+        ],
+        [
+          1.05e+21,
+          1.35
+        ]
+      ]
+    },
+    {
+      &quot;sparsity&quot;: 32,
+      &quot;points&quot;: [
+        [
+          100000000000000000000,
+          1.69
+        ],
+        [
+          190000000000000000000,
+          1.58
+        ],
+        [
+          380000000000000000000,
+          1.48
+        ],
+        [
+          750000000000000000000,
+          1.37
+        ],
+        [
+          1e+21,
+          1.31
+        ]
+      ]
+    },
+    {
+      &quot;sparsity&quot;: 42,
+      &quot;points&quot;: [
+        [
+          120000000000000000000,
+          1.7
+        ],
+        [
+          230000000000000000000,
+          1.59
+        ],
+        [
+          460000000000000000000,
+          1.49
+        ],
+        [
+          870000000000000000000,
+          1.38
+        ],
+        [
+          1.08e+21,
+          1.32
+        ]
+      ]
+    },
+    {
+      &quot;sparsity&quot;: 64,
+      &quot;points&quot;: [
+        [
+          110000000000000000000,
+          1.68
+        ],
+        [
+          210000000000000000000,
+          1.57
+        ],
+        [
+          420000000000000000000,
+          1.46
+        ],
+        [
+          820000000000000000000,
+          1.36
+        ],
+        [
+          1.02e+21,
+          1.3
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a><a href="minimax-isoflop-gaps.html"><strong>Isoflop Equal-Quality Gaps</strong><span>benchmark 小多图双拟合曲线 + 等性能水平桥 + 两端算力垂线与倍率</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

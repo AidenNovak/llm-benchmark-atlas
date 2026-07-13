@@ -1,0 +1,104 @@
+# Benchmark Atlas
+
+> A source-grounded, duplication-checked component atlas for LLM benchmark charts, model launches, independent leaderboards, and research-paper figures.
+
+## Primary pages
+
+- [Product story](https://aidennovak.github.io/llm-benchmark-atlas/about.html): Editorial explanation of the product principles, provenance workflow, and quality gates.
+- [Interactive catalog](https://aidennovak.github.io/llm-benchmark-atlas/): Search, filter, inspect, export SVG, and copy component JSON.
+- [Static component index](https://aidennovak.github.io/llm-benchmark-atlas/components/): Crawlable list of all 83 components.
+- [Machine-readable catalog](https://aidennovak.github.io/llm-benchmark-atlas/catalog.generated.json): Full source registry and component metadata.
+- [JSON Schema](https://aidennovak.github.io/llm-benchmark-atlas/schema/catalog.schema.json): Catalog data contract.
+- [GitHub repository](https://github.com/AidenNovak/llm-benchmark-atlas): MIT-licensed source code.
+
+## Identity
+
+- Author: Aiden Novak
+- X: https://x.com/logiclogic1223
+- GitHub: https://github.com/AidenNovak
+
+## Component pages
+
+- [Master Benchmark Table](https://aidennovak.github.io/llm-benchmark-atlas/components/claude-master-table.html): 将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。
+- [Direct-label Lollipop Rank](https://aidennovak.github.io/llm-benchmark-atlas/components/openai-lollipop-rank.html): 用细杆和端点替代面积更重的柱图，在紧凑空间里突出冠军和目标阈值。
+- [Hatched Multi-bench Bars](https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-hatched-groups.html): 用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。
+- [Release Delta Dumbbells](https://aidennovak.github.io/llm-benchmark-atlas/components/mistral-dumbbell-delta.html): 把新旧版本的绝对值和提升幅度同时呈现，避免只宣传相对百分比。
+- [Two-snapshot Rank Slope](https://aidennovak.github.io/llm-benchmark-atlas/components/arena-rank-slope.html): 直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。
+- [Frontier Rank Bump Chart](https://aidennovak.github.io/llm-benchmark-atlas/components/aa-rank-bump.html): 跟踪多家模型在连续发布周期中的排名换位，强调前沿竞争的动态性。
+- [Compute Frontier Curve](https://aidennovak.github.io/llm-benchmark-atlas/components/openai-compute-frontier.html): 展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。
+- [Thinking Budget Saturation](https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-thinking-budget.html): 将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。
+- [Training Dual-axis Trace](https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-dual-axis.html): 同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。
+- [Log-log Scaling Law](https://aidennovak.github.io/llm-benchmark-atlas/components/llama-scaling-law.html): 用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。
+- [Parameter Efficiency Bubbles](https://aidennovak.github.io/llm-benchmark-atlas/components/phi-efficiency-bubbles.html): 同时编码质量、推理成本和参数规模，突出小模型落在效率前沿的位置。
+- [Price–Quality Pareto](https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-price-pareto.html): 把“更强”和“更便宜”放在同一坐标系，用非支配前沿区分真正有竞争力的模型。
+- [Capability Radar](https://aidennovak.github.io/llm-benchmark-atlas/components/opencompass-radar.html): 用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。
+- [Benchmark Small Multiples](https://aidennovak.github.io/llm-benchmark-atlas/components/gemini-small-multiples.html): 把不同量纲或不同分数区间的 benchmark 分开成对齐面板，避免共用轴压扁差异。
+- [Transparent Trade-off Lines](https://aidennovak.github.io/llm-benchmark-atlas/components/helm-parallel-coordinates.html): 让质量、安全、公平和效率在同一图中显露折衷，不用一个综合分抹平差异。
+- [Multimodal Polar Rose](https://aidennovak.github.io/llm-benchmark-atlas/components/nova-polar-rose.html): 用极坐标柱表示文本、图像、视频、语音等模态的覆盖深度，形状一眼可辨。
+- [Capability Glyph Matrix](https://aidennovak.github.io/llm-benchmark-atlas/components/cohere-capability-glyphs.html): 每个单元格以四个扇区编码质量、延迟、工具使用与检索，形成紧凑能力指纹。
+- [Concentric Score Rings](https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-score-rings.html): 把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。
+- [Confidence Interval Forest](https://aidennovak.github.io/llm-benchmark-atlas/components/claude-error-forest.html): 显示均值和置信区间，避免把 0.3 分噪声包装成确定性领先。
+- [Seed Distribution Violins](https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-violin-distribution.html): 同时展示多次运行的密度形状、中位数和离群 seed，揭示平均值背后的稳定性。
+- [Repository Box Plots](https://aidennovak.github.io/llm-benchmark-atlas/components/cognition-boxplot.html): 比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。
+- [Latency Ridgeline](https://aidennovak.github.io/llm-benchmark-atlas/components/grok-latency-ridges.html): 用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。
+- [Pass@k ECDF](https://aidennovak.github.io/llm-benchmark-atlas/components/openai-passk-ecdf.html): 显示随着样本预算 k 增加，累计有多少任务至少被解出一次。
+- [Reliability Calibration](https://aidennovak.github.io/llm-benchmark-atlas/components/openai-reliability.html): 比较模型自信度与真实正确率，直接呈现过度自信或保守区间。
+- [Scenario Heatmap](https://aidennovak.github.io/llm-benchmark-atlas/components/helm-capability-heatmap.html): 在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。
+- [Safety Confusion Matrix](https://aidennovak.github.io/llm-benchmark-atlas/components/llamaguard-confusion.html): 把安全分类的 TP、TN、FP、FN 与业务成本放在同一矩阵，而不是只给 accuracy。
+- [Long-context Decay Strips](https://aidennovak.github.io/llm-benchmark-atlas/components/gemini-context-decay.html): 将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。
+- [Ablation Waterfall](https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-ablation-waterfall.html): 按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。
+- [Pairwise Win-rate Matrix](https://aidennovak.github.io/llm-benchmark-atlas/components/arena-winrate-matrix.html): 用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。
+- [Behavior Quadrant](https://aidennovak.github.io/llm-benchmark-atlas/components/swebench-behavior-quadrant.html): 将 patch precision 与 repository exploration 交叉，定位“乱改”“过早收敛”等 Agent 行为。
+- [Long-horizon Agent Ledger](https://aidennovak.github.io/llm-benchmark-atlas/components/vending-agent-timeseries.html): 跟踪长时程 Agent 的净值、波动和失败事件，区分最后结果与过程风险。
+- [Token Allocation Stack](https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-token-area.html): 展示规划、工具调用、验证和回答在多步推理中的 token 占比如何变化。
+- [Terminal Task Swimlane](https://aidennovak.github.io/llm-benchmark-atlas/components/terminal-bench-trajectory.html): 把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。
+- [Tool-call Outcome Flow](https://aidennovak.github.io/llm-benchmark-atlas/components/toolbench-outcome-sankey.html): 追踪 Agent 意图如何路由到工具以及最终成功、重试或失败，揭示损耗发生在哪一层。
+- [Task Survival Curve](https://aidennovak.github.io/llm-benchmark-atlas/components/agentbench-survival.html): 显示任务随时间被完成的比例，并保留超时 censor，而不是只统计最终完成率。
+- [Cumulative Solve Curve](https://aidennovak.github.io/llm-benchmark-atlas/components/livecode-solve-curve.html): 按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。
+- [Cylindrical Benchmark Columns](https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-cylinder-bars.html): 用圆柱体替代平面柱，保留统一基线和顶面读数，满足发布视觉中的立体表达。
+- [Failure-mode Waffle](https://aidennovak.github.io/llm-benchmark-atlas/components/halueval-waffle.html): 将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。
+- [Benchmark Domain Treemap](https://aidennovak.github.io/llm-benchmark-atlas/components/mmlu-domain-treemap.html): 用面积编码题目数量，用颜色区分 STEM、humanities、social science 等上层学科。
+- [Multimodal Task Beeswarm](https://aidennovak.github.io/llm-benchmark-atlas/components/mmmu-beeswarm.html): 展示不同多模态题型的逐题分数分布和中位数，保留离群难题。
+- [Gemini Deep Think Triptych](https://aidennovak.github.io/llm-benchmark-atlas/components/gemini-deepthink-triptych.html): 复现 Gemini 发布页常见的三联 benchmark 结构，用一致模型顺序并排呈现推理、科学与视觉任务。
+- [Thinking vs Direct Bars](https://aidennovak.github.io/llm-benchmark-atlas/components/openai-thinking-outline-bars.html): 复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。
+- [Multilingual Coding Error Bars](https://aidennovak.github.io/llm-benchmark-atlas/components/claude-multilingual-errorbars.html): 复现 Claude 发布图里按编程语言拆分的 grouped bars，并保留 seed 或 bootstrap 误差。
+- [High-score Broken Axis](https://aidennovak.github.io/llm-benchmark-atlas/components/claude-broken-axis-release.html): 复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。
+- [Agent Protocol Uplift](https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-protocol-uplift.html): 把模型本体分数和 agent protocol 后的分数配对，避免把系统增益误写成模型能力。
+- [Intelligence × Interactivity Frontier](https://aidennovak.github.io/llm-benchmark-atlas/components/tml-intelligence-interactivity.html): 复现 Thinking Machines Lab 用二维前沿表达模型智能与交互性的方式，强调产品形态不只是静态分数。
+- [Multilingual Capability Dot Plot](https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-multilingual-dotplot.html): 用点而非柱对比多语言结果，压缩空间同时保留每种语言的模型差距。
+- [Cost–Quality Quadrants](https://aidennovak.github.io/llm-benchmark-atlas/components/mistral-cost-quality-quadrants.html): 把企业模型选型拆成成本与质量四象限，复现 Mistral 常见的性价比叙事。
+- [MRCR Context Spark Rows](https://aidennovak.github.io/llm-benchmark-atlas/components/claude-mrcr-context-rows.html): 复现 Claude 长上下文发布图的 MRCR 叙事，把每个模型放在独立行中避免曲线交叉遮挡。
+- [Expert Preference Win-rate](https://aidennovak.github.io/llm-benchmark-atlas/components/openai-expert-winrate.html): 复现 OpenAI 面向专家评审的胜率图，以 50% 为中性中心并保留置信区间。
+- [Enterprise Win–Tie–Loss Strips](https://aidennovak.github.io/llm-benchmark-atlas/components/cohere-outcome-strips.html): 复现 Cohere 企业评测中的 win-rate 叙事，同时保留 tie 和 loss，而不是只报胜率。
+- [MoE Activation Rails](https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-moe-activation-rails.html): 把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。
+- [Context Length × Depth Surface](https://aidennovak.github.io/llm-benchmark-atlas/components/longbench-context-contour.html): 把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。
+- [Post-training Phase Ladder](https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-posttrain-ladder.html): 用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。
+- [Nova Latency Range Bands](https://aidennovak.github.io/llm-benchmark-atlas/components/nova-latency-range-bands.html): 在一张图里保留服务延迟中位数、长尾和质量，避免只比较单点 latency。
+- [Generation Leap Arrows](https://aidennovak.github.io/llm-benchmark-atlas/components/grok-generation-arrows.html): 用向量同时展示新一代模型的速度与质量变化，避免把两个改善拆成无关联图。
+- [Benchmark Set UpSet](https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-benchmark-upset.html): 用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。
+- [Rank Migration Alluvial](https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-rank-alluvial.html): 把模型在三次榜单快照中的排名迁移画成 alluvial ribbon，突出稳定和剧烈换位。
+- [Prompt Sensitivity Raincloud](https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-prompt-raincloud.html): 用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。
+- [Quality–Speed–Cost Ternary](https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-selection-ternary.html): 把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。
+- [Kimi Sparsity Scaling Law](https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-sparsity-scaling.html): 复现 Kimi K2 Figure 5：固定激活专家数、改变总专家数，比较不同 sparsity 下的训练缩放。
+- [Attention-head Scaling Facets](https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-attention-head-scaling.html): 复现 Kimi K2 Figure 6：在不同 compute 档位比较 heads=layers 与 doubled heads 的验证 loss。
+- [Pipeline Parallel Overlap Grid](https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-pipeline-overlap.html): 复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。
+- [Real vs Synthetic Tool Embeddings](https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-tool-embedding-pair.html): 复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。
+- [Isoflop Equal-Quality Gaps](https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-isoflop-gaps.html): 复现 MiniMax-01 Figure 4：在多个 benchmark 中，以同一性能水平反查 MoE 与 dense 所需算力差。
+- [Attention Throughput Cliff](https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-attention-throughput-cliff.html): 复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。
+- [Instruction Coverage Sunburst](https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-data-taxonomy-sunburst.html): 复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。
+- [Matched-quality RL Speedup](https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-m1-matched-quality-speedup.html): 复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。
+- [Training–Inference Agreement Audit](https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-m1-probability-agreement.html): 复现 MiniMax-M1 Figure 3：逐 token 检查 training-mode 与 inference-mode 概率在数值修复前后的对角一致性。
+- [RL Curriculum Counterfactuals](https://aidennovak.github.io/llm-benchmark-atlas/components/glm-curriculum-counterfactuals.html): 合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。
+- [Known vs Undisclosed Parameter Frontier](https://aidennovak.github.io/llm-benchmark-atlas/components/glm-parameter-frontier-unknown-lane.html): 复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。
+- [Orthogonal Training Efficiency](https://aidennovak.github.io/llm-benchmark-atlas/components/internlm-orthogonal-efficiency.html): 复现 InternLM2 Figure 1：把横向 GPU 扩展效率与固定 128 GPU 下的长序列执行效率并排检查。
+- [Unbiased Replay Buffer Schedule](https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-unbiased-replay-buffer.html): 复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。
+- [Entropy Collapse Diagnostic](https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-entropy-collapse.html): 复现 ERNIE 5.0 Figure 6：同一训练进程中并排观察准确率增长和策略熵坍塌，区分表面增益与训练失稳。
+- [Cross-modal Expert Collaboration Facets](https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-expert-collaboration.html): 合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。
+- [Attention Hardware Roofline](https://aidennovak.github.io/llm-benchmark-atlas/components/step3-hardware-roofline.html): 复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。
+- [Training–Decoding Objective Reversal](https://aidennovak.github.io/llm-benchmark-atlas/components/step3-objective-reversal.html): 复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。
+- [Continuous vs Discrete Emergence](https://aidennovak.github.io/llm-benchmark-atlas/components/yi-continuous-discrete-emergence.html): 复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。
+- [Layer–Token Similarity Bands](https://aidennovak.github.io/llm-benchmark-atlas/components/yi-layer-token-similarity.html): 复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。
+- [Capacity-aware Recycle Routing](https://aidennovak.github.io/llm-benchmark-atlas/components/hunyuan-recycle-routing.html): 复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。
+- [Loss-to-Benchmark Transfer Calibration](https://aidennovak.github.io/llm-benchmark-atlas/components/seed-loss-metric-transfer.html): 复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。
+- [Mixed-precision Training Lifecycle](https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-fp8-precision-lifecycle.html): 复现 DeepSeek-V3 Figure 6：把线性层前向、激活反传、权重反传和优化器更新放进一个显式精度转换闭环。
+- [Fine-grained Quantization Accumulator](https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-fine-grained-quantization.html): 复现 DeepSeek-V3 Figure 7：并排展示局部 scale 如何隔离 outlier，以及低精度 MMA 如何按固定间隔提升到 CUDA Core 做 FP32 累加。

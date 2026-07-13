@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。 适合用训练代理指标预测相关 benchmark；只应在论文支持的局部 loss 区间内解释，不外推到饱和区。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Seed1.5-VL Technical Report, seed, vlm, scaling-law, calibration, transfer">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Loss-to-Benchmark Transfer Calibration · Benchmark Atlas">
+  <meta property="og:description" content="复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/seed-loss-metric-transfer.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Loss-to-Benchmark Transfer Calibration · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Loss-to-Benchmark Transfer Calibration · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/seed-loss-metric-transfer.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Loss-to-Benchmark Transfer Calibration · Benchmark Atlas","description":"复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/seed-loss-metric-transfer.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Seed1.5-VL Technical Report, seed, vlm, scaling-law, calibration, transfer"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Loss-to-Benchmark Transfer Calibration</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Loss-to-Benchmark Transfer Calibration</h1>
+        <p class="component-lede">复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。</p>
+        <div class="component-tags"><span>seed</span><span>vlm</span><span>scaling-law</span><span>calibration</span><span>transfer</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffefe"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='seedlossmetrictransfer-title seedlossmetrictransfer-desc' style='background:#fffefe;color:#19212c'>
+      <title id='seedlossmetrictransfer-title'>Training tokens → subcategory loss → downstream metrics</title><desc id='seedlossmetrictransfer-desc'>复现 Seed1.5-VL Figure 3：把 OCR/grounding 子类 loss 的 token 缩放与相关下游评测指标的局部校准关系串成两段证据链。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212c}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6c7480}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6c7480}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212c}.g{stroke:#dfe3e8;stroke-width:1;shape-rendering:crispEdges}</style><marker id='seedlossmetrictransfer-arrow' markerWidth='8' markerHeight='8' refX='7' refY='4' orient='auto'><path d='M0 0 L8 4 L0 8 Z' fill='context-stroke'/></marker></defs>
+      <text class='t' x='28' y='30'>Training tokens → subcategory loss → downstream metrics</text><text class='s' x='28' y='48'>Seed1.5-VL Technical Report · Figure 3 / PDF p.14</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><rect x='40' y='78' width='165' height='94' fill='#247bc1' fill-opacity='.025' stroke='#dfe3e8'/><text class='s' x='45' y='90'>loss vs training tokens</text><line class='g' x1='40' y1='78' x2='205' y2='78'/><line class='g' x1='40' y1='125' x2='205' y2='125'/><line class='g' x1='40' y1='172' x2='205' y2='172'/><path d='M 48.00 162.00 L 197.00 100.00' fill='none' stroke='#ef5546' stroke-width='1.8' stroke-dasharray='5 3'/><circle cx='53.96' cy='103.28' r='2.6' fill='#247bc1'/><circle cx='70.35' cy='109.88' r='2.6' fill='#247bc1'/><circle cx='89.72' cy='113.18' r='2.6' fill='#247bc1'/><circle cx='107.6' cy='121.75999999999999' r='2.6' fill='#247bc1'/><circle cx='128.46' cy='127.69999999999999' r='2.6' fill='#247bc1'/><circle cx='144.85000000000002' cy='135.62' r='2.6' fill='#247bc1'/><circle cx='161.24' cy='142.88' r='2.6' fill='#247bc1'/><circle cx='182.1' cy='153.44' r='2.6' fill='#247bc1'/><circle cx='194.02' cy='158.72' r='2.6' fill='#247bc1'/><text class='s' x='122.5' y='187' text-anchor='middle'>log tokens →</text><rect x='237' y='78' width='165' height='94' fill='#49a574' fill-opacity='.025' stroke='#dfe3e8'/><text class='s' x='242' y='90'>ChartQA vs -log loss</text><line class='g' x1='237' y1='78' x2='402' y2='78'/><line class='g' x1='237' y1='125' x2='402' y2='125'/><line class='g' x1='237' y1='172' x2='402' y2='172'/><path d='M 245.00 162.00 L 394.00 100.00' fill='none' stroke='#ef5546' stroke-width='1.8' stroke-dasharray='5 3'/><circle cx='256.92' cy='156.08' r='2.6' fill='#49a574'/><circle cx='274.8' cy='148.16' r='2.6' fill='#49a574'/><circle cx='292.68' cy='144.2' r='2.6' fill='#49a574'/><circle cx='313.54' cy='132.32' r='2.6' fill='#49a574'/><circle cx='337.38' cy='127.69999999999999' r='2.6' fill='#49a574'/><circle cx='358.24' cy='117.14' r='2.6' fill='#49a574'/><circle cx='380.59000000000003' cy='108.56' r='2.6' fill='#49a574'/><text class='s' x='319.5' y='187' text-anchor='middle'>-log OCR loss →</text><rect x='434' y='78' width='165' height='94' fill='#49a574' fill-opacity='.025' stroke='#dfe3e8'/><text class='s' x='439' y='90'>InfoVQA vs -log loss</text><line class='g' x1='434' y1='78' x2='599' y2='78'/><line class='g' x1='434' y1='125' x2='599' y2='125'/><line class='g' x1='434' y1='172' x2='599' y2='172'/><path d='M 442.00 162.00 L 591.00 100.00' fill='none' stroke='#ef5546' stroke-width='1.8' stroke-dasharray='5 3'/><circle cx='450.94' cy='157.4' r='2.6' fill='#49a574'/><circle cx='474.78' cy='150.8' r='2.6' fill='#49a574'/><circle cx='498.62' cy='140.24' r='2.6' fill='#49a574'/><circle cx='522.46' cy='132.98' r='2.6' fill='#49a574'/><circle cx='543.32' cy='121.75999999999999' r='2.6' fill='#49a574'/><circle cx='564.18' cy='112.52' r='2.6' fill='#49a574'/><circle cx='583.55' cy='107.24000000000001' r='2.6' fill='#49a574'/><text class='s' x='516.5' y='187' text-anchor='middle'>-log OCR loss →</text><text class='v' x='18' y='126' text-anchor='middle' transform='rotate(-90 18 126)'>OCR</text><path d='M 211 125 h 19 M 408 125 h 19' stroke='#e39b2f' stroke-width='1.5' marker-end='url(#seedlossmetrictransfer-arrow)'/><rect x='40' y='223' width='165' height='94' fill='#247bc1' fill-opacity='.025' stroke='#dfe3e8'/><text class='s' x='45' y='235'>loss vs training tokens</text><line class='g' x1='40' y1='223' x2='205' y2='223'/><line class='g' x1='40' y1='270' x2='205' y2='270'/><line class='g' x1='40' y1='317' x2='205' y2='317'/><path d='M 48.00 307.00 L 197.00 245.00' fill='none' stroke='#ef5546' stroke-width='1.8' stroke-dasharray='5 3'/><circle cx='50.98' cy='246.96' r='2.6' fill='#247bc1'/><circle cx='73.33' cy='252.9' r='2.6' fill='#247bc1'/><circle cx='94.19' cy='262.14' r='2.6' fill='#247bc1'/><circle cx='116.54' cy='268.08' r='2.6' fill='#247bc1'/><circle cx='137.39999999999998' cy='277.32' r='2.6' fill='#247bc1'/><circle cx='156.76999999999998' cy='284.58' r='2.6' fill='#247bc1'/><circle cx='176.14' cy='293.82' r='2.6' fill='#247bc1'/><circle cx='194.02' cy='302.4' r='2.6' fill='#247bc1'/><text class='s' x='122.5' y='332' text-anchor='middle'>log tokens →</text><rect x='237' y='223' width='165' height='94' fill='#49a574' fill-opacity='.025' stroke='#dfe3e8'/><text class='s' x='242' y='235'>RefCOCO vs -log loss</text><line class='g' x1='237' y1='223' x2='402' y2='223'/><line class='g' x1='237' y1='270' x2='402' y2='270'/><line class='g' x1='237' y1='317' x2='402' y2='317'/><path d='M 245.00 307.00 L 394.00 245.00' fill='none' stroke='#ef5546' stroke-width='1.8' stroke-dasharray='5 3'/><circle cx='256.92' cy='298.44' r='2.6' fill='#49a574'/><circle cx='277.78' cy='290.52' r='2.6' fill='#49a574'/><circle cx='298.64' cy='292.5' r='2.6' fill='#49a574'/><circle cx='318.01' cy='274.68' r='2.6' fill='#49a574'/><circle cx='338.87' cy='270.72' r='2.6' fill='#49a574'/><circle cx='359.73' cy='260.82' r='2.6' fill='#49a574'/><circle cx='383.57' cy='249.6' r='2.6' fill='#49a574'/><text class='s' x='319.5' y='332' text-anchor='middle'>-log grounding loss →</text><rect x='434' y='223' width='165' height='94' fill='#49a574' fill-opacity='.025' stroke='#dfe3e8'/><text class='s' x='439' y='235'>RefCOCO+ vs -log loss</text><line class='g' x1='434' y1='223' x2='599' y2='223'/><line class='g' x1='434' y1='270' x2='599' y2='270'/><line class='g' x1='434' y1='317' x2='599' y2='317'/><path d='M 442.00 307.00 L 591.00 245.00' fill='none' stroke='#ef5546' stroke-width='1.8' stroke-dasharray='5 3'/><circle cx='452.43' cy='301.08' r='2.6' fill='#49a574'/><circle cx='474.78' cy='289.2' r='2.6' fill='#49a574'/><circle cx='497.13' cy='285.24' r='2.6' fill='#49a574'/><circle cx='517.99' cy='276.66' r='2.6' fill='#49a574'/><circle cx='540.34' cy='266.76' r='2.6' fill='#49a574'/><circle cx='561.2' cy='258.84' r='2.6' fill='#49a574'/><circle cx='583.55' cy='248.28' r='2.6' fill='#49a574'/><text class='s' x='516.5' y='332' text-anchor='middle'>-log grounding loss →</text><text class='v' x='18' y='271' text-anchor='middle' transform='rotate(-90 18 271)'>GROUNDING</text><path d='M 211 270 h 19 M 408 270 h 19' stroke='#e39b2f' stroke-width='1.5' marker-end='url(#seedlossmetrictransfer-arrow)'/><text class='s' x='320' y='383' text-anchor='middle'>training tokens → subcategory loss → multiple related downstream metrics · local calibration only</text></svg><figcaption>Illustrative demo data · renderer: <code>lossMetricTransferFacets</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>能力子类分行 + token-loss 幂律首面板 + 同一 loss 映射多个下游指标的局部 log-linear 双面板 + 因果阅读箭头</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-81 Seed linked loss-transfer facets</dd></div><div><dt>Component ID</dt><dd><code>seed-loss-metric-transfer</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合用训练代理指标预测相关 benchmark；只应在论文支持的局部 loss 区间内解释，不外推到饱和区。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 3 · PDF p.14</h2><p>六分面分别连接 OCR/grounding loss 的 token 幂律与 ChartQA、InfoVQA、RefCOCO、RefCOCO+ 指标。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2505.07062" rel="noreferrer">Seed1.5-VL Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;rows&quot;: [
+    {
+      &quot;label&quot;: &quot;OCR&quot;,
+      &quot;panels&quot;: [
+        {
+          &quot;label&quot;: &quot;loss vs training tokens&quot;,
+          &quot;axis&quot;: &quot;log tokens →&quot;,
+          &quot;points&quot;: [
+            [
+              0.04,
+              0.92
+            ],
+            [
+              0.15,
+              0.82
+            ],
+            [
+              0.28,
+              0.77
+            ],
+            [
+              0.4,
+              0.64
+            ],
+            [
+              0.54,
+              0.55
+            ],
+            [
+              0.65,
+              0.43
+            ],
+            [
+              0.76,
+              0.32
+            ],
+            [
+              0.9,
+              0.16
+            ],
+            [
+              0.98,
+              0.08
+            ]
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;ChartQA vs -log loss&quot;,
+          &quot;axis&quot;: &quot;-log OCR loss →&quot;,
+          &quot;points&quot;: [
+            [
+              0.08,
+              0.12
+            ],
+            [
+              0.2,
+              0.24
+            ],
+            [
+              0.32,
+              0.3
+            ],
+            [
+              0.46,
+              0.48
+            ],
+            [
+              0.62,
+              0.55
+            ],
+            [
+              0.76,
+              0.71
+            ],
+            [
+              0.91,
+              0.84
+            ]
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;InfoVQA vs -log loss&quot;,
+          &quot;axis&quot;: &quot;-log OCR loss →&quot;,
+          &quot;points&quot;: [
+            [
+              0.06,
+              0.1
+            ],
+            [
+              0.22,
+              0.2
+            ],
+            [
+              0.38,
+              0.36
+            ],
+            [
+              0.54,
+              0.47
+            ],
+            [
+              0.68,
+              0.64
+            ],
+            [
+              0.82,
+              0.78
+            ],
+            [
+              0.95,
+              0.86
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;GROUNDING&quot;,
+      &quot;panels&quot;: [
+        {
+          &quot;label&quot;: &quot;loss vs training tokens&quot;,
+          &quot;axis&quot;: &quot;log tokens →&quot;,
+          &quot;points&quot;: [
+            [
+              0.02,
+              0.94
+            ],
+            [
+              0.17,
+              0.85
+            ],
+            [
+              0.31,
+              0.71
+            ],
+            [
+              0.46,
+              0.62
+            ],
+            [
+              0.6,
+              0.48
+            ],
+            [
+              0.73,
+              0.37
+            ],
+            [
+              0.86,
+              0.23
+            ],
+            [
+              0.98,
+              0.1
+            ]
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;RefCOCO vs -log loss&quot;,
+          &quot;axis&quot;: &quot;-log grounding loss →&quot;,
+          &quot;points&quot;: [
+            [
+              0.08,
+              0.16
+            ],
+            [
+              0.22,
+              0.28
+            ],
+            [
+              0.36,
+              0.25
+            ],
+            [
+              0.49,
+              0.52
+            ],
+            [
+              0.63,
+              0.58
+            ],
+            [
+              0.77,
+              0.73
+            ],
+            [
+              0.93,
+              0.9
+            ]
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;RefCOCO+ vs -log loss&quot;,
+          &quot;axis&quot;: &quot;-log grounding loss →&quot;,
+          &quot;points&quot;: [
+            [
+              0.07,
+              0.12
+            ],
+            [
+              0.22,
+              0.3
+            ],
+            [
+              0.37,
+              0.36
+            ],
+            [
+              0.51,
+              0.49
+            ],
+            [
+              0.66,
+              0.64
+            ],
+            [
+              0.8,
+              0.76
+            ],
+            [
+              0.95,
+              0.92
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

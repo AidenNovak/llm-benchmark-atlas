@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aidennovak.github.io/llm-benchmark-atlas/schema/source.schema.json",
+  "title": "Benchmark Atlas source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "type", "url", "note"],
+  "properties": {
+    "key": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+    "name": { "type": "string", "minLength": 2 },
+    "type": { "type": "string", "minLength": 2 },
+    "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "note": { "type": "string", "minLength": 4 }
+  }
+}

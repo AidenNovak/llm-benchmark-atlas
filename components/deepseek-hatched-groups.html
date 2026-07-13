@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。 适合 3–5 个模型跨 4–8 个指标；系列更多时应改用热力图。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 排名与横向对比, DeepSeek, grouped-bar, hatch, print-safe">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Hatched Multi-bench Bars · Benchmark Atlas">
+  <meta property="og:description" content="用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-hatched-groups.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Hatched Multi-bench Bars · Benchmark Atlas">
+  <meta name="twitter:description" content="用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Hatched Multi-bench Bars · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-hatched-groups.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Hatched Multi-bench Bars · Benchmark Atlas","description":"用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/deepseek-hatched-groups.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 排名与横向对比, DeepSeek, grouped-bar, hatch, print-safe"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>排名与横向对比</span><span>/</span><span aria-current="page">Hatched Multi-bench Bars</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">排名与横向对比 · 厂商发布</p>
+        <h1>Hatched Multi-bench Bars</h1>
+        <p class="component-lede">用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。</p>
+        <div class="component-tags"><span>grouped-bar</span><span>hatch</span><span>print-safe</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f8fbff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='deepseekhatchedgroups-title deepseekhatchedgroups-desc' style='background:#f8fbff;color:#172239'>
+        <title id='deepseekhatchedgroups-title'>Six tasks · grouped accuracy</title>
+        <desc id='deepseekhatchedgroups-desc'>用纹理而不只用颜色标记主模型，适合密集 benchmark 横评与黑白打印。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='deepseekhatchedgroups-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#86a0ff' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#4d6bfe' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#172239}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#64708a}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64708a}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#172239}
+            .g{stroke:#d9e2ef;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#172239;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Six tasks · grouped accuracy</text>
+        <text class='s' x='28' y='48'>DeepSeek</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='48' y1='332' x2='614' y2='332'/><text class='l' x='39' y='335' text-anchor='end'>0</text><line class='g' x1='48' y1='272' x2='614' y2='272'/><text class='l' x='39' y='275' text-anchor='end'>25</text><line class='g' x1='48' y1='212' x2='614' y2='212'/><text class='l' x='39' y='215' text-anchor='end'>50</text><line class='g' x1='48' y1='152' x2='614' y2='152'/><text class='l' x='39' y='155' text-anchor='end'>75</text><line class='g' x1='48' y1='92' x2='614' y2='92'/><text class='l' x='39' y='95' text-anchor='end'>100</text><rect x='74' y='142.39999999999998' width='20' height='189.60000000000002' fill='url(#deepseekhatchedgroups-hatch)' stroke='#4d6bfe'/><rect x='98' y='152' width='20' height='180' fill='#b9c7ff' stroke='#d9e2ef'/><rect x='122' y='185.6' width='20' height='146.4' fill='#d9e1f4' stroke='#d9e2ef'/><text class='v' x='102' y='352' text-anchor='middle'>AIME</text><rect x='178' y='161.60000000000002' width='20' height='170.39999999999998' fill='url(#deepseekhatchedgroups-hatch)' stroke='#4d6bfe'/><rect x='202' y='168.79999999999998' width='20' height='163.20000000000002' fill='#b9c7ff' stroke='#d9e2ef'/><rect x='226' y='183.2' width='20' height='148.8' fill='#d9e1f4' stroke='#d9e2ef'/><text class='v' x='206' y='352' text-anchor='middle'>GPQA</text><rect x='282' y='118.4' width='20' height='213.6' fill='url(#deepseekhatchedgroups-hatch)' stroke='#4d6bfe'/><rect x='306' y='123.19999999999999' width='20' height='208.8' fill='#b9c7ff' stroke='#d9e2ef'/><rect x='330' y='130.4' width='20' height='201.6' fill='#d9e1f4' stroke='#d9e2ef'/><text class='v' x='310' y='352' text-anchor='middle'>MMLU</text><rect x='386' y='214.4' width='20' height='117.6' fill='url(#deepseekhatchedgroups-hatch)' stroke='#4d6bfe'/><rect x='410' y='226.4' width='20' height='105.6' fill='#b9c7ff' stroke='#d9e2ef'/><rect x='434' y='243.2' width='20' height='88.80000000000001' fill='#d9e1f4' stroke='#d9e2ef'/><text class='v' x='414' y='352' text-anchor='middle'>SWE</text><rect x='490' y='111.19999999999999' width='20' height='220.8' fill='url(#deepseekhatchedgroups-hatch)' stroke='#4d6bfe'/><rect x='514' y='120.80000000000001' width='20' height='211.2' fill='#b9c7ff' stroke='#d9e2ef'/><rect x='538' y='140' width='20' height='192' fill='#d9e1f4' stroke='#d9e2ef'/><text class='v' x='518' y='352' text-anchor='middle'>MATH</text><rect x='70' y='371' width='14' height='10' fill='url(#deepseekhatchedgroups-hatch)'/><text class='l' x='90' y='380'>DeepSeek</text><rect x='202' y='371' width='14' height='10' fill='#b9c7ff'/><text class='l' x='222' y='380'>Qwen</text><rect x='334' y='371' width='14' height='10' fill='#d9e1f4'/><text class='l' x='354' y='380'>Llama</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>groupedHatch</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>多组柱 + 自家斜线纹理 + 双层类目轴</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-03 Blueprint hatch</dd></div><div><dt>Component ID</dt><dd><code>deepseek-hatched-groups</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 3–5 个模型跨 4–8 个指标；系列更多时应改用热力图。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>DeepSeek</h2><p>蓝色斜线纹理、分组 benchmark 与价格效率</p><a class="text-link" href="https://api-docs.deepseek.com/news/news250120" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;series&quot;: [
+    &quot;DeepSeek&quot;,
+    &quot;Qwen&quot;,
+    &quot;Llama&quot;
+  ],
+  &quot;groups&quot;: [
+    {
+      &quot;label&quot;: &quot;AIME&quot;,
+      &quot;values&quot;: [
+        79,
+        75,
+        61
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;GPQA&quot;,
+      &quot;values&quot;: [
+        71,
+        68,
+        62
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;MMLU&quot;,
+      &quot;values&quot;: [
+        89,
+        87,
+        84
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;SWE&quot;,
+      &quot;values&quot;: [
+        49,
+        44,
+        37
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;MATH&quot;,
+      &quot;values&quot;: [
+        92,
+        88,
+        80
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="claude-master-table.html"><strong>Master Benchmark Table</strong><span>分组行 + 主模型描边 + 单元格双层高亮</span></a><a href="openai-lollipop-rank.html"><strong>Direct-label Lollipop Rank</strong><span>水平棒棒糖 + 末端直标 + 目标线</span></a><a href="mistral-dumbbell-delta.html"><strong>Release Delta Dumbbells</strong><span>双端点差值图 + 方向箭头 + 增量直标</span></a><a href="arena-rank-slope.html"><strong>Two-snapshot Rank Slope</strong><span>双时点坡度图 + 名次反向轴 + 交叉直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

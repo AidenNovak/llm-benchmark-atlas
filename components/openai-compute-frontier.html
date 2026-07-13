@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。 适合可调 thinking budget 的模型；必须同时说明横轴是 tokens、时间还是美元。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 规模、成本与效率, OpenAI / ChatGPT, compute, frontier, reasoning">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Compute Frontier Curve · Benchmark Atlas">
+  <meta property="og:description" content="展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/openai-compute-frontier.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Compute Frontier Curve · Benchmark Atlas">
+  <meta name="twitter:description" content="展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Compute Frontier Curve · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/openai-compute-frontier.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Compute Frontier Curve · Benchmark Atlas","description":"展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/openai-compute-frontier.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 规模、成本与效率, OpenAI / ChatGPT, compute, frontier, reasoning"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>规模、成本与效率</span><span>/</span><span aria-current="page">Compute Frontier Curve</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">规模、成本与效率 · 厂商发布</p>
+        <h1>Compute Frontier Curve</h1>
+        <p class="component-lede">展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。</p>
+        <div class="component-tags"><span>compute</span><span>frontier</span><span>reasoning</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#ffffff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='openaicomputefrontier-title openaicomputefrontier-desc' style='background:#ffffff;color:#141414'>
+        <title id='openaicomputefrontier-title'>Accuracy vs inference compute</title>
+        <desc id='openaicomputefrontier-desc'>展示推理算力增加时的收益曲线，并标出 low、medium、high 等 effort 档位。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='openaicomputefrontier-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#9f87ff' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#d6409f' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#141414}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#70706d}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#70706d}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#141414}
+            .g{stroke:#dededb;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#141414;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Accuracy vs inference compute</text>
+        <text class='s' x='28' y='48'>OpenAI / ChatGPT</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='78' y1='86' x2='78' y2='338'/><text class='l' x='78' y='360' text-anchor='middle'>1×</text><line class='g' x1='178.4' y1='86' x2='178.4' y2='338'/><text class='l' x='178.4' y='360' text-anchor='middle'>2×</text><line class='g' x1='278.8' y1='86' x2='278.8' y2='338'/><text class='l' x='278.8' y='360' text-anchor='middle'>4×</text><line class='g' x1='379.2' y1='86' x2='379.2' y2='338'/><text class='l' x='379.2' y='360' text-anchor='middle'>8×</text><line class='g' x1='479.6' y1='86' x2='479.6' y2='338'/><text class='l' x='479.6' y='360' text-anchor='middle'>16×</text><line class='g' x1='580' y1='86' x2='580' y2='338'/><text class='l' x='580' y='360' text-anchor='middle'>32×</text><line class='g' x1='68' y1='315.09090909090907' x2='590' y2='315.09090909090907'/><text class='l' x='58' y='318.09090909090907' text-anchor='end'>40</text><line class='g' x1='68' y1='269.27272727272725' x2='590' y2='269.27272727272725'/><text class='l' x='58' y='272.27272727272725' text-anchor='end'>50</text><line class='g' x1='68' y1='223.45454545454544' x2='590' y2='223.45454545454544'/><text class='l' x='58' y='226.45454545454544' text-anchor='end'>60</text><line class='g' x1='68' y1='177.63636363636363' x2='590' y2='177.63636363636363'/><text class='l' x='58' y='180.63636363636363' text-anchor='end'>70</text><line class='g' x1='68' y1='131.8181818181818' x2='590' y2='131.8181818181818'/><text class='l' x='58' y='134.8181818181818' text-anchor='end'>80</text><line class='g' x1='68' y1='86' x2='590' y2='86'/><text class='l' x='58' y='89' text-anchor='end'>90</text><path d='M 78.00 305.93 L 178.40 232.62 L 278.80 173.05 L 379.20 131.82 L 479.60 108.91 L 580.00 95.16' fill='none' stroke='#d6409f' stroke-width='4'/><circle cx='78' cy='305.92727272727274' r='6' fill='#ffffff' stroke='#d6409f' stroke-width='3'/><text class='s' x='78' y='293.92727272727274' text-anchor='middle'>LOW</text><circle cx='178.4' cy='232.61818181818182' r='6' fill='#ffffff' stroke='#d6409f' stroke-width='3'/><circle cx='278.8' cy='173.05454545454546' r='6' fill='#ffffff' stroke='#d6409f' stroke-width='3'/><circle cx='379.2' cy='131.8181818181818' r='6' fill='#ffffff' stroke='#d6409f' stroke-width='3'/><text class='s' x='379.2' y='119.81818181818181' text-anchor='middle'>MED</text><circle cx='479.6' cy='108.9090909090909' r='6' fill='#ffffff' stroke='#d6409f' stroke-width='3'/><circle cx='580' cy='95.16363636363636' r='6' fill='#ffffff' stroke='#d6409f' stroke-width='3'/><text class='s' x='580' y='83.16363636363636' text-anchor='middle'>HIGH</text><path d='M 78.00 319.67 L 178.40 292.18 L 278.80 269.27 L 379.20 250.95 L 479.60 241.78 L 580.00 237.20' fill='none' stroke='#dadad6' stroke-width='4'/><circle cx='78' cy='319.6727272727273' r='6' fill='#ffffff' stroke='#dadad6' stroke-width='3'/><circle cx='178.4' cy='292.1818181818182' r='6' fill='#ffffff' stroke='#dadad6' stroke-width='3'/><circle cx='278.8' cy='269.27272727272725' r='6' fill='#ffffff' stroke='#dadad6' stroke-width='3'/><circle cx='379.2' cy='250.94545454545454' r='6' fill='#ffffff' stroke='#dadad6' stroke-width='3'/><circle cx='479.6' cy='241.78181818181818' r='6' fill='#ffffff' stroke='#dadad6' stroke-width='3'/><circle cx='580' cy='237.2' r='6' fill='#ffffff' stroke='#dadad6' stroke-width='3'/><text class='s' x='328' y='386' text-anchor='middle'>relative inference compute (log scale)</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>frontier</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>对数横轴 + 前沿曲线 + effort 节点注释</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-07 Reasoning compute field</dd></div><div><dt>Component ID</dt><dd><code>openai-compute-frontier</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合可调 thinking budget 的模型；必须同时说明横轴是 tokens、时间还是美元。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>OpenAI / ChatGPT</h2><p>高留白、单一强调色、compute 与 reliability 叙事</p><a class="text-link" href="https://openai.com/index/introducing-o3-and-o4-mini/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;reasoning&quot;,
+      &quot;points&quot;: [
+        [
+          1,
+          42
+        ],
+        [
+          2,
+          58
+        ],
+        [
+          4,
+          71
+        ],
+        [
+          8,
+          80
+        ],
+        [
+          16,
+          85
+        ],
+        [
+          32,
+          88
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;baseline&quot;,
+      &quot;points&quot;: [
+        [
+          1,
+          39
+        ],
+        [
+          2,
+          45
+        ],
+        [
+          4,
+          50
+        ],
+        [
+          8,
+          54
+        ],
+        [
+          16,
+          56
+        ],
+        [
+          32,
+          57
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="qwen-thinking-budget.html"><strong>Thinking Budget Saturation</strong><span>饱和曲线 + 边际收益分段 + 最佳预算窗</span></a><a href="arxiv-dual-axis.html"><strong>Training Dual-axis Trace</strong><span>双纵轴折线 + 训练阶段带 + 最佳 checkpoint</span></a><a href="llama-scaling-law.html"><strong>Log-log Scaling Law</strong><span>log-log 散点 + 拟合线 + 模型规模标注</span></a><a href="phi-efficiency-bubbles.html"><strong>Parameter Efficiency Bubbles</strong><span>气泡散点 + 气泡面积参数 + 效率等高线</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

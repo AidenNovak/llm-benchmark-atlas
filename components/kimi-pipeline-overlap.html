@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。 适合训练系统 pipeline 调度；每格必须对应同一时间粒度。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Kimi K2 Technical Report, kimi, pipeline-parallel, overlap">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Pipeline Parallel Overlap Grid · Benchmark Atlas">
+  <meta property="og:description" content="复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-pipeline-overlap.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Pipeline Parallel Overlap Grid · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Pipeline Parallel Overlap Grid · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-pipeline-overlap.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Pipeline Parallel Overlap Grid · Benchmark Atlas","description":"复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-pipeline-overlap.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Kimi K2 Technical Report, kimi, pipeline-parallel, overlap"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Pipeline Parallel Overlap Grid</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Pipeline Parallel Overlap Grid</h1>
+        <p class="component-lede">复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。</p>
+        <div class="component-tags"><span>kimi</span><span>pipeline-parallel</span><span>overlap</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffaf5"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='kimipipelineoverlap-title kimipipelineoverlap-desc' style='background:#fffaf5;color:#19212b'>
+      <title id='kimipipelineoverlap-title'>Compute, communication and offload overlap</title>
+      <desc id='kimipipelineoverlap-desc'>复现 Kimi K2 Figure 7 的 PP 调度结构，展示 forward、backward、通信与 offload 如何重叠。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212b}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6e7682}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6e7682}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212b}
+        .g{stroke:#dce1e7;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Compute, communication and offload overlap</text>
+      <text class='s' x='28' y='48'>Kimi K2 Technical Report · Figure 7 / PDF p.8</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <text class='s' x='139' y='80' text-anchor='middle'>t0</text><text class='s' x='181' y='80' text-anchor='middle'>t1</text><text class='s' x='223' y='80' text-anchor='middle'>t2</text><text class='s' x='265' y='80' text-anchor='middle'>t3</text><text class='s' x='307' y='80' text-anchor='middle'>t4</text><text class='s' x='349' y='80' text-anchor='middle'>t5</text><text class='s' x='391' y='80' text-anchor='middle'>t6</text><text class='s' x='433' y='80' text-anchor='middle'>t7</text><text class='s' x='475' y='80' text-anchor='middle'>t8</text><text class='s' x='517' y='80' text-anchor='middle'>t9</text><text class='s' x='559' y='80' text-anchor='middle'>t10</text><text class='v' x='101' y='113' text-anchor='end'>PP0</text><rect x='118' y='94' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='137' y='113' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F1</text><rect x='160' y='94' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='179' y='113' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F2</text><rect x='202' y='94' width='38' height='29' fill='#2f9e54' fill-opacity='0.86'/><text x='221' y='113' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>C</text><rect x='286' y='94' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='305' y='113' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B1</text><rect x='328' y='94' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='347' y='113' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B2</text><text class='v' x='101' y='160' text-anchor='end'>PP1</text><rect x='160' y='141' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='179' y='160' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F1</text><rect x='202' y='141' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='221' y='160' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F2</text><rect x='244' y='141' width='38' height='29' fill='#2f9e54' fill-opacity='0.86'/><text x='263' y='160' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>C</text><rect x='328' y='141' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='347' y='160' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B1</text><rect x='370' y='141' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='389' y='160' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B2</text><text class='v' x='101' y='207' text-anchor='end'>PP2</text><rect x='202' y='188' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='221' y='207' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F1</text><rect x='244' y='188' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='263' y='207' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F2</text><rect x='286' y='188' width='38' height='29' fill='#2f9e54' fill-opacity='0.86'/><text x='305' y='207' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>C</text><rect x='370' y='188' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='389' y='207' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B1</text><rect x='412' y='188' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='431' y='207' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B2</text><text class='v' x='101' y='254' text-anchor='end'>PP3</text><rect x='244' y='235' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='263' y='254' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F1</text><rect x='286' y='235' width='38' height='29' fill='#4a65ee' fill-opacity='0.86'/><text x='305' y='254' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>F2</text><rect x='328' y='235' width='38' height='29' fill='#2f9e54' fill-opacity='0.86'/><text x='347' y='254' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>C</text><rect x='412' y='235' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='431' y='254' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B1</text><rect x='454' y='235' width='38' height='29' fill='#ef6256' fill-opacity='0.86'/><text x='473' y='254' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffaf5'>B2</text><text class='s' x='101' y='311' text-anchor='end'>all-to-all</text><rect x='202' y='300' width='248' height='14' fill='#2f9e54' fill-opacity='.55'/><text class='s' x='101' y='333' text-anchor='end'>offload</text><rect x='286' y='322' width='248' height='14' fill='#8e58c7' fill-opacity='.55'/><rect x='165' y='372' width='12' height='8' fill='#4a65ee'/><text class='l' x='183' y='380'>forward</text><rect x='270' y='372' width='12' height='8' fill='#ef6256'/><text class='l' x='288' y='380'>backward</text><rect x='382' y='372' width='12' height='8' fill='#2f9e54'/><text class='l' x='400' y='380'>communication</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>pipelineOverlapGrid</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-63 Kimi pipeline schedule</dd></div><div><dt>Component ID</dt><dd><code>kimi-pipeline-overlap</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合训练系统 pipeline 调度；每格必须对应同一时间粒度。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 7 · PDF p.8</h2><p>不同 PP phase 中 computation、communication 与 offloading 的重叠调度。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2507.20534" rel="noreferrer">Kimi K2 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;phases&quot;: [
+    &quot;t0&quot;,
+    &quot;t1&quot;,
+    &quot;t2&quot;,
+    &quot;t3&quot;,
+    &quot;t4&quot;,
+    &quot;t5&quot;,
+    &quot;t6&quot;,
+    &quot;t7&quot;,
+    &quot;t8&quot;,
+    &quot;t9&quot;,
+    &quot;t10&quot;
+  ],
+  &quot;rows&quot;: [
+    {
+      &quot;label&quot;: &quot;PP0&quot;,
+      &quot;cells&quot;: [
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F2&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;C&quot;,
+          &quot;text&quot;: &quot;C&quot;
+        },
+        null,
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B2&quot;
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;PP1&quot;,
+      &quot;cells&quot;: [
+        null,
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F2&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;C&quot;,
+          &quot;text&quot;: &quot;C&quot;
+        },
+        null,
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B2&quot;
+        },
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;PP2&quot;,
+      &quot;cells&quot;: [
+        null,
+        null,
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F2&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;C&quot;,
+          &quot;text&quot;: &quot;C&quot;
+        },
+        null,
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B2&quot;
+        },
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;PP3&quot;,
+      &quot;cells&quot;: [
+        null,
+        null,
+        null,
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;F&quot;,
+          &quot;text&quot;: &quot;F2&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;C&quot;,
+          &quot;text&quot;: &quot;C&quot;
+        },
+        null,
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B1&quot;
+        },
+        {
+          &quot;kind&quot;: &quot;B&quot;,
+          &quot;text&quot;: &quot;B2&quot;
+        },
+        null,
+        null
+      ]
+    }
+  ],
+  &quot;bands&quot;: [
+    {
+      &quot;label&quot;: &quot;all-to-all&quot;,
+      &quot;start&quot;: 2,
+      &quot;end&quot;: 8
+    },
+    {
+      &quot;label&quot;: &quot;offload&quot;,
+      &quot;start&quot;: 4,
+      &quot;end&quot;: 10
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a><a href="minimax-isoflop-gaps.html"><strong>Isoflop Equal-Quality Gaps</strong><span>benchmark 小多图双拟合曲线 + 等性能水平桥 + 两端算力垂线与倍率</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

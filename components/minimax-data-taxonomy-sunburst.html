@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。 适合训练集或评测集 taxonomy 覆盖审计；扇区面积只编码样本占比，不能替代质量评估。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-01 Technical Report, minimax, sunburst, taxonomy, data-coverage">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Instruction Coverage Sunburst · Benchmark Atlas">
+  <meta property="og:description" content="复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-data-taxonomy-sunburst.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Instruction Coverage Sunburst · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Instruction Coverage Sunburst · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-data-taxonomy-sunburst.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Instruction Coverage Sunburst · Benchmark Atlas","description":"复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-data-taxonomy-sunburst.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-01 Technical Report, minimax, sunburst, taxonomy, data-coverage"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Instruction Coverage Sunburst</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Instruction Coverage Sunburst</h1>
+        <p class="component-lede">复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。</p>
+        <div class="component-tags"><span>minimax</span><span>sunburst</span><span>taxonomy</span><span>data-coverage</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffcf8"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='minimaxdatataxonomysunburst-title minimaxdatataxonomysunburst-desc' style='background:#fffcf8;color:#171518'>
+      <title id='minimaxdatataxonomysunburst-title'>Hierarchical instruction-data coverage</title>
+      <desc id='minimaxdatataxonomysunburst-desc'>复现 MiniMax-01 Figure 17 的两层层级结构，用能力大类和细粒度 tag 检查多模态数据覆盖。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6f6870}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6f6870}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .g{stroke:#e5dde2;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Hierarchical instruction-data coverage</text>
+      <text class='s' x='28' y='48'>MiniMax-01 Technical Report · Figure 17 / PDF p.36</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <path d='M 320.85520047884063 125.00373153971121 A 98 98 0 0 1 413.46426117332624 252.46916835141877 L 366.7321305866631 237.7345841757094 A 49 49 0 0 0 320.4276002394203 174.0018657698556 Z' fill='#ed4966' fill-opacity='.9' stroke='#fffcf8' stroke-width='2'/><text x='380.6762745781211' y='176.9161060780645' text-anchor='middle' style='font:700 8px ui-sans-serif;fill:#fffcf8'>TEXT QA</text><text x='380.6762745781211' y='187.9161060780645' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffcf8'>30%</text><path d='M 321.29152725375934 75.00563538650263 A 148 148 0 0 1 449.06625231995383 150.57139714117073 L 408.95106578807633 173.0829899216177 A 102 102 0 0 0 320.89010662083416 121.00388384745453 Z' fill='#ed4966' fill-opacity='0.36' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='383.6301769687964' y='115.40724662450704' text-anchor='middle' transform='rotate(-59.400000000000006 383.6301769687964 115.40724662450704)'>retrieval</text><path d='M 450.31064831935595 152.8349450610268 A 148 148 0 0 1 461.1501087107376 267.5044583266324 L 417.27912897631916 253.67199154943586 A 102 102 0 0 0 409.80869005793454 174.64300267719415 Z' fill='#ed4966' fill-opacity='0.54' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='444.445245575385' y='211.2364608351857' text-anchor='middle' transform='rotate(-5.400000000000002 444.445245575385 211.2364608351857)'>comprehension</text><path d='M 412.93571821020754 254.09585632769904 A 98 98 0 0 1 308.5662677642654 320.33072365477165 L 314.2831338821327 271.6653618273858 A 49 49 0 0 0 366.4678591051038 238.54792816384952 Z' fill='#f0a33a' fill-opacity='.9' stroke='#fffcf8' stroke-width='2'/><text x='360.18700962342473' y='284.32459441265115' text-anchor='middle' style='font:700 8px ui-sans-serif;fill:#fffcf8'>IMAGE QA</text><text x='360.18700962342473' y='295.32459441265115' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffcf8'>22%</text><path d='M 460.3519009705175 269.96108914795366 A 148 148 0 0 1 392.42860285882927 352.06625231995383 L 369.9170100783823 311.9510657880763 A 102 102 0 0 0 416.7290128310323 255.3650749533194 Z' fill='#f0a33a' fill-opacity='0.36' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='416.3141553469737' y='302.6779987185862' text-anchor='middle' transform='rotate(39.599999999999994 416.3141553469737 302.6779987185862)'>VQA</text><path d='M 390.16505493897324 353.31064831935595 A 148 148 0 0 1 302.7327309092987 369.9892561316959 L 308.099584815868 324.3034062529256 A 102 102 0 0 0 368.3569973228059 312.80869005793454 Z' fill='#f0a33a' fill-opacity='0.54' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='343.4226643232156' y='345.78590634108605' text-anchor='middle' transform='rotate(79.19999999999999 343.4226643232156 345.78590634108605)'>captioning</text><path d='M 306.86935382900737 320.116353572054 A 98 98 0 0 1 231.69445191043502 265.49859028957934 L 275.8472259552175 244.24929514478967 A 49 49 0 0 0 313.4346769145037 271.558176786027 Z' fill='#5b63ce' fill-opacity='.9' stroke='#fffcf8' stroke-width='2'/><text x='275.9161060780645' y='281.6762745781211' text-anchor='middle' style='font:700 8px ui-sans-serif;fill:#fffcf8'>OBJECT</text><text x='275.9161060780645' y='292.6762745781211' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffcf8'>16%</text><path d='M 300.1700445580928 369.66551355779575 A 148 148 0 0 1 226.6599805001697 337.8548682458488 L 255.67106764200884 302.1567335207877 A 102 102 0 0 0 306.3334090873342 324.0802863709133 Z' fill='#5b63ce' fill-opacity='0.36' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='270.3565136706524' y='337.7193282104977' text-anchor='middle' transform='rotate(293.4 270.3565136706524 337.7193282104977)'>detection</text><path d='M 224.6697027953148 336.2083673359279 A 148 148 0 0 1 186.64060084433044 287.18154451895657 L 228.09014382514667 267.2332266279295 A 102 102 0 0 0 254.29938976433857 301.02198289368005 Z' fill='#5b63ce' fill-opacity='0.54' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='221.23062345303873' y='299.61338170662214' text-anchor='middle' transform='rotate(322.2 221.23062345303873 299.61338170662214)'>counting</text><path d='M 230.96619860238127 263.95097323250553 A 98 98 0 0 1 228.5705535871021 187.72031280423494 L 274.285276793551 205.36015640211747 A 49 49 0 0 0 275.48309930119063 243.47548661625277 Z' fill='#2d9b62' fill-opacity='.9' stroke='#fffcf8' stroke-width='2'/><text x='245.0370079725701' y='223.35580693085961' text-anchor='middle' style='font:700 8px ui-sans-serif;fill:#fffcf8'>REASON</text><text x='245.0370079725701' y='234.35580693085961' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffcf8'>13%</text><path d='M 185.54078972604518 284.84432692255933 A 148 148 0 0 1 172.00563538650263 224.2915272537594 L 218.00388384745452 223.8901066208342 A 102 102 0 0 0 227.33216589227436 265.62244152770984 Z' fill='#2d9b62' fill-opacity='0.36' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='198.0104047576566' y='250.26790517456783' text-anchor='middle' transform='rotate(347.4 198.0104047576566 250.26790517456783)'>spatial</text><path d='M 172.00563538650263 221.7084727462407 A 148 148 0 0 1 181.92287684582763 169.7204723982324 L 224.83873944780012 186.28032557175476 A 102 102 0 0 0 218.00388384745452 222.10989337916587 Z' fill='#2d9b62' fill-opacity='0.54' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='197.21409365891392' y='199.5773356767844' text-anchor='middle' transform='rotate(370.8 197.21409365891392 199.5773356767844)'>causal</text><path d='M 229.20019417455995 186.13002221234214 A 98 98 0 0 1 272.0405197286131 137.53721130165218 L 296.0202598643066 180.2686056508261 A 49 49 0 0 0 274.60009708728 204.56501110617108 Z' fill='#168f91' fill-opacity='.9' stroke='#fffcf8' stroke-width='2'/><text x='263.7416697777156' y='171.4016101007261' text-anchor='middle' style='font:700 8px ui-sans-serif;fill:#fffcf8'>DOCUMENT</text><text x='263.7416697777156' y='182.4016101007261' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffcf8'>11%</text><path d='M 182.8737626309681 167.31880905537386 A 148 148 0 0 1 217.74940316062498 116.00086240538388 L 249.52999407016046 149.25735111722403 A 102 102 0 0 0 225.49407965107258 184.6251251597847 Z' fill='#168f91' fill-opacity='0.36' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='216.6149282156798' y='152.73957776848363' text-anchor='middle' transform='rotate(394.20000000000005 216.6149282156798 152.73957776848363)'>OCR</text><path d='M 219.63236885952554 114.23263991780593 A 148 148 0 0 1 247.57139714117085 93.93374768004611 L 270.08298992161775 134.04893421192367 A 102 102 0 0 0 250.8277136734568 148.0387112947041 Z' fill='#168f91' fill-opacity='0.54' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='246.52684346344085' y='121.87287570313158' text-anchor='middle' transform='rotate(414 246.52684346344085 121.87287570313158)'>layout</text><path d='M 273.53935551338265 136.71321935610212 A 98 98 0 0 1 319.14479952115937 125.00373153971121 L 319.5723997605797 174.0018657698556 A 49 49 0 0 0 296.7696777566913 179.85660967805106 Z' fill='#8b58b7' fill-opacity='.9' stroke='#fffcf8' stroke-width='2'/><text x='301.3482584626359' y='148.35626291535266' text-anchor='middle' style='font:700 8px ui-sans-serif;fill:#fffcf8'>TOOLS</text><text x='301.3482584626359' y='159.35626291535266' text-anchor='middle' style='font:700 8px ui-monospace;fill:#fffcf8'>8%</text><path d='M 249.83494506102684 92.689351680644 A 148 148 0 0 1 290.99997065210744 77.86903053510125 L 300.01349328726326 122.97730482824547 A 102 102 0 0 0 271.6430026771942 133.19130994206546 Z' fill='#8b58b7' fill-opacity='0.36' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='277.6577599693387' y='105.38990388072177' text-anchor='middle' transform='rotate(430.20000000000005 277.6577599693387 105.38990388072177)'>code</text><path d='M 293.5372721627803 77.38501438583583 A 148 148 0 0 1 318.7084727462407 75.00563538650263 L 319.1098933791659 121.00388384745453 A 102 102 0 0 0 301.76217405813236 122.64372613077875 Z' fill='#8b58b7' fill-opacity='0.54' stroke='#fffcf8' stroke-width='1.5'/><text class='s' x='308.23646083518577' y='98.554754424615' text-anchor='middle' transform='rotate(444.6 308.23646083518577 98.554754424615)'>agent</text><circle cx='320' cy='223' r='45' fill='#fffcf8' stroke='#e5dde2'/><text class='t' x='320' y='221' text-anchor='middle'>1M</text><text class='s' x='320' y='237' text-anchor='middle'>sampled pairs</text><text class='s' x='320' y='388' text-anchor='middle'>inner ring = capability family · outer ring = top instruction tags</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>hierarchicalCoverageSunburst</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>能力族内环占比 + 高频 instruction tag 外环分裂 + 中心样本口径</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-67 MiniMax hierarchical coverage wheel</dd></div><div><dt>Component ID</dt><dd><code>minimax-data-taxonomy-sunburst</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合训练集或评测集 taxonomy 覆盖审计；扇区面积只编码样本占比，不能替代质量评估。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 17 · PDF p.36</h2><p>内层展示 14 个大类占比，外层展示各类 top instruction tags。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2501.08313" rel="noreferrer">MiniMax-01 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;categories&quot;: [
+    {
+      &quot;label&quot;: &quot;TEXT QA&quot;,
+      &quot;share&quot;: 30,
+      &quot;tags&quot;: [
+        {
+          &quot;label&quot;: &quot;retrieval&quot;,
+          &quot;share&quot;: 17
+        },
+        {
+          &quot;label&quot;: &quot;comprehension&quot;,
+          &quot;share&quot;: 13
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;IMAGE QA&quot;,
+      &quot;share&quot;: 22,
+      &quot;tags&quot;: [
+        {
+          &quot;label&quot;: &quot;VQA&quot;,
+          &quot;share&quot;: 12
+        },
+        {
+          &quot;label&quot;: &quot;captioning&quot;,
+          &quot;share&quot;: 10
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;OBJECT&quot;,
+      &quot;share&quot;: 16,
+      &quot;tags&quot;: [
+        {
+          &quot;label&quot;: &quot;detection&quot;,
+          &quot;share&quot;: 9
+        },
+        {
+          &quot;label&quot;: &quot;counting&quot;,
+          &quot;share&quot;: 7
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;REASON&quot;,
+      &quot;share&quot;: 13,
+      &quot;tags&quot;: [
+        {
+          &quot;label&quot;: &quot;spatial&quot;,
+          &quot;share&quot;: 7
+        },
+        {
+          &quot;label&quot;: &quot;causal&quot;,
+          &quot;share&quot;: 6
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;DOCUMENT&quot;,
+      &quot;share&quot;: 11,
+      &quot;tags&quot;: [
+        {
+          &quot;label&quot;: &quot;OCR&quot;,
+          &quot;share&quot;: 7
+        },
+        {
+          &quot;label&quot;: &quot;layout&quot;,
+          &quot;share&quot;: 4
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;TOOLS&quot;,
+      &quot;share&quot;: 8,
+      &quot;tags&quot;: [
+        {
+          &quot;label&quot;: &quot;code&quot;,
+          &quot;share&quot;: 5
+        },
+        {
+          &quot;label&quot;: &quot;agent&quot;,
+          &quot;share&quot;: 3
+        }
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

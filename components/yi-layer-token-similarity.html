@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。 适合选择可复制或可跳过的层；相似度需按 token 展开，不能只报整层平均。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Yi Technical Report, yi, layers, cosine-similarity, depth-upscaling">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Layer–Token Similarity Bands · Benchmark Atlas">
+  <meta property="og:description" content="复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/yi-layer-token-similarity.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Layer–Token Similarity Bands · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Layer–Token Similarity Bands · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/yi-layer-token-similarity.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Layer–Token Similarity Bands · Benchmark Atlas","description":"复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/yi-layer-token-similarity.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Yi Technical Report, yi, layers, cosine-similarity, depth-upscaling"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Layer–Token Similarity Bands</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Layer–Token Similarity Bands</h1>
+        <p class="component-lede">复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。</p>
+        <div class="component-tags"><span>yi</span><span>layers</span><span>cosine-similarity</span><span>depth-upscaling</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbfbff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='yilayertokensimilarity-title yilayertokensimilarity-desc' style='background:#fbfbff;color:#181923'>
+      <title id='yilayertokensimilarity-title'>Input/output cosine similarity across model depth</title><desc id='yilayertokensimilarity-desc'>复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#181923}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6e7080}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6e7080}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#181923}.g{stroke:#dfe0ea;stroke-width:1;shape-rendering:crispEdges}</style></defs>
+      <text class='t' x='28' y='30'>Input/output cosine similarity across model depth</text><text class='s' x='28' y='48'>Yi Technical Report · Figure 8 / PDF p.17</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><rect x='78' y='80' width='512' height='104' fill='#4e55c7' fill-opacity='.02' stroke='#dfe0ea'/><text class='v' x='86' y='95'>YI-6B · 32 LAYERS</text><path d='M 78.00 154.50 L 94.00 99.56 L 110.00 105.30 L 126.00 94.64 L 142.00 93.82 L 158.00 94.64 L 174.00 173.36 L 190.00 95.46 L 206.00 93.82 L 222.00 94.64 L 238.00 93.82 L 254.00 94.64 L 270.00 94.64 L 286.00 93.82 L 302.00 94.64 L 318.00 93.82 L 334.00 94.64 L 350.00 93.82 L 366.00 94.64 L 382.00 93.82 L 398.00 94.64 L 414.00 93.82 L 430.00 94.64 L 446.00 93.82 L 462.00 94.64 L 478.00 93.82 L 494.00 94.64 L 510.00 93.82 L 526.00 94.64 L 542.00 96.28 L 558.00 171.72 L 574.00 174.18' fill='none' stroke='#4e55c7' stroke-width='1.8'/><path d='M 78.00 155.32 L 94.00 102.84 L 110.00 138.10 L 126.00 106.94 L 142.00 104.48 L 158.00 101.20 L 174.00 102.84 L 190.00 102.02 L 206.00 100.38 L 222.00 102.84 L 238.00 101.20 L 254.00 100.38 L 270.00 102.02 L 286.00 99.56 L 302.00 101.20 L 318.00 100.38 L 334.00 99.56 L 350.00 99.56 L 366.00 98.74 L 382.00 97.92 L 398.00 97.92 L 414.00 97.10 L 430.00 97.10 L 446.00 96.28 L 462.00 95.46 L 478.00 96.28 L 494.00 95.46 L 510.00 95.46 L 526.00 94.64 L 542.00 95.46 L 558.00 134.00 L 574.00 142.20' fill='none' stroke='#b43b35' stroke-width='1.8'/><path d='M 78.00 158.60 L 94.00 112.68 L 110.00 107.76 L 126.00 105.30 L 142.00 102.84 L 158.00 101.20 L 174.00 103.66 L 190.00 101.20 L 206.00 100.38 L 222.00 102.02 L 238.00 100.38 L 254.00 99.56 L 270.00 101.20 L 286.00 99.56 L 302.00 98.74 L 318.00 98.74 L 334.00 97.92 L 350.00 97.92 L 366.00 97.10 L 382.00 97.10 L 398.00 96.28 L 414.00 96.28 L 430.00 96.28 L 446.00 95.46 L 462.00 95.46 L 478.00 94.64 L 494.00 95.46 L 510.00 94.64 L 526.00 94.64 L 542.00 94.64 L 558.00 135.64 L 574.00 140.56' fill='none' stroke='#933e9d' stroke-width='1.8'/><path d='M 78.00 150.40 L 94.00 101.20 L 110.00 117.60 L 126.00 107.76 L 142.00 103.66 L 158.00 102.02 L 174.00 106.12 L 190.00 102.84 L 206.00 101.20 L 222.00 103.66 L 238.00 102.02 L 254.00 100.38 L 270.00 102.84 L 286.00 100.38 L 302.00 99.56 L 318.00 99.56 L 334.00 98.74 L 350.00 98.74 L 366.00 97.92 L 382.00 97.92 L 398.00 97.10 L 414.00 97.10 L 430.00 96.28 L 446.00 96.28 L 462.00 95.46 L 478.00 95.46 L 494.00 94.64 L 510.00 95.46 L 526.00 94.64 L 542.00 94.64 L 558.00 134.00 L 574.00 138.10' fill='none' stroke='#2aa1a6' stroke-width='1.8'/><path d='M 78.00 154.50 L 94.00 106.12 L 110.00 111.04 L 126.00 104.48 L 142.00 101.20 L 158.00 100.38 L 174.00 103.66 L 190.00 101.20 L 206.00 100.38 L 222.00 102.02 L 238.00 101.20 L 254.00 99.56 L 270.00 100.38 L 286.00 99.56 L 302.00 98.74 L 318.00 98.74 L 334.00 97.92 L 350.00 97.92 L 366.00 97.10 L 382.00 97.10 L 398.00 96.28 L 414.00 96.28 L 430.00 96.28 L 446.00 95.46 L 462.00 95.46 L 478.00 95.46 L 494.00 94.64 L 510.00 94.64 L 526.00 94.64 L 542.00 94.64 L 558.00 138.10 L 574.00 143.84' fill='none' stroke='#3b9b55' stroke-width='1.8'/><text class='s' x='590' y='179' text-anchor='end'>layer →</text><rect x='78' y='218' width='512' height='104' fill='#4e55c7' fill-opacity='.02' stroke='#dfe0ea'/><text class='v' x='86' y='233'>YI-9B INITIALIZATION · 48 LAYERS</text><rect x='206' y='218' width='170.66666666666669' height='104' fill='#933e9d' fill-opacity='.09'/><text class='s' x='291.33333333333337' y='248' text-anchor='middle'>duplicated layers</text><path d='M 78.00 292.50 L 88.67 237.56 L 99.33 243.30 L 110.00 232.64 L 120.67 231.82 L 131.33 232.64 L 142.00 311.36 L 152.67 233.46 L 163.33 231.82 L 174.00 232.64 L 184.67 231.82 L 195.33 232.64 L 206.00 231.82 L 216.67 231.82 L 227.33 231.82 L 238.00 231.82 L 248.67 231.82 L 259.33 231.82 L 270.00 231.82 L 280.67 231.82 L 291.33 231.82 L 302.00 231.82 L 312.67 231.82 L 323.33 231.82 L 334.00 231.82 L 344.67 231.82 L 355.33 231.82 L 366.00 231.82 L 376.67 232.64 L 387.33 231.82 L 398.00 232.64 L 408.67 231.82 L 419.33 232.64 L 430.00 231.82 L 440.67 232.64 L 451.33 231.82 L 462.00 232.64 L 472.67 231.82 L 483.33 232.64 L 494.00 231.82 L 504.67 232.64 L 515.33 231.82 L 526.00 232.64 L 536.67 231.82 L 547.33 232.64 L 558.00 233.46 L 568.67 234.28 L 579.33 304.80' fill='none' stroke='#4e55c7' stroke-width='1.8'/><path d='M 78.00 293.32 L 88.67 240.84 L 99.33 276.10 L 110.00 244.94 L 120.67 242.48 L 131.33 239.20 L 142.00 240.84 L 152.67 240.02 L 163.33 238.38 L 174.00 240.84 L 184.67 239.20 L 195.33 238.38 L 206.00 232.64 L 216.67 231.82 L 227.33 231.82 L 238.00 231.82 L 248.67 231.82 L 259.33 231.82 L 270.00 231.82 L 280.67 231.82 L 291.33 231.82 L 302.00 231.82 L 312.67 231.82 L 323.33 231.82 L 334.00 231.82 L 344.67 231.82 L 355.33 231.82 L 366.00 232.64 L 376.67 239.20 L 387.33 238.38 L 398.00 240.02 L 408.67 237.56 L 419.33 239.20 L 430.00 238.38 L 440.67 237.56 L 451.33 237.56 L 462.00 236.74 L 472.67 235.92 L 483.33 235.92 L 494.00 235.10 L 504.67 235.10 L 515.33 234.28 L 526.00 233.46 L 536.67 234.28 L 547.33 233.46 L 558.00 233.46 L 568.67 235.10 L 579.33 272.00' fill='none' stroke='#b43b35' stroke-width='1.8'/><path d='M 78.00 296.60 L 88.67 250.68 L 99.33 245.76 L 110.00 243.30 L 120.67 240.84 L 131.33 239.20 L 142.00 241.66 L 152.67 239.20 L 163.33 238.38 L 174.00 240.02 L 184.67 238.38 L 195.33 237.56 L 206.00 232.64 L 216.67 232.64 L 227.33 231.82 L 238.00 231.82 L 248.67 231.82 L 259.33 231.82 L 270.00 231.82 L 280.67 231.82 L 291.33 231.82 L 302.00 231.82 L 312.67 231.82 L 323.33 231.82 L 334.00 231.82 L 344.67 231.82 L 355.33 231.82 L 366.00 232.64 L 376.67 239.20 L 387.33 237.56 L 398.00 236.74 L 408.67 236.74 L 419.33 235.92 L 430.00 235.92 L 440.67 235.10 L 451.33 235.10 L 462.00 234.28 L 472.67 234.28 L 483.33 234.28 L 494.00 233.46 L 504.67 233.46 L 515.33 232.64 L 526.00 233.46 L 536.67 232.64 L 547.33 232.64 L 558.00 232.64 L 568.67 235.10 L 579.33 273.64' fill='none' stroke='#933e9d' stroke-width='1.8'/><path d='M 78.00 288.40 L 88.67 239.20 L 99.33 255.60 L 110.00 245.76 L 120.67 241.66 L 131.33 240.02 L 142.00 244.12 L 152.67 240.84 L 163.33 239.20 L 174.00 241.66 L 184.67 240.02 L 195.33 238.38 L 206.00 232.64 L 216.67 232.64 L 227.33 231.82 L 238.00 231.82 L 248.67 231.82 L 259.33 231.82 L 270.00 231.82 L 280.67 231.82 L 291.33 231.82 L 302.00 231.82 L 312.67 231.82 L 323.33 231.82 L 334.00 231.82 L 344.67 231.82 L 355.33 231.82 L 366.00 232.64 L 376.67 240.84 L 387.33 238.38 L 398.00 237.56 L 408.67 237.56 L 419.33 236.74 L 430.00 236.74 L 440.67 235.92 L 451.33 235.92 L 462.00 235.10 L 472.67 235.10 L 483.33 234.28 L 494.00 234.28 L 504.67 233.46 L 515.33 233.46 L 526.00 232.64 L 536.67 233.46 L 547.33 232.64 L 558.00 232.64 L 568.67 235.92 L 579.33 276.10' fill='none' stroke='#2aa1a6' stroke-width='1.8'/><path d='M 78.00 292.50 L 88.67 244.12 L 99.33 249.04 L 110.00 242.48 L 120.67 239.20 L 131.33 238.38 L 142.00 241.66 L 152.67 239.20 L 163.33 238.38 L 174.00 240.02 L 184.67 239.20 L 195.33 237.56 L 206.00 232.64 L 216.67 231.82 L 227.33 231.82 L 238.00 231.82 L 248.67 231.82 L 259.33 231.82 L 270.00 231.82 L 280.67 231.82 L 291.33 231.82 L 302.00 231.82 L 312.67 231.82 L 323.33 231.82 L 334.00 231.82 L 344.67 231.82 L 355.33 231.82 L 366.00 232.64 L 376.67 238.38 L 387.33 237.56 L 398.00 236.74 L 408.67 236.74 L 419.33 235.92 L 430.00 235.92 L 440.67 235.10 L 451.33 235.10 L 462.00 234.28 L 472.67 234.28 L 483.33 234.28 L 494.00 233.46 L 504.67 233.46 L 515.33 233.46 L 526.00 232.64 L 536.67 232.64 L 547.33 232.64 L 558.00 232.64 L 568.67 236.74 L 579.33 278.56' fill='none' stroke='#3b9b55' stroke-width='1.8'/><text class='s' x='590' y='317' text-anchor='end'>layer →</text><line x1='92' y1='371' x2='110' y2='371' stroke='#4e55c7' stroke-width='2'/><text class='l' x='116' y='375'>Write</text><line x1='193' y1='371' x2='211' y2='371' stroke='#b43b35' stroke-width='2'/><text class='l' x='217' y='375'>a</text><line x1='294' y1='371' x2='312' y2='371' stroke='#933e9d' stroke-width='2'/><text class='l' x='318' y='375'>quiz</text><line x1='395' y1='371' x2='413' y2='371' stroke='#2aa1a6' stroke-width='2'/><text class='l' x='419' y='375'>about</text><line x1='496' y1='371' x2='514' y2='371' stroke='#3b9b55' stroke-width='2'/><text class='l' x='520' y='375'>bits</text><text class='s' x='18' y='214' text-anchor='middle' transform='rotate(-90 18 214)'>input/output cosine similarity</text></svg><figcaption>Illustrative demo data · renderer: <code>layerTokenSimilarityBands</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>原模型/深度扩展双带 + token 多线 + duplicated-layer 区间底色 + 层端退化</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-79 Yi layer-token similarity bands</dd></div><div><dt>Component ID</dt><dd><code>yi-layer-token-similarity</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合选择可复制或可跳过的层；相似度需按 token 展开，不能只报整层平均。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 8 · PDF p.17</h2><p>Yi-6B 与 Yi-9B 初始化的 token-wise layer cosine similarity，新增 16 层接近 1。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2403.04652" rel="noreferrer">Yi Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;panels&quot;: [
+    {
+      &quot;label&quot;: &quot;YI-6B · 32 LAYERS&quot;,
+      &quot;maxLayer&quot;: 32,
+      &quot;tokens&quot;: [
+        {
+          &quot;label&quot;: &quot;Write&quot;,
+          &quot;values&quot;: [
+            0.25,
+            0.92,
+            0.85,
+            0.98,
+            0.99,
+            0.98,
+            0.02,
+            0.97,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.96,
+            0.04,
+            0.01
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;a&quot;,
+          &quot;values&quot;: [
+            0.24,
+            0.88,
+            0.45,
+            0.83,
+            0.86,
+            0.9,
+            0.88,
+            0.89,
+            0.91,
+            0.88,
+            0.9,
+            0.91,
+            0.89,
+            0.92,
+            0.9,
+            0.91,
+            0.92,
+            0.92,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.97,
+            0.96,
+            0.97,
+            0.97,
+            0.98,
+            0.97,
+            0.5,
+            0.4
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;quiz&quot;,
+          &quot;values&quot;: [
+            0.2,
+            0.76,
+            0.82,
+            0.85,
+            0.88,
+            0.9,
+            0.87,
+            0.9,
+            0.91,
+            0.89,
+            0.91,
+            0.92,
+            0.9,
+            0.92,
+            0.93,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.96,
+            0.96,
+            0.97,
+            0.97,
+            0.98,
+            0.97,
+            0.98,
+            0.98,
+            0.98,
+            0.48,
+            0.42
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;about&quot;,
+          &quot;values&quot;: [
+            0.3,
+            0.9,
+            0.7,
+            0.82,
+            0.87,
+            0.89,
+            0.84,
+            0.88,
+            0.9,
+            0.87,
+            0.89,
+            0.91,
+            0.88,
+            0.91,
+            0.92,
+            0.92,
+            0.93,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.96,
+            0.97,
+            0.97,
+            0.98,
+            0.97,
+            0.98,
+            0.98,
+            0.5,
+            0.45
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;bits&quot;,
+          &quot;values&quot;: [
+            0.25,
+            0.84,
+            0.78,
+            0.86,
+            0.9,
+            0.91,
+            0.87,
+            0.9,
+            0.91,
+            0.89,
+            0.9,
+            0.92,
+            0.91,
+            0.92,
+            0.93,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.96,
+            0.96,
+            0.97,
+            0.97,
+            0.97,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.45,
+            0.38
+          ]
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;YI-9B INITIALIZATION · 48 LAYERS&quot;,
+      &quot;maxLayer&quot;: 48,
+      &quot;duplicated&quot;: [
+        12,
+        28
+      ],
+      &quot;tokens&quot;: [
+        {
+          &quot;label&quot;: &quot;Write&quot;,
+          &quot;values&quot;: [
+            0.25,
+            0.92,
+            0.85,
+            0.98,
+            0.99,
+            0.98,
+            0.02,
+            0.97,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.99,
+            0.98,
+            0.97,
+            0.96,
+            0.1
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;a&quot;,
+          &quot;values&quot;: [
+            0.24,
+            0.88,
+            0.45,
+            0.83,
+            0.86,
+            0.9,
+            0.88,
+            0.89,
+            0.91,
+            0.88,
+            0.9,
+            0.91,
+            0.98,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.98,
+            0.9,
+            0.91,
+            0.89,
+            0.92,
+            0.9,
+            0.91,
+            0.92,
+            0.92,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.97,
+            0.96,
+            0.97,
+            0.97,
+            0.95,
+            0.5
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;quiz&quot;,
+          &quot;values&quot;: [
+            0.2,
+            0.76,
+            0.82,
+            0.85,
+            0.88,
+            0.9,
+            0.87,
+            0.9,
+            0.91,
+            0.89,
+            0.91,
+            0.92,
+            0.98,
+            0.98,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.98,
+            0.9,
+            0.92,
+            0.93,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.96,
+            0.96,
+            0.97,
+            0.97,
+            0.98,
+            0.97,
+            0.98,
+            0.98,
+            0.98,
+            0.95,
+            0.48
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;about&quot;,
+          &quot;values&quot;: [
+            0.3,
+            0.9,
+            0.7,
+            0.82,
+            0.87,
+            0.89,
+            0.84,
+            0.88,
+            0.9,
+            0.87,
+            0.89,
+            0.91,
+            0.98,
+            0.98,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.98,
+            0.88,
+            0.91,
+            0.92,
+            0.92,
+            0.93,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.96,
+            0.97,
+            0.97,
+            0.98,
+            0.97,
+            0.98,
+            0.98,
+            0.94,
+            0.45
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;bits&quot;,
+          &quot;values&quot;: [
+            0.25,
+            0.84,
+            0.78,
+            0.86,
+            0.9,
+            0.91,
+            0.87,
+            0.9,
+            0.91,
+            0.89,
+            0.9,
+            0.92,
+            0.98,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.99,
+            0.98,
+            0.91,
+            0.92,
+            0.93,
+            0.93,
+            0.94,
+            0.94,
+            0.95,
+            0.95,
+            0.96,
+            0.96,
+            0.96,
+            0.97,
+            0.97,
+            0.97,
+            0.98,
+            0.98,
+            0.98,
+            0.98,
+            0.93,
+            0.42
+          ]
+        }
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。 仅当完整坐标会掩盖差异、且断轴被清晰披露时使用。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 厂商发布复现系列, Anthropic / Claude, claude, broken-axis, high-score">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="High-score Broken Axis · Benchmark Atlas">
+  <meta property="og:description" content="复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/claude-broken-axis-release.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="High-score Broken Axis · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>High-score Broken Axis · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/claude-broken-axis-release.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"High-score Broken Axis · Benchmark Atlas","description":"复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/claude-broken-axis-release.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 厂商发布复现系列, Anthropic / Claude, claude, broken-axis, high-score"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>厂商发布复现系列</span><span>/</span><span aria-current="page">High-score Broken Axis</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">厂商发布复现系列 · 厂商发布</p>
+        <h1>High-score Broken Axis</h1>
+        <p class="component-lede">复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。</p>
+        <div class="component-tags"><span>claude</span><span>broken-axis</span><span>high-score</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f4efe5"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='claudebrokenaxisrelease-title claudebrokenaxisrelease-desc' style='background:#f4efe5;color:#211b16'>
+      <title id='claudebrokenaxisrelease-title'>Coding benchmark · compressed high range</title>
+      <desc id='claudebrokenaxisrelease-desc'>复现 Claude 在高分 benchmark 上使用的断轴结构，放大 70–90 区间内的真实差别。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#211b16}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#7b7168}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#7b7168}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#211b16}
+        .g{stroke:#d8d0c5;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Coding benchmark · compressed high range</text>
+      <text class='s' x='28' y='48'>Anthropic / Claude</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <path d='M 43 287 l 8 -8 l 8 8 l 8 -8' fill='none' stroke='#211b16' stroke-width='2'/><text class='s' x='51' y='309' text-anchor='middle'>axis break</text><rect x='92' y='123.48000000000008' width='62' height='201.51999999999992' fill='#d96f4f' fill-opacity='0.9'/><text class='v' x='123' y='114.48000000000008' text-anchor='middle'>87.6</text><text class='v' x='123' y='349' text-anchor='middle'>Opus</text><rect x='196' y='183.01999999999992' width='62' height='141.98000000000008' fill='#2c6e63' fill-opacity='0.62'/><text class='v' x='227' y='174.01999999999992' text-anchor='middle'>82.4</text><text class='v' x='227' y='349' text-anchor='middle'>Sonnet</text><rect x='300' y='212.79000000000002' width='62' height='112.20999999999998' fill='#3270a8' fill-opacity='0.62'/><text class='v' x='331' y='203.79000000000002' text-anchor='middle'>79.8</text><text class='v' x='331' y='349' text-anchor='middle'>GPT</text><rect x='404' y='234.54499999999993' width='62' height='90.45500000000007' fill='#f0b354' fill-opacity='0.62'/><text class='v' x='435' y='225.54499999999993' text-anchor='middle'>77.9</text><text class='v' x='435' y='349' text-anchor='middle'>Gemini</text><rect x='508' y='263.16999999999996' width='62' height='61.83000000000004' fill='#c8bfaf' fill-opacity='0.62'/><text class='v' x='539' y='254.16999999999996' text-anchor='middle'>75.4</text><text class='v' x='539' y='349' text-anchor='middle'>Qwen</text><line class='g' x1='62' y1='325' x2='604' y2='325'/><text class='l' x='52' y='328' text-anchor='end'>70</text><line class='g' x1='62' y1='210.5' x2='604' y2='210.5'/><text class='l' x='52' y='213.5' text-anchor='end'>80</text><line class='g' x1='62' y1='96' x2='604' y2='96'/><text class='l' x='52' y='99' text-anchor='end'>90</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>brokenAxisBars</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>高分段断轴柱 + 轴断裂符号 + 柱顶一位小数</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-44 Claude compressed score rail</dd></div><div><dt>Component ID</dt><dd><code>claude-broken-axis-release</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>仅当完整坐标会掩盖差异、且断轴被清晰披露时使用。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Anthropic / Claude</h2><p>暖纸、珊瑚主系列、强表格与误差区间</p><a class="text-link" href="https://www.anthropic.com/news/claude-opus-4-6" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;min&quot;: 70,
+  &quot;max&quot;: 90,
+  &quot;items&quot;: [
+    {
+      &quot;label&quot;: &quot;Opus&quot;,
+      &quot;value&quot;: 87.6
+    },
+    {
+      &quot;label&quot;: &quot;Sonnet&quot;,
+      &quot;value&quot;: 82.4
+    },
+    {
+      &quot;label&quot;: &quot;GPT&quot;,
+      &quot;value&quot;: 79.8
+    },
+    {
+      &quot;label&quot;: &quot;Gemini&quot;,
+      &quot;value&quot;: 77.9
+    },
+    {
+      &quot;label&quot;: &quot;Qwen&quot;,
+      &quot;value&quot;: 75.4
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="gemini-deepthink-triptych.html"><strong>Gemini Deep Think Triptych</strong><span>三联独立柱面板 + 自家蓝强调 + benchmark 条件脚注</span></a><a href="openai-thinking-outline-bars.html"><strong>Thinking vs Direct Bars</strong><span>填充/空心配对柱 + thinking 模式图例 + 单 benchmark 排序</span></a><a href="claude-multilingual-errorbars.html"><strong>Multilingual Coding Error Bars</strong><span>语言分组窄柱 + 每柱误差棒 + 三模型稳定顺序</span></a><a href="deepseek-protocol-uplift.html"><strong>Agent Protocol Uplift</strong><span>每任务 base/protocol 配对柱 + 增量桥线 + 开放/填充编码</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

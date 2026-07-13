@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。 适合 prompt 敏感性、seed 方差或多任务分布；样本少时不要平滑密度。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 论文图表复现, MTEB, arxiv, raincloud, prompt-sensitivity">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Prompt Sensitivity Raincloud · Benchmark Atlas">
+  <meta property="og:description" content="用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-prompt-raincloud.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Prompt Sensitivity Raincloud · Benchmark Atlas">
+  <meta name="twitter:description" content="用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Prompt Sensitivity Raincloud · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-prompt-raincloud.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Prompt Sensitivity Raincloud · Benchmark Atlas","description":"用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-prompt-raincloud.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 论文图表复现, MTEB, arxiv, raincloud, prompt-sensitivity"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>论文图表复现</span><span>/</span><span aria-current="page">Prompt Sensitivity Raincloud</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">论文图表复现 · arXiv / 独立评测</p>
+        <h1>Prompt Sensitivity Raincloud</h1>
+        <p class="component-lede">用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。</p>
+        <div class="component-tags"><span>arxiv</span><span>raincloud</span><span>prompt-sensitivity</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbfbfb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='arxivpromptraincloud-title arxivpromptraincloud-desc' style='background:#fbfbfb;color:#202020'>
+      <title id='arxivpromptraincloud-title'>Prompt-template sensitivity by model</title>
+      <desc id='arxivpromptraincloud-desc'>用 raincloud 同时展示 prompt 模板造成的密度、四分位和逐次得分。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#202020}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#707070}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#707070}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#202020}
+        .g{stroke:#dedede;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Prompt-template sensitivity by model</text>
+      <text class='s' x='28' y='48'>MTEB</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <line class='g' x1='172' y1='80' x2='172' y2='344'/><text class='l' x='172' y='367' text-anchor='middle'>30</text><line class='g' x1='300.61538461538464' y1='80' x2='300.61538461538464' y2='344'/><text class='l' x='300.61538461538464' y='367' text-anchor='middle'>50</text><line class='g' x1='429.2307692307692' y1='80' x2='429.2307692307692' y2='344'/><text class='l' x='429.2307692307692' y='367' text-anchor='middle'>70</text><line class='g' x1='557.8461538461538' y1='80' x2='557.8461538461538' y2='344'/><text class='l' x='557.8461538461538' y='367' text-anchor='middle'>90</text><text class='v' x='151' y='117' text-anchor='end'>Model A</text><path d='M 307.04615384615386 112 L 307.05 109.00 L 345.63 99.43 L 371.35 91.32 L 384.22 85.90 L 403.51 84.00 L 422.80 85.90 L 442.09 91.32 L 480.68 99.43 L 506.40 109.00 L 506.40000000000003 112 Z' fill='#7049a8' fill-opacity='.25' stroke='#7049a8' stroke-width='2'/><line x1='371.3538461538462' y1='121' x2='442.0923076923077' y2='121' stroke='#7049a8' stroke-width='8' stroke-linecap='round'/><line x1='403.5076923076923' y1='114' x2='403.5076923076923' y2='128' stroke='#202020' stroke-width='3'/><circle cx='307.04615384615386' cy='137' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='345.63076923076926' cy='144' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='371.3538461538462' cy='151' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='384.2153846153846' cy='143' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='403.5076923076923' cy='150' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='422.79999999999995' cy='142' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='442.0923076923077' cy='149' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='480.6769230769231' cy='141' r='3.5' fill='#7049a8' fill-opacity='.68'/><circle cx='506.40000000000003' cy='148' r='3.5' fill='#7049a8' fill-opacity='.68'/><text class='v' x='151' y='186' text-anchor='end'>Model B</text><path d='M 287.75384615384615 181 L 287.75 178.00 L 326.34 168.43 L 358.49 160.32 L 397.08 154.90 L 416.37 153.00 L 454.95 154.90 L 487.11 160.32 L 499.97 168.43 L 532.12 178.00 L 532.123076923077 181 Z' fill='#36a58b' fill-opacity='.25' stroke='#36a58b' stroke-width='2'/><line x1='358.4923076923077' y1='190' x2='487.1076923076923' y2='190' stroke='#36a58b' stroke-width='8' stroke-linecap='round'/><line x1='416.3692307692308' y1='183' x2='416.3692307692308' y2='197' stroke='#202020' stroke-width='3'/><circle cx='287.75384615384615' cy='206' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='326.33846153846156' cy='213' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='358.4923076923077' cy='220' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='397.0769230769231' cy='212' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='416.3692307692308' cy='219' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='454.95384615384614' cy='211' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='487.1076923076923' cy='218' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='499.96923076923076' cy='210' r='3.5' fill='#36a58b' fill-opacity='.68'/><circle cx='532.123076923077' cy='217' r='3.5' fill='#36a58b' fill-opacity='.68'/><text class='v' x='151' y='255' text-anchor='end'>Model C</text><path d='M 339.20000000000005 250 L 339.20 247.00 L 371.35 237.43 L 390.65 229.32 L 429.23 223.90 L 448.52 222.00 L 467.82 223.90 L 519.26 229.32 L 538.55 237.43 L 557.85 247.00 L 557.8461538461538 250 Z' fill='#e18b35' fill-opacity='.25' stroke='#e18b35' stroke-width='2'/><line x1='390.6461538461539' y1='259' x2='519.2615384615385' y2='259' stroke='#e18b35' stroke-width='8' stroke-linecap='round'/><line x1='448.5230769230769' y1='252' x2='448.5230769230769' y2='266' stroke='#202020' stroke-width='3'/><circle cx='339.20000000000005' cy='275' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='371.3538461538462' cy='282' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='390.6461538461539' cy='289' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='429.2307692307692' cy='281' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='448.5230769230769' cy='288' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='467.81538461538463' cy='280' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='519.2615384615385' cy='287' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='538.5538461538462' cy='279' r='3.5' fill='#e18b35' fill-opacity='.68'/><circle cx='557.8461538461538' cy='286' r='3.5' fill='#e18b35' fill-opacity='.68'/><text class='v' x='151' y='324' text-anchor='end'>Model D</text><path d='M 255.60000000000002 319 L 255.60 316.00 L 313.48 306.43 L 352.06 298.32 L 364.92 292.90 L 409.94 291.00 L 435.66 292.90 L 461.38 298.32 L 493.54 306.43 L 544.98 316.00 L 544.9846153846154 319 Z' fill='#cf5268' fill-opacity='.25' stroke='#cf5268' stroke-width='2'/><line x1='352.0615384615385' y1='328' x2='461.38461538461536' y2='328' stroke='#cf5268' stroke-width='8' stroke-linecap='round'/><line x1='409.9384615384615' y1='321' x2='409.9384615384615' y2='335' stroke='#202020' stroke-width='3'/><circle cx='255.60000000000002' cy='344' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='313.4769230769231' cy='351' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='352.0615384615385' cy='358' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='364.9230769230769' cy='350' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='409.9384615384615' cy='357' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='435.66153846153844' cy='349' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='461.38461538461536' cy='356' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='493.53846153846155' cy='348' r='3.5' fill='#cf5268' fill-opacity='.68'/><circle cx='544.9846153846154' cy='355' r='3.5' fill='#cf5268' fill-opacity='.68'/>
+    </svg><figcaption>Illustrative demo data · renderer: <code>raincloud</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>半小提琴云 + IQR 粗线 + median + 原始点雨</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-59 Paper raincloud specimen</dd></div><div><dt>Component ID</dt><dd><code>arxiv-prompt-raincloud</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 prompt 敏感性、seed 方差或多任务分布；样本少时不要平滑密度。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>MTEB</h2><p>多任务 embedding 评测与分布比较</p><a class="text-link" href="https://arxiv.org/abs/2210.07316" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;groups&quot;: [
+    {
+      &quot;label&quot;: &quot;Model A&quot;,
+      &quot;values&quot;: [
+        51,
+        57,
+        61,
+        63,
+        66,
+        69,
+        72,
+        78,
+        82
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Model B&quot;,
+      &quot;values&quot;: [
+        48,
+        54,
+        59,
+        65,
+        68,
+        74,
+        79,
+        81,
+        86
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Model C&quot;,
+      &quot;values&quot;: [
+        56,
+        61,
+        64,
+        70,
+        73,
+        76,
+        84,
+        87,
+        90
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Model D&quot;,
+      &quot;values&quot;: [
+        43,
+        52,
+        58,
+        60,
+        67,
+        71,
+        75,
+        80,
+        88
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="longbench-context-contour.html"><strong>Context Length × Depth Surface</strong><span>context-length × needle-depth 矩阵 + 双等值线 + 单元格读数</span></a><a href="arxiv-benchmark-upset.html"><strong>Benchmark Set UpSet</strong><span>交集柱 + benchmark membership 点阵 + 连线组合</span></a><a href="arxiv-rank-alluvial.html"><strong>Rank Migration Alluvial</strong><span>三时点排名节点 + 半透明宽 ribbon + 末端系列直标</span></a><a href="arxiv-selection-ternary.html"><strong>Quality–Speed–Cost Ternary</strong><span>三元重心坐标 + 三顶点权重 + 模型点直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

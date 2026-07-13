@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。 适合单次轨迹剖析和 Agent latency；不用于模型总体排名。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, Agent 与过程评测, Terminal-Bench, swimlane, trajectory, terminal">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Terminal Task Swimlane · Benchmark Atlas">
+  <meta property="og:description" content="把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/terminal-bench-trajectory.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Terminal Task Swimlane · Benchmark Atlas">
+  <meta name="twitter:description" content="把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Terminal Task Swimlane · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/terminal-bench-trajectory.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Terminal Task Swimlane · Benchmark Atlas","description":"把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/terminal-bench-trajectory.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, Agent 与过程评测, Terminal-Bench, swimlane, trajectory, terminal"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>Agent 与过程评测</span><span>/</span><span aria-current="page">Terminal Task Swimlane</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">Agent 与过程评测 · 独立榜单</p>
+        <h1>Terminal Task Swimlane</h1>
+        <p class="component-lede">把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。</p>
+        <div class="component-tags"><span>swimlane</span><span>trajectory</span><span>terminal</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#111913"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='terminalbenchtrajectory-title terminalbenchtrajectory-desc' style='background:#111913;color:#e9f3ea'>
+        <title id='terminalbenchtrajectory-title'>One successful agent trajectory</title>
+        <desc id='terminalbenchtrajectory-desc'>把思考、shell、测试和修复沿统一时间轴展开，显示并发、等待与重试成本。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='terminalbenchtrajectory-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#57a6ff' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#63d17d' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#e9f3ea}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#92a695}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#92a695}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#e9f3ea}
+            .g{stroke:#304235;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#e9f3ea;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>One successful agent trajectory</text>
+        <text class='s' x='28' y='48'>Terminal-Bench</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='156' y1='82' x2='156' y2='342'/><text class='l' x='156' y='367' text-anchor='middle'>0s</text><line class='g' x1='243.2' y1='82' x2='243.2' y2='342'/><text class='l' x='243.2' y='367' text-anchor='middle'>20s</text><line class='g' x1='330.4' y1='82' x2='330.4' y2='342'/><text class='l' x='330.4' y='367' text-anchor='middle'>40s</text><line class='g' x1='417.59999999999997' y1='82' x2='417.59999999999997' y2='342'/><text class='l' x='417.59999999999997' y='367' text-anchor='middle'>60s</text><line class='g' x1='504.8' y1='82' x2='504.8' y2='342'/><text class='l' x='504.8' y='367' text-anchor='middle'>80s</text><line class='g' x1='592' y1='82' x2='592' y2='342'/><text class='l' x='592' y='367' text-anchor='middle'>100s</text><text class='v' x='139' y='121' text-anchor='end'>PLAN</text><line x1='156' y1='117' x2='592' y2='117' stroke='#304235'/><rect x='156' y='105' width='52.31999999999999' height='25' rx='3' fill='#63d17d' fill-opacity='0.9'/><text x='182.16' y='122' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>12s</text><rect x='443.76' y='105' width='34.879999999999995' height='25' rx='3' fill='#63d17d' fill-opacity='0.62'/><text x='461.2' y='122' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>8s</text><text class='v' x='139' y='182' text-anchor='end'>SHELL</text><line x1='156' y1='178' x2='592' y2='178' stroke='#304235'/><rect x='199.6' y='166' width='91.55999999999997' height='25' rx='3' fill='#57a6ff' fill-opacity='0.9'/><text x='245.38' y='183' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>21s</text><rect x='347.84000000000003' y='166' width='82.83999999999997' height='25' rx='3' fill='#57a6ff' fill-opacity='0.62'/><text x='389.26' y='183' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>19s</text><rect x='496.08' y='166' width='56.68000000000001' height='25' rx='3' fill='#57a6ff' fill-opacity='0.62'/><text x='524.42' y='183' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>13s</text><text class='v' x='139' y='243' text-anchor='end'>TEST</text><line x1='156' y1='239' x2='592' y2='239' stroke='#304235'/><rect x='282.44' y='227' width='69.76000000000005' height='25' rx='3' fill='#eecb68' fill-opacity='0.9'/><text x='317.32000000000005' y='244' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>16s</text><rect x='421.96' y='227' width='78.48000000000002' height='25' rx='3' fill='#eecb68' fill-opacity='0.62'/><text x='461.2' y='244' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>18s</text><rect x='548.4000000000001' y='227' width='43.59999999999991' height='25' rx='3' fill='#eecb68' fill-opacity='0.62'/><text x='570.2' y='244' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>10s</text><text class='v' x='139' y='304' text-anchor='end'>PATCH</text><line x1='156' y1='300' x2='592' y2='300' stroke='#304235'/><rect x='317.32' y='288' width='87.19999999999999' height='25' rx='3' fill='#e06c75' fill-opacity='0.9'/><text x='360.91999999999996' y='305' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>20s</text><rect x='469.92' y='288' width='69.76000000000005' height='25' rx='3' fill='#e06c75' fill-opacity='0.62'/><text x='504.80000000000007' y='305' text-anchor='middle' style='font:700 8px ui-monospace;fill:#111913'>16s</text><path d='M 347.84000000000003 78 l 7 10 l -14 0 Z' fill='#e06c75'/><text class='s' x='347.84000000000003' y='73' text-anchor='middle'>RETRY</text><path d='M 496.08 78 l 7 10 l -14 0 Z' fill='#e06c75'/><text class='s' x='496.08' y='73' text-anchor='middle'>RETRY</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>swimlane</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>事件泳道 + 时间轴 + 并发段 + 重试标记</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-33 Terminal trace</dd></div><div><dt>Component ID</dt><dd><code>terminal-bench-trajectory</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合单次轨迹剖析和 Agent latency；不用于模型总体排名。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Terminal-Bench</h2><p>终端任务轨迹与阶段耗时</p><a class="text-link" href="https://www.tbench.ai/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;lanes&quot;: [
+    {
+      &quot;label&quot;: &quot;PLAN&quot;,
+      &quot;segments&quot;: [
+        [
+          0,
+          12
+        ],
+        [
+          66,
+          74
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;SHELL&quot;,
+      &quot;segments&quot;: [
+        [
+          10,
+          31
+        ],
+        [
+          44,
+          63
+        ],
+        [
+          78,
+          91
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;TEST&quot;,
+      &quot;segments&quot;: [
+        [
+          29,
+          45
+        ],
+        [
+          61,
+          79
+        ],
+        [
+          90,
+          100
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;PATCH&quot;,
+      &quot;segments&quot;: [
+        [
+          37,
+          57
+        ],
+        [
+          72,
+          88
+        ]
+      ]
+    }
+  ],
+  &quot;retries&quot;: [
+    44,
+    78
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="vending-agent-timeseries.html"><strong>Long-horizon Agent Ledger</strong><span>多线时间序列 + 失败事件旗标 + 零收益线</span></a><a href="qwen-token-area.html"><strong>Token Allocation Stack</strong><span>100% 堆叠面积 + step 边界 + token 类别层</span></a><a href="toolbench-outcome-sankey.html"><strong>Tool-call Outcome Flow</strong><span>三阶段 Sankey + 失败支流 + 流量直标</span></a><a href="agentbench-survival.html"><strong>Task Survival Curve</strong><span>Kaplan–Meier 阶梯 + censor 标记 + 中位完成时</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。 适合 4–8 个模型的 head-to-head；样本不足的格子要明确缺失。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 诊断与矩阵, LMArena / Chatbot Arena, pairwise, win-rate, matrix">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Pairwise Win-rate Matrix · Benchmark Atlas">
+  <meta property="og:description" content="用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/arena-winrate-matrix.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Pairwise Win-rate Matrix · Benchmark Atlas">
+  <meta name="twitter:description" content="用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Pairwise Win-rate Matrix · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/arena-winrate-matrix.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Pairwise Win-rate Matrix · Benchmark Atlas","description":"用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/arena-winrate-matrix.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 诊断与矩阵, LMArena / Chatbot Arena, pairwise, win-rate, matrix"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>诊断与矩阵</span><span>/</span><span aria-current="page">Pairwise Win-rate Matrix</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">诊断与矩阵 · 独立榜单</p>
+        <h1>Pairwise Win-rate Matrix</h1>
+        <p class="component-lede">用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。</p>
+        <div class="component-tags"><span>pairwise</span><span>win-rate</span><span>matrix</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f7f7f5"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='arenawinratematrix-title arenawinratematrix-desc' style='background:#f7f7f5;color:#191919'>
+        <title id='arenawinratematrix-title'>Head-to-head preference</title>
+        <desc id='arenawinratematrix-desc'>用成对胜率矩阵揭示循环优势和风格偏好，避免 Elo 单排名掩盖 matchup。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='arenawinratematrix-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#e04b42' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#2f65d9' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#191919}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#72726e}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#72726e}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#191919}
+            .g{stroke:#dcdcd8;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#191919;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Head-to-head preference</text>
+        <text class='s' x='28' y='48'>LMArena / Chatbot Arena</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <text class='v' x='223' y='76' text-anchor='middle'>A</text><text class='v' x='184' y='116' text-anchor='end'>A</text><text class='v' x='277' y='76' text-anchor='middle'>B</text><text class='v' x='184' y='170' text-anchor='end'>B</text><text class='v' x='331' y='76' text-anchor='middle'>C</text><text class='v' x='184' y='224' text-anchor='end'>C</text><text class='v' x='385' y='76' text-anchor='middle'>D</text><text class='v' x='184' y='278' text-anchor='end'>D</text><text class='v' x='439' y='76' text-anchor='middle'>E</text><text class='v' x='184' y='332' text-anchor='end'>E</text><rect x='196' y='84' width='51' height='51' fill='#e2a928' fill-opacity='0.18'/><text x='221' y='115' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>—</text><rect x='250' y='84' width='51' height='51' fill='#2f65d9' fill-opacity='0.384'/><text x='275' y='115' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>57%</text><rect x='304' y='84' width='51' height='51' fill='#2f65d9' fill-opacity='0.512'/><text x='329' y='115' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>61%</text><rect x='358' y='84' width='51' height='51' fill='#e04b42' fill-opacity='0.224'/><text x='383' y='115' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>48%</text><rect x='412' y='84' width='51' height='51' fill='#2f65d9' fill-opacity='0.672'/><text x='437' y='115' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>66%</text><rect x='196' y='138' width='51' height='51' fill='#e04b42' fill-opacity='0.384'/><text x='221' y='169' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>43%</text><rect x='250' y='138' width='51' height='51' fill='#e2a928' fill-opacity='0.18'/><text x='275' y='169' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>—</text><rect x='304' y='138' width='51' height='51' fill='#2f65d9' fill-opacity='0.32'/><text x='329' y='169' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>55%</text><rect x='358' y='138' width='51' height='51' fill='#2f65d9' fill-opacity='0.224'/><text x='383' y='169' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>52%</text><rect x='412' y='138' width='51' height='51' fill='#2f65d9' fill-opacity='0.44800000000000006'/><text x='437' y='169' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>59%</text><rect x='196' y='192' width='51' height='51' fill='#e04b42' fill-opacity='0.512'/><text x='221' y='223' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>39%</text><rect x='250' y='192' width='51' height='51' fill='#e04b42' fill-opacity='0.32'/><text x='275' y='223' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>45%</text><rect x='304' y='192' width='51' height='51' fill='#e2a928' fill-opacity='0.18'/><text x='329' y='223' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>—</text><rect x='358' y='192' width='51' height='51' fill='#2f65d9' fill-opacity='0.5760000000000001'/><text x='383' y='223' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>63%</text><rect x='412' y='192' width='51' height='51' fill='#2f65d9' fill-opacity='0.28800000000000003'/><text x='437' y='223' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>54%</text><rect x='196' y='246' width='51' height='51' fill='#2f65d9' fill-opacity='0.224'/><text x='221' y='277' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>52%</text><rect x='250' y='246' width='51' height='51' fill='#e04b42' fill-opacity='0.224'/><text x='275' y='277' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>48%</text><rect x='304' y='246' width='51' height='51' fill='#e04b42' fill-opacity='0.5760000000000001'/><text x='329' y='277' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>37%</text><rect x='358' y='246' width='51' height='51' fill='#e2a928' fill-opacity='0.18'/><text x='383' y='277' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>—</text><rect x='412' y='246' width='51' height='51' fill='#2f65d9' fill-opacity='0.41600000000000004'/><text x='437' y='277' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>58%</text><rect x='196' y='300' width='51' height='51' fill='#e04b42' fill-opacity='0.672'/><text x='221' y='331' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>34%</text><rect x='250' y='300' width='51' height='51' fill='#e04b42' fill-opacity='0.44800000000000006'/><text x='275' y='331' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>41%</text><rect x='304' y='300' width='51' height='51' fill='#e04b42' fill-opacity='0.28800000000000003'/><text x='329' y='331' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>46%</text><rect x='358' y='300' width='51' height='51' fill='#e04b42' fill-opacity='0.41600000000000004'/><text x='383' y='331' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>42%</text><rect x='412' y='300' width='51' height='51' fill='#e2a928' fill-opacity='0.18'/><text x='437' y='331' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#191919'>—</text><text class='s' x='331' y='373' text-anchor='middle'>row model win rate against column model</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>winMatrix</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>反对称胜率矩阵 + 50% 中性线 + 对角禁用</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-29 Diverging arena board</dd></div><div><dt>Component ID</dt><dd><code>arena-winrate-matrix</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 4–8 个模型的 head-to-head；样本不足的格子要明确缺失。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>LMArena / Chatbot Arena</h2><p>Elo、胜率、置信区间与排名变化</p><a class="text-link" href="https://lmarena.ai/leaderboard" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;models&quot;: [
+    &quot;A&quot;,
+    &quot;B&quot;,
+    &quot;C&quot;,
+    &quot;D&quot;,
+    &quot;E&quot;
+  ],
+  &quot;values&quot;: [
+    [
+      50,
+      57,
+      61,
+      48,
+      66
+    ],
+    [
+      43,
+      50,
+      55,
+      52,
+      59
+    ],
+    [
+      39,
+      45,
+      50,
+      63,
+      54
+    ],
+    [
+      52,
+      48,
+      37,
+      50,
+      58
+    ],
+    [
+      34,
+      41,
+      46,
+      42,
+      50
+    ]
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="helm-capability-heatmap.html"><strong>Scenario Heatmap</strong><span>连续热力矩阵 + 行列聚类顺序 + 最差格标记</span></a><a href="llamaguard-confusion.html"><strong>Safety Confusion Matrix</strong><span>2×2 混淆矩阵 + 边际总量 + 错误成本标注</span></a><a href="gemini-context-decay.html"><strong>Long-context Decay Strips</strong><span>多模型水平色带 + 上下文断点 + 退化阈值</span></a><a href="qwen-ablation-waterfall.html"><strong>Ablation Waterfall</strong><span>正负增量瀑布 + 累计基线 + 最终值</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

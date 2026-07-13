@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。 适合跨数量级的参数量、数据量或 compute；不应用在线性范围很窄的数据。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 规模、成本与效率, Meta / Llama, scaling-law, log-log, fit">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Log-log Scaling Law · Benchmark Atlas">
+  <meta property="og:description" content="用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/llama-scaling-law.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Log-log Scaling Law · Benchmark Atlas">
+  <meta name="twitter:description" content="用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Log-log Scaling Law · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/llama-scaling-law.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Log-log Scaling Law · Benchmark Atlas","description":"用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/llama-scaling-law.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 规模、成本与效率, Meta / Llama, scaling-law, log-log, fit"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>规模、成本与效率</span><span>/</span><span aria-current="page">Log-log Scaling Law</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">规模、成本与效率 · arXiv 论文</p>
+        <h1>Log-log Scaling Law</h1>
+        <p class="component-lede">用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。</p>
+        <div class="component-tags"><span>scaling-law</span><span>log-log</span><span>fit</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbf5eb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='llamascalinglaw-title llamascalinglaw-desc' style='background:#fbf5eb;color:#201c18'>
+        <title id='llamascalinglaw-title'>Model size vs validation loss</title>
+        <desc id='llamascalinglaw-desc'>用对数尺度检验模型规模与 loss 的幂律关系，保留偏离拟合线的点。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='llamascalinglaw-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#d64d3a' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#3559c7' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#201c18}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#736b62}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#736b62}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#201c18}
+            .g{stroke:#dfd5c8;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#201c18;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Model size vs validation loss</text>
+        <text class='s' x='28' y='48'>Meta / Llama</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='76' y1='86' x2='76' y2='334'/><text class='l' x='76' y='356' text-anchor='middle'>1B</text><line class='g' x1='264.21995027135347' y1='86' x2='264.21995027135347' y2='334'/><text class='l' x='264.21995027135347' y='356' text-anchor='middle'>10B</text><line class='g' x1='452.4399005427069' y1='86' x2='452.4399005427069' y2='334'/><text class='l' x='452.4399005427069' y='356' text-anchor='middle'>100B</text><line class='g' x1='584' y1='86' x2='584' y2='334'/><text class='l' x='584' y='356' text-anchor='middle'>500B</text><line class='g' x1='70' y1='330' x2='590' y2='330'/><text class='l' x='59' y='333' text-anchor='end'>1.5</text><line class='g' x1='70' y1='249.33333333333334' x2='590' y2='249.33333333333334'/><text class='l' x='59' y='252.33333333333334' text-anchor='end'>2</text><line class='g' x1='70' y1='168.66666666666669' x2='590' y2='168.66666666666669'/><text class='l' x='59' y='171.66666666666669' text-anchor='end'>2.5</text><line class='g' x1='70' y1='88' x2='590' y2='88'/><text class='l' x='59' y='91' text-anchor='end'>3</text><line x1='76' y1='110.58666666666667' x2='566.7750548042557' y2='317.0933333333333' stroke='#d64d3a' stroke-width='3' stroke-dasharray='7 5'/><text class='s' x='250' y='140' transform='rotate(-17 250 140)'>power-law fit</text><circle cx='76' cy='120.26666666666668' r='6' fill='#3559c7'/><text class='v' x='85' y='112.26666666666668'>1B</text><circle cx='165.8037388367406' cy='175.12' r='7' fill='#3559c7'/><text class='v' x='174.8037388367406' y='167.12'>3B</text><circle cx='245.97955244218082' cy='217.06666666666663' r='8' fill='#3559c7'/><text class='v' x='254.97955244218082' y='209.06666666666663'>8B</text><circle cx='345.4112165102219' cy='252.56' r='9' fill='#3559c7'/><text class='v' x='354.4112165102219' y='244.56'>27B</text><circle cx='423.2842613372551' cy='276.76' r='10' fill='#3559c7'/><text class='v' x='432.2842613372551' y='268.76'>70B</text><circle cx='566.7750548042557' cy='312.25333333333333' r='11' fill='#3559c7'/><text class='v' x='575.7750548042557' y='304.25333333333333'>405B</text><text class='s' x='330' y='385' text-anchor='middle'>active parameters · log scale</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>logScaling</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>log-log 散点 + 拟合线 + 模型规模标注</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-10 Field-note scaling</dd></div><div><dt>Component ID</dt><dd><code>llama-scaling-law</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合跨数量级的参数量、数据量或 compute；不应用在线性范围很窄的数据。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Meta / Llama</h2><p>缩放曲线、模型族比较与安全诊断</p><a class="text-link" href="https://arxiv.org/abs/2407.21783" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;points&quot;: [
+    {
+      &quot;label&quot;: &quot;1B&quot;,
+      &quot;x&quot;: 1,
+      &quot;y&quot;: 2.8
+    },
+    {
+      &quot;label&quot;: &quot;3B&quot;,
+      &quot;x&quot;: 3,
+      &quot;y&quot;: 2.46
+    },
+    {
+      &quot;label&quot;: &quot;8B&quot;,
+      &quot;x&quot;: 8,
+      &quot;y&quot;: 2.2
+    },
+    {
+      &quot;label&quot;: &quot;27B&quot;,
+      &quot;x&quot;: 27,
+      &quot;y&quot;: 1.98
+    },
+    {
+      &quot;label&quot;: &quot;70B&quot;,
+      &quot;x&quot;: 70,
+      &quot;y&quot;: 1.83
+    },
+    {
+      &quot;label&quot;: &quot;405B&quot;,
+      &quot;x&quot;: 405,
+      &quot;y&quot;: 1.61
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="openai-compute-frontier.html"><strong>Compute Frontier Curve</strong><span>对数横轴 + 前沿曲线 + effort 节点注释</span></a><a href="qwen-thinking-budget.html"><strong>Thinking Budget Saturation</strong><span>饱和曲线 + 边际收益分段 + 最佳预算窗</span></a><a href="arxiv-dual-axis.html"><strong>Training Dual-axis Trace</strong><span>双纵轴折线 + 训练阶段带 + 最佳 checkpoint</span></a><a href="phi-efficiency-bubbles.html"><strong>Parameter Efficiency Bubbles</strong><span>气泡散点 + 气泡面积参数 + 效率等高线</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

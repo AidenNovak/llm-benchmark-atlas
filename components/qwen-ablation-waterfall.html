@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。 适合消融和 feature contribution；只有在增量可加时使用。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 诊断与矩阵, Qwen3 Technical Report, waterfall, ablation, contribution">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Ablation Waterfall · Benchmark Atlas">
+  <meta property="og:description" content="按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-ablation-waterfall.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Ablation Waterfall · Benchmark Atlas">
+  <meta name="twitter:description" content="按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Ablation Waterfall · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-ablation-waterfall.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Ablation Waterfall · Benchmark Atlas","description":"按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-ablation-waterfall.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 诊断与矩阵, Qwen3 Technical Report, waterfall, ablation, contribution"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>诊断与矩阵</span><span>/</span><span aria-current="page">Ablation Waterfall</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">诊断与矩阵 · arXiv 论文</p>
+        <h1>Ablation Waterfall</h1>
+        <p class="component-lede">按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。</p>
+        <div class="component-tags"><span>waterfall</span><span>ablation</span><span>contribution</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f6f3ff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='qwenablationwaterfall-title qwenablationwaterfall-desc' style='background:#f6f3ff;color:#24174a'>
+        <title id='qwenablationwaterfall-title'>Contribution to final reward</title>
+        <desc id='qwenablationwaterfall-desc'>按训练或系统模块逐项展示对最终分数的正负贡献，保留累计基线。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='qwenablationwaterfall-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#28b8c7' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#6657d9' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#24174a}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#756b91}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#756b91}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#24174a}
+            .g{stroke:#ded5f3;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#24174a;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Contribution to final reward</text>
+        <text class='s' x='28' y='48'>Qwen3 Technical Report</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='58' y1='335' x2='600' y2='335'/><text class='l' x='49' y='338' text-anchor='end'>50</text><line class='g' x1='58' y1='272.6923076923077' x2='600' y2='272.6923076923077'/><text class='l' x='49' y='275.6923076923077' text-anchor='end'>60</text><line class='g' x1='58' y1='210.38461538461542' x2='600' y2='210.38461538461542'/><text class='l' x='49' y='213.38461538461542' text-anchor='end'>70</text><line class='g' x1='58' y1='148.07692307692307' x2='600' y2='148.07692307692307'/><text class='l' x='49' y='151.07692307692307' text-anchor='end'>80</text><rect x='82' y='310.0769230769231' width='48' height='24.923076923076906' fill='#a59af0'/><text class='v' x='106' y='302.0769230769231' text-anchor='middle'>54</text><text class='l' x='106' y='359' text-anchor='middle'>BASE</text><line x1='130' y1='310.0769230769231' x2='164' y2='310.0769230769231' stroke='#756b91' stroke-dasharray='3 3'/><rect x='164' y='254' width='48' height='56.076923076923094' fill='#28b8c7'/><text class='v' x='188' y='247' text-anchor='middle'>+9</text><text class='l' x='188' y='359' text-anchor='middle'>+SFT mix</text><line x1='212' y1='254' x2='246' y2='254' stroke='#756b91' stroke-dasharray='3 3'/><rect x='246' y='173' width='48' height='81' fill='#28b8c7'/><text class='v' x='270' y='166' text-anchor='middle'>+13</text><text class='l' x='270' y='359' text-anchor='middle'>+RL</text><line x1='294' y1='173' x2='328' y2='173' stroke='#756b91' stroke-dasharray='3 3'/><rect x='328' y='129.3846153846154' width='48' height='43.61538461538461' fill='#28b8c7'/><text class='v' x='352' y='122.38461538461539' text-anchor='middle'>+7</text><text class='l' x='352' y='359' text-anchor='middle'>+Tools</text><line x1='376' y1='129.3846153846154' x2='410' y2='129.3846153846154' stroke='#756b91' stroke-dasharray='3 3'/><rect x='410' y='129.3846153846154' width='48' height='24.923076923076906' fill='#d75b9b'/><text class='v' x='434' y='170.3076923076923' text-anchor='middle'>-4</text><text class='l' x='434' y='359' text-anchor='middle'>Noisy data</text><line x1='458' y1='154.3076923076923' x2='492' y2='154.3076923076923' stroke='#756b91' stroke-dasharray='3 3'/><rect x='492' y='116.9230769230769' width='48' height='37.38461538461539' fill='#28b8c7'/><text class='v' x='516' y='109.9230769230769' text-anchor='middle'>+6</text><text class='l' x='516' y='359' text-anchor='middle'>+Verifier</text><line x1='82' y1='116.9230769230769' x2='540' y2='116.9230769230769' stroke='#6657d9' stroke-width='2'/><text class='s' x='598' y='109.9230769230769' text-anchor='end'>FINAL 85</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>waterfall</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>正负增量瀑布 + 累计基线 + 最终值</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-28 Purple ablation ledger</dd></div><div><dt>Component ID</dt><dd><code>qwen-ablation-waterfall</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合消融和 feature contribution；只有在增量可加时使用。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Qwen3 Technical Report</h2><p>训练阶段、消融、缩放与多任务评测</p><a class="text-link" href="https://arxiv.org/abs/2505.09388" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;start&quot;: 54,
+  &quot;steps&quot;: [
+    {
+      &quot;label&quot;: &quot;+SFT mix&quot;,
+      &quot;delta&quot;: 9
+    },
+    {
+      &quot;label&quot;: &quot;+RL&quot;,
+      &quot;delta&quot;: 13
+    },
+    {
+      &quot;label&quot;: &quot;+Tools&quot;,
+      &quot;delta&quot;: 7
+    },
+    {
+      &quot;label&quot;: &quot;Noisy data&quot;,
+      &quot;delta&quot;: -4
+    },
+    {
+      &quot;label&quot;: &quot;+Verifier&quot;,
+      &quot;delta&quot;: 6
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="helm-capability-heatmap.html"><strong>Scenario Heatmap</strong><span>连续热力矩阵 + 行列聚类顺序 + 最差格标记</span></a><a href="llamaguard-confusion.html"><strong>Safety Confusion Matrix</strong><span>2×2 混淆矩阵 + 边际总量 + 错误成本标注</span></a><a href="gemini-context-decay.html"><strong>Long-context Decay Strips</strong><span>多模型水平色带 + 上下文断点 + 退化阈值</span></a><a href="arena-winrate-matrix.html"><strong>Pairwise Win-rate Matrix</strong><span>反对称胜率矩阵 + 50% 中性线 + 对角禁用</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

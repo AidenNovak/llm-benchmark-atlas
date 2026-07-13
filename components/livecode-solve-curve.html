@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。 适合时间预算固定的 coding benchmark；题目难度顺序要随机或已知。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, Agent 与过程评测, LiveCodeBench, cumulative, coding, time-budget">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Cumulative Solve Curve · Benchmark Atlas">
+  <meta property="og:description" content="按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/livecode-solve-curve.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Cumulative Solve Curve · Benchmark Atlas">
+  <meta name="twitter:description" content="按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Cumulative Solve Curve · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/livecode-solve-curve.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Cumulative Solve Curve · Benchmark Atlas","description":"按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/livecode-solve-curve.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, Agent 与过程评测, LiveCodeBench, cumulative, coding, time-budget"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>Agent 与过程评测</span><span>/</span><span aria-current="page">Cumulative Solve Curve</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">Agent 与过程评测 · 独立榜单</p>
+        <h1>Cumulative Solve Curve</h1>
+        <p class="component-lede">按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。</p>
+        <div class="component-tags"><span>cumulative</span><span>coding</span><span>time-budget</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffdf8"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='livecodesolvecurve-title livecodesolvecurve-desc' style='background:#fffdf8;color:#1e1c19'>
+        <title id='livecodesolvecurve-title'>Problems solved by elapsed minute</title>
+        <desc id='livecodesolvecurve-desc'>按比赛时间累计解题数，显示模型是快速拿到简单题还是后程解决难题。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='livecodesolvecurve-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#2b68d2' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#ee4b3f' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e1c19}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#756f66}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#756f66}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e1c19}
+            .g{stroke:#ded8cd;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#1e1c19;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Problems solved by elapsed minute</text>
+        <text class='s' x='28' y='48'>LiveCodeBench</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='72' y1='88' x2='72' y2='338'/><text class='l' x='72' y='360' text-anchor='middle'>0m</text><line class='g' x1='158.33333333333331' y1='88' x2='158.33333333333331' y2='338'/><text class='l' x='158.33333333333331' y='360' text-anchor='middle'>10m</text><line class='g' x1='244.66666666666666' y1='88' x2='244.66666666666666' y2='338'/><text class='l' x='244.66666666666666' y='360' text-anchor='middle'>20m</text><line class='g' x1='331' y1='88' x2='331' y2='338'/><text class='l' x='331' y='360' text-anchor='middle'>30m</text><line class='g' x1='417.3333333333333' y1='88' x2='417.3333333333333' y2='338'/><text class='l' x='417.3333333333333' y='360' text-anchor='middle'>40m</text><line class='g' x1='503.6666666666667' y1='88' x2='503.6666666666667' y2='338'/><text class='l' x='503.6666666666667' y='360' text-anchor='middle'>50m</text><line class='g' x1='590' y1='88' x2='590' y2='338'/><text class='l' x='590' y='360' text-anchor='middle'>60m</text><line class='g' x1='72' y1='338' x2='590' y2='338'/><text class='l' x='61' y='341' text-anchor='end'>0</text><line class='g' x1='72' y1='296.3333333333333' x2='590' y2='296.3333333333333'/><text class='l' x='61' y='299.3333333333333' text-anchor='end'>1</text><line class='g' x1='72' y1='254.66666666666669' x2='590' y2='254.66666666666669'/><text class='l' x='61' y='257.6666666666667' text-anchor='end'>2</text><line class='g' x1='72' y1='213' x2='590' y2='213'/><text class='l' x='61' y='216' text-anchor='end'>3</text><line class='g' x1='72' y1='171.33333333333334' x2='590' y2='171.33333333333334'/><text class='l' x='61' y='174.33333333333334' text-anchor='end'>4</text><line class='g' x1='72' y1='129.66666666666666' x2='590' y2='129.66666666666666'/><text class='l' x='61' y='132.66666666666666' text-anchor='end'>5</text><line class='g' x1='72' y1='88' x2='590' y2='88'/><text class='l' x='61' y='91' text-anchor='end'>6</text><path d='M 72 338 H 141.06666666666666 V 296.3333333333333 H 227.4 V 254.66666666666669 H 356.90000000000003 V 213 H 477.76666666666665 V 171.33333333333334 H 546.8333333333333 V 129.66666666666666' fill='none' stroke='#ee4b3f' stroke-width='5'/><circle cx='141.06666666666666' cy='296.3333333333333' r='5' fill='#fffdf8' stroke='#ee4b3f' stroke-width='3'/><circle cx='227.4' cy='254.66666666666669' r='5' fill='#fffdf8' stroke='#ee4b3f' stroke-width='3'/><circle cx='356.90000000000003' cy='213' r='5' fill='#fffdf8' stroke='#ee4b3f' stroke-width='3'/><circle cx='477.76666666666665' cy='171.33333333333334' r='5' fill='#fffdf8' stroke='#ee4b3f' stroke-width='3'/><circle cx='546.8333333333333' cy='129.66666666666666' r='5' fill='#fffdf8' stroke='#ee4b3f' stroke-width='3'/><text class='v' x='540.8333333333333' y='119.66666666666666' text-anchor='end'>Model A · 5</text><path d='M 72 338 H 175.60000000000002 V 296.3333333333333 H 287.83333333333337 V 254.66666666666669 H 408.7 V 213 H 572.7333333333333 V 171.33333333333334' fill='none' stroke='#2b68d2' stroke-width='5'/><circle cx='175.60000000000002' cy='296.3333333333333' r='5' fill='#fffdf8' stroke='#2b68d2' stroke-width='3'/><circle cx='287.83333333333337' cy='254.66666666666669' r='5' fill='#fffdf8' stroke='#2b68d2' stroke-width='3'/><circle cx='408.7' cy='213' r='5' fill='#fffdf8' stroke='#2b68d2' stroke-width='3'/><circle cx='572.7333333333333' cy='171.33333333333334' r='5' fill='#fffdf8' stroke='#2b68d2' stroke-width='3'/><text class='v' x='566.7333333333333' y='161.33333333333334' text-anchor='end'>Model B · 4</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>cumulative</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>累计阶梯 + 解题事件点 + 领先区间色带</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-36 Live contest ribbon</dd></div><div><dt>Component ID</dt><dd><code>livecode-solve-curve</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合时间预算固定的 coding benchmark；题目难度顺序要随机或已知。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>LiveCodeBench</h2><p>时间切片、防污染与累计解题</p><a class="text-link" href="https://livecodebench.github.io/leaderboard.html" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;Model A&quot;,
+      &quot;points&quot;: [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          33,
+          3
+        ],
+        [
+          47,
+          4
+        ],
+        [
+          55,
+          5
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Model B&quot;,
+      &quot;points&quot;: [
+        [
+          0,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          25,
+          2
+        ],
+        [
+          39,
+          3
+        ],
+        [
+          58,
+          4
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="vending-agent-timeseries.html"><strong>Long-horizon Agent Ledger</strong><span>多线时间序列 + 失败事件旗标 + 零收益线</span></a><a href="qwen-token-area.html"><strong>Token Allocation Stack</strong><span>100% 堆叠面积 + step 边界 + token 类别层</span></a><a href="terminal-bench-trajectory.html"><strong>Terminal Task Swimlane</strong><span>事件泳道 + 时间轴 + 并发段 + 重试标记</span></a><a href="toolbench-outcome-sankey.html"><strong>Tool-call Outcome Flow</strong><span>三阶段 Sankey + 失败支流 + 流量直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

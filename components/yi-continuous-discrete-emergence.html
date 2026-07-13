@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。 适合研究 emergent ability 与测量伪影；连续、离散指标必须来自同一预测样本。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Yi Technical Report, yi, emergence, in-context-learning, measurement">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Continuous vs Discrete Emergence · Benchmark Atlas">
+  <meta property="og:description" content="复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/yi-continuous-discrete-emergence.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Continuous vs Discrete Emergence · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Continuous vs Discrete Emergence · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/yi-continuous-discrete-emergence.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Continuous vs Discrete Emergence · Benchmark Atlas","description":"复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/yi-continuous-discrete-emergence.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Yi Technical Report, yi, emergence, in-context-learning, measurement"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Continuous vs Discrete Emergence</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Continuous vs Discrete Emergence</h1>
+        <p class="component-lede">复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。</p>
+        <div class="component-tags"><span>yi</span><span>emergence</span><span>in-context-learning</span><span>measurement</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbfbff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='yicontinuousdiscreteemergence-title yicontinuousdiscreteemergence-desc' style='background:#fbfbff;color:#181923'>
+      <title id='yicontinuousdiscreteemergence-title'>In-context learning · error and exact-match views</title><desc id='yicontinuousdiscreteemergence-desc'>复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#181923}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6e7080}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6e7080}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#181923}.g{stroke:#dfe0ea;stroke-width:1;shape-rendering:crispEdges}</style></defs>
+      <text class='t' x='28' y='30'>In-context learning · error and exact-match views</text><text class='s' x='28' y='48'>Yi Technical Report · Figure 3 / PDF p.11</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><rect x='78' y='78' width='516' height='108' fill='#4e55c7' fill-opacity='.025' stroke='#dfe0ea'/><text class='v' x='86' y='93'>2 COEFFICIENTS · [1, -1]</text><path d='M 82.00 107.20 L 138.44 120.00 L 194.89 131.20 L 251.33 144.00 L 307.78 150.40 L 364.22 147.20 L 420.67 153.60 L 477.11 156.80 L 533.56 163.20 L 590.00 160.00' fill='none' stroke='#b43b35' stroke-width='1.8' stroke-opacity='.7'/><path d='M 82.00 165.33 L 138.44 138.67 L 194.89 136.00 L 251.33 125.33 L 307.78 128.00 L 364.22 138.67 L 420.67 116.00 L 477.11 133.33 L 533.56 113.33 L 590.00 141.33' fill='none' stroke='#b43b35' stroke-width='2.7' stroke-dasharray='5 3'/><path d='M 82.00 102.40 L 138.44 113.60 L 194.89 116.80 L 251.33 123.20 L 307.78 128.00 L 364.22 131.20 L 420.67 134.40 L 477.11 137.60 L 533.56 139.20 L 590.00 140.80' fill='none' stroke='#933e9d' stroke-width='1.8' stroke-opacity='.7'/><path d='M 82.00 173.33 L 138.44 162.67 L 194.89 149.33 L 251.33 129.33 L 307.78 120.00 L 364.22 116.00 L 420.67 122.67 L 477.11 125.33 L 533.56 114.67 L 590.00 102.67' fill='none' stroke='#933e9d' stroke-width='2.7' stroke-dasharray='5 3'/><path d='M 82.00 97.60 L 138.44 108.80 L 194.89 113.60 L 251.33 118.40 L 307.78 126.40 L 364.22 140.80 L 420.67 144.00 L 477.11 136.00 L 533.56 147.20 L 590.00 148.80' fill='none' stroke='#2aa1a6' stroke-width='1.8' stroke-opacity='.7'/><path d='M 82.00 176.00 L 138.44 173.33 L 194.89 170.67 L 251.33 165.33 L 307.78 162.67 L 364.22 154.67 L 420.67 168.00 L 477.11 157.33 L 533.56 165.33 L 590.00 160.00' fill='none' stroke='#2aa1a6' stroke-width='2.7' stroke-dasharray='5 3'/><text class='s' x='590' y='180' text-anchor='end'>shots →</text><text class='s' x='85' y='178'>solid: error ↓ · dashed: exact match ↑</text><rect x='78' y='219' width='516' height='108' fill='#933e9d' fill-opacity='.025' stroke='#dfe0ea'/><text class='v' x='86' y='234'>5 COEFFICIENTS · [1, 1, 1, 1, 1]</text><path d='M 82.00 246.41 L 138.44 291.59 L 194.89 295.82 L 251.33 297.71 L 307.78 299.12 L 364.22 294.88 L 420.67 300.06 L 477.11 301.00 L 533.56 299.59 L 590.00 298.65' fill='none' stroke='#b43b35' stroke-width='1.8' stroke-opacity='.7'/><path d='M 82.00 317.00 L 138.44 317.00 L 194.89 316.00 L 251.33 315.00 L 307.78 316.00 L 364.22 314.00 L 420.67 315.00 L 477.11 313.00 L 533.56 316.00 L 590.00 314.00' fill='none' stroke='#b43b35' stroke-width='2.7' stroke-dasharray='5 3'/><path d='M 82.00 288.76 L 138.44 310.41 L 194.89 313.24 L 251.33 314.65 L 307.78 312.29 L 364.22 313.71 L 420.67 314.18 L 477.11 311.82 L 533.56 313.24 L 590.00 314.18' fill='none' stroke='#933e9d' stroke-width='1.8' stroke-opacity='.7'/><path d='M 82.00 305.00 L 138.44 273.00 L 194.89 261.00 L 251.33 239.00 L 307.78 261.00 L 364.22 243.00 L 420.67 251.00 L 477.11 245.00 L 533.56 249.00 L 590.00 241.00' fill='none' stroke='#933e9d' stroke-width='2.7' stroke-dasharray='5 3'/><path d='M 82.00 239.35 L 138.44 277.94 L 194.89 281.24 L 251.33 290.18 L 307.78 295.82 L 364.22 298.65 L 420.67 301.00 L 477.11 300.06 L 533.56 303.35 L 590.00 302.41' fill='none' stroke='#2aa1a6' stroke-width='1.8' stroke-opacity='.7'/><path d='M 82.00 317.00 L 138.44 317.00 L 194.89 315.00 L 251.33 317.00 L 307.78 314.00 L 364.22 317.00 L 420.67 315.00 L 477.11 316.00 L 533.56 314.00 L 590.00 316.00' fill='none' stroke='#2aa1a6' stroke-width='2.7' stroke-dasharray='5 3'/><text class='s' x='590' y='321' text-anchor='end'>shots →</text><text class='s' x='85' y='319'>solid: error ↓ · dashed: exact match ↑</text><text class='s' x='320' y='389' text-anchor='middle'>continuous error reveals gradual learning before discontinuous exact-match emergence</text></svg><figcaption>Illustrative demo data · renderer: <code>continuousDiscreteEmergence</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>任务难度分行 + 连续误差实线 + exact-match 虚线 + shots 共享横轴</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-78 Yi continuous-discrete emergence</dd></div><div><dt>Component ID</dt><dd><code>yi-continuous-discrete-emergence</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合研究 emergent ability 与测量伪影；连续、离散指标必须来自同一预测样本。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 3 · PDF p.11</h2><p>两个线性系数推断任务，比较 difference-to-target 与 exact match 随 shots 变化。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2403.04652" rel="noreferrer">Yi Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;shots&quot;: [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    40
+  ],
+  &quot;tasks&quot;: [
+    {
+      &quot;label&quot;: &quot;2 COEFFICIENTS · [1, -1]&quot;,
+      &quot;continuousRange&quot;: [
+        0,
+        50
+      ],
+      &quot;exactMax&quot;: 0.6,
+      &quot;models&quot;: [
+        {
+          &quot;label&quot;: &quot;Yi-34B&quot;,
+          &quot;continuous&quot;: [
+            43,
+            35,
+            28,
+            20,
+            16,
+            18,
+            14,
+            12,
+            8,
+            10
+          ],
+          &quot;exact&quot;: [
+            0.08,
+            0.28,
+            0.3,
+            0.38,
+            0.36,
+            0.28,
+            0.45,
+            0.32,
+            0.47,
+            0.26
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Llama-2-70B&quot;,
+          &quot;continuous&quot;: [
+            46,
+            39,
+            37,
+            33,
+            30,
+            28,
+            26,
+            24,
+            23,
+            22
+          ],
+          &quot;exact&quot;: [
+            0.02,
+            0.1,
+            0.2,
+            0.35,
+            0.42,
+            0.45,
+            0.4,
+            0.38,
+            0.46,
+            0.55
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Yi-6B&quot;,
+          &quot;continuous&quot;: [
+            49,
+            42,
+            39,
+            36,
+            31,
+            22,
+            20,
+            25,
+            18,
+            17
+          ],
+          &quot;exact&quot;: [
+            0,
+            0.02,
+            0.04,
+            0.08,
+            0.1,
+            0.16,
+            0.06,
+            0.14,
+            0.08,
+            0.12
+          ]
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;5 COEFFICIENTS · [1, 1, 1, 1, 1]&quot;,
+      &quot;continuousRange&quot;: [
+        0,
+        170
+      ],
+      &quot;exactMax&quot;: 0.8,
+      &quot;models&quot;: [
+        {
+          &quot;label&quot;: &quot;Yi-34B&quot;,
+          &quot;continuous&quot;: [
+            150,
+            54,
+            45,
+            41,
+            38,
+            47,
+            36,
+            34,
+            37,
+            39
+          ],
+          &quot;exact&quot;: [
+            0,
+            0,
+            0.01,
+            0.02,
+            0.01,
+            0.03,
+            0.02,
+            0.04,
+            0.01,
+            0.03
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Llama-2-70B&quot;,
+          &quot;continuous&quot;: [
+            60,
+            14,
+            8,
+            5,
+            10,
+            7,
+            6,
+            11,
+            8,
+            6
+          ],
+          &quot;exact&quot;: [
+            0.12,
+            0.44,
+            0.56,
+            0.78,
+            0.56,
+            0.74,
+            0.66,
+            0.72,
+            0.68,
+            0.76
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Yi-6B&quot;,
+          &quot;continuous&quot;: [
+            165,
+            83,
+            76,
+            57,
+            45,
+            39,
+            34,
+            36,
+            29,
+            31
+          ],
+          &quot;exact&quot;: [
+            0,
+            0,
+            0.02,
+            0,
+            0.03,
+            0,
+            0.02,
+            0.01,
+            0.03,
+            0.01
+          ]
+        }
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aidennovak.github.io/llm-benchmark-atlas/sitemap.xml

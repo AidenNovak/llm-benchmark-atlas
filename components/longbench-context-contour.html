@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。 适合检索位置显著影响结果的长上下文评测。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 论文图表复现, LongBench, longbench, long-context, contour">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Context Length × Depth Surface · Benchmark Atlas">
+  <meta property="og:description" content="把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/longbench-context-contour.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Context Length × Depth Surface · Benchmark Atlas">
+  <meta name="twitter:description" content="把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Context Length × Depth Surface · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/longbench-context-contour.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Context Length × Depth Surface · Benchmark Atlas","description":"把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/longbench-context-contour.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 论文图表复现, LongBench, longbench, long-context, contour"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>论文图表复现</span><span>/</span><span aria-current="page">Context Length × Depth Surface</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">论文图表复现 · arXiv 论文</p>
+        <h1>Context Length × Depth Surface</h1>
+        <p class="component-lede">把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。</p>
+        <div class="component-tags"><span>longbench</span><span>long-context</span><span>contour</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbf5eb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='longbenchcontextcontour-title longbenchcontextcontour-desc' style='background:#fbf5eb;color:#201c18'>
+      <title id='longbenchcontextcontour-title'>Needle retrieval · length and depth surface</title>
+      <desc id='longbenchcontextcontour-desc'>把长上下文评测同时展开为长度与 needle 深度两个维度，避免只报一个平均值。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#201c18}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#736b62}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#736b62}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#201c18}
+        .g{stroke:#dfd5c8;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Needle retrieval · length and depth surface</text>
+      <text class='s' x='28' y='48'>LongBench</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <text class='s' x='210' y='80' text-anchor='middle'>8k</text><text class='s' x='288' y='80' text-anchor='middle'>32k</text><text class='s' x='366' y='80' text-anchor='middle'>128k</text><text class='s' x='444' y='80' text-anchor='middle'>512k</text><text class='s' x='522' y='80' text-anchor='middle'>1m</text><text class='v' x='155' y='119' text-anchor='end'>10%</text><rect x='174' y='90' width='74' height='44' fill='#3559c7' fill-opacity='0.9359999999999999'/><text x='211' y='117' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>98</text><rect x='252' y='90' width='74' height='44' fill='#3559c7' fill-opacity='0.924'/><text x='289' y='117' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>97</text><rect x='330' y='90' width='74' height='44' fill='#3559c7' fill-opacity='0.8879999999999999'/><text x='367' y='117' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>94</text><rect x='408' y='90' width='74' height='44' fill='#3559c7' fill-opacity='0.8039999999999999'/><text x='445' y='117' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>87</text><rect x='486' y='90' width='74' height='44' fill='#3559c7' fill-opacity='0.6719999999999999'/><text x='523' y='117' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>76</text><text class='v' x='155' y='167' text-anchor='end'>30%</text><rect x='174' y='138' width='74' height='44' fill='#3559c7' fill-opacity='0.9359999999999999'/><text x='211' y='165' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>98</text><rect x='252' y='138' width='74' height='44' fill='#3559c7' fill-opacity='0.9'/><text x='289' y='165' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>95</text><rect x='330' y='138' width='74' height='44' fill='#3559c7' fill-opacity='0.852'/><text x='367' y='165' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>91</text><rect x='408' y='138' width='74' height='44' fill='#3559c7' fill-opacity='0.744'/><text x='445' y='165' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>82</text><rect x='486' y='138' width='74' height='44' fill='#3559c7' fill-opacity='0.588'/><text x='523' y='165' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>69</text><text class='v' x='155' y='215' text-anchor='end'>50%</text><rect x='174' y='186' width='74' height='44' fill='#3559c7' fill-opacity='0.924'/><text x='211' y='213' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>97</text><rect x='252' y='186' width='74' height='44' fill='#3559c7' fill-opacity='0.8879999999999999'/><text x='289' y='213' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>94</text><rect x='330' y='186' width='74' height='44' fill='#3559c7' fill-opacity='0.8160000000000001'/><text x='367' y='213' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>88</text><rect x='408' y='186' width='74' height='44' fill='#3559c7' fill-opacity='0.6719999999999999'/><text x='445' y='213' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>76</text><rect x='486' y='186' width='74' height='44' fill='#3559c7' fill-opacity='0.492'/><text x='523' y='213' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#201c18'>61</text><text class='v' x='155' y='263' text-anchor='end'>70%</text><rect x='174' y='234' width='74' height='44' fill='#3559c7' fill-opacity='0.9119999999999999'/><text x='211' y='261' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>96</text><rect x='252' y='234' width='74' height='44' fill='#3559c7' fill-opacity='0.852'/><text x='289' y='261' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>91</text><rect x='330' y='234' width='74' height='44' fill='#3559c7' fill-opacity='0.756'/><text x='367' y='261' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>83</text><rect x='408' y='234' width='74' height='44' fill='#3559c7' fill-opacity='0.588'/><text x='445' y='261' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>69</text><rect x='486' y='234' width='74' height='44' fill='#3559c7' fill-opacity='0.39599999999999996'/><text x='523' y='261' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#201c18'>53</text><text class='v' x='155' y='311' text-anchor='end'>90%</text><rect x='174' y='282' width='74' height='44' fill='#3559c7' fill-opacity='0.8879999999999999'/><text x='211' y='309' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>94</text><rect x='252' y='282' width='74' height='44' fill='#3559c7' fill-opacity='0.8160000000000001'/><text x='289' y='309' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>88</text><rect x='330' y='282' width='74' height='44' fill='#3559c7' fill-opacity='0.696'/><text x='367' y='309' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#fff'>78</text><rect x='408' y='282' width='74' height='44' fill='#3559c7' fill-opacity='0.504'/><text x='445' y='309' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#201c18'>62</text><rect x='486' y='282' width='74' height='44' fill='#3559c7' fill-opacity='0.28800000000000003'/><text x='523' y='309' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#201c18'>44</text><path d='M 174 261 C 250 240, 310 222, 382 198 S 500 146, 558 132' fill='none' stroke='#d64d3a' stroke-width='3'/><path d='M 174 305 C 250 292, 330 268, 402 240 S 510 202, 558 186' fill='none' stroke='#e3a72f' stroke-width='2' stroke-dasharray='6 4'/><text class='s' x='575' y='130'>80 iso</text><text class='s' x='575' y='184'>60 iso</text><text class='s' x='366' y='372' text-anchor='middle'>context length → · needle depth ↓</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>contextContour</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>context-length × needle-depth 矩阵 + 双等值线 + 单元格读数</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-53 LongBench context contour field</dd></div><div><dt>Component ID</dt><dd><code>longbench-context-contour</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合检索位置显著影响结果的长上下文评测。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>LongBench</h2><p>长上下文长度、深度与任务退化</p><a class="text-link" href="https://arxiv.org/abs/2308.14508" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;lengths&quot;: [
+    &quot;8k&quot;,
+    &quot;32k&quot;,
+    &quot;128k&quot;,
+    &quot;512k&quot;,
+    &quot;1m&quot;
+  ],
+  &quot;depths&quot;: [
+    &quot;10%&quot;,
+    &quot;30%&quot;,
+    &quot;50%&quot;,
+    &quot;70%&quot;,
+    &quot;90%&quot;
+  ],
+  &quot;values&quot;: [
+    [
+      98,
+      97,
+      94,
+      87,
+      76
+    ],
+    [
+      98,
+      95,
+      91,
+      82,
+      69
+    ],
+    [
+      97,
+      94,
+      88,
+      76,
+      61
+    ],
+    [
+      96,
+      91,
+      83,
+      69,
+      53
+    ],
+    [
+      94,
+      88,
+      78,
+      62,
+      44
+    ]
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="arxiv-benchmark-upset.html"><strong>Benchmark Set UpSet</strong><span>交集柱 + benchmark membership 点阵 + 连线组合</span></a><a href="arxiv-rank-alluvial.html"><strong>Rank Migration Alluvial</strong><span>三时点排名节点 + 半透明宽 ribbon + 末端系列直标</span></a><a href="arxiv-prompt-raincloud.html"><strong>Prompt Sensitivity Raincloud</strong><span>半小提琴云 + IQR 粗线 + median + 原始点雨</span></a><a href="arxiv-selection-ternary.html"><strong>Quality–Speed–Cost Ternary</strong><span>三元重心坐标 + 三顶点权重 + 模型点直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

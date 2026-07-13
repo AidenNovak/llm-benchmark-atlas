@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。 适合 4 个以上集合及其主要交集；集合定义必须一致。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 论文图表复现, Language Model Evaluation Harness, arxiv, upset, benchmark-overlap">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Benchmark Set UpSet · Benchmark Atlas">
+  <meta property="og:description" content="用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-benchmark-upset.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Benchmark Set UpSet · Benchmark Atlas">
+  <meta name="twitter:description" content="用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Benchmark Set UpSet · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-benchmark-upset.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Benchmark Set UpSet · Benchmark Atlas","description":"用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-benchmark-upset.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 论文图表复现, Language Model Evaluation Harness, arxiv, upset, benchmark-overlap"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>论文图表复现</span><span>/</span><span aria-current="page">Benchmark Set UpSet</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">论文图表复现 · arXiv / 开源评测</p>
+        <h1>Benchmark Set UpSet</h1>
+        <p class="component-lede">用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。</p>
+        <div class="component-tags"><span>arxiv</span><span>upset</span><span>benchmark-overlap</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffaf7"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='arxivbenchmarkupset-title arxivbenchmarkupset-desc' style='background:#fffaf7;color:#2e2d29'>
+      <title id='arxivbenchmarkupset-title'>Dataset overlap across evaluation suites</title>
+      <desc id='arxivbenchmarkupset-desc'>用 UpSet 取代难读的多集合 Venn，展示 benchmark 套件之间的任务交集。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2e2d29}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#736f69}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#736f69}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2e2d29}
+        .g{stroke:#e2d9d2;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Dataset overlap across evaluation suites</text>
+      <text class='s' x='28' y='48'>Language Model Evaluation Harness</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <rect x='209' y='84' width='34' height='106' fill='#8c1515'/><text class='v' x='226' y='77' text-anchor='middle'>42</text><circle cx='226' cy='231' r='6' fill='#2e2d29'/><circle cx='226' cy='262' r='6' fill='#e2d9d2'/><circle cx='226' cy='293' r='6' fill='#e2d9d2'/><circle cx='226' cy='324' r='6' fill='#e2d9d2'/><rect x='270' y='111.76190476190476' width='34' height='78.23809523809524' fill='#4d7f89'/><text class='v' x='287' y='104.76190476190476' text-anchor='middle'>31</text><circle cx='287' cy='231' r='6' fill='#2e2d29'/><circle cx='287' cy='262' r='6' fill='#e2d9d2'/><circle cx='287' cy='293' r='6' fill='#2e2d29'/><circle cx='287' cy='324' r='6' fill='#e2d9d2'/><line x1='287' y1='231' x2='287' y2='293' stroke='#2e2d29' stroke-width='3'/><rect x='331' y='121.85714285714285' width='34' height='68.14285714285715' fill='#4d7f89'/><text class='v' x='348' y='114.85714285714285' text-anchor='middle'>27</text><circle cx='348' cy='231' r='6' fill='#2e2d29'/><circle cx='348' cy='262' r='6' fill='#2e2d29'/><circle cx='348' cy='293' r='6' fill='#e2d9d2'/><circle cx='348' cy='324' r='6' fill='#2e2d29'/><line x1='348' y1='231' x2='348' y2='324' stroke='#2e2d29' stroke-width='3'/><rect x='392' y='131.95238095238096' width='34' height='58.04761904761904' fill='#4d7f89'/><text class='v' x='409' y='124.95238095238096' text-anchor='middle'>23</text><circle cx='409' cy='231' r='6' fill='#e2d9d2'/><circle cx='409' cy='262' r='6' fill='#2e2d29'/><circle cx='409' cy='293' r='6' fill='#e2d9d2'/><circle cx='409' cy='324' r='6' fill='#e2d9d2'/><rect x='453' y='142.04761904761904' width='34' height='47.95238095238096' fill='#4d7f89'/><text class='v' x='470' y='135.04761904761904' text-anchor='middle'>19</text><circle cx='470' cy='231' r='6' fill='#e2d9d2'/><circle cx='470' cy='262' r='6' fill='#2e2d29'/><circle cx='470' cy='293' r='6' fill='#2e2d29'/><circle cx='470' cy='324' r='6' fill='#e2d9d2'/><line x1='470' y1='262' x2='470' y2='293' stroke='#2e2d29' stroke-width='3'/><rect x='514' y='152.14285714285714' width='34' height='37.85714285714286' fill='#4d7f89'/><text class='v' x='531' y='145.14285714285714' text-anchor='middle'>15</text><circle cx='531' cy='231' r='6' fill='#e2d9d2'/><circle cx='531' cy='262' r='6' fill='#e2d9d2'/><circle cx='531' cy='293' r='6' fill='#2e2d29'/><circle cx='531' cy='324' r='6' fill='#2e2d29'/><line x1='531' y1='293' x2='531' y2='324' stroke='#2e2d29' stroke-width='3'/><text class='v' x='198' y='235' text-anchor='end'>MMLU</text><line class='g' x1='208' y1='231' x2='602' y2='231'/><text class='v' x='198' y='266' text-anchor='end'>BBH</text><line class='g' x1='208' y1='262' x2='602' y2='262'/><text class='v' x='198' y='297' text-anchor='end'>HELM</text><line class='g' x1='208' y1='293' x2='602' y2='293'/><text class='v' x='198' y='328' text-anchor='end'>OpenCompass</text><line class='g' x1='208' y1='324' x2='602' y2='324'/><text class='s' x='125' y='126' text-anchor='middle'>intersection size ↑</text><text class='s' x='410' y='378' text-anchor='middle'>benchmark membership combinations</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>upsetPlot</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>交集柱 + benchmark membership 点阵 + 连线组合</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-57 Evaluation harness UpSet</dd></div><div><dt>Component ID</dt><dd><code>arxiv-benchmark-upset</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 4 个以上集合及其主要交集；集合定义必须一致。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Language Model Evaluation Harness</h2><p>benchmark 集合、任务交集与统一评测</p><a class="text-link" href="https://arxiv.org/abs/2110.14168" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;benchmarks&quot;: [
+    &quot;MMLU&quot;,
+    &quot;BBH&quot;,
+    &quot;HELM&quot;,
+    &quot;OpenCompass&quot;
+  ],
+  &quot;sets&quot;: [
+    {
+      &quot;count&quot;: 42,
+      &quot;members&quot;: [
+        0
+      ]
+    },
+    {
+      &quot;count&quot;: 31,
+      &quot;members&quot;: [
+        0,
+        2
+      ]
+    },
+    {
+      &quot;count&quot;: 27,
+      &quot;members&quot;: [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      &quot;count&quot;: 23,
+      &quot;members&quot;: [
+        1
+      ]
+    },
+    {
+      &quot;count&quot;: 19,
+      &quot;members&quot;: [
+        1,
+        2
+      ]
+    },
+    {
+      &quot;count&quot;: 15,
+      &quot;members&quot;: [
+        2,
+        3
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="longbench-context-contour.html"><strong>Context Length × Depth Surface</strong><span>context-length × needle-depth 矩阵 + 双等值线 + 单元格读数</span></a><a href="arxiv-rank-alluvial.html"><strong>Rank Migration Alluvial</strong><span>三时点排名节点 + 半透明宽 ribbon + 末端系列直标</span></a><a href="arxiv-prompt-raincloud.html"><strong>Prompt Sensitivity Raincloud</strong><span>半小提琴云 + IQR 粗线 + median + 原始点雨</span></a><a href="arxiv-selection-ternary.html"><strong>Quality–Speed–Cost Ternary</strong><span>三元重心坐标 + 三顶点权重 + 模型点直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

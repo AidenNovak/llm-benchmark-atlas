@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。 适合 repo、语言或任务族分层；每组要有足够样本。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 分布与不确定性, Cognition / SWE research, boxplot, repository, variance">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Repository Box Plots · Benchmark Atlas">
+  <meta property="og:description" content="比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/cognition-boxplot.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Repository Box Plots · Benchmark Atlas">
+  <meta name="twitter:description" content="比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Repository Box Plots · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/cognition-boxplot.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Repository Box Plots · Benchmark Atlas","description":"比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/cognition-boxplot.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 分布与不确定性, Cognition / SWE research, boxplot, repository, variance"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>分布与不确定性</span><span>/</span><span aria-current="page">Repository Box Plots</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">分布与不确定性 · 研究博客</p>
+        <h1>Repository Box Plots</h1>
+        <p class="component-lede">比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。</p>
+        <div class="component-tags"><span>boxplot</span><span>repository</span><span>variance</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#ffffff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='cognitionboxplot-title cognitionboxplot-desc' style='background:#ffffff;color:#151515'>
+        <title id='cognitionboxplot-title'>Patch quality by repository</title>
+        <desc id='cognitionboxplot-desc'>比较不同代码仓库的分布、四分位和离群点，不让高方差被整体均值隐藏。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='cognitionboxplot-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#ee5b7f' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#2355d9' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#151515}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#737373}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#737373}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#151515}
+            .g{stroke:#e0e0e0;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#151515;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Patch quality by repository</text>
+        <text class='s' x='28' y='48'>Cognition / SWE research</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='64' y1='318.2857142857143' x2='604' y2='318.2857142857143'/><text class='l' x='54' y='321.2857142857143' text-anchor='end'>30</text><line class='g' x1='64' y1='247.42857142857144' x2='604' y2='247.42857142857144'/><text class='l' x='54' y='250.42857142857144' text-anchor='end'>50</text><line class='g' x1='64' y1='176.57142857142856' x2='604' y2='176.57142857142856'/><text class='l' x='54' y='179.57142857142856' text-anchor='end'>70</text><line class='g' x1='64' y1='105.7142857142857' x2='604' y2='105.7142857142857'/><text class='l' x='54' y='108.7142857142857' text-anchor='end'>90</text><line x1='126' y1='279.3142857142857' x2='126' y2='119.88571428571427' stroke='#151515' stroke-width='2'/><line x1='112' y1='279.3142857142857' x2='140' y2='279.3142857142857' stroke='#151515' stroke-width='2'/><line x1='112' y1='119.88571428571427' x2='140' y2='119.88571428571427' stroke='#151515' stroke-width='2'/><rect x='97' y='165.94285714285715' width='58' height='60.22857142857143' fill='#2355d9' fill-opacity='.25' stroke='#2355d9' stroke-width='2'/><line x1='97' y1='194.2857142857143' x2='155' y2='194.2857142857143' stroke='#151515' stroke-width='4'/><circle cx='117' cy='304.1142857142857' r='4' fill='none' stroke='#2355d9' stroke-width='2'/><circle cx='135' cy='105.7142857142857' r='4' fill='none' stroke='#2355d9' stroke-width='2'/><circle cx='115' cy='279.3142857142857' r='2.5' fill='#2355d9' fill-opacity='.65'/><circle cx='126' cy='226.17142857142858' r='2.5' fill='#2355d9' fill-opacity='.65'/><circle cx='137' cy='194.2857142857143' r='2.5' fill='#2355d9' fill-opacity='.65'/><circle cx='125' cy='165.94285714285715' r='2.5' fill='#2355d9' fill-opacity='.65'/><circle cx='136' cy='119.88571428571427' r='2.5' fill='#2355d9' fill-opacity='.65'/><text class='v' x='126' y='361' text-anchor='middle'>Django</text><line x1='262' y1='258.0571428571429' x2='262' y2='112.79999999999998' stroke='#151515' stroke-width='2'/><line x1='248' y1='258.0571428571429' x2='276' y2='258.0571428571429' stroke='#151515' stroke-width='2'/><line x1='248' y1='112.79999999999998' x2='276' y2='112.79999999999998' stroke='#151515' stroke-width='2'/><rect x='233' y='148.22857142857143' width='58' height='60.22857142857143' fill='#ee5b7f' fill-opacity='.25' stroke='#ee5b7f' stroke-width='2'/><line x1='233' y1='176.57142857142856' x2='291' y2='176.57142857142856' stroke='#151515' stroke-width='4'/><circle cx='253' cy='282.8571428571429' r='4' fill='none' stroke='#ee5b7f' stroke-width='2'/><circle cx='251' cy='258.0571428571429' r='2.5' fill='#ee5b7f' fill-opacity='.65'/><circle cx='262' cy='208.45714285714286' r='2.5' fill='#ee5b7f' fill-opacity='.65'/><circle cx='273' cy='176.57142857142856' r='2.5' fill='#ee5b7f' fill-opacity='.65'/><circle cx='261' cy='148.22857142857143' r='2.5' fill='#ee5b7f' fill-opacity='.65'/><circle cx='272' cy='112.79999999999998' r='2.5' fill='#ee5b7f' fill-opacity='.65'/><text class='v' x='262' y='361' text-anchor='middle'>Flask</text><line x1='398' y1='300.57142857142856' x2='398' y2='134.05714285714285' stroke='#151515' stroke-width='2'/><line x1='384' y1='300.57142857142856' x2='412' y2='300.57142857142856' stroke='#151515' stroke-width='2'/><line x1='384' y1='134.05714285714285' x2='412' y2='134.05714285714285' stroke='#151515' stroke-width='2'/><rect x='369' y='183.65714285714284' width='58' height='67.31428571428575' fill='#5ec0a7' fill-opacity='.25' stroke='#5ec0a7' stroke-width='2'/><line x1='369' y1='219.0857142857143' x2='427' y2='219.0857142857143' stroke='#151515' stroke-width='4'/><circle cx='389' cy='321.8285714285714' r='4' fill='none' stroke='#5ec0a7' stroke-width='2'/><circle cx='407' cy='109.25714285714287' r='4' fill='none' stroke='#5ec0a7' stroke-width='2'/><circle cx='387' cy='300.57142857142856' r='2.5' fill='#5ec0a7' fill-opacity='.65'/><circle cx='398' cy='250.9714285714286' r='2.5' fill='#5ec0a7' fill-opacity='.65'/><circle cx='409' cy='219.0857142857143' r='2.5' fill='#5ec0a7' fill-opacity='.65'/><circle cx='397' cy='183.65714285714284' r='2.5' fill='#5ec0a7' fill-opacity='.65'/><circle cx='408' cy='134.05714285714285' r='2.5' fill='#5ec0a7' fill-opacity='.65'/><text class='v' x='398' y='361' text-anchor='middle'>Pandas</text><line x1='534' y1='272.22857142857146' x2='534' y2='126.97142857142856' stroke='#151515' stroke-width='2'/><line x1='520' y1='272.22857142857146' x2='548' y2='272.22857142857146' stroke='#151515' stroke-width='2'/><line x1='520' y1='126.97142857142856' x2='548' y2='126.97142857142856' stroke='#151515' stroke-width='2'/><rect x='505' y='169.4857142857143' width='58' height='63.77142857142857' fill='#f1b247' fill-opacity='.25' stroke='#f1b247' stroke-width='2'/><line x1='505' y1='201.3714285714286' x2='563' y2='201.3714285714286' stroke='#151515' stroke-width='4'/><circle cx='525' cy='289.9428571428571' r='4' fill='none' stroke='#f1b247' stroke-width='2'/><circle cx='523' cy='272.22857142857146' r='2.5' fill='#f1b247' fill-opacity='.65'/><circle cx='534' cy='233.25714285714287' r='2.5' fill='#f1b247' fill-opacity='.65'/><circle cx='545' cy='201.3714285714286' r='2.5' fill='#f1b247' fill-opacity='.65'/><circle cx='533' cy='169.4857142857143' r='2.5' fill='#f1b247' fill-opacity='.65'/><circle cx='544' cy='126.97142857142856' r='2.5' fill='#f1b247' fill-opacity='.65'/><text class='v' x='534' y='361' text-anchor='middle'>Sympy</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>boxplot</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>箱线图 + 抖动点 + 样本量脚注</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-21 Pixel research scatter</dd></div><div><dt>Component ID</dt><dd><code>cognition-boxplot</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 repo、语言或任务族分层；每组要有足够样本。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Cognition / SWE research</h2><p>行为散点、分布诊断与训练过程</p><a class="text-link" href="https://cognition.ai/blog/swe-grep" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;groups&quot;: [
+    {
+      &quot;label&quot;: &quot;Django&quot;,
+      &quot;min&quot;: 41,
+      &quot;q1&quot;: 56,
+      &quot;median&quot;: 65,
+      &quot;q3&quot;: 73,
+      &quot;max&quot;: 86,
+      &quot;outliers&quot;: [
+        34,
+        90
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Flask&quot;,
+      &quot;min&quot;: 47,
+      &quot;q1&quot;: 61,
+      &quot;median&quot;: 70,
+      &quot;q3&quot;: 78,
+      &quot;max&quot;: 88,
+      &quot;outliers&quot;: [
+        40
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Pandas&quot;,
+      &quot;min&quot;: 35,
+      &quot;q1&quot;: 49,
+      &quot;median&quot;: 58,
+      &quot;q3&quot;: 68,
+      &quot;max&quot;: 82,
+      &quot;outliers&quot;: [
+        29,
+        89
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Sympy&quot;,
+      &quot;min&quot;: 43,
+      &quot;q1&quot;: 54,
+      &quot;median&quot;: 63,
+      &quot;q3&quot;: 72,
+      &quot;max&quot;: 84,
+      &quot;outliers&quot;: [
+        38
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="claude-error-forest.html"><strong>Confidence Interval Forest</strong><span>森林图 + 置信区间 + 零差值参考线</span></a><a href="arxiv-violin-distribution.html"><strong>Seed Distribution Violins</strong><span>小提琴密度 + 中位数 + 原始 seed 点</span></a><a href="grok-latency-ridges.html"><strong>Latency Ridgeline</strong><span>重叠山脊密度 + p50/p95 刻度 + 长尾标注</span></a><a href="openai-passk-ecdf.html"><strong>Pass@k ECDF</strong><span>经验累计分布阶梯 + k 预算线 + 面积差</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

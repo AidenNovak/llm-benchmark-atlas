@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。 适合 3–5 个比例指标的单模型快照；不适合模型间精确横比。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 多维能力概览, NVIDIA / Nemotron, radial, scorecard, post-training">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Concentric Score Rings · Benchmark Atlas">
+  <meta property="og:description" content="把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-score-rings.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Concentric Score Rings · Benchmark Atlas">
+  <meta name="twitter:description" content="把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Concentric Score Rings · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-score-rings.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Concentric Score Rings · Benchmark Atlas","description":"把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-score-rings.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 多维能力概览, NVIDIA / Nemotron, radial, scorecard, post-training"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>多维能力概览</span><span>/</span><span aria-current="page">Concentric Score Rings</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">多维能力概览 · 技术报告</p>
+        <h1>Concentric Score Rings</h1>
+        <p class="component-lede">把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。</p>
+        <div class="component-tags"><span>radial</span><span>scorecard</span><span>post-training</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#10130d"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='nemotronscorerings-title nemotronscorerings-desc' style='background:#10130d;color:#f1f5e9'>
+        <title id='nemotronscorerings-title'>Post-training evaluation suite</title>
+        <desc id='nemotronscorerings-desc'>把少量核心指标压缩为仪表式同心环，中心保留平均分而非营销口号。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='nemotronscorerings-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#b7db69' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#76b900' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f1f5e9}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#aab2a2}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#aab2a2}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f1f5e9}
+            .g{stroke:#394032;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#f1f5e9;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Post-training evaluation suite</text>
+        <text class='s' x='28' y='48'>NVIDIA / Nemotron</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <circle cx='270' cy='222' r='52' fill='none' stroke='#394032' stroke-width='12'/><circle cx='270' cy='222' r='52' fill='none' stroke='#76b900' stroke-width='12' stroke-linecap='round' stroke-dasharray='297.32032873573803 29.405307237600482' transform='rotate(-90 270 222)'/><rect x='455' y='130' width='15' height='10' fill='#76b900'/><text class='v' x='480' y='139'>Reasoning</text><text class='v' x='578' y='139' text-anchor='end'>91</text><circle cx='270' cy='222' r='76' fill='none' stroke='#394032' stroke-width='12'/><circle cx='270' cy='222' r='76' fill='none' stroke='#b7db69' stroke-width='12' stroke-linecap='round' stroke-dasharray='401.1185500103448 76.40353333530373' transform='rotate(-90 270 222)'/><rect x='455' y='177' width='15' height='10' fill='#b7db69'/><text class='v' x='480' y='186'>Coding</text><text class='v' x='578' y='186' text-anchor='end'>84</text><circle cx='270' cy='222' r='100' fill='none' stroke='#394032' stroke-width='12'/><circle cx='270' cy='222' r='100' fill='none' stroke='#58c7a6' stroke-width='12' stroke-linecap='round' stroke-dasharray='552.9203070318036 75.398223686155' transform='rotate(-90 270 222)'/><rect x='455' y='224' width='15' height='10' fill='#58c7a6'/><text class='v' x='480' y='233'>Instruction</text><text class='v' x='578' y='233' text-anchor='end'>88</text><circle cx='270' cy='222' r='124' fill='none' stroke='#394032' stroke-width='12'/><circle cx='270' cy='222' r='124' fill='none' stroke='#f6cc55' stroke-width='12' stroke-linecap='round' stroke-dasharray='615.5008326913122 163.61414539895645' transform='rotate(-90 270 222)'/><rect x='455' y='271' width='15' height='10' fill='#f6cc55'/><text class='v' x='480' y='280'>Safety</text><text class='v' x='578' y='280' text-anchor='end'>79</text><text x='270' y='218' text-anchor='middle' style='font:700 36px ui-sans-serif;fill:#f1f5e9'>86</text><text class='s' x='270' y='242' text-anchor='middle'>MEAN</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>rings</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>同心进度环 + 起点对齐 + 中心综合分</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-18 Black-green instrumentation</dd></div><div><dt>Component ID</dt><dd><code>nemotron-score-rings</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 3–5 个比例指标的单模型快照；不适合模型间精确横比。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>NVIDIA / Nemotron</h2><p>高对比黑绿与分项得分环</p><a class="text-link" href="https://research.nvidia.com/labs/adlr/Nemotron-4-340B/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;items&quot;: [
+    {
+      &quot;label&quot;: &quot;Reasoning&quot;,
+      &quot;value&quot;: 91
+    },
+    {
+      &quot;label&quot;: &quot;Coding&quot;,
+      &quot;value&quot;: 84
+    },
+    {
+      &quot;label&quot;: &quot;Instruction&quot;,
+      &quot;value&quot;: 88
+    },
+    {
+      &quot;label&quot;: &quot;Safety&quot;,
+      &quot;value&quot;: 79
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="opencompass-radar.html"><strong>Capability Radar</strong><span>六轴雷达 + 参考轮廓 + 直接系列标记</span></a><a href="gemini-small-multiples.html"><strong>Benchmark Small Multiples</strong><span>小多图柱 + 每面板独立基线 + 冠军标记</span></a><a href="helm-parallel-coordinates.html"><strong>Transparent Trade-off Lines</strong><span>平行坐标 + 方向统一标签 + 单模型聚焦</span></a><a href="nova-polar-rose.html"><strong>Multimodal Polar Rose</strong><span>等角极坐标柱 + 模态分区 + 外圈基准</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

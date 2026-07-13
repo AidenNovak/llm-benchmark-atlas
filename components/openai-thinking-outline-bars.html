@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。 适合同一模型两种推理协议；不适合把不同模型和不同协议混成同一因果结论。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 厂商发布复现系列, OpenAI / ChatGPT, openai, thinking, paired-bars">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Thinking vs Direct Bars · Benchmark Atlas">
+  <meta property="og:description" content="复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/openai-thinking-outline-bars.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Thinking vs Direct Bars · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Thinking vs Direct Bars · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/openai-thinking-outline-bars.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Thinking vs Direct Bars · Benchmark Atlas","description":"复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/openai-thinking-outline-bars.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 厂商发布复现系列, OpenAI / ChatGPT, openai, thinking, paired-bars"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>厂商发布复现系列</span><span>/</span><span aria-current="page">Thinking vs Direct Bars</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">厂商发布复现系列 · 厂商发布</p>
+        <h1>Thinking vs Direct Bars</h1>
+        <p class="component-lede">复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。</p>
+        <div class="component-tags"><span>openai</span><span>thinking</span><span>paired-bars</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#ffffff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='openaithinkingoutlinebars-title openaithinkingoutlinebars-desc' style='background:#ffffff;color:#141414'>
+      <title id='openaithinkingoutlinebars-title'>With thinking vs without thinking</title>
+      <desc id='openaithinkingoutlinebars-desc'>复现 OpenAI 常用的“思考 / 不思考”填充与空心配对柱，直接展示推理模式带来的增益。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#141414}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#70706d}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#70706d}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#141414}
+        .g{stroke:#dededb;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>With thinking vs without thinking</text>
+      <text class='s' x='28' y='48'>OpenAI / ChatGPT</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <line class='g' x1='58' y1='326' x2='606' y2='326'/><text class='l' x='48' y='329' text-anchor='end'>0</text><line class='g' x1='58' y1='266.5' x2='606' y2='266.5'/><text class='l' x='48' y='269.5' text-anchor='end'>25</text><line class='g' x1='58' y1='207' x2='606' y2='207'/><text class='l' x='48' y='210' text-anchor='end'>50</text><line class='g' x1='58' y1='147.5' x2='606' y2='147.5'/><text class='l' x='48' y='150.5' text-anchor='end'>75</text><line class='g' x1='58' y1='88' x2='606' y2='88'/><text class='l' x='48' y='91' text-anchor='end'>100</text><rect x='72' y='109.41999999999999' width='28' height='216.58' fill='#d6409f' fill-opacity='0.78' stroke='#d6409f' stroke-width='2'/><text class='v' x='86' y='102.41999999999999' text-anchor='middle'>91</text><rect x='110' y='149.88' width='28' height='176.12' fill='#ffffff' fill-opacity='1' stroke='#d6409f' stroke-width='2'/><text class='v' x='124' y='142.88' text-anchor='middle'>74</text><text class='l' x='105' y='350' text-anchor='middle'>o-series</text><rect x='184' y='118.94' width='28' height='207.06' fill='#d6409f' fill-opacity='0.78' stroke='#d6409f' stroke-width='2'/><text class='v' x='198' y='111.94' text-anchor='middle'>87</text><rect x='222' y='161.78' width='28' height='164.22' fill='#ffffff' fill-opacity='1' stroke='#d6409f' stroke-width='2'/><text class='v' x='236' y='154.78' text-anchor='middle'>69</text><text class='l' x='217' y='350' text-anchor='middle'>GPT-series</text><rect x='296' y='126.08000000000001' width='28' height='199.92' fill='#d6409f' fill-opacity='0.78' stroke='#d6409f' stroke-width='2'/><text class='v' x='310' y='119.08000000000001' text-anchor='middle'>84</text><rect x='334' y='154.64000000000001' width='28' height='171.35999999999999' fill='#ffffff' fill-opacity='1' stroke='#d6409f' stroke-width='2'/><text class='v' x='348' y='147.64000000000001' text-anchor='middle'>72</text><text class='l' x='329' y='350' text-anchor='middle'>Gemini</text><rect x='408' y='130.84' width='28' height='195.16' fill='#d6409f' fill-opacity='0.78' stroke='#d6409f' stroke-width='2'/><text class='v' x='422' y='123.84' text-anchor='middle'>82</text><rect x='446' y='159.4' width='28' height='166.6' fill='#ffffff' fill-opacity='1' stroke='#d6409f' stroke-width='2'/><text class='v' x='460' y='152.4' text-anchor='middle'>70</text><text class='l' x='441' y='350' text-anchor='middle'>Claude</text><circle cx='208' cy='375' r='5' fill='#d6409f'/><text class='l' x='220' y='379'>with thinking</text><circle cx='342' cy='375' r='5' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><text class='l' x='354' y='379'>without thinking</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>thinkingOutlineBars</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>填充/空心配对柱 + thinking 模式图例 + 单 benchmark 排序</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-42 OpenAI outline comparison</dd></div><div><dt>Component ID</dt><dd><code>openai-thinking-outline-bars</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合同一模型两种推理协议；不适合把不同模型和不同协议混成同一因果结论。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>OpenAI / ChatGPT</h2><p>高留白、单一强调色、compute 与 reliability 叙事</p><a class="text-link" href="https://openai.com/index/introducing-o3-and-o4-mini/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;groups&quot;: [
+    {
+      &quot;label&quot;: &quot;o-series&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;mode&quot;: &quot;thinking&quot;,
+          &quot;value&quot;: 91
+        },
+        {
+          &quot;mode&quot;: &quot;direct&quot;,
+          &quot;value&quot;: 74
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;GPT-series&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;mode&quot;: &quot;thinking&quot;,
+          &quot;value&quot;: 87
+        },
+        {
+          &quot;mode&quot;: &quot;direct&quot;,
+          &quot;value&quot;: 69
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Gemini&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;mode&quot;: &quot;thinking&quot;,
+          &quot;value&quot;: 84
+        },
+        {
+          &quot;mode&quot;: &quot;direct&quot;,
+          &quot;value&quot;: 72
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Claude&quot;,
+      &quot;values&quot;: [
+        {
+          &quot;mode&quot;: &quot;thinking&quot;,
+          &quot;value&quot;: 82
+        },
+        {
+          &quot;mode&quot;: &quot;direct&quot;,
+          &quot;value&quot;: 70
+        }
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="gemini-deepthink-triptych.html"><strong>Gemini Deep Think Triptych</strong><span>三联独立柱面板 + 自家蓝强调 + benchmark 条件脚注</span></a><a href="claude-multilingual-errorbars.html"><strong>Multilingual Coding Error Bars</strong><span>语言分组窄柱 + 每柱误差棒 + 三模型稳定顺序</span></a><a href="claude-broken-axis-release.html"><strong>High-score Broken Axis</strong><span>高分段断轴柱 + 轴断裂符号 + 柱顶一位小数</span></a><a href="deepseek-protocol-uplift.html"><strong>Agent Protocol Uplift</strong><span>每任务 base/protocol 配对柱 + 增量桥线 + 开放/填充编码</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

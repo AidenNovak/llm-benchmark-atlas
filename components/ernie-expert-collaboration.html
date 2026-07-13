@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。 适合 MoE routing 诊断；每行需要相同 expert ID 顺序，IoU 的 top-k 口径必须固定。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, ERNIE 5.0 Technical Report, ernie, moe, experts, multimodal">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Cross-modal Expert Collaboration Facets · Benchmark Atlas">
+  <meta property="og:description" content="合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-expert-collaboration.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Cross-modal Expert Collaboration Facets · Benchmark Atlas">
+  <meta name="twitter:description" content="合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Cross-modal Expert Collaboration Facets · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-expert-collaboration.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Cross-modal Expert Collaboration Facets · Benchmark Atlas","description":"合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-expert-collaboration.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, ERNIE 5.0 Technical Report, ernie, moe, experts, multimodal"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Cross-modal Expert Collaboration Facets</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Cross-modal Expert Collaboration Facets</h1>
+        <p class="component-lede">合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。</p>
+        <div class="component-tags"><span>ernie</span><span>moe</span><span>experts</span><span>multimodal</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbfdff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='ernieexpertcollaboration-title ernieexpertcollaboration-desc' style='background:#fbfdff;color:#18212c'>
+      <title id='ernieexpertcollaboration-title'>Expert utilization and modality overlap across depth</title><desc id='ernieexpertcollaboration-desc'>合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#18212c}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#677588}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#677588}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#18212c}.g{stroke:#dce5ef;stroke-width:1;shape-rendering:crispEdges}</style></defs>
+      <text class='t' x='28' y='30'>Expert utilization and modality overlap across depth</text><text class='s' x='28' y='48'>ERNIE 5.0 Technical Report · Figures 8-9 / PDF p.24</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><text class='v' x='122' y='68' text-anchor='middle'>FIRST LAYER</text><text class='s' x='93' y='91' text-anchor='end'>Text</text><rect x='99' y='88' width='11' height='13' fill='#1677dc' fill-opacity='.8'/><rect x='115' y='76' width='11' height='25' fill='#1677dc' fill-opacity='.8'/><rect x='131' y='82' width='11' height='19' fill='#1677dc' fill-opacity='.8'/><rect x='147' y='94' width='11' height='7' fill='#1677dc' fill-opacity='.8'/><rect x='163' y='88' width='11' height='13' fill='#1677dc' fill-opacity='.8'/><rect x='179' y='82' width='11' height='19' fill='#1677dc' fill-opacity='.8'/><text class='s' x='93' y='126' text-anchor='end'>Image U</text><rect x='99' y='120.33333333333333' width='11' height='15.666666666666668' fill='#d14d77' fill-opacity='.8'/><rect x='115' y='131' width='11' height='5' fill='#d14d77' fill-opacity='.8'/><rect x='131' y='111' width='11' height='25' fill='#d14d77' fill-opacity='.8'/><rect x='147' y='132.33333333333334' width='11' height='3.6666666666666665' fill='#d14d77' fill-opacity='.8'/><rect x='163' y='128.33333333333334' width='11' height='7.666666666666667' fill='#d14d77' fill-opacity='.8'/><rect x='179' y='133.66666666666666' width='11' height='2.333333333333333' fill='#d14d77' fill-opacity='.8'/><text class='s' x='93' y='161' text-anchor='end'>Video U</text><rect x='99' y='146' width='11' height='25' fill='#f09b38' fill-opacity='.8'/><rect x='115' y='166' width='11' height='5' fill='#f09b38' fill-opacity='.8'/><rect x='131' y='158' width='11' height='13' fill='#f09b38' fill-opacity='.8'/><rect x='147' y='169' width='11' height='2' fill='#f09b38' fill-opacity='.8'/><rect x='163' y='164' width='11' height='7' fill='#f09b38' fill-opacity='.8'/><rect x='179' y='168' width='11' height='3' fill='#f09b38' fill-opacity='.8'/><text class='s' x='93' y='196' text-anchor='end'>Image G</text><rect x='99' y='202.33333333333334' width='11' height='3.6666666666666665' fill='#3ca77b' fill-opacity='.8'/><rect x='115' y='181' width='11' height='25' fill='#3ca77b' fill-opacity='.8'/><rect x='131' y='199.66666666666666' width='11' height='6.333333333333333' fill='#3ca77b' fill-opacity='.8'/><rect x='147' y='203.66666666666666' width='11' height='2.333333333333333' fill='#3ca77b' fill-opacity='.8'/><rect x='163' y='194.33333333333334' width='11' height='11.666666666666666' fill='#3ca77b' fill-opacity='.8'/><rect x='179' y='201' width='11' height='5' fill='#3ca77b' fill-opacity='.8'/><text class='s' x='93' y='231' text-anchor='end'>Video G</text><rect x='99' y='238.9090909090909' width='11' height='2.090909090909091' fill='#54b5ef' fill-opacity='.8'/><rect x='115' y='236.72727272727272' width='11' height='4.2727272727272725' fill='#54b5ef' fill-opacity='.8'/><rect x='131' y='237.8181818181818' width='11' height='3.1818181818181817' fill='#54b5ef' fill-opacity='.8'/><rect x='147' y='216' width='11' height='25' fill='#54b5ef' fill-opacity='.8'/><rect x='163' y='232.36363636363637' width='11' height='8.636363636363637' fill='#54b5ef' fill-opacity='.8'/><rect x='179' y='235.63636363636363' width='11' height='5.363636363636363' fill='#54b5ef' fill-opacity='.8'/><text class='s' x='93' y='266' text-anchor='end'>Audio</text><rect x='99' y='274.17241379310343' width='11' height='1.8275862068965516' fill='#888f99' fill-opacity='.8'/><rect x='115' y='265.0689655172414' width='11' height='10.931034482758621' fill='#888f99' fill-opacity='.8'/><rect x='131' y='272.51724137931035' width='11' height='3.4827586206896552' fill='#888f99' fill-opacity='.8'/><rect x='147' y='251' width='11' height='25' fill='#888f99' fill-opacity='.8'/><rect x='163' y='271.6896551724138' width='11' height='4.310344827586206' fill='#888f99' fill-opacity='.8'/><rect x='179' y='258.44827586206895' width='11' height='17.551724137931036' fill='#888f99' fill-opacity='.8'/><text class='v' x='326' y='68' text-anchor='middle'>MIDDLE LAYER</text><text class='s' x='297' y='91' text-anchor='end'>Text</text><rect x='303' y='88' width='11' height='13' fill='#1677dc' fill-opacity='.8'/><rect x='319' y='76' width='11' height='25' fill='#1677dc' fill-opacity='.8'/><rect x='335' y='92' width='11' height='9' fill='#1677dc' fill-opacity='.8'/><rect x='351' y='88' width='11' height='13' fill='#1677dc' fill-opacity='.8'/><rect x='367' y='84' width='11' height='17' fill='#1677dc' fill-opacity='.8'/><rect x='383' y='96' width='11' height='5' fill='#1677dc' fill-opacity='.8'/><text class='s' x='297' y='126' text-anchor='end'>Image U</text><rect x='303' y='129.94736842105263' width='11' height='6.052631578947368' fill='#d14d77' fill-opacity='.8'/><rect x='319' y='132.47368421052633' width='11' height='3.526315789473684' fill='#d14d77' fill-opacity='.8'/><rect x='335' y='127.42105263157895' width='11' height='8.578947368421051' fill='#d14d77' fill-opacity='.8'/><rect x='351' y='131.21052631578948' width='11' height='4.789473684210526' fill='#d14d77' fill-opacity='.8'/><rect x='367' y='111' width='11' height='25' fill='#d14d77' fill-opacity='.8'/><rect x='383' y='132.47368421052633' width='11' height='3.526315789473684' fill='#d14d77' fill-opacity='.8'/><text class='s' x='297' y='161' text-anchor='end'>Video U</text><rect x='303' y='146' width='11' height='25' fill='#f09b38' fill-opacity='.8'/><rect x='319' y='164' width='11' height='7' fill='#f09b38' fill-opacity='.8'/><rect x='335' y='155' width='11' height='16' fill='#f09b38' fill-opacity='.8'/><rect x='351' y='161' width='11' height='10' fill='#f09b38' fill-opacity='.8'/><rect x='367' y='149' width='11' height='22' fill='#f09b38' fill-opacity='.8'/><rect x='383' y='146' width='11' height='25' fill='#f09b38' fill-opacity='.8'/><text class='s' x='297' y='196' text-anchor='end'>Image G</text><rect x='303' y='203' width='11' height='3' fill='#3ca77b' fill-opacity='.8'/><rect x='319' y='191' width='11' height='15' fill='#3ca77b' fill-opacity='.8'/><rect x='335' y='202' width='11' height='4' fill='#3ca77b' fill-opacity='.8'/><rect x='351' y='198' width='11' height='8' fill='#3ca77b' fill-opacity='.8'/><rect x='367' y='181' width='11' height='25' fill='#3ca77b' fill-opacity='.8'/><rect x='383' y='201' width='11' height='5' fill='#3ca77b' fill-opacity='.8'/><text class='s' x='297' y='231' text-anchor='end'>Video G</text><rect x='303' y='239.4' width='11' height='1.6' fill='#54b5ef' fill-opacity='.8'/><rect x='319' y='234.6' width='11' height='6.4' fill='#54b5ef' fill-opacity='.8'/><rect x='335' y='238.8' width='11' height='2.2' fill='#54b5ef' fill-opacity='.8'/><rect x='351' y='230.4' width='11' height='10.600000000000001' fill='#54b5ef' fill-opacity='.8'/><rect x='367' y='216' width='11' height='25' fill='#54b5ef' fill-opacity='.8'/><rect x='383' y='238.2' width='11' height='2.8' fill='#54b5ef' fill-opacity='.8'/><text class='s' x='297' y='266' text-anchor='end'>Audio</text><rect x='303' y='251' width='11' height='25' fill='#888f99' fill-opacity='.8'/><rect x='319' y='267.61538461538464' width='11' height='8.384615384615385' fill='#888f99' fill-opacity='.8'/><rect x='335' y='273.5230769230769' width='11' height='2.476923076923077' fill='#888f99' fill-opacity='.8'/><rect x='351' y='274.26153846153846' width='11' height='1.7384615384615385' fill='#888f99' fill-opacity='.8'/><rect x='367' y='273.89230769230767' width='11' height='2.1076923076923078' fill='#888f99' fill-opacity='.8'/><rect x='383' y='273.15384615384613' width='11' height='2.8461538461538463' fill='#888f99' fill-opacity='.8'/><text class='v' x='530' y='68' text-anchor='middle'>LAST LAYER</text><text class='s' x='501' y='91' text-anchor='end'>Text</text><rect x='507' y='96.3076923076923' width='11' height='4.6923076923076925' fill='#1677dc' fill-opacity='.8'/><rect x='523' y='94.46153846153847' width='11' height='6.538461538461538' fill='#1677dc' fill-opacity='.8'/><rect x='539' y='76' width='11' height='25' fill='#1677dc' fill-opacity='.8'/><rect x='555' y='96.3076923076923' width='11' height='4.6923076923076925' fill='#1677dc' fill-opacity='.8'/><rect x='571' y='90.76923076923077' width='11' height='10.230769230769232' fill='#1677dc' fill-opacity='.8'/><rect x='587' y='98.15384615384616' width='11' height='2.8461538461538463' fill='#1677dc' fill-opacity='.8'/><text class='s' x='501' y='126' text-anchor='end'>Image U</text><rect x='507' y='133.85714285714286' width='11' height='2.142857142857143' fill='#d14d77' fill-opacity='.8'/><rect x='523' y='132.14285714285714' width='11' height='3.8571428571428568' fill='#d14d77' fill-opacity='.8'/><rect x='539' y='111' width='11' height='25' fill='#d14d77' fill-opacity='.8'/><rect x='555' y='133.28571428571428' width='11' height='2.7142857142857144' fill='#d14d77' fill-opacity='.8'/><rect x='571' y='131' width='11' height='5' fill='#d14d77' fill-opacity='.8'/><rect x='587' y='134.42857142857142' width='11' height='1.5714285714285714' fill='#d14d77' fill-opacity='.8'/><text class='s' x='501' y='161' text-anchor='end'>Video U</text><rect x='507' y='168.22222222222223' width='11' height='2.7777777777777777' fill='#f09b38' fill-opacity='.8'/><rect x='523' y='156.66666666666666' width='11' height='14.333333333333334' fill='#f09b38' fill-opacity='.8'/><rect x='539' y='146' width='11' height='25' fill='#f09b38' fill-opacity='.8'/><rect x='555' y='167.33333333333334' width='11' height='3.6666666666666665' fill='#f09b38' fill-opacity='.8'/><rect x='571' y='163.77777777777777' width='11' height='7.222222222222221' fill='#f09b38' fill-opacity='.8'/><rect x='587' y='168.22222222222223' width='11' height='2.7777777777777777' fill='#f09b38' fill-opacity='.8'/><text class='s' x='501' y='196' text-anchor='end'>Image G</text><rect x='507' y='198.80645161290323' width='11' height='7.193548387096774' fill='#3ca77b' fill-opacity='.8'/><rect x='523' y='203.4516129032258' width='11' height='2.5483870967741935' fill='#3ca77b' fill-opacity='.8'/><rect x='539' y='181' width='11' height='25' fill='#3ca77b' fill-opacity='.8'/><rect x='555' y='187.96774193548387' width='11' height='18.032258064516128' fill='#3ca77b' fill-opacity='.8'/><rect x='571' y='193.38709677419354' width='11' height='12.612903225806452' fill='#3ca77b' fill-opacity='.8'/><rect x='587' y='202.67741935483872' width='11' height='3.32258064516129' fill='#3ca77b' fill-opacity='.8'/><text class='s' x='501' y='231' text-anchor='end'>Video G</text><rect x='507' y='231' width='11' height='10' fill='#54b5ef' fill-opacity='.8'/><rect x='523' y='238.8' width='11' height='2.2' fill='#54b5ef' fill-opacity='.8'/><rect x='539' y='224.4' width='11' height='16.6' fill='#54b5ef' fill-opacity='.8'/><rect x='555' y='219' width='11' height='22' fill='#54b5ef' fill-opacity='.8'/><rect x='571' y='237' width='11' height='4' fill='#54b5ef' fill-opacity='.8'/><rect x='587' y='216' width='11' height='25' fill='#54b5ef' fill-opacity='.8'/><text class='s' x='501' y='266' text-anchor='end'>Audio</text><rect x='507' y='272.6' width='11' height='3.4000000000000004' fill='#888f99' fill-opacity='.8'/><rect x='523' y='263.8' width='11' height='12.2' fill='#888f99' fill-opacity='.8'/><rect x='539' y='251' width='11' height='25' fill='#888f99' fill-opacity='.8'/><rect x='555' y='269.4' width='11' height='6.6' fill='#888f99' fill-opacity='.8'/><rect x='571' y='271.8' width='11' height='4.2' fill='#888f99' fill-opacity='.8'/><rect x='587' y='273.4' width='11' height='2.6' fill='#888f99' fill-opacity='.8'/><text class='s' x='320' y='299' text-anchor='middle'>expert utilization bars · each row normalized within modality</text><rect x='48' y='318' width='173' height='47' fill='#1677dc' fill-opacity='.08' stroke='#1677dc'/><text class='v' x='56' y='336'>image ↔ video understanding</text><text class='t' x='212' y='346' text-anchor='end'>IoU 0.64</text><rect x='242' y='318' width='173' height='47' fill='#d14d77' fill-opacity='.08' stroke='#d14d77'/><text class='v' x='250' y='336'>image ↔ video generation</text><text class='t' x='406' y='346' text-anchor='end'>IoU 0.78</text><rect x='436' y='318' width='173' height='47' fill='#f09b38' fill-opacity='.08' stroke='#f09b38'/><text class='v' x='444' y='336'>text ↔ audio</text><text class='t' x='600' y='346' text-anchor='end'>IoU 0.4</text><text class='s' x='320' y='389' text-anchor='middle'>representative cross-modality top-expert overlap</text></svg><figcaption>Illustrative demo data · renderer: <code>expertCollaborationFacets</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>首中末层列分面 + 模态行 expert 条码 + 底部跨模态 top-expert IoU 摘要</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-75 ERNIE expert collaboration facets</dd></div><div><dt>Component ID</dt><dd><code>ernie-expert-collaboration</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 MoE routing 诊断；每行需要相同 expert ID 顺序，IoU 的 top-k 口径必须固定。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figures 8-9 · PDF p.24</h2><p>六种模态/任务在首中末层的 expert utilization，以及 top 25% experts 的跨模态 IoU。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2602.04705" rel="noreferrer">ERNIE 5.0 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;layers&quot;: [
+    {
+      &quot;label&quot;: &quot;FIRST LAYER&quot;,
+      &quot;rows&quot;: [
+        {
+          &quot;label&quot;: &quot;Text&quot;,
+          &quot;values&quot;: [
+            2,
+            4,
+            3,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Image U&quot;,
+          &quot;values&quot;: [
+            11,
+            3,
+            18,
+            2,
+            5,
+            1
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Video U&quot;,
+          &quot;values&quot;: [
+            24,
+            4,
+            12,
+            1,
+            6,
+            2
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Image G&quot;,
+          &quot;values&quot;: [
+            2,
+            18,
+            4,
+            1,
+            8,
+            3
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Video G&quot;,
+          &quot;values&quot;: [
+            1,
+            3,
+            2,
+            22,
+            7,
+            4
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Audio&quot;,
+          &quot;values&quot;: [
+            1,
+            12,
+            3,
+            29,
+            4,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;MIDDLE LAYER&quot;,
+      &quot;rows&quot;: [
+        {
+          &quot;label&quot;: &quot;Text&quot;,
+          &quot;values&quot;: [
+            3,
+            6,
+            2,
+            3,
+            4,
+            1
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Image U&quot;,
+          &quot;values&quot;: [
+            4,
+            2,
+            6,
+            3,
+            19,
+            2
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Video U&quot;,
+          &quot;values&quot;: [
+            8,
+            2,
+            5,
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Image G&quot;,
+          &quot;values&quot;: [
+            2,
+            14,
+            3,
+            7,
+            24,
+            4
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Video G&quot;,
+          &quot;values&quot;: [
+            1,
+            9,
+            2,
+            16,
+            40,
+            3
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Audio&quot;,
+          &quot;values&quot;: [
+            65,
+            20,
+            4,
+            2,
+            3,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;LAST LAYER&quot;,
+      &quot;rows&quot;: [
+        {
+          &quot;label&quot;: &quot;Text&quot;,
+          &quot;values&quot;: [
+            2,
+            3,
+            13,
+            2,
+            5,
+            1
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Image U&quot;,
+          &quot;values&quot;: [
+            2,
+            5,
+            42,
+            3,
+            7,
+            1
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Video U&quot;,
+          &quot;values&quot;: [
+            2,
+            15,
+            27,
+            3,
+            7,
+            2
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Image G&quot;,
+          &quot;values&quot;: [
+            8,
+            2,
+            31,
+            22,
+            15,
+            3
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Video G&quot;,
+          &quot;values&quot;: [
+            15,
+            2,
+            26,
+            35,
+            5,
+            40
+          ]
+        },
+        {
+          &quot;label&quot;: &quot;Audio&quot;,
+          &quot;values&quot;: [
+            3,
+            14,
+            30,
+            7,
+            4,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  &quot;overlap&quot;: [
+    {
+      &quot;label&quot;: &quot;image ↔ video understanding&quot;,
+      &quot;value&quot;: 0.64
+    },
+    {
+      &quot;label&quot;: &quot;image ↔ video generation&quot;,
+      &quot;value&quot;: 0.78
+    },
+    {
+      &quot;label&quot;: &quot;text ↔ audio&quot;,
+      &quot;value&quot;: 0.4
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

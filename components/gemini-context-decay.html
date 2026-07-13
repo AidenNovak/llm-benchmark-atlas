@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。 适合 needle、MRCR 或长文档评测；横轴应按 token 比例或对数标注。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 诊断与矩阵, Google / Gemini, long-context, decay, strip">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Long-context Decay Strips · Benchmark Atlas">
+  <meta property="og:description" content="将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/gemini-context-decay.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Long-context Decay Strips · Benchmark Atlas">
+  <meta name="twitter:description" content="将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Long-context Decay Strips · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/gemini-context-decay.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Long-context Decay Strips · Benchmark Atlas","description":"将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/gemini-context-decay.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 诊断与矩阵, Google / Gemini, long-context, decay, strip"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>诊断与矩阵</span><span>/</span><span aria-current="page">Long-context Decay Strips</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">诊断与矩阵 · 厂商发布</p>
+        <h1>Long-context Decay Strips</h1>
+        <p class="component-lede">将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。</p>
+        <div class="component-tags"><span>long-context</span><span>decay</span><span>strip</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#ffffff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='geminicontextdecay-title geminicontextdecay-desc' style='background:#ffffff;color:#202124'>
+        <title id='geminicontextdecay-title'>Retrieval accuracy by context length</title>
+        <desc id='geminicontextdecay-desc'>将 8k 到 1m context 上的 retrieval 准确率编码成连续色带，突出何处开始退化。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='geminicontextdecay-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#ea4335' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#4285f4' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#202124}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6b7075}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6b7075}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#202124}
+            .g{stroke:#e1e4e8;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#202124;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Retrieval accuracy by context length</text>
+        <text class='s' x='28' y='48'>Google / Gemini</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <text class='v' x='206' y='87' text-anchor='middle'>8k</text><text class='v' x='288' y='87' text-anchor='middle'>32k</text><text class='v' x='370' y='87' text-anchor='middle'>128k</text><text class='v' x='452' y='87' text-anchor='middle'>512k</text><text class='v' x='534' y='87' text-anchor='middle'>1m</text><text class='v' x='149' y='137' text-anchor='end'>Gemini</text><rect x='165' y='104' width='77' height='47' fill='#4285f4' fill-opacity='0.9341538461538461' stroke='#ffffff' stroke-width='1'/><text x='203.5' y='133' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>98</text><rect x='247' y='104' width='77' height='47' fill='#4285f4' fill-opacity='0.9212307692307692' stroke='#ffffff' stroke-width='1'/><text x='285.5' y='133' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>97</text><rect x='329' y='104' width='77' height='47' fill='#4285f4' fill-opacity='0.8824615384615384' stroke='#ffffff' stroke-width='1'/><text x='367.5' y='133' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>94</text><rect x='411' y='104' width='77' height='47' fill='#4285f4' fill-opacity='0.8178461538461539' stroke='#ffffff' stroke-width='1'/><text x='449.5' y='133' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>89</text><rect x='493' y='104' width='77' height='47' fill='#4285f4' fill-opacity='0.7273846153846153' stroke='#ffffff' stroke-width='1'/><text x='531.5' y='133' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>82</text><text class='v' x='149' y='191' text-anchor='end'>Claude</text><rect x='165' y='158' width='77' height='47' fill='#4285f4' fill-opacity='0.9341538461538461' stroke='#ffffff' stroke-width='1'/><text x='203.5' y='187' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>98</text><rect x='247' y='158' width='77' height='47' fill='#4285f4' fill-opacity='0.8953846153846154' stroke='#ffffff' stroke-width='1'/><text x='285.5' y='187' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>95</text><rect x='329' y='158' width='77' height='47' fill='#4285f4' fill-opacity='0.8436923076923077' stroke='#ffffff' stroke-width='1'/><text x='367.5' y='187' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>91</text><rect x='411' y='158' width='77' height='47' fill='#4285f4' fill-opacity='0.7015384615384614' stroke='#ffffff' stroke-width='1'/><text x='449.5' y='187' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>80</text><rect x='493' y='158' width='77' height='47' fill='#4285f4' fill-opacity='0.5464615384615384' stroke='#ffffff' stroke-width='1'/><text x='531.5' y='187' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#202124'>68</text><text class='v' x='149' y='245' text-anchor='end'>Qwen</text><rect x='165' y='212' width='77' height='47' fill='#4285f4' fill-opacity='0.9083076923076923' stroke='#ffffff' stroke-width='1'/><text x='203.5' y='241' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>96</text><rect x='247' y='212' width='77' height='47' fill='#4285f4' fill-opacity='0.8566153846153846' stroke='#ffffff' stroke-width='1'/><text x='285.5' y='241' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>92</text><rect x='329' y='212' width='77' height='47' fill='#4285f4' fill-opacity='0.7661538461538462' stroke='#ffffff' stroke-width='1'/><text x='367.5' y='241' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>85</text><rect x='411' y='212' width='77' height='47' fill='#4285f4' fill-opacity='0.5852307692307692' stroke='#ffffff' stroke-width='1'/><text x='449.5' y='241' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>71</text><rect x='493' y='212' width='77' height='47' fill='#4285f4' fill-opacity='0.37846153846153846' stroke='#ea4335' stroke-width='3'/><text x='531.5' y='241' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#202124'>55</text><text class='v' x='149' y='299' text-anchor='end'>Llama</text><rect x='165' y='266' width='77' height='47' fill='#4285f4' fill-opacity='0.8824615384615384' stroke='#ffffff' stroke-width='1'/><text x='203.5' y='295' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>94</text><rect x='247' y='266' width='77' height='47' fill='#4285f4' fill-opacity='0.8049230769230769' stroke='#ffffff' stroke-width='1'/><text x='285.5' y='295' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>88</text><rect x='329' y='266' width='77' height='47' fill='#4285f4' fill-opacity='0.6110769230769231' stroke='#ffffff' stroke-width='1'/><text x='367.5' y='295' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#ffffff'>73</text><rect x='411' y='266' width='77' height='47' fill='#4285f4' fill-opacity='0.36553846153846153' stroke='#ea4335' stroke-width='3'/><text x='449.5' y='295' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#202124'>54</text><rect x='493' y='266' width='77' height='47' fill='#4285f4' fill-opacity='0.15876923076923077' stroke='#ea4335' stroke-width='3'/><text x='531.5' y='295' text-anchor='middle' style='font:700 12px ui-sans-serif;fill:#202124'>38</text><line x1='408' y1='95' x2='408' y2='326' stroke='#ea4335' stroke-width='2' stroke-dasharray='5 4'/><text class='s' x='416' y='347'>degradation zone</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>contextDecay</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>多模型水平色带 + 上下文断点 + 退化阈值</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-27 Google context spectrum</dd></div><div><dt>Component ID</dt><dd><code>gemini-context-decay</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 needle、MRCR 或长文档评测；横轴应按 token 比例或对数标注。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Google / Gemini</h2><p>Google 原色、小多图与长上下文</p><a class="text-link" href="https://deepmind.google/models/gemini/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;columns&quot;: [
+    &quot;8k&quot;,
+    &quot;32k&quot;,
+    &quot;128k&quot;,
+    &quot;512k&quot;,
+    &quot;1m&quot;
+  ],
+  &quot;rows&quot;: [
+    {
+      &quot;label&quot;: &quot;Gemini&quot;,
+      &quot;values&quot;: [
+        98,
+        97,
+        94,
+        89,
+        82
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Claude&quot;,
+      &quot;values&quot;: [
+        98,
+        95,
+        91,
+        80,
+        68
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Qwen&quot;,
+      &quot;values&quot;: [
+        96,
+        92,
+        85,
+        71,
+        55
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Llama&quot;,
+      &quot;values&quot;: [
+        94,
+        88,
+        73,
+        54,
+        38
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="helm-capability-heatmap.html"><strong>Scenario Heatmap</strong><span>连续热力矩阵 + 行列聚类顺序 + 最差格标记</span></a><a href="llamaguard-confusion.html"><strong>Safety Confusion Matrix</strong><span>2×2 混淆矩阵 + 边际总量 + 错误成本标注</span></a><a href="qwen-ablation-waterfall.html"><strong>Ablation Waterfall</strong><span>正负增量瀑布 + 累计基线 + 最终值</span></a><a href="arena-winrate-matrix.html"><strong>Pairwise Win-rate Matrix</strong><span>反对称胜率矩阵 + 50% 中性线 + 对角禁用</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

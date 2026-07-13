@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。 适合参数效率比较又必须保留未披露模型时；未知参数点不可被放到虚构的连续坐标。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, GLM-4.5 Technical Report, glm, swe-bench, parameters, pareto">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Known vs Undisclosed Parameter Frontier · Benchmark Atlas">
+  <meta property="og:description" content="复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/glm-parameter-frontier-unknown-lane.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Known vs Undisclosed Parameter Frontier · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Known vs Undisclosed Parameter Frontier · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/glm-parameter-frontier-unknown-lane.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Known vs Undisclosed Parameter Frontier · Benchmark Atlas","description":"复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/glm-parameter-frontier-unknown-lane.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, GLM-4.5 Technical Report, glm, swe-bench, parameters, pareto"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Known vs Undisclosed Parameter Frontier</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Known vs Undisclosed Parameter Frontier</h1>
+        <p class="component-lede">复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。</p>
+        <div class="component-tags"><span>glm</span><span>swe-bench</span><span>parameters</span><span>pareto</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbfdff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='glmparameterfrontierunknownlane-title glmparameterfrontierunknownlane-desc' style='background:#fbfdff;color:#17202b'>
+      <title id='glmparameterfrontierunknownlane-title'>SWE-bench quality vs known and undisclosed parameters</title>
+      <desc id='glmparameterfrontierunknownlane-desc'>复现 GLM-4.5 Figure 2：已知参数模型使用连续横轴，闭源且参数未披露的模型进入断轴后的专用通道。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202b}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#687587}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#687587}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202b}
+        .g{stroke:#d9e3ee;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>SWE-bench quality vs known and undisclosed parameters</text>
+      <text class='s' x='28' y='48'>GLM-4.5 Technical Report · Figure 2 / PDF p.3</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <line class='g' x1='82' y1='82' x2='82' y2='335'/><text class='s' x='82' y='357' text-anchor='middle'>0</text><line class='g' x1='172' y1='82' x2='172' y2='335'/><text class='s' x='172' y='357' text-anchor='middle'>250</text><line class='g' x1='262' y1='82' x2='262' y2='335'/><text class='s' x='262' y='357' text-anchor='middle'>500</text><line class='g' x1='352' y1='82' x2='352' y2='335'/><text class='s' x='352' y='357' text-anchor='middle'>750</text><line class='g' x1='442' y1='82' x2='442' y2='335'/><text class='s' x='442' y='357' text-anchor='middle'>1000</text><line class='g' x1='82' y1='295.0526315789474' x2='590' y2='295.0526315789474'/><text class='s' x='70' y='298.0526315789474' text-anchor='end'>40</text><line class='g' x1='82' y1='228.4736842105263' x2='590' y2='228.4736842105263'/><text class='s' x='70' y='231.4736842105263' text-anchor='end'>50</text><line class='g' x1='82' y1='161.89473684210526' x2='590' y2='161.89473684210526'/><text class='s' x='70' y='164.89473684210526' text-anchor='end'>60</text><line class='g' x1='82' y1='95.31578947368422' x2='590' y2='95.31578947368422'/><text class='s' x='70' y='98.31578947368422' text-anchor='end'>70</text><path d='M 82 228.4736842105263 L 82.00 221.82 L 120.16 181.87 L 209.80 135.26 L 316.00 82.00 L 82 82 Z' fill='#1689e8' fill-opacity='.12'/><path d='M 82.00 221.82 L 120.16 181.87 L 209.80 135.26 L 316.00 82.00' fill='none' stroke='#1689e8' stroke-width='2.5' stroke-dasharray='6 3'/><rect x='522' y='82' width='68' height='253' fill='#667487' fill-opacity='.06'/><line x1='558' y1='82' x2='558' y2='335' stroke='#687587' stroke-dasharray='4 3'/><text class='s' x='558' y='72' text-anchor='middle'>UNDISCLOSED</text><circle cx='120.16' cy='180.53684210526313' r='7' fill='#1689e8' stroke='#fbfdff' stroke-width='2'/><text class='v' x='130.16' y='172.53684210526313' text-anchor='start'>GLM-4.5-Air</text><circle cx='209.8' cy='133.93157894736842' r='7' fill='#1689e8' stroke='#fbfdff' stroke-width='2'/><text class='v' x='219.8' y='124.93157894736842' text-anchor='start'>GLM-4.5</text><circle cx='246.16' cy='190.52368421052628' r='5' fill='#e7a532' stroke='#fbfdff' stroke-width='2'/><text class='v' x='256.15999999999997' y='206.52368421052628' text-anchor='start'>MiniMax-M1</text><circle cx='323.56' cy='179.87105263157898' r='5' fill='#667487' stroke='#fbfdff' stroke-width='2'/><text class='v' x='333.56' y='171.87105263157898' text-anchor='start'>DeepSeek-R1</text><circle cx='166.6' cy='324.34736842105264' r='5' fill='#7764d8' stroke='#fbfdff' stroke-width='2'/><text class='v' x='176.6' y='316.34736842105264' text-anchor='start'>Qwen3</text><circle cx='457.48' cy='129.2710526315789' r='5' fill='#35aa7c' stroke='#fbfdff' stroke-width='2'/><text class='v' x='447.48' y='121.2710526315789' text-anchor='end'>Kimi K2</text><rect x='553' y='91.64736842105265' width='10' height='10' transform='rotate(45 558 96.64736842105265)' fill='#ef5a50'/><text class='s' x='548' y='99.64736842105265' text-anchor='end'>Claude</text><rect x='553' y='140.9157894736842' width='10' height='10' transform='rotate(45 558 145.9157894736842)' fill='#7764d8'/><text class='s' x='548' y='148.9157894736842' text-anchor='end'>Gemini</text><rect x='553' y='191.51578947368424' width='10' height='10' transform='rotate(45 558 196.51578947368424)' fill='#35aa7c'/><text class='s' x='548' y='199.51578947368424' text-anchor='end'>GPT-4.1</text><path d='M 492 331 l 7 8 l 7 -8 l 7 8' fill='none' stroke='#17202b' stroke-width='2'/><text class='s' x='322' y='386' text-anchor='middle'>known model parameters (B) →</text><text class='s' x='18' y='216' text-anchor='middle' transform='rotate(-90 18 216)'>SWE-bench Verified ↑</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>unknownParameterFrontier</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>连续参数 Pareto 区 + 断轴后的 undisclosed 垂直通道 + 前沿楔形与异形点</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-71 GLM mixed-domain parameter frontier</dd></div><div><dt>Component ID</dt><dd><code>glm-parameter-frontier-unknown-lane</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合参数效率比较又必须保留未披露模型时；未知参数点不可被放到虚构的连续坐标。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 2 · PDF p.3</h2><p>开源模型按总参数定位，专有模型在右侧 Unknown 通道比较 SWE-bench Verified。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2508.06471" rel="noreferrer">GLM-4.5 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;frontier&quot;: [
+    [
+      0,
+      51
+    ],
+    [
+      106,
+      57
+    ],
+    [
+      355,
+      64
+    ],
+    [
+      650,
+      72
+    ]
+  ],
+  &quot;known&quot;: [
+    {
+      &quot;label&quot;: &quot;GLM-4.5-Air&quot;,
+      &quot;parameters&quot;: 106,
+      &quot;score&quot;: 57.2,
+      &quot;frontier&quot;: true,
+      &quot;dx&quot;: 10,
+      &quot;dy&quot;: -8
+    },
+    {
+      &quot;label&quot;: &quot;GLM-4.5&quot;,
+      &quot;parameters&quot;: 355,
+      &quot;score&quot;: 64.2,
+      &quot;frontier&quot;: true,
+      &quot;dx&quot;: 10,
+      &quot;dy&quot;: -9
+    },
+    {
+      &quot;label&quot;: &quot;MiniMax-M1&quot;,
+      &quot;parameters&quot;: 456,
+      &quot;score&quot;: 55.7,
+      &quot;frontier&quot;: false,
+      &quot;dx&quot;: 10,
+      &quot;dy&quot;: 16
+    },
+    {
+      &quot;label&quot;: &quot;DeepSeek-R1&quot;,
+      &quot;parameters&quot;: 671,
+      &quot;score&quot;: 57.3,
+      &quot;frontier&quot;: false,
+      &quot;dx&quot;: 10,
+      &quot;dy&quot;: -8
+    },
+    {
+      &quot;label&quot;: &quot;Qwen3&quot;,
+      &quot;parameters&quot;: 235,
+      &quot;score&quot;: 35.6,
+      &quot;frontier&quot;: false,
+      &quot;dx&quot;: 10,
+      &quot;dy&quot;: -8
+    },
+    {
+      &quot;label&quot;: &quot;Kimi K2&quot;,
+      &quot;parameters&quot;: 1043,
+      &quot;score&quot;: 64.9,
+      &quot;frontier&quot;: false,
+      &quot;dx&quot;: -10,
+      &quot;dy&quot;: -8
+    }
+  ],
+  &quot;unknown&quot;: [
+    {
+      &quot;label&quot;: &quot;Claude&quot;,
+      &quot;score&quot;: 69.8
+    },
+    {
+      &quot;label&quot;: &quot;Gemini&quot;,
+      &quot;score&quot;: 62.4
+    },
+    {
+      &quot;label&quot;: &quot;GPT-4.1&quot;,
+      &quot;score&quot;: 54.8
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

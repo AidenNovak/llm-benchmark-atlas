@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。 只适合轴数少、量纲已统一的概览；精确比较应回到表格。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 多维能力概览, OpenCompass, radar, capability, normalized">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Capability Radar · Benchmark Atlas">
+  <meta property="og:description" content="用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/opencompass-radar.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Capability Radar · Benchmark Atlas">
+  <meta name="twitter:description" content="用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Capability Radar · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/opencompass-radar.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Capability Radar · Benchmark Atlas","description":"用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/opencompass-radar.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 多维能力概览, OpenCompass, radar, capability, normalized"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>多维能力概览</span><span>/</span><span aria-current="page">Capability Radar</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">多维能力概览 · 独立榜单</p>
+        <h1>Capability Radar</h1>
+        <p class="component-lede">用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。</p>
+        <div class="component-tags"><span>radar</span><span>capability</span><span>normalized</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffdf8"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='opencompassradar-title opencompassradar-desc' style='background:#fffdf8;color:#212121'>
+        <title id='opencompassradar-title'>Six normalized capability axes</title>
+        <desc id='opencompassradar-desc'>用统一归一化口径展示模型能力形状，强调强弱结构而非平均分。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='opencompassradar-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#2e63d7' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#e73b35' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#212121}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#77736d}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#77736d}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#212121}
+            .g{stroke:#e0ddd4;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#212121;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Six normalized capability axes</text>
+        <text class='s' x='28' y='48'>OpenCompass</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <path d='M 320.00 193.75 L 347.06 209.38 L 347.06 240.63 L 320.00 256.25 L 292.94 240.63 L 292.94 209.38 L 320.00 193.75' fill='none' stroke='#e0ddd4'/><path d='M 320.00 162.50 L 374.13 193.75 L 374.13 256.25 L 320.00 287.50 L 265.87 256.25 L 265.87 193.75 L 320.00 162.50' fill='none' stroke='#e0ddd4'/><path d='M 320.00 131.25 L 401.19 178.13 L 401.19 271.88 L 320.00 318.75 L 238.81 271.88 L 238.81 178.13 L 320.00 131.25' fill='none' stroke='#e0ddd4'/><path d='M 320.00 100.00 L 428.25 162.50 L 428.25 287.50 L 320.00 350.00 L 211.75 287.50 L 211.75 162.50 L 320.00 100.00' fill='none' stroke='#e0ddd4'/><line class='g' x1='320' y1='225' x2='320' y2='100'/><text class='v' x='320' y='76' text-anchor='middle'>Reason</text><line class='g' x1='320' y1='225' x2='428.25317547305485' y2='162.5'/><text class='v' x='452.5018867790191' y='152.5' text-anchor='middle'>Code</text><line class='g' x1='320' y1='225' x2='428.25317547305485' y2='287.5'/><text class='v' x='452.5018867790191' y='305.5' text-anchor='middle'>Math</text><line class='g' x1='320' y1='225' x2='320' y2='350'/><text class='v' x='320' y='382' text-anchor='middle'>Agent</text><line class='g' x1='320' y1='225' x2='211.7468245269452' y2='287.50000000000006'/><text class='v' x='187.4981132209809' y='305.50000000000006' text-anchor='middle'>Vision</text><line class='g' x1='320' y1='225' x2='211.74682452694518' y2='162.5'/><text class='v' x='187.49811322098088' y='152.5' text-anchor='middle'>Chinese</text><path d='M 320.00 115.00 L 405.52 175.63 L 419.59 282.50 L 320.00 312.50 L 231.23 276.25 L 221.49 168.13 L 320.00 115.00' fill='#e73b35' fill-opacity='.13' stroke='#e73b35' stroke-width='3'/><circle cx='320' cy='115' r='4' fill='#e73b35'/><circle cx='405.5200086237133' cy='175.625' r='4' fill='#e73b35'/><circle cx='419.5929214352104' cy='282.5' r='4' fill='#e73b35'/><circle cx='320' cy='312.5' r='4' fill='#e73b35'/><circle cx='231.23239611209505' cy='276.25000000000006' r='4' fill='#e73b35'/><circle cx='221.48961031952012' cy='168.125' r='4' fill='#e73b35'/><rect x='220' y='368' width='16' height='4' fill='#e73b35'/><text class='l' x='242' y='373'>Model A</text><path d='M 320.00 120.00 L 415.26 170.00 L 407.69 275.63 L 320.00 323.75 L 237.73 272.50 L 242.06 180.00 L 320.00 120.00' fill='#2e63d7' fill-opacity='.13' stroke='#2e63d7' stroke-width='3'/><circle cx='320' cy='120' r='4' fill='#2e63d7'/><circle cx='415.2627944162882' cy='170' r='4' fill='#2e63d7'/><circle cx='407.6850721331744' cy='275.625' r='4' fill='#2e63d7'/><circle cx='320' cy='323.75' r='4' fill='#2e63d7'/><circle cx='237.72758664047836' cy='272.5' r='4' fill='#2e63d7'/><circle cx='242.05771365940052' cy='180' r='4' fill='#2e63d7'/><rect x='340' y='368' width='16' height='4' fill='#2e63d7'/><text class='l' x='362' y='373'>Model B</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>radar</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>六轴雷达 + 参考轮廓 + 直接系列标记</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-13 Compass primary</dd></div><div><dt>Component ID</dt><dd><code>opencompass-radar</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>只适合轴数少、量纲已统一的概览；精确比较应回到表格。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>OpenCompass</h2><p>多维能力、中文评测与并行坐标</p><a class="text-link" href="https://opencompass.org.cn/leaderboard-llm" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;axes&quot;: [
+    &quot;Reason&quot;,
+    &quot;Code&quot;,
+    &quot;Math&quot;,
+    &quot;Agent&quot;,
+    &quot;Vision&quot;,
+    &quot;Chinese&quot;
+  ],
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;Model A&quot;,
+      &quot;values&quot;: [
+        88,
+        79,
+        92,
+        70,
+        82,
+        91
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Model B&quot;,
+      &quot;values&quot;: [
+        84,
+        88,
+        81,
+        79,
+        76,
+        72
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="gemini-small-multiples.html"><strong>Benchmark Small Multiples</strong><span>小多图柱 + 每面板独立基线 + 冠军标记</span></a><a href="helm-parallel-coordinates.html"><strong>Transparent Trade-off Lines</strong><span>平行坐标 + 方向统一标签 + 单模型聚焦</span></a><a href="nova-polar-rose.html"><strong>Multimodal Polar Rose</strong><span>等角极坐标柱 + 模态分区 + 外圈基准</span></a><a href="cohere-capability-glyphs.html"><strong>Capability Glyph Matrix</strong><span>行列字形矩阵 + 四分圆编码 + 缺口显式化</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

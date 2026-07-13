@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。 适合两个时间点、6 个以内对象的名次变化；更多时间点用 bump chart。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 排名与横向对比, LMArena / Chatbot Arena, rank-change, slopegraph, arena">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Two-snapshot Rank Slope · Benchmark Atlas">
+  <meta property="og:description" content="直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/arena-rank-slope.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Two-snapshot Rank Slope · Benchmark Atlas">
+  <meta name="twitter:description" content="直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Two-snapshot Rank Slope · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/arena-rank-slope.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Two-snapshot Rank Slope · Benchmark Atlas","description":"直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/arena-rank-slope.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 排名与横向对比, LMArena / Chatbot Arena, rank-change, slopegraph, arena"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>排名与横向对比</span><span>/</span><span aria-current="page">Two-snapshot Rank Slope</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">排名与横向对比 · 独立榜单</p>
+        <h1>Two-snapshot Rank Slope</h1>
+        <p class="component-lede">直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。</p>
+        <div class="component-tags"><span>rank-change</span><span>slopegraph</span><span>arena</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f7f7f5"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='arenarankslope-title arenarankslope-desc' style='background:#f7f7f5;color:#191919'>
+        <title id='arenarankslope-title'>Arena rank · two snapshots</title>
+        <desc id='arenarankslope-desc'>直接显示模型在两次榜单快照之间的名次升降，并保留交叉关系。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='arenarankslope-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#e04b42' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#2f65d9' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#191919}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#72726e}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#72726e}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#191919}
+            .g{stroke:#dcdcd8;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#191919;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Arena rank · two snapshots</text>
+        <text class='s' x='28' y='48'>LMArena / Chatbot Arena</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <text class='s' x='150' y='78' text-anchor='middle'>MAY</text><text class='s' x='490' y='78' text-anchor='middle'>JUN</text><line class='a' x1='150' y1='90' x2='150' y2='343'/><line class='a' x1='490' y1='90' x2='490' y2='343'/><line x1='158' y1='100' x2='482' y2='215' stroke='#2f65d9' stroke-width='3'/><circle cx='150' cy='100' r='6' fill='#2f65d9'/><circle cx='490' cy='215' r='6' fill='#2f65d9'/><text class='v' x='136' y='104' text-anchor='end'>1 · Model A</text><text class='v' x='504' y='219'>3 · Model A</text><line x1='158' y1='272.5' x2='482' y2='100' stroke='#e04b42' stroke-width='3'/><circle cx='150' cy='272.5' r='6' fill='#e04b42'/><circle cx='490' cy='100' r='6' fill='#e04b42'/><text class='v' x='136' y='276.5' text-anchor='end'>4 · Model B</text><text class='v' x='504' y='104'>1 · Model B</text><line x1='158' y1='157.5' x2='482' y2='157.5' stroke='#28a17a' stroke-width='3'/><circle cx='150' cy='157.5' r='6' fill='#28a17a'/><circle cx='490' cy='157.5' r='6' fill='#28a17a'/><text class='v' x='136' y='161.5' text-anchor='end'>2 · Model C</text><text class='v' x='504' y='161.5'>2 · Model C</text><line x1='158' y1='330' x2='482' y2='272.5' stroke='#8c62c4' stroke-width='3'/><circle cx='150' cy='330' r='6' fill='#8c62c4'/><circle cx='490' cy='272.5' r='6' fill='#8c62c4'/><text class='v' x='136' y='334' text-anchor='end'>5 · Model D</text><text class='v' x='504' y='276.5'>4 · Model D</text><line x1='158' y1='215' x2='482' y2='330' stroke='#e2a928' stroke-width='3'/><circle cx='150' cy='215' r='6' fill='#e2a928'/><circle cx='490' cy='330' r='6' fill='#e2a928'/><text class='v' x='136' y='219' text-anchor='end'>3 · Model E</text><text class='v' x='504' y='334'>5 · Model E</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>slopegraph</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>双时点坡度图 + 名次反向轴 + 交叉直标</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-05 Neutral civic ranking</dd></div><div><dt>Component ID</dt><dd><code>arena-rank-slope</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合两个时间点、6 个以内对象的名次变化；更多时间点用 bump chart。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>LMArena / Chatbot Arena</h2><p>Elo、胜率、置信区间与排名变化</p><a class="text-link" href="https://lmarena.ai/leaderboard" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;left&quot;: &quot;MAY&quot;,
+  &quot;right&quot;: &quot;JUN&quot;,
+  &quot;items&quot;: [
+    {
+      &quot;label&quot;: &quot;Model A&quot;,
+      &quot;left&quot;: 1,
+      &quot;right&quot;: 3
+    },
+    {
+      &quot;label&quot;: &quot;Model B&quot;,
+      &quot;left&quot;: 4,
+      &quot;right&quot;: 1
+    },
+    {
+      &quot;label&quot;: &quot;Model C&quot;,
+      &quot;left&quot;: 2,
+      &quot;right&quot;: 2
+    },
+    {
+      &quot;label&quot;: &quot;Model D&quot;,
+      &quot;left&quot;: 5,
+      &quot;right&quot;: 4
+    },
+    {
+      &quot;label&quot;: &quot;Model E&quot;,
+      &quot;left&quot;: 3,
+      &quot;right&quot;: 5
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="claude-master-table.html"><strong>Master Benchmark Table</strong><span>分组行 + 主模型描边 + 单元格双层高亮</span></a><a href="openai-lollipop-rank.html"><strong>Direct-label Lollipop Rank</strong><span>水平棒棒糖 + 末端直标 + 目标线</span></a><a href="deepseek-hatched-groups.html"><strong>Hatched Multi-bench Bars</strong><span>多组柱 + 自家斜线纹理 + 双层类目轴</span></a><a href="mistral-dumbbell-delta.html"><strong>Release Delta Dumbbells</strong><span>双端点差值图 + 方向箭头 + 增量直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

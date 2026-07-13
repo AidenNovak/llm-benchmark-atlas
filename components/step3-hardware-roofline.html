@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。 适合硬件感知 attention 设计；必须使用相同精度、batch 和 context 定义估算 compute 与访存。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Step-3 Technical Report, stepfun, roofline, hardware, attention">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Attention Hardware Roofline · Benchmark Atlas">
+  <meta property="og:description" content="复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/step3-hardware-roofline.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Attention Hardware Roofline · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Attention Hardware Roofline · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/step3-hardware-roofline.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Attention Hardware Roofline · Benchmark Atlas","description":"复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/step3-hardware-roofline.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Step-3 Technical Report, stepfun, roofline, hardware, attention"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Attention Hardware Roofline</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Attention Hardware Roofline</h1>
+        <p class="component-lede">复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。</p>
+        <div class="component-tags"><span>stepfun</span><span>roofline</span><span>hardware</span><span>attention</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffdfb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='step3hardwareroofline-title step3hardwareroofline-desc' style='background:#fffdfb;color:#1d1b1a'>
+      <title id='step3hardwareroofline-title'>Attention compute vs KV memory access</title><desc id='step3hardwareroofline-desc'>复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1d1b1a}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#756d68}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#756d68}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1d1b1a}.g{stroke:#e5ddd8;stroke-width:1;shape-rendering:crispEdges}</style></defs>
+      <text class='t' x='28' y='30'>Attention compute vs KV memory access</text><text class='s' x='28' y='48'>Step-3 Technical Report · Figure 5 / PDF p.8</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><line class='g' x1='82' y1='78' x2='82' y2='338'/><text class='s' x='82' y='359' text-anchor='middle'>0</text><line class='g' x1='154.57142857142856' y1='78' x2='154.57142857142856' y2='338'/><text class='s' x='154.57142857142856' y='359' text-anchor='middle'>0.5</text><line class='g' x1='227.14285714285714' y1='78' x2='227.14285714285714' y2='338'/><text class='s' x='227.14285714285714' y='359' text-anchor='middle'>1</text><line class='g' x1='372.2857142857143' y1='78' x2='372.2857142857143' y2='338'/><text class='s' x='372.2857142857143' y='359' text-anchor='middle'>2</text><line class='g' x1='517.4285714285713' y1='78' x2='517.4285714285713' y2='338'/><text class='s' x='517.4285714285713' y='359' text-anchor='middle'>3</text><line class='g' x1='82' y1='338' x2='590' y2='338'/><text class='s' x='70' y='341' text-anchor='end'>0</text><line class='g' x1='82' y1='278' x2='590' y2='278'/><text class='s' x='70' y='281' text-anchor='end'>150</text><line class='g' x1='82' y1='218' x2='590' y2='218'/><text class='s' x='70' y='221' text-anchor='end'>300</text><line class='g' x1='82' y1='158' x2='590' y2='158'/><text class='s' x='70' y='161' text-anchor='end'>450</text><line class='g' x1='82' y1='98' x2='590' y2='98'/><text class='s' x='70' y='101' text-anchor='end'>600</text><line x1='82' y1='338' x2='227.14285714285714' y2='90' stroke='#85817d' stroke-width='1.4' stroke-dasharray='6 3'/><text class='s' x='224.14285714285714' y='85' text-anchor='end'>H800</text><line x1='82' y1='338' x2='306.9714285714286' y2='130' stroke='#85817d' stroke-width='1.4' stroke-dasharray='6 3'/><text class='s' x='303.9714285714286' y='125' text-anchor='end'>910B</text><line x1='82' y1='338' x2='386.8' y2='166' stroke='#85817d' stroke-width='1.4' stroke-dasharray='6 3'/><text class='s' x='383.8' y='161' text-anchor='end'>A800</text><line x1='82' y1='338' x2='466.6285714285715' y2='238' stroke='#85817d' stroke-width='1.4' stroke-dasharray='6 3'/><text class='s' x='463.6285714285715' y='233' text-anchor='end'>H20</text><path d='M 118.29 280.00 L 248.91 102.00' fill='none' stroke='#ee3b38' stroke-width='2.7'/><circle cx='118.28571428571428' cy='280' r='6' fill='#ee3b38'/><circle cx='248.9142857142857' cy='102' r='6' fill='#fffdfb' stroke='#ee3b38' stroke-width='2.5'/><text class='v' x='256.9142857142857' y='94'>DSv3 · 32K</text><path d='M 161.83 328.00 L 539.20 298.00' fill='none' stroke='#3b68d8' stroke-width='2.7'/><circle cx='161.82857142857142' cy='328' r='6' fill='#3b68d8'/><circle cx='539.2' cy='298' r='6' fill='#fffdfb' stroke='#3b68d8' stroke-width='2.5'/><text class='v' x='547.2' y='290'>Qwen3 MoE · 32K</text><path d='M 111.03 326.00 L 227.14 286.00' fill='none' stroke='#13aeb0' stroke-width='2.7'/><circle cx='111.02857142857144' cy='326' r='6' fill='#13aeb0'/><circle cx='227.14285714285714' cy='286' r='6' fill='#fffdfb' stroke='#13aeb0' stroke-width='2.5'/><text class='v' x='235.14285714285714' y='278'>Step-3 · 32K</text><text class='s' x='336' y='387' text-anchor='middle'>KV memory access per token (GB) →</text><text class='s' x='18' y='218' text-anchor='middle' transform='rotate(-90 18 218)'>attention compute (GFLOPs) ↑</text></svg><figcaption>Illustrative demo data · renderer: <code>hardwareRoofline</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>compute-memory 坐标 + 多硬件 roofline 射线 + 8K→32K 模型轨迹 + 端点直标</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-76 Step-3 hardware roofline</dd></div><div><dt>Component ID</dt><dd><code>step3-hardware-roofline</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合硬件感知 attention 设计；必须使用相同精度、batch 和 context 定义估算 compute 与访存。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 5 · PDF p.8</h2><p>DSv3、Qwen3 MoE、Step-3 的 8K-32K 轨迹与 H800/H20/A800/910B roofline。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2507.19427" rel="noreferrer">Step-3 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;hardware&quot;: [
+    {
+      &quot;label&quot;: &quot;H800&quot;,
+      &quot;compute&quot;: 620
+    },
+    {
+      &quot;label&quot;: &quot;910B&quot;,
+      &quot;compute&quot;: 520
+    },
+    {
+      &quot;label&quot;: &quot;A800&quot;,
+      &quot;compute&quot;: 430
+    },
+    {
+      &quot;label&quot;: &quot;H20&quot;,
+      &quot;compute&quot;: 250
+    }
+  ],
+  &quot;models&quot;: [
+    {
+      &quot;label&quot;: &quot;DSv3&quot;,
+      &quot;points&quot;: [
+        [
+          0.25,
+          145
+        ],
+        [
+          1.15,
+          590
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Qwen3 MoE&quot;,
+      &quot;points&quot;: [
+        [
+          0.55,
+          25
+        ],
+        [
+          3.15,
+          100
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Step-3&quot;,
+      &quot;points&quot;: [
+        [
+          0.2,
+          30
+        ],
+        [
+          1,
+          130
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

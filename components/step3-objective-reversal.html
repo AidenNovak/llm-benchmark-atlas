@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。 适合揭示“训练便宜”不等于“推理解码便宜”；三种成本必须归一到相同 token 口径。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Step-3 Technical Report, stepfun, cost, training, decoding">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Training–Decoding Objective Reversal · Benchmark Atlas">
+  <meta property="og:description" content="复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/step3-objective-reversal.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Training–Decoding Objective Reversal · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Training–Decoding Objective Reversal · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/step3-objective-reversal.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Training–Decoding Objective Reversal · Benchmark Atlas","description":"复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/step3-objective-reversal.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Step-3 Technical Report, stepfun, cost, training, decoding"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Training–Decoding Objective Reversal</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Training–Decoding Objective Reversal</h1>
+        <p class="component-lede">复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。</p>
+        <div class="component-tags"><span>stepfun</span><span>cost</span><span>training</span><span>decoding</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffdfb"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='step3objectivereversal-title step3objectivereversal-desc' style='background:#fffdfb;color:#1d1b1a'>
+      <title id='step3objectivereversal-title'>The cheapest model changes with the objective</title><desc id='step3objectivereversal-desc'>复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1d1b1a}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#756d68}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#756d68}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1d1b1a}.g{stroke:#e5ddd8;stroke-width:1;shape-rendering:crispEdges}</style></defs>
+      <text class='t' x='28' y='30'>The cheapest model changes with the objective</text><text class='s' x='28' y='48'>Step-3 Technical Report · Figure 4 / PDF p.8</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><line class='g' x1='267.6190476190476' y1='75' x2='267.6190476190476' y2='340'/><text class='s' x='267.6190476190476' y='361' text-anchor='middle'>$0.1</text><line class='g' x1='365.23809523809524' y1='75' x2='365.23809523809524' y2='340'/><text class='s' x='365.23809523809524' y='361' text-anchor='middle'>$0.2</text><line class='g' x1='462.8571428571429' y1='75' x2='462.8571428571429' y2='340'/><text class='s' x='462.8571428571429' y='361' text-anchor='middle'>$0.3</text><line class='g' x1='560.4761904761905' y1='75' x2='560.4761904761905' y2='340'/><text class='s' x='560.4761904761905' y='361' text-anchor='middle'>$0.4</text><text class='v' x='150' y='112' text-anchor='end'>DECODING · 8K</text><rect x='170' y='94' width='111.28571428571433' height='21' fill='#ee3b38' fill-opacity='.78'/><rect x='170' y='121' width='76.14285714285714' height='21' fill='#13aeb0' fill-opacity='.82'/><text class='s' x='288.28571428571433' y='109'>0.114</text><text class='s' x='253.14285714285714' y='136'>0.078</text><path d='M 158 125 l 7 6 l -7 6 Z' fill='#e29c2e'/><text class='v' x='150' y='195' text-anchor='end'>DECODING · 32K</text><rect x='170' y='177' width='385.5952380952381' height='21' fill='#ee3b38' fill-opacity='.78'/><rect x='170' y='204' width='164' height='21' fill='#13aeb0' fill-opacity='.82'/><text class='s' x='562.5952380952381' y='192'>0.395</text><text class='s' x='341' y='219'>0.168</text><path d='M 158 208 l 7 6 l -7 6 Z' fill='#e29c2e'/><text class='v' x='150' y='278' text-anchor='end'>TRAINING · 8K</text><rect x='170' y='260' width='74.1904761904762' height='21' fill='#ee3b38' fill-opacity='.78'/><rect x='170' y='287' width='207.92857142857144' height='21' fill='#13aeb0' fill-opacity='.82'/><text class='s' x='251.1904761904762' y='275'>0.076</text><text class='s' x='384.92857142857144' y='302'>0.213</text><path d='M 158 264 l 7 6 l -7 6 Z' fill='#e29c2e'/><rect x='198' y='373' width='12' height='8' fill='#ee3b38'/><text class='l' x='218' y='381'>Pangu Pro MoE</text><rect x='353' y='373' width='12' height='8' fill='#13aeb0'/><text class='l' x='373' y='381'>Step-3</text><text class='s' x='590' y='361' text-anchor='end'>cost per 1M tokens →</text></svg><figcaption>Illustrative demo data · renderer: <code>objectiveReversalBars</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>同两模型三场景双条 + 每行赢家箭头 + decoding/training 目标反转</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-77 Step-3 objective reversal bars</dd></div><div><dt>Component ID</dt><dd><code>step3-objective-reversal</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合揭示“训练便宜”不等于“推理解码便宜”；三种成本必须归一到相同 token 口径。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 4 · PDF p.8</h2><p>Step-3 与 Pangu Pro MoE 在两档 decoding 和一档 training 成本上的相反趋势。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2507.19427" rel="noreferrer">Step-3 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;scenarios&quot;: [
+    {
+      &quot;label&quot;: &quot;DECODING · 8K&quot;,
+      &quot;a&quot;: 0.114,
+      &quot;b&quot;: 0.078
+    },
+    {
+      &quot;label&quot;: &quot;DECODING · 32K&quot;,
+      &quot;a&quot;: 0.395,
+      &quot;b&quot;: 0.168
+    },
+    {
+      &quot;label&quot;: &quot;TRAINING · 8K&quot;,
+      &quot;a&quot;: 0.076,
+      &quot;b&quot;: 0.213
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

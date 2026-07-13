@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。 适合统一 GPU、并行度和 batch 条件下的长序列压力测试；不可跨硬件比较绝对吞吐。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-01 Technical Report, minimax, attention, throughput, oom">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Attention Throughput Cliff · Benchmark Atlas">
+  <meta property="og:description" content="复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-attention-throughput-cliff.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Attention Throughput Cliff · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Attention Throughput Cliff · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-attention-throughput-cliff.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Attention Throughput Cliff · Benchmark Atlas","description":"复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-attention-throughput-cliff.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-01 Technical Report, minimax, attention, throughput, oom"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Attention Throughput Cliff</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Attention Throughput Cliff</h1>
+        <p class="component-lede">复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。</p>
+        <div class="component-tags"><span>minimax</span><span>attention</span><span>throughput</span><span>oom</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffdf9"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='minimaxattentionthroughputcliff-title minimaxattentionthroughputcliff-desc' style='background:#fffdf9;color:#171518'>
+      <title id='minimaxattentionthroughputcliff-title'>Training throughput · sequence-length pressure test</title>
+      <desc id='minimaxattentionthroughputcliff-desc'>复现 MiniMax-01 Figure 8：比较 softmax、lightning、hybrid 与其他线性 attention 在序列拉长时的吞吐和 OOM 边界。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6f6870}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6f6870}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .g{stroke:#e5dde2;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Training throughput · sequence-length pressure test</text>
+      <text class='s' x='28' y='48'>MiniMax-01 Technical Report · Figure 8 / PDF p.10</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <line class='g' x1='82' y1='78' x2='82' y2='338'/><text class='s' x='82' y='359' text-anchor='middle'>1k</text><line class='g' x1='248' y1='78' x2='248' y2='338'/><text class='s' x='248' y='359' text-anchor='middle'>4k</text><line class='g' x1='414' y1='78' x2='414' y2='338'/><text class='s' x='414' y='359' text-anchor='middle'>16k</text><line class='g' x1='580' y1='78' x2='580' y2='338'/><text class='s' x='580' y='359' text-anchor='middle'>64k</text><line class='g' x1='82' y1='315.6923076923077' x2='580' y2='315.6923076923077'/><text class='s' x='70' y='318.6923076923077' text-anchor='end'>6k</text><line class='g' x1='82' y1='238.46153846153845' x2='580' y2='238.46153846153845'/><text class='s' x='70' y='241.46153846153845' text-anchor='end'>10k</text><line class='g' x1='82' y1='161.23076923076923' x2='580' y2='161.23076923076923'/><text class='s' x='70' y='164.23076923076923' text-anchor='end'>14k</text><line class='g' x1='82' y1='84' x2='580' y2='84'/><text class='s' x='70' y='87' text-anchor='end'>18k</text><path d='M 82.00 118.75 L 165.00 124.55 L 248.00 128.41 L 331.00 136.13 L 414.00 149.65 L 497.00 165.09 L 580.00 182.47' fill='none' stroke='#ef5b4d' stroke-width='2.6'/><circle cx='82' cy='118.75384615384615' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><circle cx='165' cy='124.54615384615383' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><circle cx='248' cy='128.40769230769232' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><circle cx='331' cy='136.13076923076923' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><circle cx='414' cy='149.64615384615382' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><circle cx='497' cy='165.09230769230768' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><circle cx='580' cy='182.4692307692308' r='3.7' fill='#fffdf9' stroke='#ef5b4d' stroke-width='2'/><line x1='100' y1='70' x2='120' y2='70' stroke='#ef5b4d' stroke-width='2.5'/><text class='l' x='126' y='73'>Hybrid-lightning</text><path d='M 82.00 134.20 L 165.00 130.34 L 248.00 128.41 L 331.00 139.99 L 414.00 141.92 L 497.00 134.20 L 580.00 128.41' fill='none' stroke='#5b63ce' stroke-width='2.6'/><circle cx='82' cy='134.2' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><circle cx='165' cy='130.33846153846153' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><circle cx='248' cy='128.40769230769232' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><circle cx='331' cy='139.9923076923077' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><circle cx='414' cy='141.9230769230769' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><circle cx='497' cy='134.2' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><circle cx='580' cy='128.40769230769232' r='3.7' fill='#fffdf9' stroke='#5b63ce' stroke-width='2'/><line x1='269' y1='70' x2='289' y2='70' stroke='#5b63ce' stroke-width='2.5'/><text class='l' x='295' y='73'>Lightning</text><path d='M 82.00 111.03 L 165.00 126.48 L 248.00 151.58 L 331.00 186.33 L 414.00 236.53 L 497.00 300.25' fill='none' stroke='#168f91' stroke-width='2.6'/><circle cx='82' cy='111.03076923076921' r='3.7' fill='#fffdf9' stroke='#168f91' stroke-width='2'/><circle cx='165' cy='126.47692307692307' r='3.7' fill='#fffdf9' stroke='#168f91' stroke-width='2'/><circle cx='248' cy='151.5769230769231' r='3.7' fill='#fffdf9' stroke='#168f91' stroke-width='2'/><circle cx='331' cy='186.33076923076922' r='3.7' fill='#fffdf9' stroke='#168f91' stroke-width='2'/><circle cx='414' cy='236.53076923076924' r='3.7' fill='#fffdf9' stroke='#168f91' stroke-width='2'/><circle cx='497' cy='300.24615384615385' r='3.7' fill='#fffdf9' stroke='#168f91' stroke-width='2'/><line x1='438' y1='70' x2='458' y2='70' stroke='#168f91' stroke-width='2.5'/><text class='l' x='464' y='73'>Softmax</text><path d='M 505 294.24615384615385 l 8 8 m -8 0 l 8 -8' stroke='#168f91' stroke-width='2'/><text class='s' x='517' y='302.24615384615385'>OOM @ 64k</text><path d='M 82.00 155.44 L 165.00 157.37 L 248.00 159.30 L 331.00 161.23 L 414.00 163.16 L 497.00 157.37 L 580.00 151.58' fill='none' stroke='#e08b20' stroke-width='2.6' stroke-dasharray='6 3'/><circle cx='82' cy='155.43846153846152' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><circle cx='165' cy='157.36923076923077' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><circle cx='248' cy='159.3' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><circle cx='331' cy='161.23076923076923' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><circle cx='414' cy='163.16153846153847' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><circle cx='497' cy='157.36923076923077' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><circle cx='580' cy='151.5769230769231' r='3.7' fill='#fffdf9' stroke='#e08b20' stroke-width='2'/><line x1='100' y1='87' x2='120' y2='87' stroke='#e08b20' stroke-width='2.5'/><text class='l' x='126' y='90'>HGRN2</text><path d='M 82.00 182.47 L 165.00 180.54 L 248.00 182.47 L 331.00 184.40 L 414.00 184.40 L 497.00 180.54' fill='none' stroke='#8b58b7' stroke-width='2.6' stroke-dasharray='6 3'/><circle cx='82' cy='182.4692307692308' r='3.7' fill='#fffdf9' stroke='#8b58b7' stroke-width='2'/><circle cx='165' cy='180.53846153846152' r='3.7' fill='#fffdf9' stroke='#8b58b7' stroke-width='2'/><circle cx='248' cy='182.4692307692308' r='3.7' fill='#fffdf9' stroke='#8b58b7' stroke-width='2'/><circle cx='331' cy='184.4' r='3.7' fill='#fffdf9' stroke='#8b58b7' stroke-width='2'/><circle cx='414' cy='184.4' r='3.7' fill='#fffdf9' stroke='#8b58b7' stroke-width='2'/><circle cx='497' cy='180.53846153846152' r='3.7' fill='#fffdf9' stroke='#8b58b7' stroke-width='2'/><line x1='269' y1='87' x2='289' y2='87' stroke='#8b58b7' stroke-width='2.5'/><text class='l' x='295' y='90'>Mamba2</text><path d='M 505 174.53846153846152 l 8 8 m -8 0 l 8 -8' stroke='#8b58b7' stroke-width='2'/><text class='s' x='517' y='182.53846153846152'>OOM @ 64k</text><text class='s' x='331' y='385' text-anchor='middle'>sequence length (log₂) →</text><text class='s' x='17' y='218' text-anchor='middle' transform='rotate(-90 17 218)'>tokens / GPU / second ↑</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>throughputCliffLines</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>log sequence 横轴多机制吞吐线 + 末端 OOM 叉标 + 长上下文保持率直读</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-66 MiniMax throughput cliff</dd></div><div><dt>Component ID</dt><dd><code>minimax-attention-throughput-cliff</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合统一 GPU、并行度和 batch 条件下的长序列压力测试；不可跨硬件比较绝对吞吐。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 8 · PDF p.10</h2><p>五种 attention 机制在 1K-65K 序列长度下的 token/GPU/s 曲线。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2501.08313" rel="noreferrer">MiniMax-01 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;lengths&quot;: [
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768,
+    65536
+  ],
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;Hybrid-lightning&quot;,
+      &quot;values&quot;: [
+        16200,
+        15900,
+        15700,
+        15300,
+        14600,
+        13800,
+        12900
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Lightning&quot;,
+      &quot;values&quot;: [
+        15400,
+        15600,
+        15700,
+        15100,
+        15000,
+        15400,
+        15700
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Softmax&quot;,
+      &quot;values&quot;: [
+        16600,
+        15800,
+        14500,
+        12700,
+        10100,
+        6800,
+        null
+      ],
+      &quot;oomAt&quot;: 65536
+    },
+    {
+      &quot;label&quot;: &quot;HGRN2&quot;,
+      &quot;values&quot;: [
+        14300,
+        14200,
+        14100,
+        14000,
+        13900,
+        14200,
+        14500
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Mamba2&quot;,
+      &quot;values&quot;: [
+        12900,
+        13000,
+        12900,
+        12800,
+        12800,
+        13000,
+        null
+      ],
+      &quot;oomAt&quot;: 65536
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

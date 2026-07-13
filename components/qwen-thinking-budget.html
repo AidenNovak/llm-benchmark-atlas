@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。 适合回答“多想多久最划算”，而不是只展示最高分。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 规模、成本与效率, Alibaba Qwen, thinking-budget, saturation, marginal-gain">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Thinking Budget Saturation · Benchmark Atlas">
+  <meta property="og:description" content="将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-thinking-budget.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Thinking Budget Saturation · Benchmark Atlas">
+  <meta name="twitter:description" content="将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Thinking Budget Saturation · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-thinking-budget.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Thinking Budget Saturation · Benchmark Atlas","description":"将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-thinking-budget.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 规模、成本与效率, Alibaba Qwen, thinking-budget, saturation, marginal-gain"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>规模、成本与效率</span><span>/</span><span aria-current="page">Thinking Budget Saturation</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">规模、成本与效率 · 厂商发布</p>
+        <h1>Thinking Budget Saturation</h1>
+        <p class="component-lede">将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。</p>
+        <div class="component-tags"><span>thinking-budget</span><span>saturation</span><span>marginal-gain</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f6f3ff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='qwenthinkingbudget-title qwenthinkingbudget-desc' style='background:#f6f3ff;color:#24174a'>
+        <title id='qwenthinkingbudget-title'>Reward vs thinking tokens</title>
+        <desc id='qwenthinkingbudget-desc'>将 thinking token 增长、边际收益递减和推荐预算窗放到一条连续曲线上。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='qwenthinkingbudget-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#28b8c7' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#6657d9' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#24174a}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#756b91}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#756b91}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#24174a}
+            .g{stroke:#ded5f3;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#24174a;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Reward vs thinking tokens</text>
+        <text class='s' x='28' y='48'>Alibaba Qwen</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <rect x='200' y='82' width='130' height='260' fill='#28b8c7' fill-opacity='.13'/><text class='s' x='265' y='78' text-anchor='middle'>RECOMMENDED WINDOW</text><line class='g' x1='70' y1='88' x2='70' y2='336'/><text class='l' x='70' y='358' text-anchor='middle'>0k</text><line class='g' x1='200' y1='88' x2='200' y2='336'/><text class='l' x='200' y='358' text-anchor='middle'>8k</text><line class='g' x1='330' y1='88' x2='330' y2='336'/><text class='l' x='330' y='358' text-anchor='middle'>16k</text><line class='g' x1='460' y1='88' x2='460' y2='336'/><text class='l' x='460' y='358' text-anchor='middle'>24k</text><line class='g' x1='590' y1='88' x2='590' y2='336'/><text class='l' x='590' y='358' text-anchor='middle'>32k</text><line class='g' x1='70' y1='313.45454545454544' x2='590' y2='313.45454545454544'/><text class='l' x='58' y='316.45454545454544' text-anchor='end'>40</text><line class='g' x1='70' y1='268.3636363636364' x2='590' y2='268.3636363636364'/><text class='l' x='58' y='271.3636363636364' text-anchor='end'>50</text><line class='g' x1='70' y1='223.27272727272728' x2='590' y2='223.27272727272728'/><text class='l' x='58' y='226.27272727272728' text-anchor='end'>60</text><line class='g' x1='70' y1='178.1818181818182' x2='590' y2='178.1818181818182'/><text class='l' x='58' y='181.1818181818182' text-anchor='end'>70</text><line class='g' x1='70' y1='133.09090909090907' x2='590' y2='133.09090909090907'/><text class='l' x='58' y='136.09090909090907' text-anchor='end'>80</text><line class='g' x1='70' y1='88' x2='590' y2='88'/><text class='l' x='58' y='91' text-anchor='end'>90</text><path d='M 70.00 322.47 L 102.50 245.82 L 135.00 191.71 L 200.00 142.11 L 265.00 119.56 L 330.00 106.04 L 460.00 99.27 L 590.00 97.02' fill='none' stroke='#6657d9' stroke-width='5'/><circle cx='70' cy='322.4727272727273' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><circle cx='102.5' cy='245.8181818181818' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><circle cx='135' cy='191.70909090909092' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><circle cx='200' cy='142.1090909090909' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><circle cx='265' cy='119.56363636363636' r='8' fill='#ffb12b' stroke='#6657d9' stroke-width='3'/><circle cx='330' cy='106.03636363636363' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><circle cx='460' cy='99.27272727272725' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><circle cx='590' cy='97.01818181818183' r='5' fill='#f6f3ff' stroke='#6657d9' stroke-width='3'/><text class='v' x='590' y='84.01818181818183' text-anchor='end'>+1.0 / +16k</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>saturation</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>饱和曲线 + 边际收益分段 + 最佳预算窗</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-08 Violet budget dial</dd></div><div><dt>Component ID</dt><dd><code>qwen-thinking-budget</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合回答“多想多久最划算”，而不是只展示最高分。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Alibaba Qwen</h2><p>紫色系统、thinking budget 与 MoE 效率</p><a class="text-link" href="https://qwenlm.github.io/blog/qwen3/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;optimum&quot;: [
+    8,
+    16
+  ],
+  &quot;points&quot;: [
+    [
+      0,
+      38
+    ],
+    [
+      2,
+      55
+    ],
+    [
+      4,
+      67
+    ],
+    [
+      8,
+      78
+    ],
+    [
+      12,
+      83
+    ],
+    [
+      16,
+      86
+    ],
+    [
+      24,
+      87.5
+    ],
+    [
+      32,
+      88
+    ]
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="openai-compute-frontier.html"><strong>Compute Frontier Curve</strong><span>对数横轴 + 前沿曲线 + effort 节点注释</span></a><a href="arxiv-dual-axis.html"><strong>Training Dual-axis Trace</strong><span>双纵轴折线 + 训练阶段带 + 最佳 checkpoint</span></a><a href="llama-scaling-law.html"><strong>Log-log Scaling Law</strong><span>log-log 散点 + 拟合线 + 模型规模标注</span></a><a href="phi-efficiency-bubbles.html"><strong>Parameter Efficiency Bubbles</strong><span>气泡散点 + 气泡面积参数 + 效率等高线</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

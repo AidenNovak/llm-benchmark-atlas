@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。 适合 SFT、reward model、RL、rejection sampling 等明确阶段。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 厂商发布复现系列, NVIDIA / Nemotron, nvidia, post-training, ladder">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Post-training Phase Ladder · Benchmark Atlas">
+  <meta property="og:description" content="用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-posttrain-ladder.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Post-training Phase Ladder · Benchmark Atlas">
+  <meta name="twitter:description" content="用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Post-training Phase Ladder · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-posttrain-ladder.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Post-training Phase Ladder · Benchmark Atlas","description":"用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/nemotron-posttrain-ladder.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 厂商发布复现系列, NVIDIA / Nemotron, nvidia, post-training, ladder"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>厂商发布复现系列</span><span>/</span><span aria-current="page">Post-training Phase Ladder</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">厂商发布复现系列 · 技术报告</p>
+        <h1>Post-training Phase Ladder</h1>
+        <p class="component-lede">用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。</p>
+        <div class="component-tags"><span>nvidia</span><span>post-training</span><span>ladder</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#10130d"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='nemotronposttrainladder-title nemotronposttrainladder-desc' style='background:#10130d;color:#f1f5e9'>
+      <title id='nemotronposttrainladder-title'>Cumulative reward across post-training stages</title>
+      <desc id='nemotronposttrainladder-desc'>用阶梯而非折线说明 post-training 阶段是离散累积过程，突出每一步贡献。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f1f5e9}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#aab2a2}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#aab2a2}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f1f5e9}
+        .g{stroke:#394032;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Cumulative reward across post-training stages</text>
+      <text class='s' x='28' y='48'>NVIDIA / Nemotron</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <path d='M 64 325 H 170 V 270 H 276 V 215 H 382 V 160 H 488 V 105 H 594' fill='none' stroke='#394032' stroke-width='16' stroke-linejoin='round'/><rect x='76' y='292' width='84' height='46' rx='4' fill='#76b900' fill-opacity='.88'/><text x='118' y='311' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#10130d'>BASE</text><text x='118' y='327' text-anchor='middle' style='font:700 13px ui-sans-serif;fill:#10130d'>54</text><text class='v' x='170' y='284' fill='#76b900'>+12</text><rect x='182' y='237' width='84' height='46' rx='4' fill='#b7db69' fill-opacity='.88'/><text x='224' y='256' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#10130d'>SFT</text><text x='224' y='272' text-anchor='middle' style='font:700 13px ui-sans-serif;fill:#10130d'>66</text><text class='v' x='276' y='229' fill='#76b900'>+8</text><rect x='288' y='182' width='84' height='46' rx='4' fill='#58c7a6' fill-opacity='.88'/><text x='330' y='201' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#10130d'>RM</text><text x='330' y='217' text-anchor='middle' style='font:700 13px ui-sans-serif;fill:#10130d'>74</text><text class='v' x='382' y='174' fill='#76b900'>+10</text><rect x='394' y='127' width='84' height='46' rx='4' fill='#f6cc55' fill-opacity='.88'/><text x='436' y='146' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#10130d'>RL</text><text x='436' y='162' text-anchor='middle' style='font:700 13px ui-sans-serif;fill:#10130d'>84</text><text class='v' x='488' y='119' fill='#76b900'>+5</text><rect x='500' y='72' width='84' height='46' rx='4' fill='#8fa8ff' fill-opacity='.88'/><text x='542' y='91' text-anchor='middle' style='font:700 10px ui-sans-serif;fill:#10130d'>ALIGN</text><text x='542' y='107' text-anchor='middle' style='font:700 13px ui-sans-serif;fill:#10130d'>89</text><text class='s' x='320' y='374' text-anchor='middle'>post-training stage → cumulative benchmark reward</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>phaseLadder</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>训练阶段阶梯 + 每级 score 盒 + 阶段间增量标签</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-54 NVIDIA post-train staircase</dd></div><div><dt>Component ID</dt><dd><code>nemotron-posttrain-ladder</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 SFT、reward model、RL、rejection sampling 等明确阶段。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>NVIDIA / Nemotron</h2><p>高对比黑绿与分项得分环</p><a class="text-link" href="https://research.nvidia.com/labs/adlr/Nemotron-4-340B/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;stages&quot;: [
+    {
+      &quot;label&quot;: &quot;BASE&quot;,
+      &quot;score&quot;: 54
+    },
+    {
+      &quot;label&quot;: &quot;SFT&quot;,
+      &quot;score&quot;: 66
+    },
+    {
+      &quot;label&quot;: &quot;RM&quot;,
+      &quot;score&quot;: 74
+    },
+    {
+      &quot;label&quot;: &quot;RL&quot;,
+      &quot;score&quot;: 84
+    },
+    {
+      &quot;label&quot;: &quot;ALIGN&quot;,
+      &quot;score&quot;: 89
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="gemini-deepthink-triptych.html"><strong>Gemini Deep Think Triptych</strong><span>三联独立柱面板 + 自家蓝强调 + benchmark 条件脚注</span></a><a href="openai-thinking-outline-bars.html"><strong>Thinking vs Direct Bars</strong><span>填充/空心配对柱 + thinking 模式图例 + 单 benchmark 排序</span></a><a href="claude-multilingual-errorbars.html"><strong>Multilingual Coding Error Bars</strong><span>语言分组窄柱 + 每柱误差棒 + 三模型稳定顺序</span></a><a href="claude-broken-axis-release.html"><strong>High-score Broken Axis</strong><span>高分段断轴柱 + 轴断裂符号 + 柱顶一位小数</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

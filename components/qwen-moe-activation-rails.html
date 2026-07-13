@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。 适合 MoE 家族说明规模与实际推理负载的差别。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 厂商发布复现系列, Alibaba Qwen, qwen, moe, active-parameters">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="MoE Activation Rails · Benchmark Atlas">
+  <meta property="og:description" content="把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-moe-activation-rails.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="MoE Activation Rails · Benchmark Atlas">
+  <meta name="twitter:description" content="把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>MoE Activation Rails · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-moe-activation-rails.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"MoE Activation Rails · Benchmark Atlas","description":"把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/qwen-moe-activation-rails.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 厂商发布复现系列, Alibaba Qwen, qwen, moe, active-parameters"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>厂商发布复现系列</span><span>/</span><span aria-current="page">MoE Activation Rails</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">厂商发布复现系列 · 厂商发布</p>
+        <h1>MoE Activation Rails</h1>
+        <p class="component-lede">把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。</p>
+        <div class="component-tags"><span>qwen</span><span>moe</span><span>active-parameters</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f6f3ff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='qwenmoeactivationrails-title qwenmoeactivationrails-desc' style='background:#f6f3ff;color:#24174a'>
+      <title id='qwenmoeactivationrails-title'>Total vs active parameters · quality rail</title>
+      <desc id='qwenmoeactivationrails-desc'>把 MoE 的总参数和每 token 激活参数分开编码，并在同一行保留质量得分。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#24174a}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#756b91}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#756b91}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#24174a}
+        .g{stroke:#ded5f3;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Total vs active parameters · quality rail</text>
+      <text class='s' x='28' y='48'>Alibaba Qwen</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <text class='v' x='148' y='113' text-anchor='end'>Qwen 30B-A3B</text><rect x='166' y='96' width='44.680851063829785' height='31' rx='15' fill='#a59af0' fill-opacity='.2' stroke='#6657d9'/><rect x='166' y='103' width='10' height='17' rx='8' fill='#6657d9'/><text class='s' x='218.68085106382978' y='115'>3 / 30B</text><line x1='458' y1='111' x2='590' y2='111' stroke='#ded5f3'/><circle cx='528.4' cy='111' r='7' fill='#28b8c7'/><text class='v' x='528.4' y='92' text-anchor='middle'>74</text><text class='v' x='148' y='176' text-anchor='end'>Qwen 80B-A8B</text><rect x='166' y='159' width='119.14893617021276' height='31' rx='15' fill='#a59af0' fill-opacity='.2' stroke='#6657d9'/><rect x='166' y='166' width='11.914893617021276' height='17' rx='8' fill='#6657d9'/><text class='s' x='293.1489361702128' y='178'>8 / 80B</text><line x1='458' y1='174' x2='590' y2='174' stroke='#ded5f3'/><circle cx='551.8666666666667' cy='174' r='7' fill='#28b8c7'/><text class='v' x='551.8666666666667' y='155' text-anchor='middle'>82</text><text class='v' x='148' y='239' text-anchor='end'>Qwen 235B-A22B</text><rect x='166' y='222' width='350' height='31' rx='15' fill='#a59af0' fill-opacity='.2' stroke='#6657d9'/><rect x='166' y='229' width='32.76595744680851' height='17' rx='8' fill='#6657d9'/><text class='s' x='524' y='241'>22 / 235B</text><line x1='458' y1='237' x2='590' y2='237' stroke='#ded5f3'/><circle cx='572.4' cy='237' r='7' fill='#28b8c7'/><text class='v' x='572.4' y='218' text-anchor='middle'>89</text><text class='v' x='148' y='302' text-anchor='end'>Dense 70B</text><rect x='166' y='285' width='104.25531914893617' height='31' rx='15' fill='#a59af0' fill-opacity='.2' stroke='#6657d9'/><rect x='166' y='292' width='104.25531914893617' height='17' rx='8' fill='#6657d9'/><text class='s' x='278.25531914893617' y='304'>70 / 70B</text><line x1='458' y1='300' x2='590' y2='300' stroke='#ded5f3'/><circle cx='557.7333333333333' cy='300' r='7' fill='#28b8c7'/><text class='v' x='557.7333333333333' y='281' text-anchor='middle'>84</text><text class='s' x='166' y='371'>inner = active parameters · outer = total parameters</text><text class='s' x='525' y='371' text-anchor='middle'>benchmark score</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>moeActivationRails</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>总参数外胶囊 + 激活参数内胶囊 + 右侧 benchmark 点轴</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-52 Qwen MoE nested rails</dd></div><div><dt>Component ID</dt><dd><code>qwen-moe-activation-rails</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 MoE 家族说明规模与实际推理负载的差别。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Alibaba Qwen</h2><p>紫色系统、thinking budget 与 MoE 效率</p><a class="text-link" href="https://qwenlm.github.io/blog/qwen3/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;items&quot;: [
+    {
+      &quot;label&quot;: &quot;Qwen 30B-A3B&quot;,
+      &quot;total&quot;: 30,
+      &quot;active&quot;: 3,
+      &quot;score&quot;: 74
+    },
+    {
+      &quot;label&quot;: &quot;Qwen 80B-A8B&quot;,
+      &quot;total&quot;: 80,
+      &quot;active&quot;: 8,
+      &quot;score&quot;: 82
+    },
+    {
+      &quot;label&quot;: &quot;Qwen 235B-A22B&quot;,
+      &quot;total&quot;: 235,
+      &quot;active&quot;: 22,
+      &quot;score&quot;: 89
+    },
+    {
+      &quot;label&quot;: &quot;Dense 70B&quot;,
+      &quot;total&quot;: 70,
+      &quot;active&quot;: 70,
+      &quot;score&quot;: 84
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="gemini-deepthink-triptych.html"><strong>Gemini Deep Think Triptych</strong><span>三联独立柱面板 + 自家蓝强调 + benchmark 条件脚注</span></a><a href="openai-thinking-outline-bars.html"><strong>Thinking vs Direct Bars</strong><span>填充/空心配对柱 + thinking 模式图例 + 单 benchmark 排序</span></a><a href="claude-multilingual-errorbars.html"><strong>Multilingual Coding Error Bars</strong><span>语言分组窄柱 + 每柱误差棒 + 三模型稳定顺序</span></a><a href="claude-broken-axis-release.html"><strong>High-score Broken Axis</strong><span>高分段断轴柱 + 轴断裂符号 + 柱顶一位小数</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

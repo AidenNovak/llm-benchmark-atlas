@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。 适合解释 MoE 容量溢出策略；必须同时展示容量上限、token 身份和二次路由结果。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Hunyuan-Large Technical Report, hunyuan, moe, routing, capacity, token-flow">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Capacity-aware Recycle Routing · Benchmark Atlas">
+  <meta property="og:description" content="复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/hunyuan-recycle-routing.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Capacity-aware Recycle Routing · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Capacity-aware Recycle Routing · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/hunyuan-recycle-routing.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Capacity-aware Recycle Routing · Benchmark Atlas","description":"复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/hunyuan-recycle-routing.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Hunyuan-Large Technical Report, hunyuan, moe, routing, capacity, token-flow"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Capacity-aware Recycle Routing</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Capacity-aware Recycle Routing</h1>
+        <p class="component-lede">复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。</p>
+        <div class="component-tags"><span>hunyuan</span><span>moe</span><span>routing</span><span>capacity</span><span>token-flow</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fcfdff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='hunyuanrecyclerouting-title hunyuanrecyclerouting-desc' style='background:#fcfdff;color:#17212e'>
+      <title id='hunyuanrecyclerouting-title'>Overloaded MoE tokens · drop vs recycle</title><desc id='hunyuanrecyclerouting-desc'>复现 Hunyuan-Large Figure 2：同一个 overloaded token 在传统 top-k 中被丢弃，在 recycle routing 中被二次分配给未满专家。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17212e}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#687487}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#687487}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17212e}.g{stroke:#dbe2eb;stroke-width:1;shape-rendering:crispEdges}</style><marker id='hunyuanrecyclerouting-arrow' markerWidth='8' markerHeight='8' refX='7' refY='4' orient='auto'><path d='M0 0 L8 4 L0 8 Z' fill='context-stroke'/></marker></defs>
+      <text class='t' x='28' y='30'>Overloaded MoE tokens · drop vs recycle</text><text class='s' x='28' y='48'>Hunyuan-Large Technical Report · Figure 2 / PDF p.6</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><text class='v' x='165' y='68' text-anchor='middle'>TRADITIONAL TOP-K</text><rect x='28' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='43.5' y='96' text-anchor='middle'>A</text><rect x='66' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='81.5' y='96' text-anchor='middle'>B</text><rect x='104' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='119.5' y='96' text-anchor='middle'>C</text><rect x='142' y='82' width='31' height='20' rx='4' fill='#d95247' fill-opacity='0.17' stroke='#d95247' stroke-width='2'/><text class='s' x='157.5' y='96' text-anchor='middle'>D</text><rect x='180' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='195.5' y='96' text-anchor='middle'>E</text><rect x='218' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='233.5' y='96' text-anchor='middle'>F</text><path d='M 157 103 C 157 123 156 125 156 140' fill='none' stroke='#135ad8' stroke-width='1.6' marker-end='url(#hunyuanrecyclerouting-arrow)'/><rect x='140' y='145' width='34' height='24' rx='5' fill='#135ad8' fill-opacity='.12' stroke='#135ad8'/><text class='s' x='157' y='161' text-anchor='middle'>router</text><rect x='28' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='49.5' y='328' text-anchor='middle'>E1</text><rect x='34' y='238' width='31' height='22' rx='4' fill='#5c8ff0' fill-opacity='.14' stroke='#5c8ff0'/><text class='s' x='49.5' y='253' text-anchor='middle'>A</text><rect x='34' y='268' width='31' height='22' rx='4' fill='#5c8ff0' fill-opacity='.14' stroke='#5c8ff0'/><text class='s' x='49.5' y='283' text-anchor='middle'>C</text><rect x='81' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='102.5' y='328' text-anchor='middle'>E2</text><rect x='134' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='155.5' y='328' text-anchor='middle'>E3</text><rect x='187' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='208.5' y='328' text-anchor='middle'>E4</text><rect x='193' y='238' width='31' height='22' rx='4' fill='#5c8ff0' fill-opacity='.14' stroke='#5c8ff0'/><text class='s' x='208.5' y='253' text-anchor='middle'>B</text><rect x='240' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='261.5' y='328' text-anchor='middle'>E5</text><path d='M 157 170 C 157 195 50 198 50 226' fill='none' stroke='#135ad8' stroke-width='1.5' marker-end='url(#hunyuanrecyclerouting-arrow)'/><path d='M 50 205 l -7 10 m 0 -10 l 7 10' stroke='#d95247' stroke-width='3'/><text class='v' x='61' y='215' style='fill:#d95247'>DROP D</text><text class='v' x='470' y='68' text-anchor='middle'>RECYCLE ROUTING</text><rect x='333' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='348.5' y='96' text-anchor='middle'>A</text><rect x='371' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='386.5' y='96' text-anchor='middle'>B</text><rect x='409' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='424.5' y='96' text-anchor='middle'>C</text><rect x='447' y='82' width='31' height='20' rx='4' fill='#d95247' fill-opacity='0.17' stroke='#d95247' stroke-width='2'/><text class='s' x='462.5' y='96' text-anchor='middle'>D</text><rect x='485' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='500.5' y='96' text-anchor='middle'>E</text><rect x='523' y='82' width='31' height='20' rx='4' fill='#135ad8' fill-opacity='0.09' stroke='#135ad8'/><text class='s' x='538.5' y='96' text-anchor='middle'>F</text><path d='M 462 103 C 462 123 461 125 461 140' fill='none' stroke='#135ad8' stroke-width='1.6' marker-end='url(#hunyuanrecyclerouting-arrow)'/><rect x='445' y='145' width='34' height='24' rx='5' fill='#135ad8' fill-opacity='.12' stroke='#135ad8'/><text class='s' x='462' y='161' text-anchor='middle'>router</text><rect x='333' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='354.5' y='328' text-anchor='middle'>E1</text><rect x='339' y='238' width='31' height='22' rx='4' fill='#5c8ff0' fill-opacity='.14' stroke='#5c8ff0'/><text class='s' x='354.5' y='253' text-anchor='middle'>A</text><rect x='339' y='268' width='31' height='22' rx='4' fill='#5c8ff0' fill-opacity='.14' stroke='#5c8ff0'/><text class='s' x='354.5' y='283' text-anchor='middle'>C</text><rect x='386' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='407.5' y='328' text-anchor='middle'>E2</text><rect x='439' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='460.5' y='328' text-anchor='middle'>E3</text><rect x='492' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='513.5' y='328' text-anchor='middle'>E4</text><rect x='498' y='238' width='31' height='22' rx='4' fill='#5c8ff0' fill-opacity='.14' stroke='#5c8ff0'/><text class='s' x='513.5' y='253' text-anchor='middle'>B</text><rect x='498' y='268' width='31' height='22' rx='4' fill='#f1b447' fill-opacity='.14' stroke='#f1b447'/><text class='s' x='513.5' y='283' text-anchor='middle'>D</text><rect x='545' y='230' width='43' height='83' fill='#135ad8' fill-opacity='.025' stroke='#dbe2eb' stroke-dasharray='3 3'/><text class='s' x='566.5' y='328' text-anchor='middle'>E5</text><path d='M 462 170 C 462 195 355 198 355 226' fill='none' stroke='#135ad8' stroke-width='1.5' marker-end='url(#hunyuanrecyclerouting-arrow)'/><path d='M 355 220 C 398 184 511 184 514 226' fill='none' stroke='#f1b447' stroke-width='2' marker-end='url(#hunyuanrecyclerouting-arrow)'/><text class='s' x='449' y='190' text-anchor='middle' style='fill:#f1b447'>capacity-aware second pass</text><text class='s' x='320' y='365' text-anchor='middle'>expert capacity = 2 · overloaded token either disappears or is reassigned to an available expert</text><text class='s' x='320' y='384' text-anchor='middle'>state transition preserves the individual token identity across both panels</text></svg><figcaption>Illustrative demo data · renderer: <code>recycleRoutingComparison</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>传统/回收双路由面板 + token 身份保持 + expert 容量槽 + overloaded token 丢弃/二次分配状态转换</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-80 Hunyuan token-preserving recycle route</dd></div><div><dt>Component ID</dt><dd><code>hunyuan-recycle-routing</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合解释 MoE 容量溢出策略；必须同时展示容量上限、token 身份和二次路由结果。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 2 · PDF p.6</h2><p>Expert 1 容量为 2；Token D 从丢弃状态变为重新分配到未满的 Expert 4。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2411.02265" rel="noreferrer">Hunyuan-Large Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;methods&quot;: [
+    {
+      &quot;label&quot;: &quot;TRADITIONAL TOP-K&quot;,
+      &quot;tokens&quot;: [
+        &quot;A&quot;,
+        &quot;B&quot;,
+        &quot;C&quot;,
+        &quot;D&quot;,
+        &quot;E&quot;,
+        &quot;F&quot;
+      ],
+      &quot;experts&quot;: [
+        [
+          &quot;A&quot;,
+          &quot;C&quot;
+        ],
+        [],
+        [],
+        [
+          &quot;B&quot;
+        ],
+        []
+      ],
+      &quot;recycle&quot;: false
+    },
+    {
+      &quot;label&quot;: &quot;RECYCLE ROUTING&quot;,
+      &quot;tokens&quot;: [
+        &quot;A&quot;,
+        &quot;B&quot;,
+        &quot;C&quot;,
+        &quot;D&quot;,
+        &quot;E&quot;,
+        &quot;F&quot;
+      ],
+      &quot;experts&quot;: [
+        [
+          &quot;A&quot;,
+          &quot;C&quot;
+        ],
+        [],
+        [],
+        [
+          &quot;B&quot;,
+          &quot;D&quot;
+        ],
+        []
+      ],
+      &quot;recycle&quot;: true
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

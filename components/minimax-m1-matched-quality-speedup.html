@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。 适合算法训练效率对比；匹配点必须来自同一任务、模型底座、采样与评测协议。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-M1 Technical Report, minimax, cispo, rl, speedup">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Matched-quality RL Speedup · Benchmark Atlas">
+  <meta property="og:description" content="复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-m1-matched-quality-speedup.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Matched-quality RL Speedup · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Matched-quality RL Speedup · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-m1-matched-quality-speedup.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Matched-quality RL Speedup · Benchmark Atlas","description":"复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/minimax-m1-matched-quality-speedup.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, MiniMax-M1 Technical Report, minimax, cispo, rl, speedup"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Matched-quality RL Speedup</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Matched-quality RL Speedup</h1>
+        <p class="component-lede">复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。</p>
+        <div class="component-tags"><span>minimax</span><span>cispo</span><span>rl</span><span>speedup</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffefe"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='minimaxm1matchedqualityspeedup-title minimaxm1matchedqualityspeedup-desc' style='background:#fffefe;color:#171518'>
+      <title id='minimaxm1matchedqualityspeedup-title'>RL algorithms · steps to matched quality</title>
+      <desc id='minimaxm1matchedqualityspeedup-desc'>复现 MiniMax-M1 Figure 2：除最终分数外，直接比较 CISPO 与 DAPO 达到相同性能所需的训练步数。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6f6870}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6f6870}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171518}
+        .g{stroke:#e5dde2;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>RL algorithms · steps to matched quality</text>
+      <text class='s' x='28' y='48'>MiniMax-M1 Technical Report · Figure 2 / PDF p.6</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <line class='g' x1='78' y1='78' x2='78' y2='338'/><text class='s' x='78' y='359' text-anchor='middle'>0</text><line class='g' x1='180.4' y1='78' x2='180.4' y2='338'/><text class='s' x='180.4' y='359' text-anchor='middle'>300</text><line class='g' x1='282.8' y1='78' x2='282.8' y2='338'/><text class='s' x='282.8' y='359' text-anchor='middle'>600</text><line class='g' x1='385.2' y1='78' x2='385.2' y2='338'/><text class='s' x='385.2' y='359' text-anchor='middle'>900</text><line class='g' x1='487.6' y1='78' x2='487.6' y2='338'/><text class='s' x='487.6' y='359' text-anchor='middle'>1200</text><line class='g' x1='590' y1='78' x2='590' y2='338'/><text class='s' x='590' y='359' text-anchor='middle'>1500</text><line class='g' x1='78' y1='338' x2='590' y2='338'/><text class='s' x='66' y='341' text-anchor='end'>0</text><line class='g' x1='78' y1='283.8333333333333' x2='590' y2='283.8333333333333'/><text class='s' x='66' y='286.8333333333333' text-anchor='end'>10</text><line class='g' x1='78' y1='229.66666666666666' x2='590' y2='229.66666666666666'/><text class='s' x='66' y='232.66666666666666' text-anchor='end'>20</text><line class='g' x1='78' y1='175.5' x2='590' y2='175.5'/><text class='s' x='66' y='178.5' text-anchor='end'>30</text><line class='g' x1='78' y1='121.33333333333331' x2='590' y2='121.33333333333331'/><text class='s' x='66' y='124.33333333333331' text-anchor='end'>40</text><path d='M 78.00 327.17 L 112.13 283.83 L 146.27 245.92 L 180.40 229.67 L 214.53 218.83 L 248.67 224.25 L 282.80 224.25 L 316.93 218.83 L 351.07 213.42 L 385.20 218.83 L 419.33 213.42 L 453.47 208.00 L 487.60 213.42 L 521.73 208.00 L 555.87 218.83 L 590.00 213.42' fill='none' stroke='#2c9860' stroke-width='2.7'/><circle cx='78' cy='327.1666666666667' r='3.4' fill='#2c9860'/><circle cx='146.26666666666665' cy='245.91666666666666' r='3.4' fill='#2c9860'/><circle cx='214.53333333333333' cy='218.83333333333334' r='3.4' fill='#2c9860'/><circle cx='282.8' cy='224.25' r='3.4' fill='#2c9860'/><circle cx='351.06666666666666' cy='213.41666666666666' r='3.4' fill='#2c9860'/><circle cx='419.3333333333333' cy='213.41666666666666' r='3.4' fill='#2c9860'/><circle cx='487.6' cy='213.41666666666666' r='3.4' fill='#2c9860'/><circle cx='555.8666666666667' cy='218.83333333333334' r='3.4' fill='#2c9860'/><line x1='118' y1='70' x2='138' y2='70' stroke='#2c9860' stroke-width='2.7'/><text class='l' x='144' y='74'>GRPO</text><path d='M 78.00 327.17 L 112.13 294.67 L 146.27 256.75 L 180.40 224.25 L 214.53 224.25 L 248.67 197.17 L 282.80 208.00 L 316.93 191.75 L 351.07 180.92 L 385.20 186.33 L 419.33 170.08 L 453.47 186.33 L 487.60 164.67 L 521.73 186.33 L 555.87 159.25 L 590.00 153.83' fill='none' stroke='#5b63ce' stroke-width='2.7'/><circle cx='78' cy='327.1666666666667' r='3.4' fill='#5b63ce'/><circle cx='146.26666666666665' cy='256.75' r='3.4' fill='#5b63ce'/><circle cx='214.53333333333333' cy='224.25' r='3.4' fill='#5b63ce'/><circle cx='282.8' cy='208' r='3.4' fill='#5b63ce'/><circle cx='351.06666666666666' cy='180.91666666666669' r='3.4' fill='#5b63ce'/><circle cx='419.3333333333333' cy='170.08333333333331' r='3.4' fill='#5b63ce'/><circle cx='487.6' cy='164.66666666666669' r='3.4' fill='#5b63ce'/><circle cx='555.8666666666667' cy='159.25' r='3.4' fill='#5b63ce'/><line x1='263' y1='70' x2='283' y2='70' stroke='#5b63ce' stroke-width='2.7'/><text class='l' x='289' y='74'>DAPO</text><path d='M 78.00 327.17 L 112.13 289.25 L 146.27 208.00 L 180.40 197.17 L 214.53 186.33 L 248.67 159.25 L 282.80 148.42 L 316.93 143.00 L 351.07 132.17 L 385.20 110.50 L 419.33 115.92 L 453.47 99.67 L 487.60 121.33 L 521.73 110.50 L 555.87 115.92 L 590.00 126.75' fill='none' stroke='#ed4966' stroke-width='2.7'/><circle cx='78' cy='327.1666666666667' r='3.4' fill='#ed4966'/><circle cx='146.26666666666665' cy='208' r='3.4' fill='#ed4966'/><circle cx='214.53333333333333' cy='186.33333333333331' r='3.4' fill='#ed4966'/><circle cx='282.8' cy='148.41666666666669' r='3.4' fill='#ed4966'/><circle cx='351.06666666666666' cy='132.16666666666669' r='3.4' fill='#ed4966'/><circle cx='419.3333333333333' cy='115.91666666666669' r='3.4' fill='#ed4966'/><circle cx='487.6' cy='121.33333333333331' r='3.4' fill='#ed4966'/><circle cx='555.8666666666667' cy='115.91666666666669' r='3.4' fill='#ed4966'/><line x1='408' y1='70' x2='428' y2='70' stroke='#ed4966' stroke-width='2.7'/><text class='l' x='434' y='74'>CISPO</text><line x1='248.66666666666666' y1='147.25' x2='419.3333333333333' y2='147.25' stroke='#171518' stroke-width='2'/><path d='M 248.66666666666666 147.25 l 8 -5 v 10 Z M 419.3333333333333 147.25 l -8 -5 v 10 Z' fill='#171518'/><line x1='248.66666666666666' y1='139.25' x2='248.66666666666666' y2='167.25' stroke='#171518' stroke-dasharray='3 3'/><line x1='419.3333333333333' y1='139.25' x2='419.3333333333333' y2='167.25' stroke='#171518' stroke-dasharray='3 3'/><text class='v' x='334' y='139.25' text-anchor='middle'>2.0× fewer steps</text><text class='s' x='332' y='386' text-anchor='middle'>RL training step →</text><text class='s' x='18' y='218' text-anchor='middle' transform='rotate(-90 18 218)'>AIME avg@32 ↑</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>matchedQualitySpeedup</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>多算法训练轨迹 + 同分水平双向步数箭头 + 等质量 speedup 直标</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-68 MiniMax matched-quality speed arrow</dd></div><div><dt>Component ID</dt><dd><code>minimax-m1-matched-quality-speedup</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合算法训练效率对比；匹配点必须来自同一任务、模型底座、采样与评测协议。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 2 · PDF p.6</h2><p>GRPO、DAPO、CISPO 的 AIME avg@32 训练轨迹及 2x matched-quality speedup。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2506.13585" rel="noreferrer">MiniMax-M1 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;steps&quot;: [
+    0,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500
+  ],
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;GRPO&quot;,
+      &quot;values&quot;: [
+        2,
+        10,
+        17,
+        20,
+        22,
+        21,
+        21,
+        22,
+        23,
+        22,
+        23,
+        24,
+        23,
+        24,
+        22,
+        23
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;DAPO&quot;,
+      &quot;values&quot;: [
+        2,
+        8,
+        15,
+        21,
+        21,
+        26,
+        24,
+        27,
+        29,
+        28,
+        31,
+        28,
+        32,
+        28,
+        33,
+        34
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;CISPO&quot;,
+      &quot;values&quot;: [
+        2,
+        9,
+        24,
+        26,
+        28,
+        33,
+        35,
+        36,
+        38,
+        42,
+        41,
+        44,
+        40,
+        42,
+        41,
+        39
+      ]
+    }
+  ],
+  &quot;match&quot;: {
+    &quot;score&quot;: 33,
+    &quot;candidateStep&quot;: 500,
+    &quot;referenceStep&quot;: 1000,
+    &quot;speedup&quot;: 2
+  }
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

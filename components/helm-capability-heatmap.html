@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。 适合 5 个以上模型或场景；少量比较用分组柱更易读。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 诊断与矩阵, Stanford HELM, heatmap, scenario, audit">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Scenario Heatmap · Benchmark Atlas">
+  <meta property="og:description" content="在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/helm-capability-heatmap.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Scenario Heatmap · Benchmark Atlas">
+  <meta name="twitter:description" content="在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Scenario Heatmap · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/helm-capability-heatmap.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Scenario Heatmap · Benchmark Atlas","description":"在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/helm-capability-heatmap.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 诊断与矩阵, Stanford HELM, heatmap, scenario, audit"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>诊断与矩阵</span><span>/</span><span aria-current="page">Scenario Heatmap</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">诊断与矩阵 · 独立榜单</p>
+        <h1>Scenario Heatmap</h1>
+        <p class="component-lede">在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。</p>
+        <div class="component-tags"><span>heatmap</span><span>scenario</span><span>audit</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffaf7"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='helmcapabilityheatmap-title helmcapabilityheatmap-desc' style='background:#fffaf7;color:#2e2d29'>
+        <title id='helmcapabilityheatmap-title'>Models × evaluation scenarios</title>
+        <desc id='helmcapabilityheatmap-desc'>在高密度矩阵中扫描模型的强项、弱项和异常场景，支持统一归一化。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='helmcapabilityheatmap-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#d8786c' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#8c1515' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2e2d29}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#736f69}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#736f69}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2e2d29}
+            .g{stroke:#e2d9d2;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#2e2d29;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Models × evaluation scenarios</text>
+        <text class='s' x='28' y='48'>Stanford HELM</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <text class='v' x='199' y='86' text-anchor='middle'>QA</text><text class='v' x='269' y='86' text-anchor='middle'>Math</text><text class='v' x='339' y='86' text-anchor='middle'>Code</text><text class='v' x='409' y='86' text-anchor='middle'>Bias</text><text class='v' x='479' y='86' text-anchor='middle'>Robust</text><text class='v' x='549' y='86' text-anchor='middle'>Toxic</text><text class='v' x='148' y='133' text-anchor='end'>Model A</text><rect x='164' y='104' width='66' height='44' fill='#8c1515' fill-opacity='0.8666666666666667' stroke='#fffaf7' stroke-width='1'/><text x='197' y='132' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>88</text><rect x='234' y='104' width='66' height='44' fill='#8c1515' fill-opacity='0.7066666666666667' stroke='#fffaf7' stroke-width='1'/><text x='267' y='132' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>82</text><rect x='304' y='104' width='66' height='44' fill='#8c1515' fill-opacity='0.6266666666666667' stroke='#fffaf7' stroke-width='1'/><text x='337' y='132' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>79</text><rect x='374' y='104' width='66' height='44' fill='#8c1515' fill-opacity='0.22666666666666668' stroke='#e5b754' stroke-width='3'/><text x='407' y='132' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>64</text><rect x='444' y='104' width='66' height='44' fill='#8c1515' fill-opacity='0.49333333333333335' stroke='#fffaf7' stroke-width='1'/><text x='477' y='132' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>74</text><rect x='514' y='104' width='66' height='44' fill='#8c1515' fill-opacity='0.6799999999999999' stroke='#fffaf7' stroke-width='1'/><text x='547' y='132' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>81</text><text class='v' x='148' y='181' text-anchor='end'>Model B</text><rect x='164' y='152' width='66' height='44' fill='#8c1515' fill-opacity='0.7600000000000001' stroke='#fffaf7' stroke-width='1'/><text x='197' y='180' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>84</text><rect x='234' y='152' width='66' height='44' fill='#8c1515' fill-opacity='0.5466666666666666' stroke='#fffaf7' stroke-width='1'/><text x='267' y='180' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>76</text><rect x='304' y='152' width='66' height='44' fill='#8c1515' fill-opacity='0.7866666666666667' stroke='#fffaf7' stroke-width='1'/><text x='337' y='180' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>85</text><rect x='374' y='152' width='66' height='44' fill='#8c1515' fill-opacity='0.41333333333333333' stroke='#e5b754' stroke-width='3'/><text x='407' y='180' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>71</text><rect x='444' y='152' width='66' height='44' fill='#8c1515' fill-opacity='0.6' stroke='#fffaf7' stroke-width='1'/><text x='477' y='180' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>78</text><rect x='514' y='152' width='66' height='44' fill='#8c1515' fill-opacity='0.49333333333333335' stroke='#fffaf7' stroke-width='1'/><text x='547' y='180' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>74</text><text class='v' x='148' y='229' text-anchor='end'>Model C</text><rect x='164' y='200' width='66' height='44' fill='#8c1515' fill-opacity='0.6266666666666667' stroke='#fffaf7' stroke-width='1'/><text x='197' y='228' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>79</text><rect x='234' y='200' width='66' height='44' fill='#8c1515' fill-opacity='0.8933333333333334' stroke='#fffaf7' stroke-width='1'/><text x='267' y='228' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>89</text><rect x='304' y='200' width='66' height='44' fill='#8c1515' fill-opacity='0.44000000000000006' stroke='#fffaf7' stroke-width='1'/><text x='337' y='228' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>72</text><rect x='374' y='200' width='66' height='44' fill='#8c1515' fill-opacity='0.5733333333333334' stroke='#fffaf7' stroke-width='1'/><text x='407' y='228' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>77</text><rect x='444' y='200' width='66' height='44' fill='#8c1515' fill-opacity='0.36' stroke='#e5b754' stroke-width='3'/><text x='477' y='228' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>69</text><rect x='514' y='200' width='66' height='44' fill='#8c1515' fill-opacity='0.7333333333333334' stroke='#fffaf7' stroke-width='1'/><text x='547' y='228' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>83</text><text class='v' x='148' y='277' text-anchor='end'>Model D</text><rect x='164' y='248' width='66' height='44' fill='#8c1515' fill-opacity='0.52' stroke='#fffaf7' stroke-width='1'/><text x='197' y='276' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>75</text><rect x='234' y='248' width='66' height='44' fill='#8c1515' fill-opacity='0.33333333333333337' stroke='#e5b754' stroke-width='3'/><text x='267' y='276' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>68</text><rect x='304' y='248' width='66' height='44' fill='#8c1515' fill-opacity='0.6' stroke='#fffaf7' stroke-width='1'/><text x='337' y='276' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>78</text><rect x='374' y='248' width='66' height='44' fill='#8c1515' fill-opacity='0.7600000000000001' stroke='#fffaf7' stroke-width='1'/><text x='407' y='276' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>84</text><rect x='444' y='248' width='66' height='44' fill='#8c1515' fill-opacity='0.6799999999999999' stroke='#fffaf7' stroke-width='1'/><text x='477' y='276' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>81</text><rect x='514' y='248' width='66' height='44' fill='#8c1515' fill-opacity='0.8400000000000001' stroke='#fffaf7' stroke-width='1'/><text x='547' y='276' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>87</text><text class='v' x='148' y='325' text-anchor='end'>Model E</text><rect x='164' y='296' width='66' height='44' fill='#8c1515' fill-opacity='0.41333333333333333' stroke='#fffaf7' stroke-width='1'/><text x='197' y='324' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>71</text><rect x='234' y='296' width='66' height='44' fill='#8c1515' fill-opacity='0.4666666666666667' stroke='#fffaf7' stroke-width='1'/><text x='267' y='324' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>73</text><rect x='304' y='296' width='66' height='44' fill='#8c1515' fill-opacity='0.36' stroke='#e5b754' stroke-width='3'/><text x='337' y='324' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>69</text><rect x='374' y='296' width='66' height='44' fill='#8c1515' fill-opacity='0.7066666666666667' stroke='#fffaf7' stroke-width='1'/><text x='407' y='324' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>82</text><rect x='444' y='296' width='66' height='44' fill='#8c1515' fill-opacity='0.5733333333333334' stroke='#fffaf7' stroke-width='1'/><text x='477' y='324' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#2e2d29'>77</text><rect x='514' y='296' width='66' height='44' fill='#8c1515' fill-opacity='0.6266666666666667' stroke='#fffaf7' stroke-width='1'/><text x='547' y='324' text-anchor='middle' style='font:700 11px ui-sans-serif;fill:#fffaf7'>79</text><rect x='500' y='366' width='76' height='8' fill='#8c1515' fill-opacity='.9'/><rect x='424' y='366' width='76' height='8' fill='#8c1515' fill-opacity='.25'/><text class='s' x='418' y='375' text-anchor='end'>LOW</text><text class='s' x='584' y='375'>HIGH</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>heatmap</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>连续热力矩阵 + 行列聚类顺序 + 最差格标记</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-25 Audit heat grid</dd></div><div><dt>Component ID</dt><dd><code>helm-capability-heatmap</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 5 个以上模型或场景；少量比较用分组柱更易读。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Stanford HELM</h2><p>场景矩阵、透明评测与多指标折衷</p><a class="text-link" href="https://crfm.stanford.edu/helm/lite/latest/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;rows&quot;: [
+    &quot;Model A&quot;,
+    &quot;Model B&quot;,
+    &quot;Model C&quot;,
+    &quot;Model D&quot;,
+    &quot;Model E&quot;
+  ],
+  &quot;cols&quot;: [
+    &quot;QA&quot;,
+    &quot;Math&quot;,
+    &quot;Code&quot;,
+    &quot;Bias&quot;,
+    &quot;Robust&quot;,
+    &quot;Toxic&quot;
+  ],
+  &quot;values&quot;: [
+    [
+      88,
+      82,
+      79,
+      64,
+      74,
+      81
+    ],
+    [
+      84,
+      76,
+      85,
+      71,
+      78,
+      74
+    ],
+    [
+      79,
+      89,
+      72,
+      77,
+      69,
+      83
+    ],
+    [
+      75,
+      68,
+      78,
+      84,
+      81,
+      87
+    ],
+    [
+      71,
+      73,
+      69,
+      82,
+      77,
+      79
+    ]
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="llamaguard-confusion.html"><strong>Safety Confusion Matrix</strong><span>2×2 混淆矩阵 + 边际总量 + 错误成本标注</span></a><a href="gemini-context-decay.html"><strong>Long-context Decay Strips</strong><span>多模型水平色带 + 上下文断点 + 退化阈值</span></a><a href="qwen-ablation-waterfall.html"><strong>Ablation Waterfall</strong><span>正负增量瀑布 + 累计基线 + 最终值</span></a><a href="arena-winrate-matrix.html"><strong>Pairwise Win-rate Matrix</strong><span>反对称胜率矩阵 + 50% 中性线 + 对角禁用</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

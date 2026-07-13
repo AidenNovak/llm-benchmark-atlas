@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。 适合课程学习与干预消融；阶段边界、样本池和最大输出长度必须随数据一同记录。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, GLM-4.5 Technical Report, glm, curriculum, rl, counterfactual">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="RL Curriculum Counterfactuals · Benchmark Atlas">
+  <meta property="og:description" content="合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/glm-curriculum-counterfactuals.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="RL Curriculum Counterfactuals · Benchmark Atlas">
+  <meta name="twitter:description" content="合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>RL Curriculum Counterfactuals · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/glm-curriculum-counterfactuals.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"RL Curriculum Counterfactuals · Benchmark Atlas","description":"合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/glm-curriculum-counterfactuals.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, GLM-4.5 Technical Report, glm, curriculum, rl, counterfactual"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">RL Curriculum Counterfactuals</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>RL Curriculum Counterfactuals</h1>
+        <p class="component-lede">合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。</p>
+        <div class="component-tags"><span>glm</span><span>curriculum</span><span>rl</span><span>counterfactual</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f8fbff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='glmcurriculumcounterfactuals-title glmcurriculumcounterfactuals-desc' style='background:#f8fbff;color:#17202b'>
+      <title id='glmcurriculumcounterfactuals-title'>Difficulty and output-length curriculum ablations</title>
+      <desc id='glmcurriculumcounterfactuals-desc'>合并复现 GLM-4.5 Figures 5-6：上层显示切换极难样本后的分叉，下层显示逐级 context 课程造成的不可逆落后。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202b}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#687587}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#687587}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17202b}
+        .g{stroke:#d9e3ee;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Difficulty and output-length curriculum ablations</text>
+      <text class='s' x='28' y='48'>GLM-4.5 Technical Report · Figures 5-6 / PDF p.8</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <rect x='82' y='75' width='318.1818181818182' height='124' fill='#667487' fill-opacity='.05'/><rect x='400.1818181818182' y='75' width='181.8181818181818' height='124' fill='#1689e8' fill-opacity='.045'/><text class='v' x='82' y='68'>DIFFICULTY SWITCH · AIME24</text><text class='s' x='241.0909090909091' y='89' text-anchor='middle'>STAGE 1 · moderate</text><text class='s' x='491.0909090909091' y='89' text-anchor='middle'>STAGE 2 · extreme branch</text><line class='g' x1='82' y1='176.45454545454544' x2='582' y2='176.45454545454544'/><text class='s' x='70' y='179.45454545454544' text-anchor='end'>76</text><line class='g' x1='82' y1='131.36363636363637' x2='582' y2='131.36363636363637'/><text class='s' x='70' y='134.36363636363637' text-anchor='end'>80</text><line class='g' x1='82' y1='86.27272727272728' x2='582' y2='86.27272727272728'/><text class='s' x='70' y='89.27272727272728' text-anchor='end'>84</text><path d='M 82.00 187.73 L 127.45 176.45 L 172.91 193.36 L 218.36 159.55 L 263.82 142.64 L 309.27 151.65 L 354.73 125.73 L 400.18 111.07 L 445.64 130.24 L 491.09 120.09 L 536.55 126.85 L 582.00 129.11' fill='none' stroke='#ef5a50' stroke-width='2.5'/><path d='M 400.18 111.07 L 445.64 121.22 L 491.09 106.56 L 536.55 112.20 L 582.00 93.04' fill='none' stroke='#1689e8' stroke-width='3'/><line x1='400.1818181818182' y1='75' x2='400.1818181818182' y2='199' stroke='#7764d8' stroke-dasharray='5 3'/><circle cx='82' cy='187.72727272727272' r='2.8' fill='#ef5a50'/><circle cx='127.45454545454545' cy='176.45454545454544' r='2.8' fill='#ef5a50'/><circle cx='172.9090909090909' cy='193.36363636363637' r='2.8' fill='#ef5a50'/><circle cx='218.36363636363635' cy='159.54545454545456' r='2.8' fill='#ef5a50'/><circle cx='263.8181818181818' cy='142.63636363636363' r='2.8' fill='#ef5a50'/><circle cx='309.27272727272725' cy='151.65454545454543' r='2.8' fill='#ef5a50'/><circle cx='354.7272727272727' cy='125.72727272727272' r='2.8' fill='#ef5a50'/><circle cx='400.1818181818182' cy='111.07272727272729' r='2.8' fill='#ef5a50'/><circle cx='445.6363636363636' cy='130.2363636363637' r='2.8' fill='#ef5a50'/><circle cx='491.0909090909091' cy='120.0909090909091' r='2.8' fill='#ef5a50'/><circle cx='536.5454545454545' cy='126.85454545454539' r='2.8' fill='#ef5a50'/><circle cx='582' cy='129.10909090909087' r='2.8' fill='#ef5a50'/><rect x='397.1818181818182' y='108.07272727272729' width='6' height='6' fill='#1689e8'/><rect x='442.6363636363636' y='118.21818181818176' width='6' height='6' fill='#1689e8'/><rect x='488.0909090909091' y='103.56363636363633' width='6' height='6' fill='#1689e8'/><rect x='533.5454545454545' y='109.19999999999996' width='6' height='6' fill='#1689e8'/><rect x='579' y='90.03636363636357' width='6' height='6' fill='#1689e8'/><text class='v' x='578' y='85.03636363636357' text-anchor='end'>83.4%</text><rect x='82' y='236' width='136.36363636363635' height='116' fill='#7764d8' fill-opacity='.045'/><text class='s' x='150.1818181818182' y='250' text-anchor='middle'>16K</text><rect x='218.36363636363635' y='236' width='136.36363636363635' height='116' fill='#e7a532' fill-opacity='.045'/><text class='s' x='286.5454545454545' y='250' text-anchor='middle'>32K</text><line x1='218.36363636363635' y1='236' x2='218.36363636363635' y2='352' stroke='#687587' stroke-dasharray='4 3'/><rect x='354.7272727272727' y='236' width='136.36363636363643' height='116' fill='#ef5a50' fill-opacity='.045'/><text class='s' x='422.9090909090909' y='250' text-anchor='middle'>48K</text><line x1='354.7272727272727' y1='236' x2='354.7272727272727' y2='352' stroke='#687587' stroke-dasharray='4 3'/><rect x='491.0909090909091' y='236' width='90.90909090909088' height='116' fill='#35aa7c' fill-opacity='.045'/><text class='s' x='536.5454545454545' y='250' text-anchor='middle'>64K</text><line x1='491.0909090909091' y1='236' x2='491.0909090909091' y2='352' stroke='#687587' stroke-dasharray='4 3'/><text class='v' x='82' y='229'>OUTPUT-LENGTH CURRICULUM · SINGLE VS MULTI-STAGE</text><line class='g' x1='82' y1='328.8' x2='582' y2='328.8'/><text class='s' x='70' y='331.8' text-anchor='end'>65</text><line class='g' x1='82' y1='282.4' x2='582' y2='282.4'/><text class='s' x='70' y='285.4' text-anchor='end'>75</text><line class='g' x1='82' y1='236' x2='582' y2='236'/><text class='s' x='70' y='239' text-anchor='end'>85</text><path d='M 82.00 282.40 L 127.45 277.76 L 172.91 273.12 L 218.36 263.84 L 263.82 259.20 L 309.27 263.84 L 354.73 254.56 L 400.18 259.20 L 445.64 249.92 L 491.09 254.56 L 536.55 249.92 L 582.00 243.42' fill='none' stroke='#ef5a50' stroke-width='2.7'/><path d='M 82.00 347.36 L 127.45 328.80 L 172.91 314.88 L 218.36 300.96 L 263.82 296.32 L 309.27 291.68 L 354.73 282.40 L 400.18 287.04 L 445.64 268.48 L 491.09 263.84 L 536.55 266.16 L 582.00 256.42' fill='none' stroke='#1689e8' stroke-width='2.7'/><text class='v' x='577' y='236.42399999999998' text-anchor='end'>single 83.4%</text><text class='v' x='577' y='271.41600000000005' text-anchor='end'>multi 80.6%</text><line x1='178' y1='378' x2='198' y2='378' stroke='#ef5a50' stroke-width='2.5'/><text class='l' x='204' y='382'>baseline / single-stage</text><line x1='376' y1='378' x2='396' y2='378' stroke='#1689e8' stroke-width='2.5'/><text class='l' x='402' y='382'>intervention / multi-stage</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>curriculumCounterfactualPanels</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>共享前缀难度分支面板 + 分段 context 背景的 single/multi-stage 反事实面板</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-70 GLM curriculum counterfactual panels</dd></div><div><dt>Component ID</dt><dd><code>glm-curriculum-counterfactuals</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合课程学习与干预消融；阶段边界、样本池和最大输出长度必须随数据一同记录。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figures 5-6 · PDF p.8</h2><p>难度课程切换与 16K→64K 多阶段输出长度课程的两组控制实验。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2508.06471" rel="noreferrer">GLM-4.5 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;difficulty&quot;: {
+    &quot;steps&quot;: [
+      0,
+      200,
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1400,
+      1600,
+      1800,
+      2000,
+      2200
+    ],
+    &quot;switchIndex&quot;: 7,
+    &quot;moderate&quot;: [
+      75,
+      76,
+      74.5,
+      77.5,
+      79,
+      78.2,
+      80.5,
+      81.8,
+      80.1,
+      81,
+      80.4,
+      80.2
+    ],
+    &quot;extreme&quot;: [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      81.8,
+      80.9,
+      82.2,
+      81.7,
+      83.4
+    ]
+  },
+  &quot;context&quot;: {
+    &quot;steps&quot;: [
+      0,
+      200,
+      400,
+      600,
+      800,
+      1000,
+      1200,
+      1400,
+      1600,
+      1800,
+      2000,
+      2200
+    ],
+    &quot;stages&quot;: [
+      {
+        &quot;label&quot;: &quot;16K&quot;,
+        &quot;endIndex&quot;: 3
+      },
+      {
+        &quot;label&quot;: &quot;32K&quot;,
+        &quot;endIndex&quot;: 6
+      },
+      {
+        &quot;label&quot;: &quot;48K&quot;,
+        &quot;endIndex&quot;: 9
+      },
+      {
+        &quot;label&quot;: &quot;64K&quot;,
+        &quot;endIndex&quot;: 11
+      }
+    ],
+    &quot;single&quot;: [
+      75,
+      76,
+      77,
+      79,
+      80,
+      79,
+      81,
+      80,
+      82,
+      81,
+      82,
+      83.4
+    ],
+    &quot;multi&quot;: [
+      61,
+      65,
+      68,
+      71,
+      72,
+      73,
+      75,
+      74,
+      78,
+      79,
+      78.5,
+      80.6
+    ]
+  }
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。 适合比较两套 embedding 空间的覆盖结构；t-SNE 距离不应被解释为绝对相似度。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Kimi K2 Technical Report, kimi, tsne, tool-embeddings">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Real vs Synthetic Tool Embeddings · Benchmark Atlas">
+  <meta property="og:description" content="复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-tool-embedding-pair.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Real vs Synthetic Tool Embeddings · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Real vs Synthetic Tool Embeddings · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-tool-embedding-pair.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Real vs Synthetic Tool Embeddings · Benchmark Atlas","description":"复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/kimi-tool-embedding-pair.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, Kimi K2 Technical Report, kimi, tsne, tool-embeddings"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Real vs Synthetic Tool Embeddings</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Real vs Synthetic Tool Embeddings</h1>
+        <p class="component-lede">复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。</p>
+        <div class="component-tags"><span>kimi</span><span>tsne</span><span>tool-embeddings</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffefe"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='kimitoolembeddingpair-title kimitoolembeddingpair-desc' style='background:#fffefe;color:#19212b'>
+      <title id='kimitoolembeddingpair-title'>Paired t-SNE maps · MCP tools and synthetic domains</title>
+      <desc id='kimitoolembeddingpair-desc'>复现 Kimi K2 Figure 9：并排比较真实 MCP 工具自然聚类与合成工具预定义域覆盖。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212b}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6e7682}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6e7682}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#19212b}
+        .g{stroke:#dce1e7;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Paired t-SNE maps · MCP tools and synthetic domains</text>
+      <text class='s' x='28' y='48'>Kimi K2 Technical Report · Figure 9 / PDF p.10</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <rect x='34' y='82' width='278' height='255' fill='#fffefe' stroke='#dce1e7'/><text class='v' x='46' y='101'>REAL MCP TOOLS</text><circle cx='130.22' cy='176.00' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='109.16' cy='183.97' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='123.26' cy='158.96' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='140.24' cy='193.75' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='83.27' cy='171.27' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='159.83' cy='158.13' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='107.69' cy='213.10' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='117.02' cy='170.27' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='136.65' cy='179.96' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='99.34' cy='182.66' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='134.15' cy='155.60' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='133.14' cy='202.37' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='81.25' cy='159.76' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='173.11' cy='167.29' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='116.15' cy='181.35' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='118.89' cy='164.33' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='139.63' cy='186.82' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='90.14' cy='177.29' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='202.54' cy='173.66' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='177.24' cy='163.33' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='222.29' cy='157.25' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='183.80' cy='192.81' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='178.28' cy='135.77' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='247.62' cy='183.79' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='134.66' cy='181.48' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='202.01' cy='160.10' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='201.13' cy='181.04' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='172.63' cy='155.20' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='234.27' cy='163.10' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='166.80' cy='193.24' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='193.40' cy='126.67' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='243.30' cy='199.68' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='185.60' cy='166.77' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='211.73' cy='157.56' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='193.29' cy='187.77' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='174.22' cy='144.83' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='242.74' cy='173.72' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='148.57' cy='187.87' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='222.80' cy='249.72' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='221.42' cy='231.66' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='248.58' cy='252.39' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='194.73' cy='248.84' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='249.72' cy='219.35' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='233.61' cy='278.03' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='183.23' cy='217.85' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='236.23' cy='243.11' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='214.69' cy='252.42' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='227.48' cy='225.45' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='248.26' cy='261.39' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='186.36' cy='240.15' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='265.96' cy='223.01' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='215.56' cy='283.18' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='221.85' cy='237.64' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='243.34' cy='247.01' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='204.24' cy='251.46' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='238.68' cy='221.45' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='139.00' cy='249.27' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='165.80' cy='235.33' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='153.22' cy='271.72' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='120.39' cy='226.27' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='204.85' cy='249.14' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='103.15' cy='278.02' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='159.88' cy='195.07' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='158.71' cy='255.29' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='129.08' cy='244.73' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='179.65' cy='235.75' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='139.15' cy='277.87' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='127.81' cy='213.42' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='210.76' cy='264.69' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='82.40' cy='267.29' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='156.90' cy='239.93' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='157.77' cy='263.72' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='123.13' cy='235.72' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='193.77' cy='241.83' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='119.90' cy='279.15' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='144.14' cy='202.40' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='207.28' cy='282.91' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='138.88' cy='248.25' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='172.37' cy='199.87' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='206.83' cy='209.62' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='151.59' cy='223.11' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='191.22' cy='173.33' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='212.39' cy='244.48' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='113.05' cy='192.95' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='255.95' cy='181.25' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='176.43' cy='216.89' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='172.31' cy='190.40' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='214.67' cy='219.27' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='135.03' cy='217.28' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='212.53' cy='170.58' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='195.62' cy='257.90' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='114.53' cy='172.37' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='195.44' cy='206.36' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='164.82' cy='221.35' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='180.51' cy='180.90' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='215.25' cy='232.54' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='121.71' cy='204.99' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='236.84' cy='175.00' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='169.65' cy='266.56' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='173.63' cy='199.17' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='206.34' cy='211.67' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='149.33' cy='220.57' r='2.2' fill='#e34f83' fill-opacity='.62'/><text class='s' x='173' y='356' text-anchor='middle'>t-SNE 1 →</text><rect x='340' y='82' width='278' height='255' fill='#fffefe' stroke='#dce1e7'/><text class='v' x='352' y='101'>SYNTHETIC TOOLS</text><circle cx='426.19' cy='162.50' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='413.47' cy='166.94' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='421.24' cy='153.72' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='429.57' cy='171.26' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='401.98' cy='160.23' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='438.36' cy='154.09' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='413.91' cy='179.71' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='417.39' cy='158.68' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='428.78' cy='164.70' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='408.92' cy='165.93' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='426.57' cy='152.44' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='425.91' cy='175.15' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='401.38' cy='154.86' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='444.27' cy='158.46' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='416.81' cy='166.07' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='418.89' cy='156.00' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='429.67' cy='168.07' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='404.86' cy='163.14' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='433.06' cy='152.95' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='419.59' cy='178.05' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='403.99' cy='149.06' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='426.15' cy='162.99' r='2.2' fill='#f47a1f' fill-opacity='.62'/><circle cx='537.73' cy='172.13' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='526.68' cy='167.27' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='544.69' cy='165.03' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='530.02' cy='178.35' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='528.17' cy='157.56' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='552.77' cy='174.73' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='513.21' cy='173.84' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='537.47' cy='165.35' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='536.65' cy='174.66' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='525.50' cy='164.24' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='548.70' cy='167.36' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='524.04' cy='178.24' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='533.63' cy='154.57' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='551.01' cy='180.17' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='529.26' cy='168.69' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='541.08' cy='164.86' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='533.48' cy='176.83' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='526.48' cy='160.60' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='551.36' cy='171.22' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='517.81' cy='176.16' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='541.14' cy='153.14' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='537.19' cy='172.35' r='2.2' fill='#2f9e54' fill-opacity='.62'/><circle cx='538.40' cy='262.56' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='538.10' cy='252.81' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='551.00' cy='262.96' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='526.45' cy='261.19' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='550.80' cy='248.28' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='543.72' cy='273.55' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='522.46' cy='247.99' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='546.53' cy='258.57' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='534.70' cy='263.31' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='541.13' cy='250.36' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='550.42' cy='266.81' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='523.20' cy='257.34' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='557.54' cy='250.04' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='536.08' cy='275.52' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='537.82' cy='255.25' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='549.18' cy='260.57' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='530.26' cy='262.52' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='546.13' cy='248.92' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='547.21' cy='270.68' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='522.22' cy='252.22' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='563.52' cy='254.00' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='537.82' cy='262.35' r='2.2' fill='#8e58c7' fill-opacity='.62'/><circle cx='421.29' cy='257.61' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='433.01' cy='251.92' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='427.91' cy='265.80' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='416.22' cy='249.28' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='445.70' cy='257.39' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='410.89' cy='267.17' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='430.07' cy='239.32' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='430.75' cy='260.50' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='418.29' cy='255.69' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='437.71' cy='252.46' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='422.88' cy='267.61' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='419.08' cy='245.05' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='447.35' cy='262.65' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='404.18' cy='263.44' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='429.88' cy='253.12' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='429.79' cy='263.30' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='416.75' cy='252.44' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='442.28' cy='254.81' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='416.35' cy='267.76' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='424.77' cy='241.55' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='445.90' cy='268.66' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='421.23' cy='257.12' r='2.2' fill='#3978c5' fill-opacity='.62'/><circle cx='478.25' cy='203.96' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='492.31' cy='208.32' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='471.76' cy='213.10' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='485.83' cy='195.76' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='492.81' cy='219.85' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='460.06' cy='202.73' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='506.55' cy='199.02' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='480.13' cy='211.86' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='478.93' cy='200.87' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='494.39' cy='211.72' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='466.53' cy='210.86' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='492.86' cy='195.17' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='487.12' cy='224.02' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='460.85' cy='196.15' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='488.96' cy='206.97' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='476.02' cy='212.87' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='482.14' cy='197.96' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='494.08' cy='216.10' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='462.51' cy='206.66' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='500.63' cy='196.85' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='478.66' cy='226.58' r='2.2' fill='#e34f83' fill-opacity='.62'/><circle cx='478.84' cy='203.63' r='2.2' fill='#e34f83' fill-opacity='.62'/><text class='s' x='479' y='356' text-anchor='middle'>t-SNE 1 →</text><text class='s' x='320' y='379' text-anchor='middle'>real categories disperse · synthetic domains form designed coverage</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>pairedEmbeddingClusters</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-64 Kimi paired embedding atlas</dd></div><div><dt>Component ID</dt><dd><code>kimi-tool-embedding-pair</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合比较两套 embedding 空间的覆盖结构；t-SNE 距离不应被解释为绝对相似度。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 9 · PDF p.10</h2><p>真实 MCP 工具与合成工具 collection 的 paired t-SNE embedding。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-12</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2507.20534" rel="noreferrer">Kimi K2 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;panels&quot;: [
+    {
+      &quot;label&quot;: &quot;REAL MCP TOOLS&quot;,
+      &quot;clusters&quot;: [
+        {
+          &quot;center&quot;: [
+            -0.55,
+            0.4
+          ],
+          &quot;count&quot;: 18,
+          &quot;spread&quot;: 1.8
+        },
+        {
+          &quot;center&quot;: [
+            0.2,
+            0.5
+          ],
+          &quot;count&quot;: 20,
+          &quot;spread&quot;: 2.2
+        },
+        {
+          &quot;center&quot;: [
+            0.5,
+            -0.35
+          ],
+          &quot;count&quot;: 18,
+          &quot;spread&quot;: 1.9
+        },
+        {
+          &quot;center&quot;: [
+            -0.25,
+            -0.4
+          ],
+          &quot;count&quot;: 22,
+          &quot;spread&quot;: 2.5
+        },
+        {
+          &quot;center&quot;: [
+            0.05,
+            0.05
+          ],
+          &quot;count&quot;: 24,
+          &quot;spread&quot;: 2.8
+        }
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;SYNTHETIC TOOLS&quot;,
+      &quot;clusters&quot;: [
+        {
+          &quot;center&quot;: [
+            -0.62,
+            0.55
+          ],
+          &quot;count&quot;: 22,
+          &quot;spread&quot;: 1.2
+        },
+        {
+          &quot;center&quot;: [
+            0.52,
+            0.48
+          ],
+          &quot;count&quot;: 22,
+          &quot;spread&quot;: 1.1
+        },
+        {
+          &quot;center&quot;: [
+            0.58,
+            -0.52
+          ],
+          &quot;count&quot;: 22,
+          &quot;spread&quot;: 1.15
+        },
+        {
+          &quot;center&quot;: [
+            -0.55,
+            -0.5
+          ],
+          &quot;count&quot;: 22,
+          &quot;spread&quot;: 1.2
+        },
+        {
+          &quot;center&quot;: [
+            0,
+            0.05
+          ],
+          &quot;count&quot;: 22,
+          &quot;spread&quot;: 1.3
+        }
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="minimax-isoflop-gaps.html"><strong>Isoflop Equal-Quality Gaps</strong><span>benchmark 小多图双拟合曲线 + 等性能水平桥 + 两端算力垂线与倍率</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

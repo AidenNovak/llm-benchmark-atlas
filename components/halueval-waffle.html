@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。 适合固定总量的 part-to-whole；类别超过 5 个时可读性下降。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 特殊编码与覆盖, HaluEval, waffle, hallucination, part-to-whole">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Failure-mode Waffle · Benchmark Atlas">
+  <meta property="og:description" content="将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/halueval-waffle.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Failure-mode Waffle · Benchmark Atlas">
+  <meta name="twitter:description" content="将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Failure-mode Waffle · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/halueval-waffle.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Failure-mode Waffle · Benchmark Atlas","description":"将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/halueval-waffle.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 特殊编码与覆盖, HaluEval, waffle, hallucination, part-to-whole"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>特殊编码与覆盖</span><span>/</span><span aria-current="page">Failure-mode Waffle</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">特殊编码与覆盖 · arXiv / 开源评测</p>
+        <h1>Failure-mode Waffle</h1>
+        <p class="component-lede">将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。</p>
+        <div class="component-tags"><span>waffle</span><span>hallucination</span><span>part-to-whole</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fff4ed"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='haluevalwaffle-title haluevalwaffle-desc' style='background:#fff4ed;color:#241f1b'>
+        <title id='haluevalwaffle-title'>100 audited hallucinations</title>
+        <desc id='haluevalwaffle-desc'>将 100 个审计样本按事实、推理、引用和拒答失败类型拆分，直观呈现构成。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='haluevalwaffle-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#84c7a9' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#d65b4a' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#241f1b}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#7b6d62}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#7b6d62}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#241f1b}
+            .g{stroke:#e7d5c8;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#241f1b;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>100 audited hallucinations</text>
+        <text class='s' x='28' y='48'>HaluEval</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <rect x='66' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='95' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='124' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='153' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='182' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='211' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='240' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='269' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='298' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='327' y='317' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='66' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='95' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='124' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='153' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='182' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='211' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='240' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='269' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='298' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='327' y='292' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='66' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='95' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='124' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='153' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='182' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='211' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='240' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='269' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='298' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='327' y='267' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='66' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='95' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='124' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='153' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='182' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='211' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='240' y='242' width='23' height='19' rx='2' fill='#d65b4a' fill-opacity='.88'/><rect x='269' y='242' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='298' y='242' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='327' y='242' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='66' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='95' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='124' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='153' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='182' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='211' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='240' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='269' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='298' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='327' y='217' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='66' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='95' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='124' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='153' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='182' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='211' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='240' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='269' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='298' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='327' y='192' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='66' y='167' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='95' y='167' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='124' y='167' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='153' y='167' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='182' y='167' width='23' height='19' rx='2' fill='#84c7a9' fill-opacity='.88'/><rect x='211' y='167' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='240' y='167' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='269' y='167' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='298' y='167' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='327' y='167' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='66' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='95' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='124' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='153' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='182' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='211' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='240' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='269' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='298' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='327' y='142' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='66' y='117' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='95' y='117' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='124' y='117' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='153' y='117' width='23' height='19' rx='2' fill='#f0ba52' fill-opacity='.88'/><rect x='182' y='117' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='211' y='117' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='240' y='117' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='269' y='117' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='298' y='117' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='327' y='117' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='66' y='92' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='95' y='92' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='124' y='92' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='153' y='92' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='182' y='92' width='23' height='19' rx='2' fill='#466b8a' fill-opacity='.88'/><rect x='211' y='92' width='23' height='19' rx='2' fill='#a975a3' fill-opacity='.88'/><rect x='240' y='92' width='23' height='19' rx='2' fill='#a975a3' fill-opacity='.88'/><rect x='269' y='92' width='23' height='19' rx='2' fill='#a975a3' fill-opacity='.88'/><rect x='298' y='92' width='23' height='19' rx='2' fill='#a975a3' fill-opacity='.88'/><rect x='327' y='92' width='23' height='19' rx='2' fill='#a975a3' fill-opacity='.88'/><rect x='405' y='108' width='16' height='16' fill='#d65b4a'/><text class='v' x='433' y='121'>Factual</text><text class='v' x='578' y='121' text-anchor='end'>37%</text><rect x='405' y='155' width='16' height='16' fill='#84c7a9'/><text class='v' x='433' y='168'>Reasoning</text><text class='v' x='578' y='168' text-anchor='end'>28%</text><rect x='405' y='202' width='16' height='16' fill='#f0ba52'/><text class='v' x='433' y='215'>Citation</text><text class='v' x='578' y='215' text-anchor='end'>19%</text><rect x='405' y='249' width='16' height='16' fill='#466b8a'/><text class='v' x='433' y='262'>Refusal</text><text class='v' x='578' y='262' text-anchor='end'>11%</text><rect x='405' y='296' width='16' height='16' fill='#a975a3'/><text class='v' x='433' y='309'>Other</text><text class='v' x='578' y='309' text-anchor='end'>5%</text><text class='s' x='210' y='363' text-anchor='middle'>100 manually audited outputs</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>waffle</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>10×10 waffle + 连续类别块 + 样本总量固定</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-38 Categorical audit tiles</dd></div><div><dt>Component ID</dt><dd><code>halueval-waffle</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合固定总量的 part-to-whole；类别超过 5 个时可读性下降。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>HaluEval</h2><p>幻觉类型与失败构成</p><a class="text-link" href="https://github.com/RUCAIBox/HaluEval" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;parts&quot;: [
+    {
+      &quot;label&quot;: &quot;Factual&quot;,
+      &quot;value&quot;: 37
+    },
+    {
+      &quot;label&quot;: &quot;Reasoning&quot;,
+      &quot;value&quot;: 28
+    },
+    {
+      &quot;label&quot;: &quot;Citation&quot;,
+      &quot;value&quot;: 19
+    },
+    {
+      &quot;label&quot;: &quot;Refusal&quot;,
+      &quot;value&quot;: 11
+    },
+    {
+      &quot;label&quot;: &quot;Other&quot;,
+      &quot;value&quot;: 5
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="qwen-cylinder-bars.html"><strong>Cylindrical Benchmark Columns</strong><span>圆柱柱图 + 顶面椭圆 + 基座刻度</span></a><a href="mmlu-domain-treemap.html"><strong>Benchmark Domain Treemap</strong><span>层级 treemap + 面积样本量 + 色彩学科族</span></a><a href="mmmu-beeswarm.html"><strong>Multimodal Task Beeswarm</strong><span>分类 beeswarm + 中位短线 + 图形题型标记</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

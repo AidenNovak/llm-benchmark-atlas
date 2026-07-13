@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。 适合三项占比总和为 100% 的权重或资源分配；不是原始指标散点。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 论文图表复现, Stanford HELM, arxiv, ternary, model-selection">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Quality–Speed–Cost Ternary · Benchmark Atlas">
+  <meta property="og:description" content="把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-selection-ternary.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Quality–Speed–Cost Ternary · Benchmark Atlas">
+  <meta name="twitter:description" content="把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Quality–Speed–Cost Ternary · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-selection-ternary.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Quality–Speed–Cost Ternary · Benchmark Atlas","description":"把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-selection-ternary.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 论文图表复现, Stanford HELM, arxiv, ternary, model-selection"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>论文图表复现</span><span>/</span><span aria-current="page">Quality–Speed–Cost Ternary</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">论文图表复现 · 独立榜单</p>
+        <h1>Quality–Speed–Cost Ternary</h1>
+        <p class="component-lede">把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。</p>
+        <div class="component-tags"><span>arxiv</span><span>ternary</span><span>model-selection</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f8fbff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='arxivselectionternary-title arxivselectionternary-desc' style='background:#f8fbff;color:#172239'>
+      <title id='arxivselectionternary-title'>Three-way model selection trade-off</title>
+      <desc id='arxivselectionternary-desc'>把质量、速度与成本权重归一到三元坐标，显示不同模型适合的选型偏好。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>
+        .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#172239}
+        .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#64708a}
+        .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64708a}
+        .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#172239}
+        .g{stroke:#d9e2ef;stroke-width:1;shape-rendering:crispEdges}
+      </style></defs>
+      <text class='t' x='28' y='30'>Three-way model selection trade-off</text>
+      <text class='s' x='28' y='48'>Stanford HELM</text>
+      <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+      <path d='M 110 332 L 530 332 L 320 84 Z' fill='none' stroke='#172239' stroke-width='2'/><line class='g' x1='152' y1='282.40000000000003' x2='488' y2='282.40000000000003'/><line class='g' x1='194' y1='232.79999999999998' x2='446' y2='232.79999999999998'/><line class='g' x1='236' y1='183.20000000000002' x2='404' y2='183.20000000000002'/><line class='g' x1='278' y1='133.6' x2='362' y2='133.6'/><text class='v' x='90' y='354'>COST</text><text class='v' x='550' y='354'>SPEED</text><text class='v' x='320' y='72' text-anchor='middle'>QUALITY</text><circle cx='332.6' cy='158.4' r='9' fill='#4d6bfe'/><text class='v' x='343.6' y='149.4'>Premium</text><circle cx='324.2' cy='237.76' r='9' fill='#86a0ff'/><text class='v' x='335.2' y='228.76'>Balanced</text><circle cx='418.7' cy='289.84' r='9' fill='#b9c7ff'/><text class='v' x='429.7' y='280.84'>Fast</text><circle cx='221.3' cy='304.72' r='9' fill='#d9e1f4'/><text class='v' x='232.3' y='295.72'>Budget</text><circle cx='334.7' cy='210.48' r='9' fill='#27355c'/><text class='v' x='345.7' y='201.48'>Agent</text><text class='s' x='320' y='382' text-anchor='middle'>each point sums to 100% preference weight</text>
+    </svg><figcaption>Illustrative demo data · renderer: <code>ternaryPlot</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>三元重心坐标 + 三顶点权重 + 模型点直标</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-60 Ternary selection field</dd></div><div><dt>Component ID</dt><dd><code>arxiv-selection-ternary</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合三项占比总和为 100% 的权重或资源分配；不是原始指标散点。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Stanford HELM</h2><p>场景矩阵、透明评测与多指标折衷</p><a class="text-link" href="https://crfm.stanford.edu/helm/lite/latest/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;items&quot;: [
+    {
+      &quot;label&quot;: &quot;Premium&quot;,
+      &quot;values&quot;: [
+        12,
+        18,
+        70
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Balanced&quot;,
+      &quot;values&quot;: [
+        30,
+        32,
+        38
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Fast&quot;,
+      &quot;values&quot;: [
+        18,
+        65,
+        17
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Budget&quot;,
+      &quot;values&quot;: [
+        68,
+        21,
+        11
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Agent&quot;,
+      &quot;values&quot;: [
+        22,
+        29,
+        49
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="longbench-context-contour.html"><strong>Context Length × Depth Surface</strong><span>context-length × needle-depth 矩阵 + 双等值线 + 单元格读数</span></a><a href="arxiv-benchmark-upset.html"><strong>Benchmark Set UpSet</strong><span>交集柱 + benchmark membership 点阵 + 连线组合</span></a><a href="arxiv-rank-alluvial.html"><strong>Rank Migration Alluvial</strong><span>三时点排名节点 + 半透明宽 ribbon + 末端系列直标</span></a><a href="arxiv-prompt-raincloud.html"><strong>Prompt Sensitivity Raincloud</strong><span>半小提琴云 + IQR 粗线 + median + 原始点雨</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。 适合解释 rollout 调度与数据无偏性；每个 query 必须保持唯一索引和 iteration 归属。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 亚洲模型实验室, ERNIE 5.0 Technical Report, ernie, replay-buffer, rollout, scheduler">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Unbiased Replay Buffer Schedule · Benchmark Atlas">
+  <meta property="og:description" content="复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-unbiased-replay-buffer.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Unbiased Replay Buffer Schedule · Benchmark Atlas">
+  <meta name="twitter:description" content="复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Unbiased Replay Buffer Schedule · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-unbiased-replay-buffer.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Unbiased Replay Buffer Schedule · Benchmark Atlas","description":"复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/ernie-unbiased-replay-buffer.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 亚洲模型实验室, ERNIE 5.0 Technical Report, ernie, replay-buffer, rollout, scheduler"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>亚洲模型实验室</span><span>/</span><span aria-current="page">Unbiased Replay Buffer Schedule</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">亚洲模型实验室 · arXiv 论文</p>
+        <h1>Unbiased Replay Buffer Schedule</h1>
+        <p class="component-lede">复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。</p>
+        <div class="component-tags"><span>ernie</span><span>replay-buffer</span><span>rollout</span><span>scheduler</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fbfdff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='ernieunbiasedreplaybuffer-title ernieunbiasedreplaybuffer-desc' style='background:#fbfdff;color:#18212c'>
+      <title id='ernieunbiasedreplaybuffer-title'>Long-tail rollout scheduling · Sync vs APRIL vs U-RB</title><desc id='ernieunbiasedreplaybuffer-desc'>复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+      <defs><style>.t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#18212c}.s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#677588}.l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#677588}.v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#18212c}.g{stroke:#dce5ef;stroke-width:1;shape-rendering:crispEdges}</style></defs>
+      <text class='t' x='28' y='30'>Long-tail rollout scheduling · Sync vs APRIL vs U-RB</text><text class='s' x='28' y='48'>ERNIE 5.0 Technical Report · Figure 5 / PDF p.12</text><text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text><text class='v' x='86' y='116' text-anchor='end'>SYNC RL</text><text class='s' x='105' y='97' text-anchor='end'>GPU 0</text><rect x='120' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='133.5' y='97' text-anchor='middle' style='fill:#18212c'>0</text><rect x='151' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='164.5' y='97' text-anchor='middle' style='fill:#18212c'>1</text><rect x='182' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='195.5' y='97' text-anchor='middle' style='fill:#18212c'>2</text><rect x='213' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='226.5' y='97' text-anchor='middle' style='fill:#18212c'>3</text><rect x='244' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='257.5' y='97' text-anchor='middle' style='fill:#18212c'>8</text><rect x='275' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='288.5' y='97' text-anchor='middle' style='fill:#18212c'>9</text><rect x='306' y='82' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='319.5' y='97' text-anchor='middle' style='fill:#18212c'>10</text><rect x='337' y='82' width='27' height='23' rx='3' fill='#f09b38' fill-opacity='0.25' stroke='#f09b38' stroke-dasharray='3 2'/><text class='s' x='350.5' y='97' text-anchor='middle' style='fill:#18212c'>11</text><text class='s' x='105' y='129' text-anchor='end'>GPU 1</text><rect x='120' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='133.5' y='129' text-anchor='middle' style='fill:#18212c'>4</text><rect x='151' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='164.5' y='129' text-anchor='middle' style='fill:#18212c'>5</text><rect x='182' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='195.5' y='129' text-anchor='middle' style='fill:#18212c'>6</text><rect x='213' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='226.5' y='129' text-anchor='middle' style='fill:#18212c'>7</text><rect x='244' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='257.5' y='129' text-anchor='middle' style='fill:#18212c'>12</text><rect x='275' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='288.5' y='129' text-anchor='middle' style='fill:#18212c'>13</text><rect x='306' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='319.5' y='129' text-anchor='middle' style='fill:#18212c'>14</text><rect x='337' y='114' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='350.5' y='129' text-anchor='middle' style='fill:#18212c'>15</text><line x1='492' y1='78' x2='492' y2='140' stroke='#d14d77' stroke-width='2' stroke-dasharray='5 3'/><path d='M 509 109 h 35' stroke='#18212c' stroke-width='3'/><path d='M 544 109 l -8 -5 v 10 Z' fill='#18212c'/><rect x='560' y='84' width='77' height='51' fill='#3ca77b' fill-opacity='.08' stroke='#3ca77b' stroke-dasharray='4 3'/><text class='s' x='598' y='105' text-anchor='middle'>train set</text><text class='v' x='598' y='121' text-anchor='middle'>16</text><text class='v' x='86' y='210' text-anchor='end'>APRIL</text><text class='s' x='105' y='191' text-anchor='end'>GPU 0</text><rect x='120' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='133.5' y='191' text-anchor='middle' style='fill:#18212c'>0</text><rect x='151' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='164.5' y='191' text-anchor='middle' style='fill:#18212c'>1</text><rect x='182' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='195.5' y='191' text-anchor='middle' style='fill:#18212c'>2</text><rect x='213' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='226.5' y='191' text-anchor='middle' style='fill:#18212c'>3</text><rect x='244' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='257.5' y='191' text-anchor='middle' style='fill:#18212c'>8</text><rect x='275' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='288.5' y='191' text-anchor='middle' style='fill:#18212c'>9</text><rect x='306' y='176' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='319.5' y='191' text-anchor='middle' style='fill:#18212c'>10</text><rect x='337' y='176' width='27' height='23' rx='3' fill='#f09b38' fill-opacity='0.25' stroke='#f09b38' stroke-dasharray='3 2'/><text class='s' x='350.5' y='191' text-anchor='middle' style='fill:#18212c'>11</text><text class='s' x='105' y='223' text-anchor='end'>GPU 1</text><rect x='120' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='133.5' y='223' text-anchor='middle' style='fill:#18212c'>4</text><rect x='151' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='164.5' y='223' text-anchor='middle' style='fill:#18212c'>5</text><rect x='182' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='195.5' y='223' text-anchor='middle' style='fill:#18212c'>6</text><rect x='213' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='226.5' y='223' text-anchor='middle' style='fill:#18212c'>7</text><rect x='244' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='257.5' y='223' text-anchor='middle' style='fill:#18212c'>12</text><rect x='275' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='288.5' y='223' text-anchor='middle' style='fill:#18212c'>13</text><rect x='306' y='208' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='319.5' y='223' text-anchor='middle' style='fill:#18212c'>14</text><rect x='337' y='208' width='27' height='23' rx='3' fill='#54b5ef' fill-opacity='0.68'/><text class='s' x='350.5' y='223' text-anchor='middle' style='fill:#18212c'>16</text><line x1='430' y1='172' x2='430' y2='234' stroke='#d14d77' stroke-width='2' stroke-dasharray='5 3'/><path d='M 447 203 h 35' stroke='#18212c' stroke-width='3'/><path d='M 482 203 l -8 -5 v 10 Z' fill='#18212c'/><rect x='498' y='178' width='77' height='51' fill='#3ca77b' fill-opacity='.08' stroke='#3ca77b' stroke-dasharray='4 3'/><text class='s' x='536' y='199' text-anchor='middle'>train set</text><text class='v' x='536' y='215' text-anchor='middle'>16</text><text class='v' x='86' y='304' text-anchor='end'>U-RB</text><text class='s' x='105' y='285' text-anchor='end'>GPU 0</text><rect x='120' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='133.5' y='285' text-anchor='middle' style='fill:#18212c'>0</text><rect x='151' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='164.5' y='285' text-anchor='middle' style='fill:#18212c'>1</text><rect x='182' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='195.5' y='285' text-anchor='middle' style='fill:#18212c'>2</text><rect x='213' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='226.5' y='285' text-anchor='middle' style='fill:#18212c'>3</text><rect x='244' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='257.5' y='285' text-anchor='middle' style='fill:#18212c'>8</text><rect x='275' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='288.5' y='285' text-anchor='middle' style='fill:#18212c'>9</text><rect x='306' y='270' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='319.5' y='285' text-anchor='middle' style='fill:#18212c'>10</text><rect x='337' y='270' width='27' height='23' rx='3' fill='#f09b38' fill-opacity='0.25' stroke='#f09b38' stroke-dasharray='3 2'/><text class='s' x='350.5' y='285' text-anchor='middle' style='fill:#18212c'>11</text><text class='s' x='105' y='317' text-anchor='end'>GPU 1</text><rect x='120' y='302' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='133.5' y='317' text-anchor='middle' style='fill:#18212c'>4</text><rect x='151' y='302' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='164.5' y='317' text-anchor='middle' style='fill:#18212c'>5</text><rect x='182' y='302' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='195.5' y='317' text-anchor='middle' style='fill:#18212c'>6</text><rect x='213' y='302' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='226.5' y='317' text-anchor='middle' style='fill:#18212c'>7</text><rect x='244' y='302' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='257.5' y='317' text-anchor='middle' style='fill:#18212c'>12</text><rect x='275' y='302' width='27' height='23' rx='3' fill='#1677dc' fill-opacity='0.68'/><text class='s' x='288.5' y='317' text-anchor='middle' style='fill:#18212c'>13</text><rect x='306' y='302' width='27' height='23' rx='3' fill='#54b5ef' fill-opacity='0.68'/><text class='s' x='319.5' y='317' text-anchor='middle' style='fill:#18212c'>16</text><rect x='337' y='302' width='27' height='23' rx='3' fill='#54b5ef' fill-opacity='0.68'/><text class='s' x='350.5' y='317' text-anchor='middle' style='fill:#18212c'>17</text><line x1='492' y1='266' x2='492' y2='328' stroke='#d14d77' stroke-width='2' stroke-dasharray='5 3'/><path d='M 509 297 h 35' stroke='#18212c' stroke-width='3'/><path d='M 544 297 l -8 -5 v 10 Z' fill='#18212c'/><rect x='560' y='272' width='77' height='51' fill='#3ca77b' fill-opacity='.08' stroke='#3ca77b' stroke-dasharray='4 3'/><text class='s' x='598' y='293' text-anchor='middle'>train set</text><text class='v' x='598' y='309' text-anchor='middle'>16</text><rect x='120' y='373' width='12' height='8' fill='#1677dc' fill-opacity='.68'/><text class='l' x='139' y='381'>current</text><rect x='215' y='373' width='12' height='8' fill='#54b5ef' fill-opacity='.68'/><text class='l' x='234' y='381'>next iteration</text><rect x='345' y='373' width='12' height='8' fill='#f09b38' fill-opacity='.25' stroke='#f09b38'/><text class='l' x='364' y='381'>unfinished long tail</text></svg><figcaption>Illustrative demo data · renderer: <code>replayBufferSchedule</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>三种 rollout 方法分行 + 双 GPU query 时隙 + generation stop + next-iteration 缓冲状态</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-73 ERNIE replay-buffer scheduler</dd></div><div><dt>Component ID</dt><dd><code>ernie-unbiased-replay-buffer</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合解释 rollout 调度与数据无偏性；每个 query 必须保持唯一索引和 iteration 归属。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Figure-level evidence</p><h2>Figure 5 · PDF p.12</h2><p>两张 GPU 时间线比较 Sync RL、APRIL 和 U-RB 的长尾 rollout 与训练批组装。</p><dl class="evidence-facts"><div><dt>Verified</dt><dd>2026-07-13</dd></div><div><dt>Paper source</dt><dd><a href="https://arxiv.org/abs/2602.04705" rel="noreferrer">ERNIE 5.0 Technical Report</a></dd></div></dl></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;methods&quot;: [
+    {
+      &quot;label&quot;: &quot;SYNC RL&quot;,
+      &quot;stopAfter&quot;: 12,
+      &quot;trainingCount&quot;: 16,
+      &quot;gpus&quot;: [
+        [
+          {
+            &quot;id&quot;: 0,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 1,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 3,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 9,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 10,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 11,
+            &quot;state&quot;: &quot;unfinished&quot;
+          }
+        ],
+        [
+          {
+            &quot;id&quot;: 4,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 5,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 6,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 12,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 13,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 14,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 15,
+            &quot;state&quot;: &quot;current&quot;
+          }
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;APRIL&quot;,
+      &quot;stopAfter&quot;: 10,
+      &quot;trainingCount&quot;: 16,
+      &quot;gpus&quot;: [
+        [
+          {
+            &quot;id&quot;: 0,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 1,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 3,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 9,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 10,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 11,
+            &quot;state&quot;: &quot;unfinished&quot;
+          }
+        ],
+        [
+          {
+            &quot;id&quot;: 4,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 5,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 6,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 12,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 13,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 14,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 16,
+            &quot;state&quot;: &quot;next&quot;
+          }
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;U-RB&quot;,
+      &quot;stopAfter&quot;: 12,
+      &quot;trainingCount&quot;: 16,
+      &quot;gpus&quot;: [
+        [
+          {
+            &quot;id&quot;: 0,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 1,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 3,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 9,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 10,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 11,
+            &quot;state&quot;: &quot;unfinished&quot;
+          }
+        ],
+        [
+          {
+            &quot;id&quot;: 4,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 5,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 6,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 12,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 13,
+            &quot;state&quot;: &quot;current&quot;
+          },
+          {
+            &quot;id&quot;: 16,
+            &quot;state&quot;: &quot;next&quot;
+          },
+          {
+            &quot;id&quot;: 17,
+            &quot;state&quot;: &quot;next&quot;
+          }
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="kimi-sparsity-scaling.html"><strong>Kimi Sparsity Scaling Law</strong><span>多 sparsity 训练轨迹 + log FLOPs 横轴 + 每系列虚线缩放拟合</span></a><a href="kimi-attention-head-scaling.html"><strong>Attention-head Scaling Facets</strong><span>四 compute 档折线小多图 + 方/圆 marker 协议 + loss 改善直标</span></a><a href="kimi-pipeline-overlap.html"><strong>Pipeline Parallel Overlap Grid</strong><span>microbatch 二维时隙网格 + forward/backward 色块 + communication/offload 下层带</span></a><a href="kimi-tool-embedding-pair.html"><strong>Real vs Synthetic Tool Embeddings</strong><span>真实/合成双 t-SNE 面板 + 共享类别色 + 规则化聚类密度</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

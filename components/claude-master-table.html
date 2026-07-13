@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。 适合模型发布总览；不适合指标口径差异过大且无法写清脚注的场景。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 排名与横向对比, Anthropic / Claude, table, multi-benchmark, release">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Master Benchmark Table · Benchmark Atlas">
+  <meta property="og:description" content="将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/claude-master-table.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Master Benchmark Table · Benchmark Atlas">
+  <meta name="twitter:description" content="将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Master Benchmark Table · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/claude-master-table.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Master Benchmark Table · Benchmark Atlas","description":"将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/claude-master-table.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 排名与横向对比, Anthropic / Claude, table, multi-benchmark, release"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>排名与横向对比</span><span>/</span><span aria-current="page">Master Benchmark Table</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">排名与横向对比 · 厂商发布</p>
+        <h1>Master Benchmark Table</h1>
+        <p class="component-lede">将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。</p>
+        <div class="component-tags"><span>table</span><span>multi-benchmark</span><span>release</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#f4efe5"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='claudemastertable-title claudemastertable-desc' style='background:#f4efe5;color:#211b16'>
+        <title id='claudemastertable-title'>Frontier model benchmark sheet</title>
+        <desc id='claudemastertable-desc'>将 coding、reasoning、agentic search 等异质指标放进一张可扫描总表，保留测试条件脚注。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='claudemastertable-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#2c6e63' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#d96f4f' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#211b16}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#7b7168}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#7b7168}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#211b16}
+            .g{stroke:#d8d0c5;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#211b16;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Frontier model benchmark sheet</text>
+        <text class='s' x='28' y='48'>Anthropic / Claude</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <rect x='24' y='68' width='592' height='306' fill='#f4efe5' stroke='#d8d0c5'/><rect x='168' y='68' width='106' height='306' fill='#d96f4f' fill-opacity='.08' stroke='#d96f4f' stroke-width='2'/><text class='v' x='221' y='86' text-anchor='middle'>Opus 4.6</text><text class='v' x='327' y='86' text-anchor='middle'>Opus 4.5</text><text class='v' x='433' y='86' text-anchor='middle'>GPT-5.x</text><text class='v' x='539' y='86' text-anchor='middle'>Gemini Pro</text><line class='g' x1='24' y1='105' x2='616' y2='105'/><text class='s' x='36' y='125'>CODING</text><text class='v' x='36' y='142'>SWE-bench</text><rect x='192' y='116' width='58' height='25' rx='3' fill='#d96f4f' fill-opacity='.17'/><text class='v' x='221' y='134' text-anchor='middle'>82.1</text><text class='v' x='327' y='134' text-anchor='middle'>78.4</text><text class='v' x='433' y='134' text-anchor='middle'>76.8</text><text class='v' x='539' y='134' text-anchor='middle'>74.2</text><line class='g' x1='24' y1='163' x2='616' y2='163'/><text class='s' x='36' y='183'>AGENT</text><text class='v' x='36' y='200'>Terminal-Bench</text><rect x='192' y='174' width='58' height='25' rx='3' fill='#d96f4f' fill-opacity='.17'/><text class='v' x='221' y='192' text-anchor='middle'>65.8</text><text class='v' x='327' y='192' text-anchor='middle'>58.9</text><text class='v' x='433' y='192' text-anchor='middle'>61.4</text><text class='v' x='539' y='192' text-anchor='middle'>57.1</text><line class='g' x1='24' y1='221' x2='616' y2='221'/><text class='s' x='36' y='241'>REASON</text><text class='v' x='36' y='258'>GPQA Diamond</text><rect x='192' y='232' width='58' height='25' rx='3' fill='#d96f4f' fill-opacity='.17'/><text class='v' x='221' y='250' text-anchor='middle'>91.3</text><text class='v' x='327' y='250' text-anchor='middle'>88.1</text><text class='v' x='433' y='250' text-anchor='middle'>90.2</text><text class='v' x='539' y='250' text-anchor='middle'>87.4</text><line class='g' x1='24' y1='279' x2='616' y2='279'/><text class='s' x='36' y='299'>SEARCH</text><text class='v' x='36' y='316'>BrowseComp</text><text class='v' x='221' y='308' text-anchor='middle'>84.7</text><text class='v' x='327' y='308' text-anchor='middle'>76.9</text><rect x='404' y='290' width='58' height='25' rx='3' fill='#d96f4f' fill-opacity='.17'/><text class='v' x='433' y='308' text-anchor='middle'>86.2</text><text class='v' x='539' y='308' text-anchor='middle'>80.1</text><text class='s' x='36' y='360'>conditions · tools on where applicable · normalized display</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>masterTable</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>分组行 + 主模型描边 + 单元格双层高亮</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-01 Warm editorial table</dd></div><div><dt>Component ID</dt><dd><code>claude-master-table</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合模型发布总览；不适合指标口径差异过大且无法写清脚注的场景。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Anthropic / Claude</h2><p>暖纸、珊瑚主系列、强表格与误差区间</p><a class="text-link" href="https://www.anthropic.com/news/claude-opus-4-6" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;columns&quot;: [
+    &quot;Opus 4.6&quot;,
+    &quot;Opus 4.5&quot;,
+    &quot;GPT-5.x&quot;,
+    &quot;Gemini Pro&quot;
+  ],
+  &quot;rows&quot;: [
+    {
+      &quot;group&quot;: &quot;CODING&quot;,
+      &quot;label&quot;: &quot;SWE-bench&quot;,
+      &quot;values&quot;: [
+        82.1,
+        78.4,
+        76.8,
+        74.2
+      ]
+    },
+    {
+      &quot;group&quot;: &quot;AGENT&quot;,
+      &quot;label&quot;: &quot;Terminal-Bench&quot;,
+      &quot;values&quot;: [
+        65.8,
+        58.9,
+        61.4,
+        57.1
+      ]
+    },
+    {
+      &quot;group&quot;: &quot;REASON&quot;,
+      &quot;label&quot;: &quot;GPQA Diamond&quot;,
+      &quot;values&quot;: [
+        91.3,
+        88.1,
+        90.2,
+        87.4
+      ]
+    },
+    {
+      &quot;group&quot;: &quot;SEARCH&quot;,
+      &quot;label&quot;: &quot;BrowseComp&quot;,
+      &quot;values&quot;: [
+        84.7,
+        76.9,
+        86.2,
+        80.1
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="openai-lollipop-rank.html"><strong>Direct-label Lollipop Rank</strong><span>水平棒棒糖 + 末端直标 + 目标线</span></a><a href="deepseek-hatched-groups.html"><strong>Hatched Multi-bench Bars</strong><span>多组柱 + 自家斜线纹理 + 双层类目轴</span></a><a href="mistral-dumbbell-delta.html"><strong>Release Delta Dumbbells</strong><span>双端点差值图 + 方向箭头 + 增量直标</span></a><a href="arena-rank-slope.html"><strong>Two-snapshot Rank Slope</strong><span>双时点坡度图 + 名次反向轴 + 交叉直标</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

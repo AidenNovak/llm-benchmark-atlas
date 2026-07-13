@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="83 source-grounded SVG components for LLM benchmarks, model launches, leaderboards, and arXiv paper figures. Search, inspect, export, and reuse unique chart grammars.">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="Benchmark Atlas · LLM Benchmark Visualization Library">
+  <meta property="og:description" content="83 source-grounded, duplication-checked SVG components for model launches, leaderboards, evaluation systems, and research-paper figures.">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Benchmark Atlas, 83 unique SVG grammars across 42 source lineages">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:site" content="@logiclogic1223">
+  <meta name="twitter:title" content="Benchmark Atlas · LLM Benchmark Visualization Library">
+  <meta name="twitter:description" content="83 source-grounded SVG components for LLM benchmarks, leaderboards, model launches, and arXiv figures.">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Benchmark Atlas · LLM Benchmark SVG Component Library</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/">
+  <link rel="alternate" hreflang="zh-CN" href="https://aidennovak.github.io/llm-benchmark-atlas/">
+  <link rel="alternate" hreflang="x-default" href="https://aidennovak.github.io/llm-benchmark-atlas/">
+  <link rel="me" href="https://x.com/logiclogic1223">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Benchmark Atlas",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "url": "https://aidennovak.github.io/llm-benchmark-atlas/",
+    "image": "https://aidennovak.github.io/llm-benchmark-atlas/social-card.png",
+    "description": "Source-grounded, duplication-checked SVG components for LLM benchmark charts, model launches, leaderboards, and research-paper figures.",
+    "softwareVersion": "0.6.0",
+    "license": "https://opensource.org/license/mit",
+    "codeRepository": "https://github.com/AidenNovak/llm-benchmark-atlas",
+    "author": {
+      "@type": "Person",
+      "name": "Aiden Novak",
+      "url": "https://x.com/logiclogic1223",
+      "sameAs": ["https://x.com/logiclogic1223", "https://github.com/AidenNovak"]
+    },
+    "featureList": ["83 live SVG components", "83 unique chart grammars", "42 source lineages", "SVG export", "JSON catalog", "figure-level evidence"]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script>
+  <script src="renderers.js" defer></script>
+  <script src="vendor-series.js" defer></script>
+  <script src="research-series.js" defer></script>
+  <script src="asian-series.js" defer></script>
+  <script src="lab-series.js" defer></script>
+  <script src="lab-systems-series.js" defer></script>
+  <script src="frontier-systems-series.js" defer></script>
+  <script src="api.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#catalog" aria-label="Benchmark Atlas 首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Benchmark Atlas</span>
+    </a>
+    <nav class="topnav" aria-label="页面导航">
+      <a href="about.html">详解</a>
+      <a href="#catalog">组件</a>
+      <a href="#coverage">覆盖</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </header>
+
+  <main>
+    <noscript><p class="noscript-note">Benchmark Atlas 需要 JavaScript 来实时渲染 83 个 SVG 组件。你仍可阅读<a href="about.html">产品详解</a>或访问<a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub 仓库</a>。</p></noscript>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow">LLM benchmark component library</p>
+        <h1 id="page-title">Benchmark Atlas</h1>
+        <p class="lede">把厂商发布、独立榜单与 arXiv 论文里的 benchmark 图表语法，整理成可检索、可检查、可导出的组件。</p>
+      </div>
+      <dl class="intro-stats" aria-label="组件库统计">
+        <div><dt id="stat-components">40</dt><dd>独立组件</dd></div>
+        <div><dt id="stat-grammars">40</dt><dd>图表语法</dd></div>
+        <div><dt id="stat-lineages">24</dt><dd>来源谱系</dd></div>
+      </dl>
+    </section>
+
+    <section class="control-band" aria-label="组件筛选">
+      <div class="controls">
+        <label class="search-field">
+          <span>搜索</span>
+          <input id="search" type="search" placeholder="图表、厂商、benchmark、用途…" autocomplete="off">
+        </label>
+        <label>
+          <span>图表家族</span>
+          <select id="family-filter">
+            <option value="all">全部家族</option>
+          </select>
+        </label>
+        <label>
+          <span>来源类型</span>
+          <select id="source-filter">
+            <option value="all">全部来源</option>
+          </select>
+        </label>
+        <label>
+          <span>厂商 / 组织</span>
+          <select id="vendor-filter">
+            <option value="all">全部组织</option>
+          </select>
+        </label>
+        <fieldset class="view-switch" aria-label="显示密度">
+          <legend>显示</legend>
+          <button type="button" class="is-active" data-view="gallery" aria-pressed="true">画廊</button>
+          <button type="button" data-view="compact" aria-pressed="false">紧凑</button>
+        </fieldset>
+      </div>
+      <div class="result-line" aria-live="polite">
+        <span><strong id="result-count">40</strong> 个组件</span>
+        <span id="active-summary">全部家族 · 全部来源</span>
+        <button id="reset-filters" type="button" hidden>清除筛选</button>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Live components</p>
+          <h2 id="catalog-title">组件目录</h2>
+        </div>
+        <p>每张预览均由数据实时渲染，不是参考图片缩略图。</p>
+      </div>
+      <div id="component-grid" class="component-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>没有匹配的组件</strong>
+        <p>尝试减少筛选条件或换一个关键词。</p>
+      </div>
+    </section>
+
+    <section id="coverage" class="coverage-section" aria-labelledby="coverage-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Coverage matrix</p>
+          <h2 id="coverage-title">覆盖不是数量游戏</h2>
+        </div>
+        <p>同一种柱图换颜色不会被计为新组件。</p>
+      </div>
+      <div class="coverage-layout">
+        <div id="family-coverage" class="coverage-table-wrap"></div>
+        <div class="coverage-rules">
+          <h3>收录门槛</h3>
+          <ol>
+            <li>图表语法必须与已有条目不同。</li>
+            <li>必须能说明一个明确的 benchmark 叙事。</li>
+            <li>必须标注厂商、榜单或论文来源谱系。</li>
+            <li>必须提供机器可读数据与可导出的 SVG。</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" class="sources-section" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Source lineages</p>
+          <h2 id="sources-title">来源谱系</h2>
+        </div>
+        <p>链接指向形式来源；预览数据均标记为示意，不冒充最新榜单结果。</p>
+      </div>
+      <div id="source-index" class="source-index"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Benchmark Atlas · source-grounded, data-driven, duplication-checked</p>
+    <div class="footer-links"><a href="components/">静态组件索引</a><a href="https://x.com/logiclogic1223" target="_blank" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas/blob/main/research/SOURCES.md">研究清单</a></div>
+  </footer>
+
+  <dialog id="detail-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-shell">
+      <header class="dialog-header">
+        <div>
+          <p id="dialog-kicker" class="eyebrow"></p>
+          <h2 id="dialog-title"></h2>
+        </div>
+        <button id="close-dialog" class="icon-button" type="button" aria-label="关闭详情">×</button>
+      </header>
+      <div class="dialog-body">
+        <div id="dialog-preview" class="dialog-preview"></div>
+        <aside class="dialog-meta">
+          <div id="dialog-facts" class="fact-list"></div>
+          <p id="dialog-description" class="dialog-description"></p>
+          <p id="dialog-use" class="dialog-use"></p>
+          <div class="dialog-actions">
+            <button id="download-svg" type="button">下载 SVG</button>
+            <button id="copy-json" type="button">复制 JSON</button>
+            <a id="source-link" href="#" target="_blank" rel="noreferrer">查看形式来源</a>
+          </div>
+        </aside>
+      </div>
+      <details class="data-panel">
+        <summary>查看组件数据</summary>
+        <pre><code id="dialog-json"></code></pre>
+      </details>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

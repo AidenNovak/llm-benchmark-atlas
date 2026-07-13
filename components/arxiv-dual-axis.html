@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。 适合技术报告中的训练动态；双轴必须明确单位并避免暗示虚假相关。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 规模、成本与效率, Qwen3 Technical Report, training, dual-axis, checkpoint">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Training Dual-axis Trace · Benchmark Atlas">
+  <meta property="og:description" content="同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-dual-axis.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Training Dual-axis Trace · Benchmark Atlas">
+  <meta name="twitter:description" content="同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Training Dual-axis Trace · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-dual-axis.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Training Dual-axis Trace · Benchmark Atlas","description":"同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/arxiv-dual-axis.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 规模、成本与效率, Qwen3 Technical Report, training, dual-axis, checkpoint"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>规模、成本与效率</span><span>/</span><span aria-current="page">Training Dual-axis Trace</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">规模、成本与效率 · arXiv 论文</p>
+        <h1>Training Dual-axis Trace</h1>
+        <p class="component-lede">同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。</p>
+        <div class="component-tags"><span>training</span><span>dual-axis</span><span>checkpoint</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#fffefa"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='arxivdualaxis-title arxivdualaxis-desc' style='background:#fffefa;color:#171717'>
+        <title id='arxivdualaxis-title'>Loss and held-out score</title>
+        <desc id='arxivdualaxis-desc'>同时呈现训练 loss 下降与 held-out benchmark 上升，并标出阶段切换。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='arxivdualaxis-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#8b8b85' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#171717' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171717}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#6c6a64}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6c6a64}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#171717}
+            .g{stroke:#d8d5cb;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#171717;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Loss and held-out score</text>
+        <text class='s' x='28' y='48'>Qwen3 Technical Report</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <rect x='218.85714285714286' y='84' width='220.2857142857143' height='250' fill='#e2604b' fill-opacity='.07'/><line x1='218.85714285714286' y1='82' x2='218.85714285714286' y2='336' stroke='#8b8b85' stroke-dasharray='4 4'/><text class='s' x='223.85714285714286' y='100'>PHASE 2</text><rect x='439.14285714285717' y='84' width='146.85714285714283' height='250' fill='#4777a9' fill-opacity='.07'/><line x1='439.14285714285717' y1='82' x2='439.14285714285717' y2='336' stroke='#8b8b85' stroke-dasharray='4 4'/><text class='s' x='444.14285714285717' y='100'>PHASE 3</text><text class='l' x='72' y='356' text-anchor='middle'>0</text><text class='l' x='145.42857142857144' y='356' text-anchor='middle'>1</text><text class='l' x='218.85714285714286' y='356' text-anchor='middle'>2</text><text class='l' x='292.2857142857143' y='356' text-anchor='middle'>3</text><text class='l' x='365.7142857142857' y='356' text-anchor='middle'>4</text><text class='l' x='439.14285714285717' y='356' text-anchor='middle'>5</text><text class='l' x='512.5714285714286' y='356' text-anchor='middle'>6</text><text class='l' x='586' y='356' text-anchor='middle'>7</text><line class='g' x1='68' y1='281.6' x2='590' y2='281.6'/><text class='l' x='58' y='284.6' text-anchor='end'>40</text><line class='g' x1='68' y1='184.8' x2='590' y2='184.8'/><text class='l' x='58' y='187.8' text-anchor='end'>60</text><line class='g' x1='68' y1='88' x2='590' y2='88'/><text class='l' x='58' y='91' text-anchor='end'>80</text><path d='M 72.00 100.74 L 145.43 177.16 L 218.86 228.11 L 292.29 266.32 L 365.71 291.79 L 439.14 309.62 L 512.57 318.54 L 586.00 322.36' fill='none' stroke='#171717' stroke-width='3'/><path d='M 72.00 325.16 L 145.43 267.08 L 218.86 223.52 L 292.29 179.96 L 365.71 141.24 L 439.14 117.04 L 512.57 107.36 L 586.00 102.52' fill='none' stroke='#e2604b' stroke-width='4'/><text class='v' x='590' y='312.3578947368421' text-anchor='end'>loss ↓</text><text class='v' x='590' y='92.52000000000001' text-anchor='end' fill='#e2604b'>held-out ↑</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>dualAxis</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>双纵轴折线 + 训练阶段带 + 最佳 checkpoint</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-09 Monochrome preprint</dd></div><div><dt>Component ID</dt><dd><code>arxiv-dual-axis</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合技术报告中的训练动态；双轴必须明确单位并避免暗示虚假相关。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>Qwen3 Technical Report</h2><p>训练阶段、消融、缩放与多任务评测</p><a class="text-link" href="https://arxiv.org/abs/2505.09388" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;stages&quot;: [
+    2,
+    5
+  ],
+  &quot;points&quot;: [
+    {
+      &quot;x&quot;: 0,
+      &quot;loss&quot;: 3.2,
+      &quot;score&quot;: 31
+    },
+    {
+      &quot;x&quot;: 1,
+      &quot;loss&quot;: 2.6,
+      &quot;score&quot;: 43
+    },
+    {
+      &quot;x&quot;: 2,
+      &quot;loss&quot;: 2.2,
+      &quot;score&quot;: 52
+    },
+    {
+      &quot;x&quot;: 3,
+      &quot;loss&quot;: 1.9,
+      &quot;score&quot;: 61
+    },
+    {
+      &quot;x&quot;: 4,
+      &quot;loss&quot;: 1.7,
+      &quot;score&quot;: 69
+    },
+    {
+      &quot;x&quot;: 5,
+      &quot;loss&quot;: 1.56,
+      &quot;score&quot;: 74
+    },
+    {
+      &quot;x&quot;: 6,
+      &quot;loss&quot;: 1.49,
+      &quot;score&quot;: 76
+    },
+    {
+      &quot;x&quot;: 7,
+      &quot;loss&quot;: 1.46,
+      &quot;score&quot;: 77
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="openai-compute-frontier.html"><strong>Compute Frontier Curve</strong><span>对数横轴 + 前沿曲线 + effort 节点注释</span></a><a href="qwen-thinking-budget.html"><strong>Thinking Budget Saturation</strong><span>饱和曲线 + 边际收益分段 + 最佳预算窗</span></a><a href="llama-scaling-law.html"><strong>Log-log Scaling Law</strong><span>log-log 散点 + 拟合线 + 模型规模标注</span></a><a href="phi-efficiency-bubbles.html"><strong>Parameter Efficiency Bubbles</strong><span>气泡散点 + 气泡面积参数 + 效率等高线</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

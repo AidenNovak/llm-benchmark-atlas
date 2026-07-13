@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。 适合 serving 或 agent step latency；不是吞吐量图。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 分布与不确定性, xAI / Grok, ridgeline, latency, tail">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Latency Ridgeline · Benchmark Atlas">
+  <meta property="og:description" content="用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/grok-latency-ridges.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Latency Ridgeline · Benchmark Atlas">
+  <meta name="twitter:description" content="用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Latency Ridgeline · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/grok-latency-ridges.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Latency Ridgeline · Benchmark Atlas","description":"用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/grok-latency-ridges.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 分布与不确定性, xAI / Grok, ridgeline, latency, tail"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>分布与不确定性</span><span>/</span><span aria-current="page">Latency Ridgeline</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">分布与不确定性 · 厂商发布</p>
+        <h1>Latency Ridgeline</h1>
+        <p class="component-lede">用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。</p>
+        <div class="component-tags"><span>ridgeline</span><span>latency</span><span>tail</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#111311"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='groklatencyridges-title groklatencyridges-desc' style='background:#111311;color:#f6f7f2'>
+        <title id='groklatencyridges-title'>Time-to-first-token distribution</title>
+        <desc id='groklatencyridges-desc'>用山脊密度比较不同负载下的延迟形状，明确长尾而非只报平均响应时间。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='groklatencyridges-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#66d9c1' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#b4f451' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f6f7f2}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#a8aca4}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#a8aca4}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f6f7f2}
+            .g{stroke:#3a3d38;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#f6f7f2;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Time-to-first-token distribution</text>
+        <text class='s' x='28' y='48'>xAI / Grok</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='160' y1='82' x2='160' y2='342'/><text class='l' x='160' y='368' text-anchor='middle'>0s</text><line class='g' x1='246' y1='82' x2='246' y2='342'/><text class='l' x='246' y='368' text-anchor='middle'>1s</text><line class='g' x1='332' y1='82' x2='332' y2='342'/><text class='l' x='332' y='368' text-anchor='middle'>2s</text><line class='g' x1='418' y1='82' x2='418' y2='342'/><text class='l' x='418' y='368' text-anchor='middle'>3s</text><line class='g' x1='504' y1='82' x2='504' y2='342'/><text class='l' x='504' y='368' text-anchor='middle'>4s</text><line class='g' x1='590' y1='82' x2='590' y2='342'/><text class='l' x='590' y='368' text-anchor='middle'>5s</text><line x1='150' y1='133' x2='596' y2='133' stroke='#3a3d38'/><path d='M 160 133 L 160.00 128.60 L 246.00 119.80 L 332.00 97.80 L 418.00 89.00 L 504.00 106.60 L 590.00 124.20 L 590 133 Z' fill='#b4f451' fill-opacity='.28' stroke='#b4f451' stroke-width='2'/><text class='v' x='137' y='126' text-anchor='end'>LOW</text><line x1='418' y1='86' x2='418' y2='137' stroke='#b4f451' stroke-dasharray='3 3'/><text class='s' x='418' y='81' text-anchor='middle'>p50</text><line x1='150' y1='197' x2='596' y2='197' stroke='#3a3d38'/><path d='M 160 197 L 160.00 194.80 L 246.00 188.20 L 332.00 172.80 L 418.00 157.40 L 504.00 164.00 L 590.00 181.60 L 590 197 Z' fill='#66d9c1' fill-opacity='.28' stroke='#66d9c1' stroke-width='2'/><text class='v' x='137' y='190' text-anchor='end'>MED</text><line x1='418' y1='150' x2='418' y2='201' stroke='#66d9c1' stroke-dasharray='3 3'/><text class='s' x='418' y='145' text-anchor='middle'>p50</text><line x1='150' y1='261' x2='596' y2='261' stroke='#3a3d38'/><path d='M 160 261 L 160.00 260.12 L 246.00 256.60 L 332.00 245.60 L 418.00 231.96 L 504.00 221.40 L 590.00 233.72 L 590 261 Z' fill='#ff7b72' fill-opacity='.28' stroke='#ff7b72' stroke-width='2'/><text class='v' x='137' y='254' text-anchor='end'>HIGH</text><line x1='418' y1='214' x2='418' y2='265' stroke='#ff7b72' stroke-dasharray='3 3'/><text class='s' x='418' y='209' text-anchor='middle'>p50</text><line x1='150' y1='325' x2='596' y2='325' stroke='#3a3d38'/><path d='M 160 325 L 160.00 324.56 L 246.00 322.80 L 332.00 317.08 L 418.00 305.64 L 504.00 293.32 L 590.00 281.00 L 590 325 Z' fill='#a9a7ff' fill-opacity='.28' stroke='#a9a7ff' stroke-width='2'/><text class='v' x='137' y='318' text-anchor='end'>BURST</text><line x1='418' y1='278' x2='418' y2='329' stroke='#a9a7ff' stroke-dasharray='3 3'/><text class='s' x='418' y='273' text-anchor='middle'>p50</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>ridge</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>重叠山脊密度 + p50/p95 刻度 + 长尾标注</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-22 Black signal ridges</dd></div><div><dt>Component ID</dt><dd><code>grok-latency-ridges</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合 serving 或 agent step latency；不是吞吐量图。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>xAI / Grok</h2><p>黑白界面、速度与推理延迟</p><a class="text-link" href="https://x.ai/news/grok-3" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;LOW&quot;,
+      &quot;values&quot;: [
+        0.1,
+        0.3,
+        0.8,
+        1,
+        0.6,
+        0.2
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;MED&quot;,
+      &quot;values&quot;: [
+        0.05,
+        0.2,
+        0.55,
+        0.9,
+        0.75,
+        0.35
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;HIGH&quot;,
+      &quot;values&quot;: [
+        0.02,
+        0.1,
+        0.35,
+        0.66,
+        0.9,
+        0.62
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;BURST&quot;,
+      &quot;values&quot;: [
+        0.01,
+        0.05,
+        0.18,
+        0.44,
+        0.72,
+        1
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="claude-error-forest.html"><strong>Confidence Interval Forest</strong><span>森林图 + 置信区间 + 零差值参考线</span></a><a href="arxiv-violin-distribution.html"><strong>Seed Distribution Violins</strong><span>小提琴密度 + 中位数 + 原始 seed 点</span></a><a href="cognition-boxplot.html"><strong>Repository Box Plots</strong><span>箱线图 + 抖动点 + 样本量脚注</span></a><a href="openai-passk-ecdf.html"><strong>Pass@k ECDF</strong><span>经验累计分布阶梯 + k 预算线 + 面积差</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>

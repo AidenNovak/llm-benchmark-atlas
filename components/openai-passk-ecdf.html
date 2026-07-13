@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="显示随着样本预算 k 增加，累计有多少任务至少被解出一次。 适合代码生成和采样式推理；不能把 pass@k 当作单次成功率。">
+  <meta name="keywords" content="LLM benchmark, data visualization, SVG component, 分布与不确定性, OpenAI / ChatGPT, ecdf, pass-at-k, sampling">
+  <meta name="author" content="Aiden Novak">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Benchmark Atlas">
+  <meta property="og:title" content="Pass@k ECDF · Benchmark Atlas">
+  <meta property="og:description" content="显示随着样本预算 k 增加，累计有多少任务至少被解出一次。">
+  <meta property="og:url" content="https://aidennovak.github.io/llm-benchmark-atlas/components/openai-passk-ecdf.html">
+  <meta property="og:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@logiclogic1223">
+  <meta name="twitter:title" content="Pass@k ECDF · Benchmark Atlas">
+  <meta name="twitter:description" content="显示随着样本预算 k 增加，累计有多少任务至少被解出一次。">
+  <meta name="twitter:image" content="https://aidennovak.github.io/llm-benchmark-atlas/social-card.png">
+  <title>Pass@k ECDF · LLM Benchmark SVG Component</title>
+  <link rel="canonical" href="https://aidennovak.github.io/llm-benchmark-atlas/components/openai-passk-ecdf.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../component-page.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Pass@k ECDF · Benchmark Atlas","description":"显示随着样本预算 k 增加，累计有多少任务至少被解出一次。","url":"https://aidennovak.github.io/llm-benchmark-atlas/components/openai-passk-ecdf.html","codeRepository":"https://github.com/AidenNovak/llm-benchmark-atlas","programmingLanguage":["JavaScript","SVG"],"license":"https://opensource.org/license/mit","author":{"@type":"Person","name":"Aiden Novak","url":"https://x.com/logiclogic1223","sameAs":["https://x.com/logiclogic1223","https://github.com/AidenNovak"]},"isPartOf":{"@type":"SoftwareApplication","name":"Benchmark Atlas","url":"https://aidennovak.github.io/llm-benchmark-atlas/"},"keywords":"LLM benchmark, data visualization, SVG component, 分布与不确定性, OpenAI / ChatGPT, ecdf, pass-at-k, sampling"}</script>
+</head>
+<body>
+  <header class="component-nav"><a class="component-brand" href="../">Benchmark Atlas</a><nav><a href="../about.html">产品详解</a><a href="https://x.com/logiclogic1223" rel="me noreferrer">X · @logiclogic1223</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">GitHub</a></nav></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="面包屑"><a href="../">组件目录</a><span>/</span><span>分布与不确定性</span><span>/</span><span aria-current="page">Pass@k ECDF</span></nav>
+    <article>
+      <header class="component-hero">
+        <p class="eyebrow">分布与不确定性 · 厂商发布</p>
+        <h1>Pass@k ECDF</h1>
+        <p class="component-lede">显示随着样本预算 k 增加，累计有多少任务至少被解出一次。</p>
+        <div class="component-tags"><span>ecdf</span><span>pass-at-k</span><span>sampling</span></div>
+      </header>
+      <figure class="component-figure" style="--chart-bg:#ffffff"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400' role='img' aria-labelledby='openaipasskecdf-title openaipasskecdf-desc' style='background:#ffffff;color:#141414'>
+        <title id='openaipasskecdf-title'>Tasks solved by sample budget</title>
+        <desc id='openaipasskecdf-desc'>显示随着样本预算 k 增加，累计有多少任务至少被解出一次。 示意数据，仅复现信息结构，不代表最新榜单结果。</desc>
+        <defs>
+          <pattern id='openaipasskecdf-hatch' width='8' height='8' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'>
+            <rect width='8' height='8' fill='#9f87ff' fill-opacity='.22'/>
+            <line x1='0' y1='0' x2='0' y2='8' stroke='#d6409f' stroke-width='3'/>
+          </pattern>
+          <style>
+            .t{font:700 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#141414}
+            .s{font:10px ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#70706d}
+            .l{font:10px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#70706d}
+            .v{font:700 11px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#141414}
+            .g{stroke:#dededb;stroke-width:1;shape-rendering:crispEdges}
+            .a{stroke:#141414;stroke-width:1;shape-rendering:crispEdges}
+          </style>
+        </defs>
+        <text class='t' x='28' y='30'>Tasks solved by sample budget</text>
+        <text class='s' x='28' y='48'>OpenAI / ChatGPT</text>
+        <text class='s' x='612' y='30' text-anchor='end'>DEMO DATA</text>
+        <line class='g' x1='72' y1='86' x2='72' y2='338'/><text class='l' x='72' y='360' text-anchor='middle'>k=1</text><line class='g' x1='175.60000000000002' y1='86' x2='175.60000000000002' y2='338'/><text class='l' x='175.60000000000002' y='360' text-anchor='middle'>k=2</text><line class='g' x1='279.20000000000005' y1='86' x2='279.20000000000005' y2='338'/><text class='l' x='279.20000000000005' y='360' text-anchor='middle'>k=4</text><line class='g' x1='382.8' y1='86' x2='382.8' y2='338'/><text class='l' x='382.8' y='360' text-anchor='middle'>k=8</text><line class='g' x1='486.40000000000003' y1='86' x2='486.40000000000003' y2='338'/><text class='l' x='486.40000000000003' y='360' text-anchor='middle'>k=16</text><line class='g' x1='590' y1='86' x2='590' y2='338'/><text class='l' x='590' y='360' text-anchor='middle'>k=32</text><line class='g' x1='70' y1='294.6666666666667' x2='592' y2='294.6666666666667'/><text class='l' x='58' y='297.6666666666667' text-anchor='end'>40%</text><line class='g' x1='70' y1='253.33333333333334' x2='592' y2='253.33333333333334'/><text class='l' x='58' y='256.33333333333337' text-anchor='end'>50%</text><line class='g' x1='70' y1='212' x2='592' y2='212'/><text class='l' x='58' y='215' text-anchor='end'>60%</text><line class='g' x1='70' y1='170.66666666666669' x2='592' y2='170.66666666666669'/><text class='l' x='58' y='173.66666666666669' text-anchor='end'>70%</text><line class='g' x1='70' y1='129.33333333333331' x2='592' y2='129.33333333333331'/><text class='l' x='58' y='132.33333333333331' text-anchor='end'>80%</text><line class='g' x1='70' y1='88' x2='592' y2='88'/><text class='l' x='58' y='91' text-anchor='end'>90%</text><path d='M 72 286.4 H 175.60000000000002 V 224.39999999999998 H 279.20000000000005 V 174.79999999999998 H 382.8 V 137.6 H 486.40000000000003 V 112.79999999999998 H 590 V 96.26666666666665' fill='none' stroke='#d6409f' stroke-width='4'/><circle cx='72' cy='286.4' r='4' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><circle cx='175.60000000000002' cy='224.39999999999998' r='4' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><circle cx='279.20000000000005' cy='174.79999999999998' r='4' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><circle cx='382.8' cy='137.6' r='4' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><circle cx='486.40000000000003' cy='112.79999999999998' r='4' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><circle cx='590' cy='96.26666666666665' r='4' fill='#ffffff' stroke='#d6409f' stroke-width='2'/><text class='v' x='584' y='86.26666666666665' text-anchor='end' fill='#d6409f'>Reasoning</text><path d='M 72 319.4666666666667 H 175.60000000000002 V 274 H 279.20000000000005 V 232.66666666666666 H 382.8 V 203.73333333333335 H 486.40000000000003 V 183.06666666666666 H 590 V 170.66666666666669' fill='none' stroke='#9f87ff' stroke-width='4'/><circle cx='72' cy='319.4666666666667' r='4' fill='#ffffff' stroke='#9f87ff' stroke-width='2'/><circle cx='175.60000000000002' cy='274' r='4' fill='#ffffff' stroke='#9f87ff' stroke-width='2'/><circle cx='279.20000000000005' cy='232.66666666666666' r='4' fill='#ffffff' stroke='#9f87ff' stroke-width='2'/><circle cx='382.8' cy='203.73333333333335' r='4' fill='#ffffff' stroke='#9f87ff' stroke-width='2'/><circle cx='486.40000000000003' cy='183.06666666666666' r='4' fill='#ffffff' stroke='#9f87ff' stroke-width='2'/><circle cx='590' cy='170.66666666666669' r='4' fill='#ffffff' stroke='#9f87ff' stroke-width='2'/><text class='v' x='584' y='160.66666666666669' text-anchor='end' fill='#9f87ff'>Base</text>
+      </svg><figcaption>Illustrative demo data · renderer: <code>ecdf</code></figcaption></figure>
+      <div class="component-columns">
+        <section class="component-section"><p class="eyebrow">Information grammar</p><h2>它如何组织信息</h2><p>经验累计分布阶梯 + k 预算线 + 面积差</p><dl class="evidence-facts"><div><dt>Visual system</dt><dd>VS-23 Magenta probability steps</dd></div><div><dt>Component ID</dt><dd><code>openai-passk-ecdf</code></dd></div></dl></section>
+        <section class="component-section component-use"><p class="eyebrow">Use when</p><h2>适用判断</h2><p>适合代码生成和采样式推理；不能把 pass@k 当作单次成功率。</p></section>
+      </div>
+      <section class="component-section"><p class="eyebrow">Source lineage</p><h2>OpenAI / ChatGPT</h2><p>高留白、单一强调色、compute 与 reliability 叙事</p><a class="text-link" href="https://openai.com/index/introducing-o3-and-o4-mini/" rel="noreferrer">Open formal source ↗</a></section>
+      <section class="component-section"><p class="eyebrow">Structured data</p><h2>可替换的数据模型</h2><p>示意数据，仅复现信息结构，不代表最新榜单结果。</p><pre><code>{
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;Reasoning&quot;,
+      &quot;points&quot;: [
+        [
+          1,
+          42
+        ],
+        [
+          2,
+          57
+        ],
+        [
+          4,
+          69
+        ],
+        [
+          8,
+          78
+        ],
+        [
+          16,
+          84
+        ],
+        [
+          32,
+          88
+        ]
+      ]
+    },
+    {
+      &quot;label&quot;: &quot;Base&quot;,
+      &quot;points&quot;: [
+        [
+          1,
+          34
+        ],
+        [
+          2,
+          45
+        ],
+        [
+          4,
+          55
+        ],
+        [
+          8,
+          62
+        ],
+        [
+          16,
+          67
+        ],
+        [
+          32,
+          70
+        ]
+      ]
+    }
+  ]
+}</code></pre></section>
+      <section class="component-section"><p class="eyebrow">Related components</p><h2>同一图表家族的其他语法</h2><div class="related-grid"><a href="claude-error-forest.html"><strong>Confidence Interval Forest</strong><span>森林图 + 置信区间 + 零差值参考线</span></a><a href="arxiv-violin-distribution.html"><strong>Seed Distribution Violins</strong><span>小提琴密度 + 中位数 + 原始 seed 点</span></a><a href="cognition-boxplot.html"><strong>Repository Box Plots</strong><span>箱线图 + 抖动点 + 样本量脚注</span></a><a href="grok-latency-ridges.html"><strong>Latency Ridgeline</strong><span>重叠山脊密度 + p50/p95 刻度 + 长尾标注</span></a></div></section>
+      <nav class="component-actions" aria-label="后续操作"><a href="../#catalog">浏览全部 83 个组件</a><a href="https://github.com/AidenNovak/llm-benchmark-atlas">在 GitHub 查看源码</a></nav>
+    </article>
+  </main>
+  <footer><span>Benchmark Atlas · source-grounded, duplication-checked</span><a href="https://x.com/logiclogic1223" rel="me noreferrer">Built by @logiclogic1223</a></footer>
+</body>
+</html>
