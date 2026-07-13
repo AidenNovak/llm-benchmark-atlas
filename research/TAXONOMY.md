@@ -12,7 +12,7 @@
 | Agent and process evaluation | long-horizon time series, stacked token area, swimlane, Sankey, survival curve, cumulative solve curve |
 | Special encoding and coverage | cylindrical columns, waffle, treemap, beeswarm |
 | Vendor release reproduction | Google triptych, OpenAI thinking outlines, Claude language intervals and broken axis, DeepSeek protocol uplift, TML frontier, Qwen language dots, Mistral selection quadrants |
-| Asian model-lab papers | Kimi, MiniMax, GLM, InternLM2, ERNIE 5.0, Step-3, and Yi figure-verified grammars |
+| Asian model-lab papers | Kimi, MiniMax, GLM, InternLM2, ERNIE 5.0, Step-3, Yi, Hunyuan, Seed, and DeepSeek figure-verified grammars |
 
 ## Non-qualifying duplicates
 
@@ -29,9 +29,6 @@ The following do not create a new component by themselves:
 
 Potential future grammars should be added only after source verification:
 
-- UpSet plot for benchmark-set overlap;
-- ternary quality/cost/latency comparison;
-- alluvial rank migration across benchmark versions;
 - Bayesian posterior interval chart;
 - correlation matrix with marginal distributions;
 - posterior predictive check for benchmark judge models;

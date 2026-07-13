@@ -39,7 +39,7 @@ Demonstrates the extension boundary for coherent vendor or research series. It
 registers new sources, new components, and new renderers without changing the
 core catalog implementation.
 
-### `research-series.js`, `asian-series.js`, `lab-series.js`, and `lab-systems-series.js`
+### `research-series.js`, `asian-series.js`, `lab-series.js`, `lab-systems-series.js`, and `frontier-systems-series.js`
 
 Own the larger paper and model-lab extension sets. Figure-verified entries carry
 an `evidence` object with the paper's figure locator, one-based rendered PDF
