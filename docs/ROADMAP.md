@@ -23,7 +23,7 @@
 
 ## Ongoing source coverage
 
-- verified releases from Asian model labs: ERNIE, Yi, StepFun, Baichuan, and InternLM;
+- verified releases from Asian model labs: Baichuan, DeepSeek-V3.2, Qwen multimodal, Hunyuan, and Doubao;
 - additional first-party Meta, Mistral, Cohere, AWS, NVIDIA, and xAI figures;
 - arXiv grammars such as UpSet, alluvial, posterior intervals, correlation
   matrices, token alignment ribbons, and sourced multilingual maps;

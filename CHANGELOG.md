@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented here.
 
+## [0.5.0] - 2026-07-13
+
+### Added
+
+- Eight PDF-verified model-lab components: InternLM2 orthogonal MFU stress,
+  ERNIE 5.0 replay-buffer scheduling, entropy-collapse diagnostics and expert
+  collaboration, Step-3 hardware roofline and objective reversal, plus Yi
+  continuous/discrete emergence and layer-token similarity bands.
+- Four source lineages with figure locators and rendered PDF page evidence.
+- Browser QA assertions for 79 components, 19 Asian model-lab components,
+  ERNIE search coverage, and the hardware-roofline grammar.
+
+### Changed
+
+- Corrected false candidate citations during research: unrelated arXiv records
+  were rejected after title and first-page verification rather than entering the
+  source inventory.
+
 ## [0.4.0] - 2026-07-12
 
 ### Added

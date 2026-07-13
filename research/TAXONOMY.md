@@ -12,7 +12,7 @@
 | Agent and process evaluation | long-horizon time series, stacked token area, swimlane, Sankey, survival curve, cumulative solve curve |
 | Special encoding and coverage | cylindrical columns, waffle, treemap, beeswarm |
 | Vendor release reproduction | Google triptych, OpenAI thinking outlines, Claude language intervals and broken axis, DeepSeek protocol uplift, TML frontier, Qwen language dots, Mistral selection quadrants |
-| Asian model-lab papers | Kimi sparsity/head/pipeline/tool maps; MiniMax isoflop, throughput, sunburst, speedup and agreement; GLM curriculum and unknown-parameter frontier |
+| Asian model-lab papers | Kimi, MiniMax, GLM, InternLM2, ERNIE 5.0, Step-3, and Yi figure-verified grammars |
 
 ## Non-qualifying duplicates
 

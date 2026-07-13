@@ -15,6 +15,7 @@ PAPER_SCREENSHOT = Path("/private/tmp/benchmark-atlas-paper-series.png")
 ASIAN_SCREENSHOT = Path("/private/tmp/benchmark-atlas-asian-series.png")
 MINIMAX_SCREENSHOT = Path("/private/tmp/benchmark-atlas-minimax-series.png")
 GLM_SCREENSHOT = Path("/private/tmp/benchmark-atlas-glm-series.png")
+SYSTEMS_SCREENSHOT = Path("/private/tmp/benchmark-atlas-lab-systems-series.png")
 PREVIEW_SCREENSHOT = Path("assets/atlas-preview.png")
 
 
@@ -38,7 +39,7 @@ def main() -> None:
         page.wait_for_selector(".component-card")
 
         report["initial_cards"] = page.locator(".component-card").count()
-        assert report["initial_cards"] == 71
+        assert report["initial_cards"] == 79
         if IS_LOCAL:
             page.screenshot(path=str(PREVIEW_SCREENSHOT))
 
@@ -58,7 +59,7 @@ def main() -> None:
 
         page.locator("#family-filter").select_option(label="亚洲模型实验室")
         report["asian_lab_cards"] = page.locator(".component-card").count()
-        assert report["asian_lab_cards"] == 11
+        assert report["asian_lab_cards"] == 19
         page.screenshot(path=str(ASIAN_SCREENSHOT), full_page=True)
 
         page.locator("#reset-filters").click()
@@ -73,6 +74,17 @@ def main() -> None:
         assert report["glm_cards"] == 2
         page.screenshot(path=str(GLM_SCREENSHOT), full_page=True)
 
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("roofline")
+        report["roofline_cards"] = page.locator(".component-card").count()
+        assert report["roofline_cards"] == 1
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("ERNIE")
+        report["ernie_cards"] = page.locator(".component-card").count()
+        assert report["ernie_cards"] == 3
+        page.screenshot(path=str(SYSTEMS_SCREENSHOT), full_page=True)
+
         page.locator(".preview-button").first.click()
         assert "Figure" in page.locator("#dialog-facts").inner_text()
         assert page.locator("#dialog-json").text_content().find('"evidence"') >= 0
@@ -83,6 +95,14 @@ def main() -> None:
         report["sankey_search_cards"] = page.locator(".component-card").count()
         assert report["sankey_search_cards"] == 1
         assert "Tool-call Outcome Flow" in page.locator(".card-title").inner_text()
+
+        page.locator("#reset-filters").click()
+        page.locator("#search").fill("Layer–Token Similarity")
+        assert page.locator(".component-card").count() == 1
+        page.locator(".preview-button").click()
+        assert "Figure 8" in page.locator("#dialog-facts").inner_text()
+        assert '"verifiedAt": "2026-07-13"' in page.locator("#dialog-json").text_content()
+        page.locator("#close-dialog").click()
 
         page.locator("#reset-filters").click()
         page.locator(".preview-button").first.click()

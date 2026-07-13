@@ -37,6 +37,10 @@ renderer are unique.
 | MiniMax-01 report | <https://arxiv.org/abs/2501.08313> | equal-quality isoflop gaps, sequence throughput cliff, hierarchical data coverage |
 | MiniMax-M1 report | <https://arxiv.org/abs/2506.13585> | matched-quality RL speedup, training/inference probability agreement |
 | GLM-4.5 report | <https://arxiv.org/abs/2508.06471> | RL curriculum counterfactuals, known/undisclosed parameter frontier |
+| InternLM2 report | <https://arxiv.org/abs/2403.17297> | orthogonal MFU stress across GPU scale and sequence length |
+| ERNIE 5.0 report | <https://arxiv.org/abs/2602.04705> | replay-buffer scheduling, entropy collapse, cross-modal expert collaboration |
+| Step-3 report | <https://arxiv.org/abs/2507.19427> | attention hardware roofline, training/decoding objective reversal |
+| Yi report | <https://arxiv.org/abs/2403.04652> | continuous/discrete emergence, layer-token similarity |
 
 ## Independent leaderboards and benchmark lineages
 
@@ -94,5 +98,24 @@ has been captured. The maintainable completion criterion is therefore:
 - GLM-4.5 Figure 2, PDF page 3: SWE-bench Verified against disclosed model parameters, with proprietary models placed in a separate Unknown lane.
 - GLM-4.5 Figures 5-6, PDF page 8: difficulty-switch curriculum and single-stage versus progressive output-length RL counterfactuals.
 
-This inventory is the evidence base for the current 71-component release, not a
+### Figure-level InternLM2, ERNIE 5.0, Step-3, and Yi evidence
+
+- InternLM2 Figure 1, PDF page 5: Model FLOPs Utilization under GPU-count scaling and, separately, sequence-length scaling at fixed GPU count.
+- ERNIE 5.0 Figure 5, PDF page 12: Sync RL, APRIL, and U-RB timelines showing long-tail rollout blocking and next-iteration buffering.
+- ERNIE 5.0 Figure 6, PDF page 13: aligned accuracy and training-logit entropy dynamics with and without entropy collapse.
+- ERNIE 5.0 Figures 8-9, PDF page 24: expert utilization across modality rows and first/middle/last layers, plus top-expert IoU collaboration matrices.
+- Step-3 Figure 5, PDF page 8: attention compute and KV memory-access trajectories against four hardware rooflines.
+- Step-3 Figure 4, PDF page 8: training and decoding cost objectives select opposite winners for the same model pair.
+- Yi Figure 3, PDF page 11: continuous difference-to-target and discontinuous exact-match views of the same in-context coefficient tasks.
+- Yi Figure 8, PDF page 17: token-wise input/output cosine similarity across base and depth-upscaled layer sequences.
+
+### Rejected citation mismatches
+
+- arXiv `2408.05510` is a magnetization-dynamics paper, not an InternLM report.
+- arXiv `2406.10887` is an adversarial face-forgery paper, not a StepFun report.
+- arXiv `2503.09516` is Search-R1, not an ERNIE 4.5 technical report.
+
+These title/body checks prevent plausible-looking but incorrect IDs from becoming provenance.
+
+This inventory is the evidence base for the current 79-component release, not a
 claim that internet research can never discover another valid grammar.

@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "generatedAt": "2026-07-12",
   "stats": {
-    "components": 71,
-    "grammars": 71,
-    "visualSystems": 71,
-    "renderers": 71,
-    "sources": 35,
+    "components": 79,
+    "grammars": 79,
+    "visualSystems": 79,
+    "renderers": 79,
+    "sources": 39,
     "families": 10
   },
   "sources": [
@@ -261,6 +261,34 @@
       "type": "arXiv 论文",
       "url": "https://arxiv.org/abs/2508.06471",
       "note": "参数效率、难度课程与上下文课程消融"
+    },
+    {
+      "key": "internlm2",
+      "name": "InternLM2 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2403.17297",
+      "note": "分布式训练扩展效率与长序列吞吐"
+    },
+    {
+      "key": "ernie5",
+      "name": "ERNIE 5.0 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2602.04705",
+      "note": "replay buffer、RL 熵稳定性与跨模态专家路由"
+    },
+    {
+      "key": "step3",
+      "name": "Step-3 Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2507.19427",
+      "note": "模型-系统协同、硬件 roofline 与解码成本"
+    },
+    {
+      "key": "yiReport",
+      "name": "Yi Technical Report",
+      "type": "arXiv 论文",
+      "url": "https://arxiv.org/abs/2403.04652",
+      "note": "in-context emergence、SFT data scaling 与 depth upscaling"
     }
   ],
   "components": [
@@ -6445,6 +6473,1666 @@
         "page": 3,
         "verifiedAt": "2026-07-12",
         "summary": "开源模型按总参数定位，专有模型在右侧 Unknown 通道比较 SWE-bench Verified。"
+      }
+    },
+    {
+      "source": "InternLM2 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2403.17297",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "internlm-orthogonal-efficiency",
+      "name": "Orthogonal Training Efficiency",
+      "chartLabel": "MFU under GPU-scale and sequence-length stress",
+      "family": "亚洲模型实验室",
+      "sourceKey": "internlm2",
+      "visualSystem": "VS-72 InternLM orthogonal MFU panels",
+      "grammar": "GPU 数量扩展面板 + 固定 GPU 长序列面板 + 同一 MFU 纵轴的正交压力测试",
+      "renderer": "orthogonalEfficiencyPanels",
+      "palette": {
+        "bg": "#fbfbff",
+        "ink": "#171926",
+        "muted": "#6e7184",
+        "grid": "#dfe2ec",
+        "c1": "#6794ee",
+        "c2": "#6557c9",
+        "c3": "#e1a83f",
+        "c4": "#55a28b",
+        "c5": "#d8668a",
+        "c6": "#8e91a7"
+      },
+      "description": "复现 InternLM2 Figure 1：把横向 GPU 扩展效率与固定 128 GPU 下的长序列执行效率并排检查。",
+      "useWhen": "适合分布式训练栈验收；两个面板必须共享模型、批量定义与 MFU 口径。",
+      "tags": [
+        "internlm",
+        "mfu",
+        "distributed-training",
+        "scaling"
+      ],
+      "data": {
+        "panels": [
+          {
+            "label": "COMMUNICATION STRESS",
+            "axis": "GPU count →",
+            "values": [
+              {
+                "label": "8",
+                "value": 0.64
+              },
+              {
+                "label": "32",
+                "value": 0.62
+              },
+              {
+                "label": "128",
+                "value": 0.61
+              },
+              {
+                "label": "512",
+                "value": 0.57
+              },
+              {
+                "label": "1024",
+                "value": 0.53
+              }
+            ]
+          },
+          {
+            "label": "SEQUENCE STRESS",
+            "axis": "sequence length →",
+            "values": [
+              {
+                "label": "16K",
+                "value": 0.71
+              },
+              {
+                "label": "32K",
+                "value": 0.78
+              },
+              {
+                "label": "64K",
+                "value": 0.86
+              },
+              {
+                "label": "128K",
+                "value": 0.87
+              },
+              {
+                "label": "256K",
+                "value": 0.92
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 1",
+        "page": 5,
+        "verifiedAt": "2026-07-13",
+        "summary": "左侧随 GPU 数量扩展，右侧在 128 GPU 下随序列长度变化的 MFU。"
+      }
+    },
+    {
+      "source": "ERNIE 5.0 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2602.04705",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "ernie-unbiased-replay-buffer",
+      "name": "Unbiased Replay Buffer Schedule",
+      "chartLabel": "Long-tail rollout scheduling · Sync vs APRIL vs U-RB",
+      "family": "亚洲模型实验室",
+      "sourceKey": "ernie5",
+      "visualSystem": "VS-73 ERNIE replay-buffer scheduler",
+      "grammar": "三种 rollout 方法分行 + 双 GPU query 时隙 + generation stop + next-iteration 缓冲状态",
+      "renderer": "replayBufferSchedule",
+      "palette": {
+        "bg": "#fbfdff",
+        "ink": "#18212c",
+        "muted": "#677588",
+        "grid": "#dce5ef",
+        "c1": "#1677dc",
+        "c2": "#54b5ef",
+        "c3": "#f09b38",
+        "c4": "#3ca77b",
+        "c5": "#d14d77",
+        "c6": "#888f99"
+      },
+      "description": "复现 ERNIE 5.0 Figure 5：展示同步 RL、APRIL 与 U-RB 如何处理长尾 query、提前停止和下一轮缓冲。",
+      "useWhen": "适合解释 rollout 调度与数据无偏性；每个 query 必须保持唯一索引和 iteration 归属。",
+      "tags": [
+        "ernie",
+        "replay-buffer",
+        "rollout",
+        "scheduler"
+      ],
+      "data": {
+        "methods": [
+          {
+            "label": "SYNC RL",
+            "stopAfter": 12,
+            "trainingCount": 16,
+            "gpus": [
+              [
+                {
+                  "id": 0,
+                  "state": "current"
+                },
+                {
+                  "id": 1,
+                  "state": "current"
+                },
+                {
+                  "id": 2,
+                  "state": "current"
+                },
+                {
+                  "id": 3,
+                  "state": "current"
+                },
+                {
+                  "id": 8,
+                  "state": "current"
+                },
+                {
+                  "id": 9,
+                  "state": "current"
+                },
+                {
+                  "id": 10,
+                  "state": "current"
+                },
+                {
+                  "id": 11,
+                  "state": "unfinished"
+                }
+              ],
+              [
+                {
+                  "id": 4,
+                  "state": "current"
+                },
+                {
+                  "id": 5,
+                  "state": "current"
+                },
+                {
+                  "id": 6,
+                  "state": "current"
+                },
+                {
+                  "id": 7,
+                  "state": "current"
+                },
+                {
+                  "id": 12,
+                  "state": "current"
+                },
+                {
+                  "id": 13,
+                  "state": "current"
+                },
+                {
+                  "id": 14,
+                  "state": "current"
+                },
+                {
+                  "id": 15,
+                  "state": "current"
+                }
+              ]
+            ]
+          },
+          {
+            "label": "APRIL",
+            "stopAfter": 10,
+            "trainingCount": 16,
+            "gpus": [
+              [
+                {
+                  "id": 0,
+                  "state": "current"
+                },
+                {
+                  "id": 1,
+                  "state": "current"
+                },
+                {
+                  "id": 2,
+                  "state": "current"
+                },
+                {
+                  "id": 3,
+                  "state": "current"
+                },
+                {
+                  "id": 8,
+                  "state": "current"
+                },
+                {
+                  "id": 9,
+                  "state": "current"
+                },
+                {
+                  "id": 10,
+                  "state": "current"
+                },
+                {
+                  "id": 11,
+                  "state": "unfinished"
+                }
+              ],
+              [
+                {
+                  "id": 4,
+                  "state": "current"
+                },
+                {
+                  "id": 5,
+                  "state": "current"
+                },
+                {
+                  "id": 6,
+                  "state": "current"
+                },
+                {
+                  "id": 7,
+                  "state": "current"
+                },
+                {
+                  "id": 12,
+                  "state": "current"
+                },
+                {
+                  "id": 13,
+                  "state": "current"
+                },
+                {
+                  "id": 14,
+                  "state": "current"
+                },
+                {
+                  "id": 16,
+                  "state": "next"
+                }
+              ]
+            ]
+          },
+          {
+            "label": "U-RB",
+            "stopAfter": 12,
+            "trainingCount": 16,
+            "gpus": [
+              [
+                {
+                  "id": 0,
+                  "state": "current"
+                },
+                {
+                  "id": 1,
+                  "state": "current"
+                },
+                {
+                  "id": 2,
+                  "state": "current"
+                },
+                {
+                  "id": 3,
+                  "state": "current"
+                },
+                {
+                  "id": 8,
+                  "state": "current"
+                },
+                {
+                  "id": 9,
+                  "state": "current"
+                },
+                {
+                  "id": 10,
+                  "state": "current"
+                },
+                {
+                  "id": 11,
+                  "state": "unfinished"
+                }
+              ],
+              [
+                {
+                  "id": 4,
+                  "state": "current"
+                },
+                {
+                  "id": 5,
+                  "state": "current"
+                },
+                {
+                  "id": 6,
+                  "state": "current"
+                },
+                {
+                  "id": 7,
+                  "state": "current"
+                },
+                {
+                  "id": 12,
+                  "state": "current"
+                },
+                {
+                  "id": 13,
+                  "state": "current"
+                },
+                {
+                  "id": 16,
+                  "state": "next"
+                },
+                {
+                  "id": 17,
+                  "state": "next"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 5",
+        "page": 12,
+        "verifiedAt": "2026-07-13",
+        "summary": "两张 GPU 时间线比较 Sync RL、APRIL 和 U-RB 的长尾 rollout 与训练批组装。"
+      }
+    },
+    {
+      "source": "ERNIE 5.0 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2602.04705",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "ernie-entropy-collapse",
+      "name": "Entropy Collapse Diagnostic",
+      "chartLabel": "RL accuracy and policy entropy · stable vs collapse",
+      "family": "亚洲模型实验室",
+      "sourceKey": "ernie5",
+      "visualSystem": "VS-74 ERNIE entropy-collapse diagnostic",
+      "grammar": "上下对齐 accuracy/entropy 双面板 + 健康熵带 + collapse 垂线 + 方法共享横轴",
+      "renderer": "entropyCollapseDiagnostic",
+      "palette": {
+        "bg": "#fbfdff",
+        "ink": "#18212c",
+        "muted": "#677588",
+        "grid": "#dce5ef",
+        "c1": "#1677dc",
+        "c2": "#54b5ef",
+        "c3": "#f09b38",
+        "c4": "#3ca77b",
+        "c5": "#d14d77",
+        "c6": "#888f99"
+      },
+      "description": "复现 ERNIE 5.0 Figure 6：同一训练进程中并排观察准确率增长和策略熵坍塌，区分表面增益与训练失稳。",
+      "useWhen": "适合 RL 稳定性诊断；不能只看 accuracy，熵的方向与合理区间需要按策略定义。",
+      "tags": [
+        "ernie",
+        "entropy",
+        "rl",
+        "stability"
+      ],
+      "data": {
+        "steps": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100,
+          120,
+          140,
+          160,
+          180,
+          200
+        ],
+        "collapseIndex": 7,
+        "series": [
+          {
+            "label": "MISC / Mixed IcePop",
+            "accuracy": [
+              0.55,
+              0.58,
+              0.61,
+              0.64,
+              0.66,
+              0.68,
+              0.69,
+              0.71,
+              0.72,
+              0.73,
+              0.735
+            ],
+            "entropy": [
+              0.33,
+              0.325,
+              0.318,
+              0.31,
+              0.3,
+              0.295,
+              0.294,
+              0.29,
+              0.291,
+              0.287,
+              0.278
+            ]
+          },
+          {
+            "label": "GSPO IcePop",
+            "accuracy": [
+              0.55,
+              0.57,
+              0.6,
+              0.63,
+              0.66,
+              0.67,
+              0.685,
+              0.67,
+              0.64,
+              0.65,
+              0.655
+            ],
+            "entropy": [
+              0.33,
+              0.33,
+              0.335,
+              0.33,
+              0.335,
+              0.34,
+              0.35,
+              0.38,
+              0.46,
+              0.47,
+              0.47
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 6",
+        "page": 13,
+        "verifiedAt": "2026-07-13",
+        "summary": "两种 IcePop 目标在 accuracy 与 train-logits entropy 上的同步训练动态。"
+      }
+    },
+    {
+      "source": "ERNIE 5.0 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2602.04705",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "ernie-expert-collaboration",
+      "name": "Cross-modal Expert Collaboration Facets",
+      "chartLabel": "Expert utilization and modality overlap across depth",
+      "family": "亚洲模型实验室",
+      "sourceKey": "ernie5",
+      "visualSystem": "VS-75 ERNIE expert collaboration facets",
+      "grammar": "首中末层列分面 + 模态行 expert 条码 + 底部跨模态 top-expert IoU 摘要",
+      "renderer": "expertCollaborationFacets",
+      "palette": {
+        "bg": "#fbfdff",
+        "ink": "#18212c",
+        "muted": "#677588",
+        "grid": "#dce5ef",
+        "c1": "#1677dc",
+        "c2": "#54b5ef",
+        "c3": "#f09b38",
+        "c4": "#3ca77b",
+        "c5": "#d14d77",
+        "c6": "#888f99"
+      },
+      "description": "合并复现 ERNIE 5.0 Figures 8-9：用首层、中层、末层的专家条码和 IoU 摘要观察专家专门化与跨模态协作。",
+      "useWhen": "适合 MoE routing 诊断；每行需要相同 expert ID 顺序，IoU 的 top-k 口径必须固定。",
+      "tags": [
+        "ernie",
+        "moe",
+        "experts",
+        "multimodal"
+      ],
+      "data": {
+        "layers": [
+          {
+            "label": "FIRST LAYER",
+            "rows": [
+              {
+                "label": "Text",
+                "values": [
+                  2,
+                  4,
+                  3,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "label": "Image U",
+                "values": [
+                  11,
+                  3,
+                  18,
+                  2,
+                  5,
+                  1
+                ]
+              },
+              {
+                "label": "Video U",
+                "values": [
+                  24,
+                  4,
+                  12,
+                  1,
+                  6,
+                  2
+                ]
+              },
+              {
+                "label": "Image G",
+                "values": [
+                  2,
+                  18,
+                  4,
+                  1,
+                  8,
+                  3
+                ]
+              },
+              {
+                "label": "Video G",
+                "values": [
+                  1,
+                  3,
+                  2,
+                  22,
+                  7,
+                  4
+                ]
+              },
+              {
+                "label": "Audio",
+                "values": [
+                  1,
+                  12,
+                  3,
+                  29,
+                  4,
+                  20
+                ]
+              }
+            ]
+          },
+          {
+            "label": "MIDDLE LAYER",
+            "rows": [
+              {
+                "label": "Text",
+                "values": [
+                  3,
+                  6,
+                  2,
+                  3,
+                  4,
+                  1
+                ]
+              },
+              {
+                "label": "Image U",
+                "values": [
+                  4,
+                  2,
+                  6,
+                  3,
+                  19,
+                  2
+                ]
+              },
+              {
+                "label": "Video U",
+                "values": [
+                  8,
+                  2,
+                  5,
+                  3,
+                  7,
+                  8
+                ]
+              },
+              {
+                "label": "Image G",
+                "values": [
+                  2,
+                  14,
+                  3,
+                  7,
+                  24,
+                  4
+                ]
+              },
+              {
+                "label": "Video G",
+                "values": [
+                  1,
+                  9,
+                  2,
+                  16,
+                  40,
+                  3
+                ]
+              },
+              {
+                "label": "Audio",
+                "values": [
+                  65,
+                  20,
+                  4,
+                  2,
+                  3,
+                  5
+                ]
+              }
+            ]
+          },
+          {
+            "label": "LAST LAYER",
+            "rows": [
+              {
+                "label": "Text",
+                "values": [
+                  2,
+                  3,
+                  13,
+                  2,
+                  5,
+                  1
+                ]
+              },
+              {
+                "label": "Image U",
+                "values": [
+                  2,
+                  5,
+                  42,
+                  3,
+                  7,
+                  1
+                ]
+              },
+              {
+                "label": "Video U",
+                "values": [
+                  2,
+                  15,
+                  27,
+                  3,
+                  7,
+                  2
+                ]
+              },
+              {
+                "label": "Image G",
+                "values": [
+                  8,
+                  2,
+                  31,
+                  22,
+                  15,
+                  3
+                ]
+              },
+              {
+                "label": "Video G",
+                "values": [
+                  15,
+                  2,
+                  26,
+                  35,
+                  5,
+                  40
+                ]
+              },
+              {
+                "label": "Audio",
+                "values": [
+                  3,
+                  14,
+                  30,
+                  7,
+                  4,
+                  2
+                ]
+              }
+            ]
+          }
+        ],
+        "overlap": [
+          {
+            "label": "image ↔ video understanding",
+            "value": 0.64
+          },
+          {
+            "label": "image ↔ video generation",
+            "value": 0.78
+          },
+          {
+            "label": "text ↔ audio",
+            "value": 0.4
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figures 8-9",
+        "page": 24,
+        "verifiedAt": "2026-07-13",
+        "summary": "六种模态/任务在首中末层的 expert utilization，以及 top 25% experts 的跨模态 IoU。"
+      }
+    },
+    {
+      "source": "Step-3 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2507.19427",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "step3-hardware-roofline",
+      "name": "Attention Hardware Roofline",
+      "chartLabel": "Attention compute vs KV memory access",
+      "family": "亚洲模型实验室",
+      "sourceKey": "step3",
+      "visualSystem": "VS-76 Step-3 hardware roofline",
+      "grammar": "compute-memory 坐标 + 多硬件 roofline 射线 + 8K→32K 模型轨迹 + 端点直标",
+      "renderer": "hardwareRoofline",
+      "palette": {
+        "bg": "#fffdfb",
+        "ink": "#1d1b1a",
+        "muted": "#756d68",
+        "grid": "#e5ddd8",
+        "c1": "#ee3b38",
+        "c2": "#13aeb0",
+        "c3": "#3b68d8",
+        "c4": "#7165ba",
+        "c5": "#e29c2e",
+        "c6": "#85817d"
+      },
+      "description": "复现 Step-3 Figure 5：把 attention 计算量与 KV 访存量放到硬件 computation-bandwidth roofline 上判断瓶颈匹配。",
+      "useWhen": "适合硬件感知 attention 设计；必须使用相同精度、batch 和 context 定义估算 compute 与访存。",
+      "tags": [
+        "stepfun",
+        "roofline",
+        "hardware",
+        "attention"
+      ],
+      "data": {
+        "hardware": [
+          {
+            "label": "H800",
+            "compute": 620
+          },
+          {
+            "label": "910B",
+            "compute": 520
+          },
+          {
+            "label": "A800",
+            "compute": 430
+          },
+          {
+            "label": "H20",
+            "compute": 250
+          }
+        ],
+        "models": [
+          {
+            "label": "DSv3",
+            "points": [
+              [
+                0.25,
+                145
+              ],
+              [
+                1.15,
+                590
+              ]
+            ]
+          },
+          {
+            "label": "Qwen3 MoE",
+            "points": [
+              [
+                0.55,
+                25
+              ],
+              [
+                3.15,
+                100
+              ]
+            ]
+          },
+          {
+            "label": "Step-3",
+            "points": [
+              [
+                0.2,
+                30
+              ],
+              [
+                1,
+                130
+              ]
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 5",
+        "page": 8,
+        "verifiedAt": "2026-07-13",
+        "summary": "DSv3、Qwen3 MoE、Step-3 的 8K-32K 轨迹与 H800/H20/A800/910B roofline。"
+      }
+    },
+    {
+      "source": "Step-3 Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2507.19427",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "step3-objective-reversal",
+      "name": "Training–Decoding Objective Reversal",
+      "chartLabel": "The cheapest model changes with the objective",
+      "family": "亚洲模型实验室",
+      "sourceKey": "step3",
+      "visualSystem": "VS-77 Step-3 objective reversal bars",
+      "grammar": "同两模型三场景双条 + 每行赢家箭头 + decoding/training 目标反转",
+      "renderer": "objectiveReversalBars",
+      "palette": {
+        "bg": "#fffdfb",
+        "ink": "#1d1b1a",
+        "muted": "#756d68",
+        "grid": "#e5ddd8",
+        "c1": "#ee3b38",
+        "c2": "#13aeb0",
+        "c3": "#3b68d8",
+        "c4": "#7165ba",
+        "c5": "#e29c2e",
+        "c6": "#85817d"
+      },
+      "description": "复现 Step-3 Figure 4：同一对模型在 8K/32K decoding 与 training 成本上的赢家发生反转。",
+      "useWhen": "适合揭示“训练便宜”不等于“推理解码便宜”；三种成本必须归一到相同 token 口径。",
+      "tags": [
+        "stepfun",
+        "cost",
+        "training",
+        "decoding"
+      ],
+      "data": {
+        "scenarios": [
+          {
+            "label": "DECODING · 8K",
+            "a": 0.114,
+            "b": 0.078
+          },
+          {
+            "label": "DECODING · 32K",
+            "a": 0.395,
+            "b": 0.168
+          },
+          {
+            "label": "TRAINING · 8K",
+            "a": 0.076,
+            "b": 0.213
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 4",
+        "page": 8,
+        "verifiedAt": "2026-07-13",
+        "summary": "Step-3 与 Pangu Pro MoE 在两档 decoding 和一档 training 成本上的相反趋势。"
+      }
+    },
+    {
+      "source": "Yi Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2403.04652",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "yi-continuous-discrete-emergence",
+      "name": "Continuous vs Discrete Emergence",
+      "chartLabel": "In-context learning · error and exact-match views",
+      "family": "亚洲模型实验室",
+      "sourceKey": "yiReport",
+      "visualSystem": "VS-78 Yi continuous-discrete emergence",
+      "grammar": "任务难度分行 + 连续误差实线 + exact-match 虚线 + shots 共享横轴",
+      "renderer": "continuousDiscreteEmergence",
+      "palette": {
+        "bg": "#fbfbff",
+        "ink": "#181923",
+        "muted": "#6e7080",
+        "grid": "#dfe0ea",
+        "c1": "#4e55c7",
+        "c2": "#b43b35",
+        "c3": "#933e9d",
+        "c4": "#2aa1a6",
+        "c5": "#3b9b55",
+        "c6": "#e77b2d"
+      },
+      "description": "复现 Yi Figure 3：在同一 few-shot 任务上并列连续误差与离散 exact match，避免把测量阈值误当作能力突然出现。",
+      "useWhen": "适合研究 emergent ability 与测量伪影；连续、离散指标必须来自同一预测样本。",
+      "tags": [
+        "yi",
+        "emergence",
+        "in-context-learning",
+        "measurement"
+      ],
+      "data": {
+        "shots": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40
+        ],
+        "tasks": [
+          {
+            "label": "2 COEFFICIENTS · [1, -1]",
+            "continuousRange": [
+              0,
+              50
+            ],
+            "exactMax": 0.6,
+            "models": [
+              {
+                "label": "Yi-34B",
+                "continuous": [
+                  43,
+                  35,
+                  28,
+                  20,
+                  16,
+                  18,
+                  14,
+                  12,
+                  8,
+                  10
+                ],
+                "exact": [
+                  0.08,
+                  0.28,
+                  0.3,
+                  0.38,
+                  0.36,
+                  0.28,
+                  0.45,
+                  0.32,
+                  0.47,
+                  0.26
+                ]
+              },
+              {
+                "label": "Llama-2-70B",
+                "continuous": [
+                  46,
+                  39,
+                  37,
+                  33,
+                  30,
+                  28,
+                  26,
+                  24,
+                  23,
+                  22
+                ],
+                "exact": [
+                  0.02,
+                  0.1,
+                  0.2,
+                  0.35,
+                  0.42,
+                  0.45,
+                  0.4,
+                  0.38,
+                  0.46,
+                  0.55
+                ]
+              },
+              {
+                "label": "Yi-6B",
+                "continuous": [
+                  49,
+                  42,
+                  39,
+                  36,
+                  31,
+                  22,
+                  20,
+                  25,
+                  18,
+                  17
+                ],
+                "exact": [
+                  0,
+                  0.02,
+                  0.04,
+                  0.08,
+                  0.1,
+                  0.16,
+                  0.06,
+                  0.14,
+                  0.08,
+                  0.12
+                ]
+              }
+            ]
+          },
+          {
+            "label": "5 COEFFICIENTS · [1, 1, 1, 1, 1]",
+            "continuousRange": [
+              0,
+              170
+            ],
+            "exactMax": 0.8,
+            "models": [
+              {
+                "label": "Yi-34B",
+                "continuous": [
+                  150,
+                  54,
+                  45,
+                  41,
+                  38,
+                  47,
+                  36,
+                  34,
+                  37,
+                  39
+                ],
+                "exact": [
+                  0,
+                  0,
+                  0.01,
+                  0.02,
+                  0.01,
+                  0.03,
+                  0.02,
+                  0.04,
+                  0.01,
+                  0.03
+                ]
+              },
+              {
+                "label": "Llama-2-70B",
+                "continuous": [
+                  60,
+                  14,
+                  8,
+                  5,
+                  10,
+                  7,
+                  6,
+                  11,
+                  8,
+                  6
+                ],
+                "exact": [
+                  0.12,
+                  0.44,
+                  0.56,
+                  0.78,
+                  0.56,
+                  0.74,
+                  0.66,
+                  0.72,
+                  0.68,
+                  0.76
+                ]
+              },
+              {
+                "label": "Yi-6B",
+                "continuous": [
+                  165,
+                  83,
+                  76,
+                  57,
+                  45,
+                  39,
+                  34,
+                  36,
+                  29,
+                  31
+                ],
+                "exact": [
+                  0,
+                  0,
+                  0.02,
+                  0,
+                  0.03,
+                  0,
+                  0.02,
+                  0.01,
+                  0.03,
+                  0.01
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 3",
+        "page": 11,
+        "verifiedAt": "2026-07-13",
+        "summary": "两个线性系数推断任务，比较 difference-to-target 与 exact match 随 shots 变化。"
+      }
+    },
+    {
+      "source": "Yi Technical Report",
+      "sourceType": "arXiv 论文",
+      "sourceUrl": "https://arxiv.org/abs/2403.04652",
+      "dataNote": "示意数据，仅复现信息结构，不代表最新榜单结果。",
+      "id": "yi-layer-token-similarity",
+      "name": "Layer–Token Similarity Bands",
+      "chartLabel": "Input/output cosine similarity across model depth",
+      "family": "亚洲模型实验室",
+      "sourceKey": "yiReport",
+      "visualSystem": "VS-79 Yi layer-token similarity bands",
+      "grammar": "原模型/深度扩展双带 + token 多线 + duplicated-layer 区间底色 + 层端退化",
+      "renderer": "layerTokenSimilarityBands",
+      "palette": {
+        "bg": "#fbfbff",
+        "ink": "#181923",
+        "muted": "#6e7080",
+        "grid": "#dfe0ea",
+        "c1": "#4e55c7",
+        "c2": "#b43b35",
+        "c3": "#933e9d",
+        "c4": "#2aa1a6",
+        "c5": "#3b9b55",
+        "c6": "#e77b2d"
+      },
+      "description": "复现 Yi Figure 8：逐 token 查看每层输入/输出余弦相似度，并突出 depth upscaling 新复制层接近恒等映射。",
+      "useWhen": "适合选择可复制或可跳过的层；相似度需按 token 展开，不能只报整层平均。",
+      "tags": [
+        "yi",
+        "layers",
+        "cosine-similarity",
+        "depth-upscaling"
+      ],
+      "data": {
+        "panels": [
+          {
+            "label": "YI-6B · 32 LAYERS",
+            "maxLayer": 32,
+            "tokens": [
+              {
+                "label": "Write",
+                "values": [
+                  0.25,
+                  0.92,
+                  0.85,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.02,
+                  0.97,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.96,
+                  0.04,
+                  0.01
+                ]
+              },
+              {
+                "label": "a",
+                "values": [
+                  0.24,
+                  0.88,
+                  0.45,
+                  0.83,
+                  0.86,
+                  0.9,
+                  0.88,
+                  0.89,
+                  0.91,
+                  0.88,
+                  0.9,
+                  0.91,
+                  0.89,
+                  0.92,
+                  0.9,
+                  0.91,
+                  0.92,
+                  0.92,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.97,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.97,
+                  0.5,
+                  0.4
+                ]
+              },
+              {
+                "label": "quiz",
+                "values": [
+                  0.2,
+                  0.76,
+                  0.82,
+                  0.85,
+                  0.88,
+                  0.9,
+                  0.87,
+                  0.9,
+                  0.91,
+                  0.89,
+                  0.91,
+                  0.92,
+                  0.9,
+                  0.92,
+                  0.93,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.96,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.97,
+                  0.98,
+                  0.98,
+                  0.98,
+                  0.48,
+                  0.42
+                ]
+              },
+              {
+                "label": "about",
+                "values": [
+                  0.3,
+                  0.9,
+                  0.7,
+                  0.82,
+                  0.87,
+                  0.89,
+                  0.84,
+                  0.88,
+                  0.9,
+                  0.87,
+                  0.89,
+                  0.91,
+                  0.88,
+                  0.91,
+                  0.92,
+                  0.92,
+                  0.93,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.97,
+                  0.98,
+                  0.98,
+                  0.5,
+                  0.45
+                ]
+              },
+              {
+                "label": "bits",
+                "values": [
+                  0.25,
+                  0.84,
+                  0.78,
+                  0.86,
+                  0.9,
+                  0.91,
+                  0.87,
+                  0.9,
+                  0.91,
+                  0.89,
+                  0.9,
+                  0.92,
+                  0.91,
+                  0.92,
+                  0.93,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.96,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.98,
+                  0.98,
+                  0.98,
+                  0.45,
+                  0.38
+                ]
+              }
+            ]
+          },
+          {
+            "label": "YI-9B INITIALIZATION · 48 LAYERS",
+            "maxLayer": 48,
+            "duplicated": [
+              12,
+              28
+            ],
+            "tokens": [
+              {
+                "label": "Write",
+                "values": [
+                  0.25,
+                  0.92,
+                  0.85,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.02,
+                  0.97,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.99,
+                  0.98,
+                  0.97,
+                  0.96,
+                  0.1
+                ]
+              },
+              {
+                "label": "a",
+                "values": [
+                  0.24,
+                  0.88,
+                  0.45,
+                  0.83,
+                  0.86,
+                  0.9,
+                  0.88,
+                  0.89,
+                  0.91,
+                  0.88,
+                  0.9,
+                  0.91,
+                  0.98,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.98,
+                  0.9,
+                  0.91,
+                  0.89,
+                  0.92,
+                  0.9,
+                  0.91,
+                  0.92,
+                  0.92,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.97,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.95,
+                  0.5
+                ]
+              },
+              {
+                "label": "quiz",
+                "values": [
+                  0.2,
+                  0.76,
+                  0.82,
+                  0.85,
+                  0.88,
+                  0.9,
+                  0.87,
+                  0.9,
+                  0.91,
+                  0.89,
+                  0.91,
+                  0.92,
+                  0.98,
+                  0.98,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.98,
+                  0.9,
+                  0.92,
+                  0.93,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.96,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.97,
+                  0.98,
+                  0.98,
+                  0.98,
+                  0.95,
+                  0.48
+                ]
+              },
+              {
+                "label": "about",
+                "values": [
+                  0.3,
+                  0.9,
+                  0.7,
+                  0.82,
+                  0.87,
+                  0.89,
+                  0.84,
+                  0.88,
+                  0.9,
+                  0.87,
+                  0.89,
+                  0.91,
+                  0.98,
+                  0.98,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.98,
+                  0.88,
+                  0.91,
+                  0.92,
+                  0.92,
+                  0.93,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.97,
+                  0.98,
+                  0.98,
+                  0.94,
+                  0.45
+                ]
+              },
+              {
+                "label": "bits",
+                "values": [
+                  0.25,
+                  0.84,
+                  0.78,
+                  0.86,
+                  0.9,
+                  0.91,
+                  0.87,
+                  0.9,
+                  0.91,
+                  0.89,
+                  0.9,
+                  0.92,
+                  0.98,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.99,
+                  0.98,
+                  0.91,
+                  0.92,
+                  0.93,
+                  0.93,
+                  0.94,
+                  0.94,
+                  0.95,
+                  0.95,
+                  0.96,
+                  0.96,
+                  0.96,
+                  0.97,
+                  0.97,
+                  0.97,
+                  0.98,
+                  0.98,
+                  0.98,
+                  0.98,
+                  0.93,
+                  0.42
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "locator": "Figure 8",
+        "page": 17,
+        "verifiedAt": "2026-07-13",
+        "summary": "Yi-6B 与 Yi-9B 初始化的 token-wise layer cosine similarity，新增 16 层接近 1。"
       }
     }
   ]

@@ -9,13 +9,13 @@
 
 ## 当前能力
 
-- 71 个实时 SVG 组件
-- 71 个互不重复的图表语法、renderer 和视觉系统编号
-- 35 个厂商、榜单、实验室与论文来源谱系
+- 79 个实时 SVG 组件
+- 79 个互不重复的图表语法、renderer 和视觉系统编号
+- 39 个厂商、榜单、实验室与论文来源谱系
 - 10 个图表家族
 - 搜索、图表家族/来源/组织筛选、详情放大、JSON 查看、SVG 导出
 - 稳定的查询/渲染/扩展注册 API 与机器可读 catalog JSON
-- Kimi、MiniMax、GLM 论文图号、PDF 页码与核验日期的机器可读 evidence
+- Kimi、MiniMax、GLM、InternLM2、ERNIE 5.0、Step-3、Yi 论文图号、PDF 页码与核验日期的机器可读 evidence
 - 自动拒绝重复语法、缺失来源、无障碍信息缺失和无效 SVG
 
 仅替换颜色、厂商名、benchmark 名或图片格式，不算新组件。

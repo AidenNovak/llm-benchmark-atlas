@@ -6,7 +6,7 @@ const read = relative => fs.readFileSync(new URL(relative, root), 'utf8');
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 
-for (const file of ['catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'api.js']) {
+for (const file of ['catalog.js', 'renderers.js', 'vendor-series.js', 'research-series.js', 'asian-series.js', 'lab-series.js', 'lab-systems-series.js', 'api.js']) {
   vm.runInContext(read(`library/${file}`), sandbox, { filename: file });
 }
 
