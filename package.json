@@ -11,7 +11,8 @@
     "deploy:pages": "bash scripts/deploy-pages.sh",
     "validate": "node scripts/validate-library.mjs",
     "serve": "python3 -m http.server 4173 --bind 127.0.0.1",
-    "qa": "python3 scripts/qa_library.py"
+    "qa": "python3 scripts/qa_library.py",
+    "qa:about": "python3 scripts/qa_about.py"
   },
   "engines": {
     "node": ">=20"

@@ -36,6 +36,7 @@ leaderboard result.
 | File | Role |
 |---|---|
 | `index.html` | Semantic page shell, filters, catalog, dialog |
+| `about.html` / `about.css` / `about.js` | Apple-inspired product story with live component evidence |
 | `styles.css` | Responsive application layout |
 | `catalog.js` | Source registry, component metadata, demo data |
 | `renderers.js` | One pure SVG renderer per component |

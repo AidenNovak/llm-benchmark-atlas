@@ -4,6 +4,7 @@
 它强调来源可追溯、图表语法去重、结构化数据驱动和可维护扩展，而不是收集截图。
 
 [在线组件库](https://aidennovak.github.io/llm-benchmark-atlas/) ·
+[产品详解](https://aidennovak.github.io/llm-benchmark-atlas/about.html) ·
 [组件契约](docs/COMPONENT_CONTRACT.md) ·
 [来源清单](research/SOURCES.md)
 
