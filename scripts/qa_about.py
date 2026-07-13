@@ -25,8 +25,10 @@ def main() -> None:
         report["title"] = page.title()
         report["component_stat"] = page.locator("[data-stat='components']").inner_text()
         report["live_svgs"] = page.locator(".live-chart svg, .evidence-chart svg").count()
+        report["favicon"] = page.locator("link[rel='icon'][type='image/svg+xml']").get_attribute("href")
         assert report["component_stat"] == "83"
         assert report["live_svgs"] == 5
+        assert report["favicon"] == "favicon.svg"
         assert page.locator("text=不是收集截图。").count() == 1
         assert page.locator("text=容量满了以后，token 去哪里？").count() == 1
 

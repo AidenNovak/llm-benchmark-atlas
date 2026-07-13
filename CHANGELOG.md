@@ -13,6 +13,8 @@ All notable changes to this project will be documented here.
   entries, Hunyuan/Seed discovery, and both FP8 components.
 - An Apple-inspired product story page with live component renders, provenance
   walkthroughs, responsive layout, and a dedicated browser QA suite.
+- A custom three-bar Benchmark Atlas favicon, PNG fallback, Apple Touch Icon,
+  and matching browser theme metadata across the catalog and product story.
 
 ### Research decisions
 
