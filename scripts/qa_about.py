@@ -26,9 +26,15 @@ def main() -> None:
         report["component_stat"] = page.locator("[data-stat='components']").inner_text()
         report["live_svgs"] = page.locator(".live-chart svg, .evidence-chart svg").count()
         report["favicon"] = page.locator("link[rel='icon'][type='image/svg+xml']").get_attribute("href")
+        report["canonical"] = page.locator("link[rel='canonical']").get_attribute("href")
+        report["twitter_creator"] = page.locator("meta[name='twitter:creator']").get_attribute("content")
+        report["structured_data"] = page.locator("script[type='application/ld+json']").count()
         assert report["component_stat"] == "83"
         assert report["live_svgs"] == 5
         assert report["favicon"] == "favicon.svg"
+        assert report["canonical"] == "https://aidennovak.github.io/llm-benchmark-atlas/about.html"
+        assert report["twitter_creator"] == "@logiclogic1223"
+        assert report["structured_data"] == 1
         assert page.locator("text=不是收集截图。").count() == 1
         assert page.locator("text=容量满了以后，token 去哪里？").count() == 1
 

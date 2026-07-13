@@ -1,0 +1,23 @@
+{
+  "name": "Benchmark Atlas",
+  "short_name": "Atlas",
+  "description": "Source-grounded, duplication-checked SVG components for LLM benchmark charts, leaderboards, model launches, and research-paper figures.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f5f7",
+  "theme_color": "#0a1020",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
