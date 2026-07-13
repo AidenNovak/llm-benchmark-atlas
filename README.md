@@ -1,7 +1,5 @@
 # Benchmark Atlas
 
-[![Validate](https://github.com/AidenNovak/llm-benchmark-atlas/actions/workflows/validate.yml/badge.svg)](https://github.com/AidenNovak/llm-benchmark-atlas/actions/workflows/validate.yml)
-[![Deploy Pages](https://github.com/AidenNovak/llm-benchmark-atlas/actions/workflows/pages.yml/badge.svg)](https://github.com/AidenNovak/llm-benchmark-atlas/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-171717.svg)](LICENSE)
 
 A source-grounded, duplication-checked component atlas for LLM benchmark
