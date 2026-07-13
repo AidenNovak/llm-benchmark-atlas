@@ -47,6 +47,19 @@ npm run serve
 
 Open <http://127.0.0.1:4173/library/>.
 
+The public site is normally deployed from the `gh-pages` branch. Maintainers can
+publish the validated static bundle without a hosted runner:
+
+```bash
+npm run deploy:pages
+```
+
+Run the same interaction suite against production with:
+
+```bash
+npm run qa -- https://aidennovak.github.io/llm-benchmark-atlas/
+```
+
 ## Coverage
 
 | Family | Representative components |

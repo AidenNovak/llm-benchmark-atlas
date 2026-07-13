@@ -8,6 +8,7 @@ from playwright.sync_api import sync_playwright
 
 
 BASE_URL = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:4173/library/"
+IS_LOCAL = BASE_URL.startswith("http://127.0.0.1") or BASE_URL.startswith("http://localhost")
 SCREENSHOT = Path("/private/tmp/benchmark-atlas-dialog.png")
 SERIES_SCREENSHOT = Path("/private/tmp/benchmark-atlas-series.png")
 PAPER_SCREENSHOT = Path("/private/tmp/benchmark-atlas-paper-series.png")
@@ -38,7 +39,8 @@ def main() -> None:
 
         report["initial_cards"] = page.locator(".component-card").count()
         assert report["initial_cards"] == 71
-        page.screenshot(path=str(PREVIEW_SCREENSHOT))
+        if IS_LOCAL:
+            page.screenshot(path=str(PREVIEW_SCREENSHOT))
 
         page.locator("#family-filter").select_option(label="Agent 与过程评测")
         report["agent_family_cards"] = page.locator(".component-card").count()

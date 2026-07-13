@@ -31,6 +31,18 @@ npm run serve
 
 打开 <http://127.0.0.1:4173/library/>。
 
+维护者可在本地完成校验、静态构建并发布 `gh-pages`，不依赖托管 runner：
+
+```bash
+npm run deploy:pages
+```
+
+生产站交互验收：
+
+```bash
+npm run qa -- https://aidennovak.github.io/llm-benchmark-atlas/
+```
+
 ## 组件收录门槛
 
 1. 必须给出厂商一手页面、独立榜单或论文来源。

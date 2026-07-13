@@ -15,6 +15,8 @@ All notable changes to this project will be documented here.
 - Evidence surfaced in the inspection dialog and validated for all 11 Asian
   model-lab components.
 - Dedicated MiniMax and GLM browser QA, plus a refreshed catalog preview.
+- Deterministic static-site assembly and a runner-independent `gh-pages`
+  deployment command.
 
 ## [0.3.0] - 2026-07-12
 
